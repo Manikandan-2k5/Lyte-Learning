@@ -1,0 +1,61 @@
+:root {
+	--lyte-voicenote-bg: #f5f8fb;
+	--lyte-voicenote-play-btn-bg: #8ac0f2;
+	--lyte-voicenote-play-btn-border-color: #fff;
+	--lyte-voicenote-play-btn-boxshadow-color: #00000040;
+	--lyte-voicenote-loading-bar-bg: #dce3eb;
+	--lyte-voicenote-loading-handler-bg: #59b0ff;
+	--lyte-voicenote-error-handler-bg: #dce3eb;
+	--lyte-voicenote-completed-bg: #8ac0f2;
+	--lyte-voicenote-duration-text-color: #949fb5;
+	--lyte-voicenote-duration-separator-color: #949fb5;
+	--lyte-voicenote-volume-slider-fill-bg: #8ac0f2;
+	--lyte-voicenote-volume-slider-handler-bg: #59b0ff;
+	--lyte-voicenote-playback-speed-text-color: #666;
+	--lyte-voicenote-playback-speed-drop-item-text-color: #666;
+	--lyte-voicenote-circle-loader-color: #fff;
+}
+.lyteVoicenoteMixin() {
+	@bg: var(--lyte-voicenote-bg);
+}
+.lyteVoiceNotePausePlayIconMixin() {
+	@bg: var(--lyte-voicenote-play-btn-bg);
+	@border: 1px solid var(--lyte-voicenote-play-btn-border-color);
+	@box-shadow: 0px 0px 2px 0px var(--lyte-voicenote-play-btn-boxshadow-color);
+}
+.lyteVoiceNotePrefetchLoadingBarMixin() {
+	@bg: var(--lyte-voicenote-loading-bar-bg);
+}
+.lyteVoiceNoteProgressMixin() {
+	@bg: var(--lyte-voicenote-loading-bar-bg);
+}
+.lyteVoiceNoteMetaLoadedHandlerMixin() {
+	@bg: var(--lyte-voicenote-loading-handler-bg);
+}
+.lyteVoiceNoteCompletionMixin() {
+	@bg: var(--lyte-voicenote-completed-bg);
+}
+.lyteVoiceNoteElapsedAndDurationSpanMixin() {
+	@color: var(--lyte-voicenote-duration-text-color);
+}
+.lyteVoiceNoteTimeSeparateMixin() {
+	@color: var(--lyte-voicenote-duration-separator-color);
+}
+.lyteVoiceNoteVolumeSliderRangeSliderFillMixin() {
+	@bg: var(--lyte-voicenote-volume-slider-fill-bg);
+}
+.lyteVoiceNoteVolumeSliderHandlerMixin() {
+	@bg: var(--lyte-voicenote-volume-slider-handler-bg);
+}
+.lyteVoiceNotePlaybackRateDropButtonMixin() {
+	@color: var(--lyte-voicenote-playback-speed-text-color);
+}
+.lyteVoiceNotePlaybackRateDropboxDropItemMixin() {
+	@color: var(--lyte-voicenote-playback-speed-drop-item-text-color);
+}
+.lyteCircleInnerLoaderAfterMixin() {
+	@border: 2px solid var(--lyte-voicenote-circle-loader-color);
+}
+.lyteVoiceNoteErrorHandlerMixin() {
+	@bg: var(--lyte-voicenote-error-handler-bg);
+}

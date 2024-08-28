@@ -1,0 +1,35 @@
+:root {
+	--lyte-colorpicker-border-color: #e6e6e6;
+	--lyte-colorpicker-boxshadow-color: rgba(0,0,0,0.1);
+	--lyte-colorpicker-colorpan-border-color: rgba(0,0,0,0.2);
+	--lyte-colorpicker-colorpan-hover-border-color: rgba(0,0,0,0.3);
+	--lyte-colorpicker-morelink-hover-bg: #f5f5f5;
+	--lyte-colorpicker-common-text-color: @commonTextColor2;
+	--lyte-colorpicker-advanced-link-text-color: @LCP_commonText;
+	--lyte-colorpicker-color-slider-handle-border-color: #fff;
+	--lyte-colorpicker-input-border-color: #d6d6d6;
+	--lyte-colorpicker-input-hover-border-color: #c1c1c1;
+	--lyte-colorpicker-formatdropdown-text-color: #555;
+	--lyte-colorpicker-formatdropdown-active-text-color: @commonTextColor;
+	--lyte-colorpicker-selectedtick-color: #fff;
+	--lyte-colorpicker-whitebg-selectedtick-color: #333;
+	--lyte-colorpicker-sliderhandle-border-color: #000;
+	--lyte-colorpicker-sliderhandle-bg: #fff;
+	--lyte-colorpicker-formatlabel-text-color: #9b9b9b;
+}
+
+.LCP_SelectedColorBefore() {
+	@border-left: 1px solid var(--lyte-colorpicker-selectedtick-color);
+	@border-bottom: 1px solid var(--lyte-colorpicker-selectedtick-color);
+}
+.LCP_WhiteSelectedColorBefore() {
+	@border-left: 1px solid var(--lyte-colorpicker-whitebg-selectedtick-color);
+	@border-bottom: 1px solid var(--lyte-colorpicker-whitebg-selectedtick-color);
+}
+.colorSlider_sliderHandle() {
+	@border: 1px solid var(--lyte-colorpicker-sliderhandle-border-color);
+	@bg: var(--lyte-colorpicker-sliderhandle-bg);
+}
+.cpValFormatIpSecondRowTd() {
+	@color: var(--lyte-colorpicker-formatlabel-text-color);
+}

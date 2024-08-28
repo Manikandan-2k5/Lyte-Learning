@@ -1,0 +1,136 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-messagebox-bg: var(--lyte-theme-body-bg);
+  --lyte-messagebox-content-text-color: var(--lyte-common-text-color);
+  --lyte-messagebox-success-bg: #49a251;
+  --lyte-messagebox-error-bg: #e64040;
+  --lyte-messagebox-warning-bg: #ea8d42;
+  --lyte-messagebox-info-bg: #188bc7;
+  --lyte-messagebox-zindex: var(--lyte-level5-zindex);
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-MESSAGEBOX BEGINS   */
+.lyteMessageBoxContent {
+  font-family: var(--lyte-primary-font);
+  font-size: 15px;
+  color: var(--lyte-messagebox-content-text-color);
+}
+.lyteMessageBox {
+  padding: 0 50px 0 0;
+  z-index: var(--lyte-messagebox-zindex);
+  background: var(--lyte-messagebox-bg);
+  border-radius: 2px;
+  color: var(--lyte-messagebox-content-text-color);
+  font-size: 15px;
+  transition: 0.3s all ease;
+  display: block;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  border: 1px solid transparent;
+  position: absolute;
+  min-width: 200px;
+}
+.lyteMessageBox.successMessageIcon {
+  border-color: var(--lyte-messagebox-success-bg);
+}
+.lyteMessageBox.errorMessageIcon {
+  border-color: var(--lyte-messagebox-error-bg);
+}
+.lyteMessageBox.warningMessageIcon {
+  border-color: var(--lyte-messagebox-warning-bg);
+}
+.lyteMessageBox.infoMessageIcon {
+  border-color: var(--lyte-messagebox-info-bg);
+}
+.lyteMessageBox .lyteMessageBoxSymbol {
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+}
+.lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-success-bg);
+}
+.lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-error-bg);
+}
+.lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-warning-bg);
+}
+.lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-info-bg);
+}
+.lyteMessageBox .lyteMessageBoxSymbol::before {
+  content: "";
+  background-image: var(--lyte-sprite-image);
+  position: absolute;
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: calc(50% - 11px);
+}
+.lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -287px -58px;
+}
+.lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -317px -60px;
+  width: 24px;
+  left: calc(50% - 12px);
+}
+.lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -347px -58px;
+}
+.lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -377px -58px;
+}
+.lyteMessageBox .lyteMessageBoxContent {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+  padding: 10px 15px 10px 65px;
+}
+.lyteMessageBox .lyteMessageBoxClose {
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+}
+.lyteMessageBoxFadeIn {
+  animation-name: lyteMsgBoxFadeIn;
+}
+@keyframes lyteMsgBoxFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.lyteMessageBoxFadeOut {
+  animation-name: lyteMsgBoxFadeOut;
+}
+@keyframes lyteMsgBoxFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-MESSAGEBOX ENDS   */

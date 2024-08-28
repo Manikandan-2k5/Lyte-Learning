@@ -1,0 +1,55 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-combobox lyte-dropdown {
+  display: block;
+  width: 100%;
+  max-width: unset;
+}
+.lyteComboboxButtonSearch.lyteComboboxSearchPresent .lyteDropPlaceholderNormal,
+.lyteComboboxButtonSearch.lyteComboboxSearchPresent .lyteDropdownLabel,
+lyte-combobox.buttonSearch.lyteComboboxSearchPresent .lyteDropPlaceholderNormal,
+lyte-combobox.buttonSearch.lyteComboboxSearchPresent .lyteDropdownLabel {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  padding-right: 20px;
+}
+.lyteComboboxButtonSearch .lyteDropButtonDown .lyteDropdownLabel,
+.lyteComboboxButtonSearch .lyteDropButtonUp .lyteDropdownLabel,
+lyte-combobox.buttonSearch .lyteDropButtonDown .lyteDropdownLabel,
+lyte-combobox.buttonSearch .lyteDropButtonUp .lyteDropdownLabel {
+  opacity: 0.5;
+}
+.lyteComboboxFiltering .lyteDropPlaceholderNormal,
+.lyteComboboxButtonSearch .lyteComboboxFiltering .lyteDropdownLabel {
+  opacity: 0;
+}
+.lyteComboboxBtnSearchInput {
+  width: 100%;
+}
+.lyteInput.lyteComboboxBtnSearchInput[lt-prop-type="search"] .lyteComboboxBtnSearchOrigIpt {
+  padding: 0;
+  padding-right: 20px;
+}
+.lyteComboboxBtnSearchInput.lyteInputFocus .lyteField,
+.lyteComboboxBtnSearchInput .lyteField:hover,
+.lyteComboboxBtnSearchInput .lyteField {
+  border: 0;
+}
+.lyteComboboxBtnSearchInput[lt-prop-type="search"] .searchIcon {
+  right: 0;
+}
+.lyteComboboxDropboxSearch {
+  box-sizing: border-box;
+  width: 100%;
+}
+.lyteComboboxDropboxSearch.lyteInputBox {
+  padding: 15px;
+}

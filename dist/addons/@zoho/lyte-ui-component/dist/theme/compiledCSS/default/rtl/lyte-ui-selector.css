@@ -1,0 +1,126 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+.lyteSelectionWrapperBox {
+  position: relative;
+  overflow: hidden;
+}
+.lyteSelectionBox {
+  position: absolute;
+  background: red;
+  cursor: move;
+  border: 1px solid #fff;
+  z-index: 10;
+}
+.lyteSelectorActiveBox {
+  z-index: 15;
+  border: 1px solid #5ba1e5;
+}
+.lyteSelectionFreezeLayer {
+  position: absolute;
+  margin: auto;
+  user-select: none;
+  background: #000;
+  opacity: 0.3;
+  cursor: crosshair;
+}
+.lyteSelectorHandles {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  position: absolute;
+  display: none;
+  border: 1px solid #5ba1e5;
+}
+.lyteTLCorner {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+.lyteTRCorner {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+.lyteBRCorner {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+.lyteBLCorner {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+.lyteTEdge {
+  top: -5px;
+  left: calc(50% - 5px);
+  cursor: ns-resize;
+}
+.lyteBEdge {
+  bottom: -5px;
+  left: calc(50% - 5px);
+  cursor: ns-resize;
+}
+.lyteREdge {
+  right: -5px;
+  top: calc(50% - 5px);
+  cursor: ew-resize;
+}
+.lyteLEdge {
+  left: -5px;
+  top: calc(50% - 5px);
+  cursor: ew-resize;
+}
+.lyteSelectorDeleteBtn {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: -18px;
+  left: -18px;
+  display: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #fff;
+  padding: 1px;
+}
+.lyteSelectorDeleteBtn::after {
+  content: '';
+  display: block;
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -187px -38px;
+  width: 11px;
+  height: 13px;
+  margin: 1px auto;
+}
+.lyteSelectorDeleteBtn:hover::after {
+  background-position: -209px -38px;
+}
+.lyteSelectorWorkArea {
+  position: absolute;
+  display: none;
+}
+.lyteSelectorActiveBox .lyteSelectorHandles,
+.lyteSelectorActiveBox .lyteSelectorDeleteBtn,
+.lyteSelectorActiveBox .lyteSelectorWorkArea {
+  display: block;
+}
+.lyteSelectorLabel {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+}
+.lyteSelectorLabelTop {
+  top: 0;
+  transform: translateY(-100%);
+}
+.lyteSelectorLabelBottom {
+  top: 100%;
+}

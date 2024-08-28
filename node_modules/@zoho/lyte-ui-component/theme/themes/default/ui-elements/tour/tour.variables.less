@@ -1,0 +1,73 @@
+.TourFreezeLayerMixin() {
+	@bg: #000;
+	@top: 0;
+	@bottom: 0;
+	@left: 0;
+	@right: 0;
+	@opacity: 0.3;
+	@z-index: 1000;
+}
+.TourContainerMixin() {
+	@top: 0;
+	@left: 0;
+	@z-index: 1040;
+	@box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.TourArrowMixin() {
+	@w: 10px;
+	@h: 10px;
+	@bg: @tourBg;
+	@left: 0;
+}
+.TourLeftArrowMixin() {
+	@border-left: 1px solid @tourBorderColor;
+	@border-bottom: 1px solid @tourBorderColor;
+}
+.TourRightArrowMixin() {
+	@right: 0;
+	@border-top: 1px solid @tourBorderColor;
+	@border-right: 1px solid @tourBorderColor;
+}
+.TourTopArrowMixin() {
+	@top: 0;
+	@border-top: 1px solid @tourBorderColor;
+	@border-left: 1px solid @tourBorderColor;
+}
+.TourBottomArrowMixin() {
+	@bottom: 0;
+	@border-bottom: 1px solid @tourBorderColor;
+	@border-right: 1px solid @tourBorderColor;
+}
+.TourStepMixin() {
+	@w: 100%;
+	@h: 100%;
+	@bg: @tourBg;
+	@border: 1px solid @tourBorderColor;
+	@border-radius: 3px;
+}
+.tourStepHeadMixin() {
+	@font-family: @secondaryFont;
+	@font-size: 20px;
+	@padding: 10px;
+    @color: @tourTextColor;
+}
+.tourStepFooterMixin() {
+	@padding: 10px;
+}
+.tourStepIndicatorMixin() {
+	@w: 10px;
+	@h: 10px;
+	@bg: #ddd;
+	@margin: 0 5px;
+}
+.tourStepIndicatorhoverMixin() {
+	@bg: #5ba1e5;
+}
+.tourActiveTargetMixin() {
+	@z-index: 1040;
+}
+.TourTargetBackgroundMixin() {
+	@bg: @tourBg;
+	@z-index: 1020;
+	@border-radius: 50%;
+}

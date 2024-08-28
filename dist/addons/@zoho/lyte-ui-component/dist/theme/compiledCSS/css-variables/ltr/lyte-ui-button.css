@@ -1,0 +1,158 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-button-border-width: 1px;
+  --lyte-button-border-style: solid;
+  --lyte-button-default-bg: #fff;
+  --lyte-button-default-text-color: #3c3c3c;
+  --lyte-button-default-border-color: #c4c4c4;
+  --lyte-button-default-hover-border-color: #abaaaa;
+  --lyte-button-primary-bg: var(--lyte-theme-active-element-bg);
+  --lyte-button-primary-text-color: #fff;
+  --lyte-button-primary-border-color: var(--lyte-theme-active-element-bg);
+  --lyte-button-primary-hover-bg: #3c98dd;
+  --lyte-button-primary-hover-text-color: #fff;
+  --lyte-button-primary-hover-border-color: #3c98dd;
+  --lyte-button-secondary-bg: #555;
+  --lyte-button-secondary-text-color: #fff;
+  --lyte-button-secondary-border-color: #555;
+  --lyte-button-secondary-hover-bg: #474747;
+  --lyte-button-secondary-hover-color: #fff;
+  --lyte-button-secondary-hover-border-color: #444;
+  --lyte-button-success-bg: #19bc7d;
+  --lyte-button-success-text-color: #fff;
+  --lyte-button-success-border-color: #19bc7d;
+  --lyte-button-success-hover-bg: #10ab6f;
+  --lyte-button-success-hover-border-color: #10ab6f;
+  --lyte-button-outline-success-bg: #fff;
+  --lyte-button-outline-success-text-color: #19bc7d;
+  --lyte-button-outline-success-border-color: #19bc7d;
+  --lyte-button-outline-success-hover-bg: #19bc7d;
+  --lyte-button-outline-success-hover-text-color: #fff;
+  --lyte-button-outline-success-hover-border-color: #19bc7d;
+  --lyte-button-failure-bg: #ec4844;
+  --lyte-button-failure-text-color: #fff;
+  --lyte-button-failure-border-color: #ec4844;
+  --lyte-button-failure-hover-bg: #da3e3e;
+  --lyte-button-failure-hover-border-color: #da3e3e;
+  --lyte-button-outline-failure-bg: #fff;
+  --lyte-button-outline-failure-text-color: #ec4844;
+  --lyte-button-outline-failure-border-color: #ec4844;
+  --lyte-button-outline-failure-hover-bg: #ec4844;
+  --lyte-button-outline-failure-hover-text-color: #fff;
+  --lyte-button-outline-failure-hover-border-color: #ec4844;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+/* BUTTON STYLES BEGINS   */
+lyte-button {
+  display: inline-block;
+}
+lyte-button button {
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 5px 15px;
+  font-family: var(--lyte-primary-font);
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  border-width: var(--lyte-button-border-width);
+  border-style: var(--lyte-button-border-style);
+}
+lyte-button button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/*Specific type*/
+.lyteDefaultBtn {
+  background: var(--lyte-button-default-bg);
+  color: var(--lyte-button-default-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-default-border-color);
+}
+.lyteDefaultBtn:hover {
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-default-hover-border-color);
+}
+.lytePrimaryBtn {
+  background: var(--lyte-button-primary-bg);
+  color: var(--lyte-button-primary-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-primary-border-color);
+}
+.lytePrimaryBtn:hover {
+  background: var(--lyte-button-primary-hover-bg);
+  color: var(--lyte-button-primary-hover-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-primary-hover-border-color);
+}
+.lyte-button.lyteSecondary {
+  background: var(--lyte-button-secondary-bg);
+  color: var(--lyte-button-secondary-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-secondary-border-color);
+}
+.lyte-button.lyteSecondary:hover {
+  background: var(--lyte-button-secondary-hover-bg);
+  color: var(--lyte-button-secondary-hover-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-secondary-hover-border-color);
+}
+.lyteSuccess {
+  background: var(--lyte-button-success-bg);
+  color: var(--lyte-button-success-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-success-border-color);
+}
+.lyteSuccess:hover {
+  background: var(--lyte-button-success-hover-bg);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-success-hover-border-color);
+}
+.lyteDefaultBtn.lyteSuccess {
+  background: var(--lyte-button-outline-success-bg);
+  color: var(--lyte-button-outline-success-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-outline-success-border-color);
+}
+.lyteDefaultBtn.lyteSuccess:hover {
+  background: var(--lyte-button-outline-success-hover-bg);
+  color: var(--lyte-button-outline-success-hover-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-outline-success-hover-border-color);
+}
+.lyteFailure {
+  background: var(--lyte-button-failure-bg);
+  color: var(--lyte-button-failure-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-failure-border-color);
+}
+.lyteFailure:hover {
+  background: var(--lyte-button-failure-hover-bg);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-failure-hover-border-color);
+}
+.lyteDefaultBtn.lyteFailure {
+  background: var(--lyte-button-outline-failure-bg);
+  color: var(--lyte-button-outline-failure-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-outline-failure-border-color);
+}
+.lyteDefaultBtn.lyteFailure:hover {
+  background: var(--lyte-button-outline-failure-hover-bg);
+  color: var(--lyte-button-outline-failure-hover-text-color);
+  border: var(--lyte-button-border-width) var(--lyte-button-border-style) var(--lyte-button-outline-failure-hover-border-color);
+}
+.lyteLg {
+  padding: 7px 20px;
+  font-size: 15px;
+}
+.lyteSm {
+  padding: 3px 10px;
+  font-size: 13px;
+}
+.lyteExsm {
+  padding: 2px 8px;
+  font-size: 12px;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/button.less file
+ */
+/* BUTTON STYLES ENDS   */

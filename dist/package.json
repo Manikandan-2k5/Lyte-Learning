@@ -1,0 +1,21 @@
+{
+    "name": "Lyte-Test",
+    "version": "1.0.0",
+    "description": "Description for Lyte-Test goes here",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+   
+    "dependencies" : {
+      "@zoho/lyte" : "3.4.1",
+      "@zoho/lyte-ui-component" : "3.88.0",
+      "@zoho/lyte-dom" : "2.0.10"
+    },
+    "devDependencies" : {
+     
+    }
+  
+}
+  

@@ -1,0 +1,28 @@
+:root {
+	--lyte-cropper-crop-area-bg: #eee;
+	--lyte-cropper-resize-handle-bg: #fff;
+	--lyte-cropper-opacitydiv-bg: #333;
+	--lyte-cropper-gridline-color: #ccc;
+	--lyte-cropper-profilesetter-freeze-bg: #333;
+}
+.cropArea() {
+	@bg: var(--lyte-cropper-crop-area-bg);
+}
+.cropperTopBottomCornerCommon() {
+	@bg: var(--lyte-cropper-resize-handle-bg);
+}
+.cropperEdgesCenterSpanMixin() {
+	@bg: var(--lyte-cropper-resize-handle-bg);
+}
+.cropperOpacityDiv() {
+	@bg: var(--lyte-cropper-opacitydiv-bg);
+}
+.cropperVerticalGrid() {
+	@border-right: 1px dashed var(--lyte-cropper-gridline-color);
+}
+.cropperHorizontalGrid() {
+	@border-top: 1px dashed var(--lyte-cropper-gridline-color);
+}
+.lytePSFreezeLayerMixin() {
+	@bg: var(--lyte-cropper-profilesetter-freeze-bg);
+}

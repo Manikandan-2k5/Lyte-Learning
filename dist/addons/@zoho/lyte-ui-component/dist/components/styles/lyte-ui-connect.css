@@ -1,0 +1,375 @@
+lyte-connect-item{
+	display: block;
+	border: 1px solid #C2CFDE;
+	border-radius: 3px;
+	position: absolute;
+	--contextualRatio: calc( var(--contextualLevel) / 100 );
+	width: calc( 100px * var( --contextualRatio ) );
+	z-index: 2;
+	background: white;
+	overflow: hidden;
+	cursor: move;
+}
+lyte-connect-item.lyteConnectionHover {
+	box-shadow: 0px 5px 10px #0000001A;
+}
+
+lyte-connect-item.lyteShapeHover {
+	border: 1px solid #ACC3DD;
+}
+
+lyte-connect{
+	position: relative;
+	display: block;
+	--contextualLevel: 100;
+}
+lyte-connection-title {
+	display: block;
+}
+lyte-connection-header {
+	display: block;
+	padding: 10px;
+	background: #d7e7fa;
+	border-top: 4px solid #3D90F8;
+}
+lyte-connection-content {
+	display: block;
+	background: #d7e7fa;
+}
+lyte-connection-module {
+	display: block;
+	padding: 5px 10px;
+	background: #fff;
+	margin: 10px;
+}
+lyte-connection-footer {
+	display: block;
+	padding: 10px;
+	background: #d7e7fa;;
+}
+
+.lyteConnectionSelected{
+	z-index: 10;
+	border-color: blue;
+}
+
+.lyteConnectionPath {
+	stroke: #65819D;
+	stroke-width: 2;
+	fill: none;
+}
+.lyteConnectionHover .lyteConnectionPath {
+	stroke-width: 3;
+}
+
+.lyteConnectionFakePath{
+	stroke: transparent;
+	stroke-width:5;
+	fill: none;
+}
+
+.lyteConnectionFakeContainer, .lyteConnectionContainer{
+	pointer-events: none;
+	/*will-change: transform;*/
+}
+
+.lyteConnectionContainer path{
+	pointer-events: auto;
+	/*will-change: d*/
+}
+
+.lyteConnectionElement{
+	position: relative;
+	width: 100vw;
+    height: 100vh;
+    /*overflow: auto;*/
+    overflow: hidden;
+}
+
+.lyteConnectionMarker{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.lyteConnectSelection{
+	z-index: 3;
+}
+
+.lyteConnectWrapper{
+	overflow: visible;
+	height: 100%;
+	width: 100%;
+}
+
+.lyteConnectOverlay{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	border: 2px solid red;
+	box-sizing: border-box;
+}
+
+.lytePreviewElement{
+	position: absolute;
+	border: 1px solid black;
+}
+
+.lyteConnectPreview{
+	background: white;
+}
+
+.lytePreviewForeignObject{
+	overflow: visible;
+}
+
+.lyteContextualAnimation lyte-connect-item{
+	transition-property: width, height, left, top;
+	transition-duration: 200ms;
+	will-change: left,top,font-size,width,height;
+}
+
+.lyteContextualAnimation lyte-connection-content{
+	transition-property: max-height, height;
+	will-change: max-height,height;
+	transition-duration: 200ms;
+	pointer-events: none;
+}
+
+.lyteConnectSelectionElement{
+	position: absolute;
+	background: #00c4ff;
+	opacity: 0.5;
+}
+
+.lyteConnectContextualLevel75{
+	font-size: 12px;
+}
+
+.lyteConnectContextualLevel75 lyte-connect-item{
+	width: 75px;
+}
+
+.lyteConnectContextualLevel75 lyte-connection-content{
+	max-height: 150px;
+}
+
+.lyteConnectContextualLevel50{
+	font-size: 8px;
+}
+
+.lyteConnectContextualLevel50 lyte-connect-item{
+	width: 50px;
+}
+
+.lyteConnectContextualLevel50 lyte-connection-content{
+	max-height: 100px;
+}
+
+.lyteConnectContextualLevel25{
+	font-size: 6px;
+}
+
+.lyteConnectContextualLevel25 lyte-connect-item{
+	width: 40px;
+}
+
+.lyteConnectContextualLevel25 lyte-connection-content{
+	max-height: 80px;
+}
+
+.lyteConnectContextualLevel0 lyte-connect-item{
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+}
+
+.lyteConnectContextualLevel0 lyte-connection-content{
+	display: none;
+}
+
+.lyteConnectGroupShape {
+	background: transparent;
+}
+
+.lyteShapeHover .lyteConnectionPath{
+	stroke: yellow;
+}
+
+.lyteConnectPreview{
+	width: 200px; 
+	height: 200px; 
+	bottom: 100vh;
+	position: absolute;
+	border: 1px solid black;
+	transform: translate(-200%,-100%);
+	left: 100vw;
+	top: 100vh;
+}
+
+.lyteConnectHiddenElem{
+	display: none !important;
+}
+
+.lyteSmartGuides{
+	position: absolute;
+	border: 1px dotted black;
+	box-sizing: border-box;
+	z-index: 100;
+}
+
+.lyteConnectionPreviewMarker{
+	position: absolute;
+	pointer-events: none;
+}
+
+.lyteConnectReconnectElement {
+    z-index: 15;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    left: calc(var(--left) - 5px );
+    top: calc(var(--top) - 5px );
+}
+
+.lyteConnectorReconnect .lyteConnectReconnectElement{
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.lyteConnectorReconnect .lyteConnectorElementSelected path{
+	pointer-events: none;
+}
+
+.lyteConnectorReconnect lyte-textbox.lyteConnectorElementSelected{
+	display: none;
+}
+
+lyte-textbox{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    min-width: 25px;
+    min-height: 25px;
+    pointer-events: auto;
+    z-index: 10;
+    border: 1px solid black;
+}
+
+lyte-textbox.lyteConnectEmpty{
+    border: 2px solid rgb(0, 173, 255);
+}
+
+.lyteConnectEmpty:before{
+    content: "+";
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.lyteConnectInnerSpan {
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    border-left: 2px solid #00adff;
+    border-right: 2px solid #00adff
+}
+
+.lyteConnectInnerSpan::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #00adff;
+    left: 0;
+    top: 16px
+}
+
+.lyteInnerText {
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    z-index: 1
+}
+
+.lyteConnectInnerSpan:first-of-type .lyteInnerText {
+    padding-top: 0;
+    top: -5px
+}
+
+.lyteConnectInnerSpan:last-of-type .lyteInnerText {
+    padding-bottom: 0;
+    bottom: -5px
+}
+
+.lyteConnectInnerSpan:first-of-type {
+    border-radius: 4px 4px 0 0
+}
+
+.lyteConnectInnerSpan:last-of-type {
+    border-radius: 0 0 4px 4px
+}
+
+.lyteConnectInnerSpan:first-of-type::after {
+    top: 0;
+    border-radius: 5px 5px 0 0
+}
+
+.lyteConnectInnerSpan:last-of-type::after {
+    bottom: 0;
+    top: auto;
+    border-radius: 0 0 5px 5px
+}
+
+.lyteConnectInnerSpan:only-of-type::after {
+    content: unset
+}
+
+.lyteConnectInnerSpan:only-of-type {
+    border: 0;
+    padding: 0
+}
+
+.lyteConnectInnerSpan:only-of-type .lyteInnerText {
+    bottom: auto;
+    top: 5px
+}
+
+.lyteConnectReadonly .lyteConnectAnchorPoint{
+    display: none;
+}
+
+.lyteConnectGroupShape {
+	display: flex;
+	flex-direction: row;
+	width: auto;
+}
+
+.lyteConnectGroupShape .lyteConnectInnerItem {
+	margin: 0px 20px;
+	padding: 15px 10px;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	border: 1px solid #C2CFDE;
+	width: 100px;
+}
+
+.lyteGroupSortableSelect {
+	overflow: visible;
+}
+
+.lyteConnectSortableDown path {
+	pointer-events: none;
+}
+
+.lyteConnectSortHover {
+	border: 1px solid #7fceef !important;
+}

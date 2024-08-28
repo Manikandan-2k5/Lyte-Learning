@@ -1,0 +1,46 @@
+.hovercardPopoverMixin() {
+    @bg: @hoverCardBg;
+    @color: @hoverCardTextColor;
+    @border-radius: 5px;
+    @z-index: @hoverCardzIndex;
+    @border: 1px solid transparent;
+}
+.hovercardArrowMixin() {
+    @bg: @hoverCardBg;
+}
+.hovercardArrowTop() {
+	@box-shadow: -1px -1px 0 0 @hoverCardBg;
+}
+.hovercardArrowBottom() {
+	@box-shadow: 1px 1px 0 0 @hoverCardBg;
+}
+.hovercardArrowRight() {
+	@box-shadow: 1px -1px 0 0 @hoverCardBg;
+}
+.hovercardArrowLeft() {
+	@box-shadow: -1px 1px 0 0 @hoverCardBg;
+}
+.hovercardContentMixin() {
+    @padding: 15px;
+    @max-w: 500px;
+}
+.hovercardTopBottomPopoverBefore() {
+	@w: 100%;
+	@h: 10px;
+}
+.hovercardBottomPopoverBefore() {
+    @top: -10px;
+}
+.hovercardTopPopoverBefore() {
+    @bottom: -10px;
+}
+.hovercardLeftRightPopoverBefore() {
+    @h: 100%;
+    @w: 10px;
+}
+.hovercardRightPopoverBefore() {
+    @left: -10px;
+}
+.hovercardLeftPopoverBefore() {
+    @right: -10px;
+}

@@ -1,0 +1,64 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-card-bg: var(--lyte-theme-body-bg);
+  --lyte-card-boxshadow-color: rgba(0, 0, 0, 0.1);
+  --lyte-card-img-bg: #eee;
+  --lyte-card-text-color: var(--lyte-common-text-color);
+  --lyte-card-render-placeholder-bg: #eee;
+}
+/* rtl files loading */
+lyte-card {
+  font-family: var(--lyte-primary-font);
+  display: block;
+}
+lyte-card-box {
+  display: block;
+  box-shadow: 0 1px 3px 2px var(--lyte-card-boxshadow-color);
+  border-radius: 3px;
+  text-align: left;
+  background: var(--lyte-card-bg);
+  color: var(--lyte-card-text-color);
+}
+.lyteCardYield {
+  display: flex;
+  flex-direction: column;
+}
+lyte-card-image {
+  padding: 30px 20px;
+  background: var(--lyte-card-img-bg);
+  border-radius: 2px 2px 0 0;
+}
+lyte-card-header {
+  font-family: var(--lyte-secondary-font);
+  font-size: 18px;
+  padding: 10px 20px;
+}
+lyte-card-body {
+  font-size: 14px;
+  padding: 5px 20px;
+}
+lyte-card-footer {
+  padding: 10px 20px;
+}
+.lyteCardImgElem {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+.lyteCardRenderPlaceholder {
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+  background: var(--lyte-card-render-placeholder-bg);
+  border-radius: 3px;
+}

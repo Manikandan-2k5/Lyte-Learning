@@ -1,0 +1,80 @@
+.SelectionBoxMixin() {
+	@border: 1px solid #fff;
+	@z-index: 10;
+}
+.SelectorActiveBoxMixin() {
+	@z-index: 15;
+	@border: 1px solid #5ba1e5;
+}
+.SelectionFreezeLayerMixin() {
+	@bg: #000;
+}
+.SelectorHandlesMixin() {
+	@w: 8px;
+	@h: 8px;
+	@bg: #fff;
+	@border: 1px solid #5ba1e5;
+}
+.TLCornerMixin() {
+	@top: -5px;
+	@left: -5px;
+}
+.TRCornerMixin() {
+	@top: -5px;
+	@right: -5px;
+}
+.BRCornerMixin() {
+	@bottom: -5px;
+	@right: -5px;
+}
+.BLCornerMixin() {
+	@bottom: -5px;
+	@left: -5px;
+}
+.TEdgeMixin() {
+	@top: -5px;
+	@left: calc(50% - 5px);
+}
+.BEdgeMixin() {
+	@bottom: -5px;
+	@left: calc(50% - 5px);
+}
+.REdgeMixin() {
+	@right: -5px;
+	@top: calc(50% - 5px);
+}
+.LEdgeMixin() {
+	@left: -5px;
+	@top: calc(50% - 5px);
+}
+.SelectorDeleteBtnMixin() {
+	@w: 15px;
+	@h: 15px;
+	@top: -18px;
+	@right: -18px;
+	@border-radius: 50%;
+	@bg: #fff;
+	@padding: 1px;
+}
+.SelectorDeleteBtnAfterMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -187px -38px;
+	@w: 11px;
+	@h: 13px;
+	@margin: 1px auto;
+}
+.SelectorDeleteBtnHoverAfterMixin() {
+	@bg-pos: -209px -38px;
+}
+.lyteSelectorLabelMixin() {
+    @w: 100%;
+    @color: #fff;
+    @font-size: 14px;
+}
+.lyteSelectorLabelTopMixin() {
+	@top: 0;
+	@transform: translateY(-100%);
+}
+.lyteSelectorLabelBottomMixin() {
+	@top: 100%;
+}

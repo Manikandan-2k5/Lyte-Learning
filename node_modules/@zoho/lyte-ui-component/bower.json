@@ -1,0 +1,24 @@
+{
+  "name": "git",
+  "authors": [
+    "Samrat Bose <samrat.b@zohocorp.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "lyte": "http://build/zoho/lyte/milestones/master/LYTE_V3_0_1_BETA_10/Lyte.zip",
+    "lyte-dom": "http://build/zoho/lyte_dom/milestones/master/LYTE_DOM_V2_0_11/Lyte_Dom.zip",
+    "ui-components": "http://build/zoho/lyte_ui_component/milestones/V2_2_X/LYTE_UI_COMPONENTS_V2_2_6/Lyte_ui_component.zip",
+    "whiteboard" : "http://build/zoho/showserver/milestones/Pon/SHOWSERVER_PON_MAR_16_2021/whiteboard.zip"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "3.12.0"
+}

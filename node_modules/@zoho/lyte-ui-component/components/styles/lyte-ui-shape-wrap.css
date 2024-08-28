@@ -1,0 +1,63 @@
+lyte-connect-item{
+	padding: 10px 5px;
+    text-align: center;
+    overflow: visible;
+    cursor: default;
+    white-space: nowrap;
+    /*box-sizing: border-box;*/
+}
+
+.lyteConnectShapeAnimate lyte-connect-item{
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+
+.lyteConnectShapeAnimate lyte-textbox{
+    transition-duration: 0.4s;
+    transition-property: left,top;
+    transition-timing-function: linear;
+}
+
+lyte-element-wrapper{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+lyte-connect-item:hover lyte-element-wrapper{
+	width: calc( 100% + 30px );
+    height: calc( 100% + 30px );
+    left: -15px;
+    top: -15px;
+}
+
+.lyteConnectCustomlyCreated{
+	display: none;
+}
+
+lyte-connect{
+	outline: none;
+}
+
+lyte-shape-wrap .lyteConnectAnchorPoint{
+    display: none;
+}
+
+lyte-shape-wrap .lyteConnectAnywhereAnchor{
+    display: block;
+}
+
+.lyteConnectionLineMarker{
+    stroke: #65819D;
+    stroke-width: 2;
+    fill: none;
+}
+
+.lyteConnectLoading lyte-connect-item, .lyteConnectLoading lyte-textbox, .lyteConnectLoading .lyteConnectionContainer{
+    visibility: hidden;
+}

@@ -1,0 +1,51 @@
+.lyteNoteEmojiPopover .lytePopover {
+    padding: 15px 0 10px;
+    border-radius: 10px;
+}
+lyte-emoji {
+    display: block;
+    width: 330px;
+}
+.lyteEmojiInputElement {
+    padding: 5px 20px 10px;
+}
+.lyteEmojiInputElement lyte-input {
+    display: flex;
+    width: 100%;
+}
+.lyteEmojiWrapper {
+    padding: 0 15px;
+    height: 190px;
+    overflow: auto;
+}
+.lyteEmojiGroup {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lyteEmoji {
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: 1px solid transparent;
+    line-height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.lyteEmoji:hover {
+    background: #eee;
+}
+.lyteEmojiNoResult {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+.lyteEmojiHidden {
+    display: none !important;
+}
+  

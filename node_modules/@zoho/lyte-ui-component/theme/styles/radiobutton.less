@@ -1,0 +1,259 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/radiobutton/radiobutton.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{radiobutton}/ui-elements/radiobutton/radiobutton.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{radiobutton}/global/@{direction}.less";
+
+
+/* Loading custom themes */
+@import (optional) "../overrides/ui-elements/radiobutton.variables.less";
+
+/* Radiobutton CSS BEGINS */
+
+lyte-radiobutton {
+	.radiobutton();
+	color: @color;
+	font-family: @primaryFont;
+	font-size: @font-size;
+	display: inline-block;
+    position: relative;
+}
+lyte-radiobutton label {
+	cursor: pointer;
+}
+lyte-radiobutton.lyteRadioDisabled label {
+	cursor: not-allowed;
+}
+lyte-radiobutton input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+.lyteRadioLayer {
+	.radioLayer();
+	width: @w;
+	height: @h;
+	border: @border;
+	border-radius: @border-radius;
+	display: inline-block;
+    @{property-margin-right}: @margin-right;
+	vertical-align: middle;
+	background: @bg;
+	position: relative;
+}
+.lyteRadioLayer .lyteRadioCheck {
+	.radioCheck();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	position: absolute;
+	top: @top;
+    @{property-left}: @left;
+	background: @bg;
+	transform: scale(0);
+	transition: transform 0.2s ease;
+}
+.lyteRadioDisabled input[type="radio"]:checked + .lyteRadioLayer,
+lyte-radiobutton label:hover .lyteRadioLayer,
+lyte-radiobutton input[type="radio"]:focus + .lyteRadioLayer,
+lyte-radiobutton input[type="radio"]:active + .lyteRadioLayer,
+lyte-radiobutton input[type="radio"]:checked + .lyteRadioLayer {
+	.checkedRadioLayer();
+	border: @border;
+}
+lyte-radiobutton input[type="radio"]:focus + .lyteRadioLayer {
+    .defaultRadioFocus();
+    box-shadow: @box-shadow;
+}
+lyte-radiobutton input[type="radio"]:checked + .lyteRadioLayer .lyteRadioCheck {
+	transform: scale(1);
+}
+.lyteRadioLabel {
+	display: inline-block;
+	vertical-align: middle;
+}
+lyte-radiobutton input[type="radio"]:focus ~ .lyteRadioLabel,
+lyte-radiobutton label:hover .lyteRadioLabel {
+    .radioLabelHover();
+    color: @color;
+}
+lyte-radiobutton .lytePrimary .lyteRadioLayer .lyteRadioCheck {
+    .radioPrimaryCheck();
+    background: @bg;
+}
+lyte-radiobutton label.lytePrimary:hover .lyteRadioLayer,
+lyte-radiobutton .lytePrimary input[type="radio"]:focus + .lyteRadioLayer,
+lyte-radiobutton .lytePrimary input[type="radio"]:active + .lyteRadioLayer,
+lyte-radiobutton .lytePrimary input[type="radio"]:checked + .lyteRadioLayer {
+	.checkedRadioPrimaryLayer();
+	border: @border;
+}
+lyte-radiobutton .lytePrimary input[type="radio"]:focus + .lyteRadioLayer {
+    .primaryRadioFocus();
+    box-shadow: @box-shadow;
+}
+lyte-radiobutton .lyteSecondary .lyteRadioLayer .lyteRadioCheck {
+    .radioSecondaryCheck();
+    background: @bg;
+}
+lyte-radiobutton label.lyteSecondary:hover .lyteRadioLayer,
+lyte-radiobutton .lyteSecondary input[type="radio"]:focus + .lyteRadioLayer,
+lyte-radiobutton .lyteSecondary input[type="radio"]:active + .lyteRadioLayer,
+lyte-radiobutton .lyteSecondary input[type="radio"]:checked + .lyteRadioLayer {
+	.checkedRadioSecondaryLayer();
+	border: @border;
+}
+lyte-radiobutton .lyteSecondary input[type="radio"]:focus + .lyteRadioLayer {
+    .secondaryRadioFocus();
+    box-shadow: @box-shadow;
+}
+
+.lyteRadioSwitch {
+    .radioSwitch();
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+}
+.lyteRadioSwitch .on-btn {
+    .radioSwitchCircle();
+	display: inline-block;
+	position: absolute;
+	width: @w;
+	height: @h;
+	background: @bg;
+	border-radius: @border-radius;
+    @{property-left}: @left;
+	top: @top;
+    @{property-right}: auto;
+    transition: @value-transition-left 200ms ease;
+}
+lyte-radiobutton .on-off-sw:focus + .lyteRadioSwitch {
+    .radioSwitchFocus();
+    box-shadow: @box-shadow;
+}
+.on-off-sw:checked + .lyteRadioSwitch {
+    .radioSwitchOn();
+    background: @bg;
+}
+lyte-radiobutton .on-off-sw:checked:focus + .lyteRadioSwitch {
+    .radioSwitchCheckedFocus();
+    box-shadow: @box-shadow;
+}
+lyte-radiobutton .on-off-sw:checked + .lyteRadioSwitch .on-btn {
+    .radioSwitchOnCircle();
+	@{property-left}: @left;
+}
+
+.lyteRadioSliderLabel {
+	box-sizing: border-box;
+	cursor: pointer;
+	position: relative;
+}
+.lyteRadioSlider {
+    .radioSlider();
+	position: relative;
+	display: inline-block;
+	height: @h;
+}
+.lyteRadioSlider::before {
+    .radioSliderCircle();
+	content: '';
+	position: absolute;
+	display: inline-block;
+	z-index: 1;
+	width: @w;
+	height: @h;
+	background: @bg;
+	box-shadow: @box-shadow;
+	border-radius: @border-radius;
+	@{property-left}: @left;
+	transition: @value-transition-left 200ms ease;
+}
+input[type="radio"]:checked + .lyteRadioSlider::before {
+    .radioSliderCircleChecked();
+    @{property-left}: @left;
+}
+.lyteRadioSlider::after {
+    .radioSliderBar();
+	content: '';
+	position: absolute;
+	display: inline-block;
+	z-index: 0;
+	width: @w;
+	height: @h;
+	top: @top;
+	@{property-left}: @left;
+	background: @bg;
+}
+input[type="radio"]:checked + .lyteRadioSlider::after {
+    .radioSliderBarChecked();
+	background: @bg;
+}
+.lyteRadioSliderText {
+    .radioSliderText();
+    @{property-padding-left}: @padding-left;
+	vertical-align: middle;
+}
+
+.lyteRadioDisabled .lyteRadioSlider::after,
+.lyteRadioDisabled .lyteRadioSwitch,
+.lyteRadioDisabled .lyteRadioLayer {
+    .disabledRadioLayer();
+    opacity: @opacity;
+}
+.lyteRadioDisabled .lyteRadioSlider::before {
+    .disabledRadioSliderBefore();
+    opacity: @opacity;
+    background: @bg;
+}
+.lyteRadioDisabled input[type="radio"]:active + .lyteRadioLayer,
+.lyteRadioDisabled .lytePrimary input[type="radio"]:active + .lyteRadioLayer,
+.lyteRadioDisabled .lyteSecondary input[type="radio"]:active + .lyteRadioLayer,
+.lyteRadioDisabled label.lyteSecondary:hover .lyteRadioLayer,
+.lyteRadioDisabled label.lytePrimary:hover .lyteRadioLayer,
+.lyteRadioDisabled label:hover .lyteRadioLayer {
+    .disabledRadioLayerHover();
+    border: @border;
+}
+.lyteRadioDisabled label:hover .lyteRadioLabel {
+    .disabledRadioLabelHover();
+    color: @color;
+}
+
+/*	CSS for handling bigger labels in Radio button BEGINS	*/
+lyte-radiobutton.lyteRadioLabelBiggerCase {
+	max-width: 100%;
+}
+lyte-radiobutton.lyteRadioLabelBiggerCase label {
+	display: flex;
+}
+lyte-radiobutton.lyteRadioLabelBiggerCase .lyteRadioLayer {
+	flex-shrink: 0;
+}
+lyte-radiobutton.lyteRadioLabelBiggerCase .lyteRadioLabel {
+	overflow: auto;
+	overflow-wrap: break-word;
+	white-space: normal;
+}
+/*	CSS for handling bigger labels in Radio button ENDS	*/
+
+/* import theme overrides - styles s*/
+@import (optional) "../themes/@{radiobutton}/ui-elements/radiobutton/radiobutton.styles.less";
+
+
+
+
+/* import custom css */
+@import (optional) "../overrides/ui-elements/radiobutton.overrides.less";
+
+/* Radiobutton CSS ENDS */

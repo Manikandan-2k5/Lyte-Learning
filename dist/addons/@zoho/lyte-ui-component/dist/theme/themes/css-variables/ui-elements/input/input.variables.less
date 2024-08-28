@@ -1,0 +1,23 @@
+:root {
+	--lyte-input-bg: @themeBodyBackground;
+	--lyte-input-text-color: @commonTextColor2;
+	--lyte-input-border-color: #d6d6d6;
+	--lyte-input-hover-border-color: #c1c1c1;
+	--lyte-input-focus-border-color: #7fceef;
+	--lyte-input-border-radius: 2px;
+	--lyte-input-disabled-bg: #f3f3f3;
+	--lyte-input-label-text-color: #555;
+	--lyte-input-font-size: 15px;
+	--lyte-input-disabled-text-color: #999;
+	--lyte-input-placeholder-text-color: #a6a6a6;
+}
+
+.inputBoxInputDisabled() {
+	@color: var(--lyte-input-disabled-text-color);
+}
+.inputPlaceholder() {
+	@color: var(--lyte-input-placeholder-text-color);
+}
+.inputDateTimePlaceholderMixin() {
+	@color: var(--lyte-input-placeholder-text-color);
+}

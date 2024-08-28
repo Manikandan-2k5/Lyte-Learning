@@ -1,0 +1,267 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-table-bg: var(--lyte-theme-body-bg);
+  --lyte-table-th-bg: #f7f7f7;
+  --lyte-table-border-color: #e2e2e2;
+  --lyte-table-fixed-column-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --lyte-table-sort-helper-bg: var(--lyte-theme-active-element-bg);
+  --lyte-table-th-text-color: var(--lyte-common-text-color);
+  --lyte-table-td-text-color: var(--lyte-common-text-color2);
+}
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/*  Lyte Table CSS BEGINS   */
+lyte-table {
+  display: block;
+  height: inherit;
+  font-family: var(--lyte-primary-font);
+}
+lyte-table-structure {
+  display: table;
+  position: relative;
+  background: var(--lyte-table-bg);
+  box-sizing: border-box;
+}
+lyte-tr {
+  display: table-row;
+}
+lyte-tr.lyteTableDummyRow {
+  position: relative;
+}
+lyte-col {
+  display: table-column;
+}
+lyte-colgroup {
+  display: table-column-group;
+}
+lyte-thead {
+  display: table-header-group;
+}
+lyte-th {
+  cursor: default;
+  background: var(--lyte-table-th-bg);
+  text-align: left;
+  color: var(--lyte-table-th-text-color);
+  font-family: var(--lyte-secondary-font);
+  font-size: 14px;
+  outline: none;
+  padding: 12px 15px;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  min-width: 50px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+lyte-th.tableRowFixed {
+  z-index: 6;
+}
+.lyteTableFixed {
+  z-index: 7;
+  box-shadow: 3px 0 7px -2px var(--lyte-table-fixed-column-box-shadow-color);
+}
+lyte-th.tableRowFixed.lyteTableFixed {
+  z-index: 8;
+}
+lyte-th:last-of-type lyte-tablehead-resize {
+  cursor: default;
+  position: absolute;
+  right: 0;
+  height: 0px;
+  width: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+lyte-tbody {
+  display: table-row-group;
+}
+lyte-td {
+  display: table-cell;
+  border-bottom: 1px solid var(--lyte-table-border-color);
+  vertical-align: middle;
+  background: var(--lyte-table-bg);
+  min-width: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 15px;
+  white-space: nowrap;
+  color: var(--lyte-table-td-text-color);
+  position: relative;
+}
+lyte-tfoot {
+  display: table-footer-group;
+}
+lyte-table > .lyteTableScroll {
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+  outline: none;
+}
+lyte-table.border .lyteTableScroll {
+  border-bottom: 1px solid var(--lyte-table-border-color);
+  border-right: 1px solid var(--lyte-table-border-color);
+}
+lyte-table > .lyteTableScroll > lyte-yield {
+  display: block;
+  width: 100%;
+}
+lyte-table.border lyte-tbody lyte-tr:last-of-type lyte-td {
+  border-bottom: 0;
+}
+lyte-table.border lyte-thead lyte-tr lyte-td:last-of-type,
+lyte-table.border lyte-tbody lyte-tr lyte-td:last-of-type {
+  border-right: 0;
+}
+lyte-table.border lyte-th {
+  border: 1px solid var(--lyte-table-border-color);
+  border-bottom: none;
+  border-right: none;
+}
+lyte-table.border lyte-th:last-of-type {
+  border-right: 0;
+}
+lyte-table.border lyte-td {
+  border: 1px solid var(--lyte-table-border-color);
+  border-right: 0;
+  border-top: 0;
+}
+.lyteDualResize lyte-th:last-of-type lyte-tablehead-resize,
+lyte-tablehead-resize {
+  cursor: ew-resize;
+  height: 100%;
+  width: 21px;
+  top: 0;
+  z-index: 9;
+  right: -12px;
+  position: absolute;
+}
+.lyteDualResize lyte-th:last-of-type lyte-tablehead-resize {
+  pointer-events: auto;
+  right: 0;
+}
+lyte-tablehead-resize::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  right: 10px;
+  background: transparent;
+}
+.lyteDualResize lyte-th:last-of-type lyte-tablehead-resize::after {
+  right: 0;
+}
+lyte-th[resize="enable"]:hover lyte-tablehead-resize::after {
+  background: var(--lyte-theme-active-element-bg);
+  opacity: 0.7;
+}
+lyte-th[resize="enable"] lyte-tablehead-resize:hover::after,
+lyte-th[resize="enable"].resizeSelect lyte-tablehead-resize::after {
+  background: var(--lyte-theme-active-element-bg);
+  opacity: 1;
+}
+lyte-table.resizing lyte-th[resize="enable"]:not(.resizeSelect):hover lyte-tablehead-resize::after {
+  background: transparent;
+}
+lyte-table-resize {
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  cursor: se-resize;
+  z-index: 10;
+  right: 0;
+  position: absolute;
+}
+lyte-table-resize:hover {
+  border-bottom: 2px solid var(--lyte-theme-active-element-bg);
+  border-right: 2px solid var(--lyte-theme-active-element-bg);
+}
+lyte-table-horizontal-resize {
+  width: 15px;
+  height: 100%;
+  bottom: 0;
+  cursor: col-resize;
+  z-index: 9;
+  right: 0;
+  position: absolute;
+}
+lyte-table-horizontal-resize:hover {
+  border-right: 2px solid var(--lyte-theme-active-element-bg);
+}
+lyte-table-vertical-resize {
+  width: 100%;
+  height: 15px;
+  bottom: 0;
+  cursor: row-resize;
+  z-index: 9;
+  right: 0;
+  position: absolute;
+}
+lyte-table-vertical-resize:hover {
+  border-bottom: 2px solid var(--lyte-theme-active-element-bg);
+}
+.lyteTableSortHelper {
+  font-family: var(--lyte-secondary-font);
+  font-size: 14px;
+  position: absolute;
+  z-index: 10;
+  background: var(--lyte-table-bg);
+  border: 1px solid var(--lyte-table-sort-helper-bg);
+  padding: 12px 15px;
+  box-sizing: border-box;
+  cursor: move;
+}
+.sortableTable lyte-th {
+  cursor: move;
+}
+lyte-table.lyteStickyTable {
+  --lyte-table-intersection: 0px;
+}
+.lyteStickyTable .lyteFixedColumn {
+  position: sticky;
+}
+.lyteIntersectionDiv {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  top: var(--lyte-table-intersection);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.lyteStickyTable lyte-th {
+  top: 0;
+  position: sticky;
+  z-index: 6;
+}
+.lyteStickyTable lyte-th.lyteTableFixed {
+  z-index: 8;
+}
+.lyteTableRightFixed {
+  box-shadow: -3px 0 7px -2px var(--lyte-table-fixed-column-box-shadow-color);
+}
+.lyteStickyTableColumnMoving {
+  z-index: 10;
+}
+lyte-th.lyteStickyTableColumnMoving {
+  z-index: 15;
+}
+.lyteStickyTableColumnSortAnimate {
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/table.less file
+ */
+/*  Lyte Table CSS ENDS   */

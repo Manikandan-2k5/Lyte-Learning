@@ -1,0 +1,23 @@
+.lyteConnectAnchorPoint{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	/*transform: translate(-50%,-50%);*/
+	border-radius: 50%;
+	background: black;
+	visibility: hidden;
+	left: calc( var(--leftValue) - 4px );
+    top: calc( var(--topValue) - 4px );
+}
+
+.lyteShapeHover{
+	overflow: visible;
+}
+
+.lyteShapeHover>.lyteConnectAnchorPoint{
+	visibility: visible;
+}
+
+.lyteConnectionSelected .lyteConnectAnchorPoint{
+	display: none;
+}

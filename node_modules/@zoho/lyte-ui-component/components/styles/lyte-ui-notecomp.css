@@ -1,0 +1,647 @@
+lyte-notecomp {
+	display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding-bottom: 20px;
+  font-family: 'LatoRegular', sans-serif;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.lyteNoteMainComment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px 15px 0 20px;
+}
+.lyteNoteMainCommentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px 5px 0 0;
+}
+lyte-notecomp lyte-note-editor {
+  display: block;
+  flex-grow: 1;
+  overflow: auto;
+  padding: 5px;
+}
+.lyteNoteFakeElement {
+  padding: 10px;
+  border: 1px solid #CBD8E4;
+  border-radius: 6px;
+  color: #313949;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 15px;
+  cursor: text;
+  position: relative;
+}
+.lyteNoteFakeElement:hover {
+  background: #f8fbfe;
+  border: 1px solid #cedbee;
+}
+.lyteNoteFakeElement.lyteNoteDraft {
+  overflow: hidden;
+  height: 20px;
+  border: 1px solid #e2d3ca;
+}
+.lyteNoteDraft::after {
+  content: '';
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -195px -45px;
+  width: 15px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 8px);
+}
+.lyteNoteDraftWrapper {
+  opacity: 0.7;
+}
+.lyteNoteEditorWrapper {
+  border: 1px solid #429FF5;
+  border-radius: 6px;
+  position: relative;
+  transition: height 0.3s ease;
+}
+.lyteNoteEditorWrapper.lyteNoteEditorWhiteBg {
+  box-shadow: 0 0 6px #8dc4ff;
+}
+lyte-notecomp lyte-texteditor {
+  min-height: 50px;
+  height: 120px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 0;
+  overflow: auto;
+}
+lyte-notecomp lyte-texteditor.lyteEditorFocused {
+  border: 0;
+}
+lyte-notecomp .lyteEditorMainDiv {
+  padding-right: 30px;
+}
+.lyteNoteEditorFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F7F9FB;
+  padding: 5px 10px;
+  border-radius: 0 0 6px 6px;
+}
+.lyteNoteCancelSaveWrap,
+.lyteNoteFooterActions {
+  display: flex;
+}
+.lyteNoteCancelSaveWrap lyte-button:last-child {
+  margin-left: 10px;
+}
+.lyteNoteCommentWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 0 10px;
+  position: relative;
+}
+.lyteEditorContent {
+  padding: 10px;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  background: #f8f8f8;
+  max-width: calc(100% - 105px);
+}
+lyte-comment:hover .lyteEditorContent {
+  border: 1px solid #bdbcbc;
+}
+.lyteEditorContent ol,
+.lyteEditorContent ul {
+  padding-left: 20px;
+}
+
+.lyteCommentEmojiWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+}
+lyte-emoji-container {
+  display: inline-flex;
+  background: #f0f2f5;
+  border-radius: 20px;
+  padding: 4px 6px;
+  font-size: 13px;
+  line-height: 13px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-right: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.lyte_emoji_reactions_0 {
+  background: transparent;
+  padding: 4px 9px;
+}
+.lyte_emoji_reactions_0:hover {
+  background: #f0f2f5;
+}
+.lyteNoteLikeReaction lyte-emoji-holder {
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -284px -2px;
+  width: 14px;
+  height: 16px;
+}
+.lyteNoteLikeReaction.lyteEmojiSelected lyte-emoji-holder {
+  background-position: -304px -2px;
+}
+lyte-emoji-count {
+  margin-left: 5px;
+}
+.lyte_emoji_reactions_0 lyte-emoji-count {
+  display: none;
+}
+lyte-emoji-container:hover {
+  border: 1px solid #c6d0d9;
+}
+.lyteEmojiSelected:hover,
+.lyteEmojiSelected {
+  color: #48aceb;
+  background: #f8fcfe;
+  border: 1px solid #94bdd6;
+}
+
+
+.lyteNoteEmojiTooltipTitle {
+  font-family: 'LatoBold', sans-serif;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.lyteNoteEmojiTooltipWrapper lyte-hovercard-content {
+  padding: 8px;
+}
+.lyteNoteEmojiTooltipNames {
+  list-style: none;
+  font-size: 13px;
+  color: #ddd;
+}
+
+.lyteNoteBgSwitcher {
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -6px -4px;
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.lyteNoteFileUpload,
+.lyteNoteEditorIcon,
+.lyteNoteSmileyIcon {
+  width: 33px;
+  height: 33px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lyteNoteSmileyIcon,
+.lyteNoteIconHolder {
+    margin-left: 5px;
+}
+.lyteNoteEditorIcon::before,
+.lyteNoteFileUpload::before,
+.lyteNoteSmileyIcon::before {
+  content: '';
+  background-image: url(../images/lyte_note_sprite.svg);
+}
+.lyteNoteSmileyIcon::before {
+  background-position: -261px -3px;
+  width: 16px;
+  height: 17px;
+}
+.lyteNoteFileUpload::before {
+  background-position: -238px -4px;
+  width: 16px;
+  height: 14px;
+}
+lyte-note-editor .lyteFileUpdBtnType .lyteFileUpdMsgWrap {
+  display: none;
+}
+.lyteNoteFileUpload .multiFileupload .lyteFileUpdList {
+  margin: 0;
+}
+.lyteNoteFileUpload:hover,
+.lyteNoteEditorIcon.lyteEditorPanelHidden:hover,
+.lyteNoteSmileyIcon:hover {
+  border: 1px solid #c1c8d2;
+}
+.lyteNoteIconHolder {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+.lyteNoteEditorIcon {
+  background: #fff;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+  border-radius: 6px 0 0 6px;
+}
+.lyteEditorPanelHidden {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 6px;
+}
+.lyteNoteEditorIcon::before {
+  background-position: -71px -25px;
+  width: 13px;
+  height: 13px;
+}
+lyte-notecomp .lyteEditorIconsDiv {
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25) inset;
+}
+lyte-notecomp .lyteEditorBgIcon {
+  margin-right: 0;
+}
+lyte-notecomp .LyteEditorFormatSection::after {
+  content: '';
+  height: 50%;
+  width: 1px;
+  background: #b2c2da;
+  margin: auto 5px auto 2px;
+}
+lyte-notecomp .LyteEditorFormatSection:last-child::after {
+  content: none;
+}
+
+.lyteNoteFileStatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #f7f9fb;
+  padding: 10px;
+  border-bottom: 1px solid #e3e7ee;
+}
+lyte-notecomp .multiFileupload .lyteFileUpdList {
+  margin-top: 0;
+  align-items: flex-start;
+}
+.lyteNoteFileStatus lyte-fileupload {
+  width: auto;
+  position: relative;
+}
+.lyteNoteFileStatus .lyteFileUpdThumb {
+  border-radius: 6px 0 0 6px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  object-fit: cover;
+}
+.lyteNoteFileUpdListInnerWrap {
+  width: 310px;
+  display: flex;
+  background: #eaf0f6;
+  border-radius: 6px;
+}
+.lyteFileUpdListFile.success .lyteNoteFileUpdListInnerWrap {
+  background: #eaf6ee;
+}
+.lyteFileUpdListFile.error .lyteNoteFileUpdListInnerWrap {
+  background: #f6eaea;
+}
+.lyteNoteFileStatus .lyteFileUpdTypePreview {
+  margin-right: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 0 0 6px;
+  flex-shrink: 0;
+  background: #fff;
+}
+.lyteNoteFileStatus .lyteFileUpdListFile.error,
+.lyteNoteFileStatus .lyteFileUpdListFile {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  padding-right: 50px;
+}
+.lyteNoteFileStatus .lyteFileUpdFileName {
+  padding: 6px 5px;
+  margin-right: 0;
+  max-width: calc(100% - 80px);
+  flex-shrink: 1;
+  flex-grow: 1;
+  font-size: 15px;
+  color: #313949;
+  line-height: 18px;
+}
+.lyteNoteFileStatus .lyteFileUpdListFile.success .lyteFileUpdFileName {
+  max-width: calc(100% - 80px);
+}
+
+.lyteNoteFileStatus .lyteFileUpdFileStatus {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  width: 280px;
+  margin-right: 0;
+}
+.lyteNoteFileStatus .lyteFileUpdFileSize {
+  padding: 7px 10px 7px 5px;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  margin-right: 0;
+  flex-shrink: 0;
+  color: #8390a9;
+}
+.lyteNoteFileStatus lyte-file-retry {
+  margin-left: 10px;
+  margin-right: 0;
+  align-items: center;
+  cursor: pointer;
+}
+.lyteNoteFileStatus .lyteFileUpdFailMsg {
+  display: none;
+}
+.lyteNoteFileStatus .lyteFileUpdProgressBar {
+  width: 100%;
+  border-radius: 2px;
+  height: 2px;
+}
+.lyteNoteFileStatus .lyteFileUpdProgressFill {
+  border-radius: 0;
+  height: 2px;
+}
+.lyteNoteFileStatus .lyteFileUpdListFile.success::after {
+  content: '';
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -139px -49px;
+  width: 10px;
+  height: 8px;
+  display: block;
+  position: absolute;
+  left: 320px;
+}
+.lyteNoteFileStatus .lyteFileUpdListFile.success:hover::after {
+  content: none;
+}
+.lyteNoteFileStatus lyte-file-close {
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -113px -44px;
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.lyteNoteFileStatus lyte-file-close:hover {
+  opacity: 1;
+}
+.lyteNoteIndividualFilePercentage {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #8390a9;
+}
+.lyteNoteIndividualFilePercentage::after {
+  content: '%';
+}
+.lyteNoteFileUploadStatus {
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  color: #898f9a;
+  font-size: 13px;
+}
+.lyteNoteFileStatus .lyteFileUpdRetryMsg {
+  color: #58a2e5;
+  border-bottom: 1px dotted #58a2e5;
+  text-decoration: none;
+  font-size: 13px;
+  font-style: italic;
+}
+.lyteNoteFileStatus lyte-file-retry::after {
+  content: '';
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -91px -46px;
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+  transform: scale(0.8);
+  margin-left: 5px;
+}
+.fileDragEnter lyte-file-select-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.fileDragEnter lyte-file-select-area::after {
+  content: 'Drop files here to attach';
+  color: #777;
+}
+.lyteNoteUploadSize,
+.lyteNoteUploadCountSection {
+  display: flex;
+  align-items: center;
+}
+.lyteNoteUploadCountSection  {
+  margin-bottom: 10px;
+}
+.lyteNoteUploadText,
+.lyteNoteSizeText {
+  margin-right: 3px;
+}
+.lyteNoteFileLimitMessage {
+  font-style: italic;
+}
+.lyteNoteUploadCountNumber,
+.lyteNoteUploadSizeNumber {
+  color: #313949;
+}
+.lyteNoteUploadCountSection .lyteNoteSvgContainer {
+  width: 17px;
+  height: 17px;
+  margin-right: 9px;
+  margin-left: 1px;
+}
+.lyteNoteUploadSize .lyteNoteSvgContainer {
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
+}
+.lyteNoteSvgGroup {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.lyteNoteUploadCountSection .lyteNoteSvgGroup .background_circle {
+  stroke-width: 10;
+  stroke: #e55858;
+  fill: none;
+}
+.lyteNoteUploadCountSection .lyteNoteSvgGroup .progress_circle {
+  stroke-width: 10;
+  stroke: #24C948;
+  transition: stroke-dashoffset 2s linear;
+  fill: none;
+}
+.lyteNoteUploadSize .lyteNoteSvgGroup .background_circle {
+  stroke-width: 40;
+  stroke: #dfebf6;
+  fill: none;
+}
+.lyteNoteUploadSize .lyteNoteSvgGroup .progress_circle {
+  stroke-width: 40;
+  stroke: #42A2EB;
+  transition: stroke-dashoffset 2s linear;
+  fill: none;
+}
+lyte-notecomp lyte-editorpanel {
+  overflow: hidden;
+}
+.lyteNoteEditorPanelslide .lyteEditorIconsDiv {
+  transition: transform 0.3s linear;
+}
+.lyteNoteEditorPanelfade .lyteEditorIconsDiv {
+  transition: opacity 0.3s linear;
+}
+.lyteNoteEditorPanelscale .lyteEditorIconsDiv {
+  transition: transform 0.3s linear;
+  transform-origin: left center;
+}
+.lyteNoteEditorPanelslide.lyteNoteEditorPanelTransStart .lyteEditorIconsDiv {
+  transform: translateX(-100%);
+}
+.lyteNoteEditorPanelslide.lyteNoteEditorPanelTransEnd .lyteEditorIconsDiv {
+  transform: translateX(0);
+}
+.lyteNoteEditorPanelfade.lyteNoteEditorPanelTransStart .lyteEditorIconsDiv {
+  opacity: 0;
+}
+.lyteNoteEditorPanelfade.lyteNoteEditorPanelTransEnd .lyteEditorIconsDiv {
+  opacity: 1;
+}
+.lyteNoteEditorPanelscale.lyteNoteEditorPanelTransStart .lyteEditorIconsDiv {
+  transform: scaleX(0);
+}
+.lyteNoteEditorPanelscale.lyteNoteEditorPanelTransEnd .lyteEditorIconsDiv {
+  transform: scaleX(1);
+}
+.lyteNoteTextEditorWrapper {
+  position: relative;
+}
+.lyteNoteButtonDisabled {
+  pointer-events: none;
+}
+
+
+lyte-notecomp .lyteFileUpdTypeIcon::after {
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -205px -68px;
+  width: 15px;
+  height: 17px;
+}
+lyte-notecomp .lyteFileUpdTypeIcon.video::after {
+  background-position: -5px -70px;
+  width: 16px;
+  height: 14px;
+}
+lyte-notecomp .lyteFileUpdTypeIcon.pdf::after {
+  background-position: -70px -68px;
+}
+lyte-notecomp .lyteFileUpdTypeIcon.zip::after {
+  background-position: -114px -68px;
+}
+lyte-notecomp .lyteFileUpdTypeIcon.wav::after {
+  background-position: -94px -68px;
+  width: 11px;
+}
+
+
+.lyteNotePinnedComment {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.lyteNotePinIndicator {
+  background: #d4a375;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+.lyteNotePinIndicator::before {
+  content: '';
+  background-image: url(../images/lyte_note_sprite.svg);
+  background-position: -219px -47px;
+  width: 12px;
+  height: 12px;
+}
+.lyteNoteUnpinIcon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  background: #fff;
+  border-radius: 50%;
+  top: calc(50% - 15px);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+}
+.lyteNoteUnpinIcon::before {
+  content: '';
+  background: url(../images/lyte_note_sprite.svg);
+  background-position: -5.5px -27px;
+  width: 14px;
+  height: 4px;
+}
+.lyteMenuSelected.lyteNoteUnpinIcon,
+.lyteNotePinnedComment:hover .lyteNoteUnpinIcon {
+  visibility: visible;
+}
+.lyteNotePinTooltipWrapper lyte-hovercard-content {
+  font-size: 13px;
+  padding: 8px;
+}
+.lyteNotePinTooltipWrapper .lyteNotePinMessage {
+  display: block;
+  margin-bottom: 5px;
+}
+.lyteNoteKeepEditingButton {
+  margin-right: 5px;
+}
+.lyteNotePinnedCommentClick {
+  border-radius: 6px;
+  animation: lyteNoteShowPin 1s linear;
+}
+@keyframes lyteNoteShowPin {
+  0%, 100% {
+    background: #fff;
+  }
+  25%, 75% {
+    background: #fffced;
+  }
+}

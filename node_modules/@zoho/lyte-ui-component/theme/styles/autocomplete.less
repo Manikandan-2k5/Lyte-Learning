@@ -1,0 +1,190 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/autocomplete/autocomplete.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{autocomplete}/ui-elements/autocomplete/autocomplete.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{autocomplete}/global/@{direction}.less";
+
+/* Loading custom themes */
+
+@import (optional) "../overrides/ui-elements/autocomplete.variables.less";
+
+/* Autocomplete styles BEGINS */
+
+
+lyte-autocomplete {
+	position: relative;
+	display: inline-block;
+}
+lyte-autocomplete lyte-dropdown {
+    .autoCompDropdown();    /*  Since this mixin is provided, This mixin can not be removed immediately */
+	display: block;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button {
+    .autocompDropbutton();
+	border: @border;
+	padding: @padding;
+}
+lyte-autocomplete lyte-input {
+    display: block;
+}
+lyte-autocomplete lyte-input.lyteInputBox .lyteInputBoxSearch input {
+    .autocompSearchInput();
+    @{property-padding-left}: @padding-left;
+}
+lyte-autocomplete lyte-input.lyteInputBox input {
+	.autocompleteInput();
+    @{property-padding-right}: @padding-right;
+    font-size: @font-size;
+}
+lyte-autocomplete.searchPresent lyte-input.lyteInputBox input {
+    .autocompleteInputWithSearch();
+    @{property-padding-right}: @padding-right;
+}
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input {
+    .autocompDropOpenDownInput();
+    border-radius: @border-radius;
+}
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox input {
+    .autocompDropOpenUpInput();
+    border-radius: @border-radius;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp:hover {
+    .autocompDropbutton();
+	border: @border;
+    box-shadow: none;
+}
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField {
+	.lyteAutocompleteDropdownFocusedInputFieldMixin();
+	border: @border;
+}
+.lyteAutoCompCloseIcon {
+    .closeIcon();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    vertical-align: top;
+}
+.lyteAutoCompCloseIconWrapper {
+	.autocompClose();
+	@{property-right}: @right;
+	top: @top;
+	padding: @padding;
+    height: @h;
+	position: absolute;
+	cursor: pointer;
+	z-index: 10;
+	opacity: @opacity;
+}
+lyte-autocomplete.searchPresent .lyteAutoCompCloseIconWrapper {
+    .autocompCloseWithSearch();
+    @{property-right}: @right;
+}
+.lyteAutoCompCloseIconWrapper:hover {
+    .autocompCloseHover();
+	opacity: @opacity;
+}
+lyte-autocomplete lyte-input[lt-prop-type="search"] .searchIcon {
+	.autocompSearch();
+    @{property-left}: auto;
+    @{property-right}: @right;
+	top: @top;
+	z-index: 10;
+	cursor: default;
+	opacity: @opacity;
+}
+.iconSeparator {
+	.iconSeparator();
+	height: @h;
+    @{property-border-right}: @border-right;
+    @{property-right}: @right;
+	top: @top;
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+}
+lyte-autocomplete-description {
+    .autoCompDesc();
+	opacity: @opacity;
+    font-size: @font-size;
+    align-self: center;
+    white-space: nowrap;
+}
+.lyteautocompleteError {
+	.autocompleteError();
+	display: block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: @font-size;
+    color: @color;
+    padding: @padding;
+}
+lyte-drop-item .lyteAutoComplete {
+	.autocompDropItem();
+	color: @color;
+	font-family: @primaryFont;
+    max-width: @max-w;
+    overflow-wrap: break-word;
+}
+.lyteautocompleteDropdown {
+	.autocompleteDropdown();
+    border: @border;
+	border-top: @border-top;
+    box-shadow: @box-shadow;
+}
+.lyteautocompleteDropdown.lyteDropdownDown {
+    .autocompleteDropdownDown();
+	transform: @transform;
+}
+.lyteautocompleteDropdown.lyteDropdownUp {
+    .autocompleteDropdownUp();
+	transform: @transform;
+}
+.lyteautocompleteDropdown lyte-drop-item {
+    .autocompDropdownItem();
+    @{property-padding-left}: @padding-left;
+    display: flex;
+}
+.lyteautocompleteDropdown lyte-drop-item[selected='true']::before {
+    content: none;
+}
+.lyteautocompleteHighlight {
+	.autocompleteHighlight();
+	color: @color;
+    background: @bg;
+}
+.lyteautocompleteDropdown lyte-drop-item.lyteSearchHidden {
+	display: none;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{autocomplete}/ui-elements/autocomplete/autocomplete.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/autocomplete.overrides.less";
+
+/* Autocomplete styles ENDS */

@@ -1,0 +1,40 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-sortable-placeholder-bg: #f6fad2;
+  --lyte-sortable-placeholder-border-color: #edf2c3;
+  --lyte-sortable-placeholder-disabled-bg: #f5c7c7;
+  --lyte-sortable-placeholder-disabled-border-color: #f4a7a7;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteSortableParent .lyteSortablePlaceholder:hover,
+.lyteSortableParent .lyteSortablePlaceholder {
+  background: var(--lyte-sortable-placeholder-bg);
+  border: 1px solid var(--lyte-sortable-placeholder-border-color);
+  box-sizing: border-box;
+}
+.lyteSortableParent .lyteSortableDisabledPlaceholder:hover,
+.lyteSortableParent .lyteSortableDisabledPlaceholder {
+  background: var(--lyte-sortable-placeholder-disabled-bg);
+  border: 1px solid var(--lyte-sortable-placeholder-disabled-border-color);
+}
+.nullifyTransition {
+  transition-duration: 0s;
+}
+.lyteSortableDisablePE {
+  pointer-events: none;
+}
+.lyteSortableDummyTr {
+  opacity: 0 !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */

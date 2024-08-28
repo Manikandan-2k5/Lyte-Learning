@@ -1,0 +1,65 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/badge/badge.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{accordion}/ui-elements/badge/badge.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{badge}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/badge.variables.less";
+
+.lyteBadge {
+	.BadgeMixin();
+	font-family: @primaryFont;
+	position: absolute;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	padding: @padding;
+	border-radius: @border-radius;
+	background: @bg;
+	border: @border;
+}
+.lyteBadgeContent {
+	.BadgeContentMixin();
+	color: @color;
+	font-size: @font-size;
+	margin: auto;
+}
+.lyteBadgeWidHeiD {
+	.BadgeWidHeiDMixin();
+	min-width: @min-w;
+	height: @h;
+	line-height: @line-height;
+}
+.lyteBadgeWidHeiWD {
+	.BadgeWidHeiWDMixin();
+	min-width: @min-w;
+	min-height: @min-h;
+}
+.lyteBadgeTopRight {
+	.BadgeTopRightMixin();
+    @{property-right}: @right;
+	top: @top;
+}
+.lyteBadgeTopLeft {
+	.BadgeTopLeftMixin();
+	@{property-left}: @left;
+	top: @top;
+}
+.lyteBadgeBottomRight {
+	.BadgeBottomRightMixin();
+	@{property-right}: @right;
+	bottom: @bottom;
+}
+.lyteBadgeBottomLeft {
+	.BadgeBottomLeftMixin();
+	@{property-left}: @left;
+	bottom: @bottom;
+}

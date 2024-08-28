@@ -1,0 +1,101 @@
+:root {
+	--lyte-video-controls-div-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+	--lyte-video-tooltip-bg: #333;
+	--lyte-video-tooltip-text-color: #fff;
+	--lyte-video-progressed-bg: #338cf0;
+	--lyte-video-chapter-bg: rgba(255, 255, 255, .3);
+	--lyte-video-loaded-bg: rgba(255,255,255,.6);
+	--lyte-video-progress-bar-bg: rgba(255, 255, 255, .3);
+	--lyte-video-progress-handler-bg: #fff;
+	--lyte-video-progress-handler-boxshadow-color: rgba(0, 0, 0, 0.69);
+	--lyte-video-volume-slider-bg: rgba(255, 255, 255, 0.3);
+	--lyte-video-volume-slider-fill-bg: #fff;
+	--lyte-video-volume-slider-unfilled-bg: transparent;
+	--lyte-video-volume-slider-handler-bg: #fff;
+	--lyte-video-show-actions-bg: rgba(0, 0, 0, 0.3);
+	--lyte-video-show-backward-action-bg: #fff;
+	--lyte-video-show-forward-action-bg: #fff;
+	--lyte-video-settings-bg: rgba(28, 28, 28, 0.9);
+	--lyte-video-settings-text-color: #fff;
+	--lyte-video-settings-item-hover-bg: rgba(255, 255, 255, 0.1);
+	--lyte-video-settings-dropitem-tick-color: #fff;
+	--lyte-video-settings-dropdown-header-border-color: #bbb;
+	--lyte-video-settings-arrow-color: #eee;
+	--lyte-video-timer-text-color: #fff;
+	--lyte-video-subtitle-bg: #333c;
+	--lyte-video-subtitle-text-color: #fff;
+	--lyte-video-circular-loader-color: #fff;
+}
+
+.lyteVideoControlsMixin() {
+	@bg: var(--lyte-video-controls-div-bg);
+}
+.lyteVideoToolTipMixin() {
+	@bg: var(--lyte-video-tooltip-bg);
+	@color: var(--lyte-video-tooltip-text-color);
+}
+.lyteVideoProgressBarMixin() {
+	@bg: var(--lyte-video-progress-bar-bg);
+}
+.lyteVideoProgressedMixin() {
+	@background-color: var(--lyte-video-progressed-bg);
+}
+.lyteVideoChapterMixin() {
+	@bg: var(--lyte-video-chapter-bg);
+}
+.lyteVideoProgressLoadMixin() {
+	@background-color: var(--lyte-video-loaded-bg);
+}
+.lyteVideoVolumeSliderRangeSliderMixin() {
+	@bg: var(--lyte-video-volume-slider-bg);
+}
+.lyteVideoProgressHandlerMixin() {
+	@bg: var(--lyte-video-progress-handler-bg);
+	@box-shadow: 0 4px 10px 0 var(--lyte-video-progress-handler-boxshadow-color);
+}
+.lyteVideoVolumeSliderFillMixin() {
+	@bg: var(--lyte-video-volume-slider-fill-bg);
+}
+.lyteVideoVolumeSliderFillEndMixin() {
+	@bg: var(--lyte-video-volume-slider-unfilled-bg);
+}
+.lyteVideoVolumeSliderHandlerMixin() {
+	@bg: var(--lyte-video-volume-slider-handler-bg);
+}
+.lyteVideoAnimatePlayMixin() {
+	@background-color: var(--lyte-video-show-actions-bg);
+}
+.lyteVideoAnimateBackArrowMixin() {
+	@border-right: 7px solid var(--lyte-video-show-backward-action-bg);
+}
+.lyteVideoAnimateForwardArrowMixin() {
+	@border-left: 7px solid var(--lyte-video-show-forward-action-bg);
+}
+.lyteVideoSettingsWrapperMixin() {
+	@bg: var(--lyte-video-settings-bg);
+	@color: var(--lyte-video-settings-text-color);
+}
+.lyteVideoSettingsItemHoverMixin() {
+	@bg: var(--lyte-video-settings-item-hover-bg);
+}
+.lyteVideoOptionselectedBeforeMixin() {
+	@border-left: 1px solid var(--lyte-video-settings-dropitem-tick-color);
+	@border-bottom: 1px solid var(--lyte-video-settings-dropitem-tick-color);
+}
+.lyteVideoSettingsDropdownHeadMixin() {
+	@border-bottom: 1px solid var(--lyte-video-settings-dropdown-header-border-color);
+}
+.lyteVideoSettingsKeyAfterMixin() {
+	@border-top: 1px solid var(--lyte-video-settings-arrow-color);
+	@border-right: 1px solid var(--lyte-video-settings-arrow-color);
+}
+.lyteVideoTimerMixin() {
+	@color: var(--lyte-video-timer-text-color);
+}
+.lyteVideoSubtitleMixin() {
+	@bg: var(--lyte-video-subtitle-bg);
+	@color: var(--lyte-video-subtitle-text-color);
+}
+.lyteCircleInnerLoaderAfterMixin() {
+	@border: 2px solid var(--lyte-video-circular-loader-color);
+}

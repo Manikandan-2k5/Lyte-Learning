@@ -1,0 +1,75 @@
+lyte-datetime-input {
+	display: inline-block;
+}
+.lyteDateTimeInputWrapper {
+	display: flex;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+	border: 1px solid #d6d6d6;
+	border-radius: 2px;
+}
+.lyteDateTimeInputBox:hover .lyteDateTimeInputWrapper {
+	border: 1px solid #c1c1c1;
+}
+.lyteDateInputFocused.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+	border: 1px solid #7fceef;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > input {
+	border-right: 1px solid #d6d6d6;
+	border-radius: 2px 0 0 2px;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > div input {
+	border-radius: 0 2px 2px 0;
+}
+.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+	border-bottom: 1px solid #d6d6d6;
+}
+.lyteDateTimeInputFlat:hover .lyteDateTimeInputWrapper {
+	border-bottom: 1px solid #c1c1c1;
+}
+.lyteDateInputFocused.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+	border-bottom: 1px solid #7fceef;
+}
+.lyteDateTimeInputWrapper input {
+	font-family: 'LatoRegular', sans-serif;
+	font-size: 15px;
+	background: #fff;
+	color: #111;
+	border: 0;
+	box-shadow: none;
+	outline: 0;
+}
+.lyteDateTimeInputBox input {
+	padding: 9px 10px;
+}
+.lyteDateTimeInputFlat input {
+	padding: 9px 0;
+}
+.lyteDateTimeInputWrapper lyte-drop-button {
+	padding: 0;
+}
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button,
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button {
+	border: 0;
+	box-shadow: none;
+}
+.lyteDateTimeInputWormhole {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+.lyteDateTimeInputHidden {
+	display: none;
+}
+.lyteDateTimezone {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	padding: 0 5px;
+	color: #111;
+}

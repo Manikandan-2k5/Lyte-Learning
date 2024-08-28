@@ -1,0 +1,114 @@
+.radiobutton() {
+	@color: @radioTextColor;
+	@font-size: 14px;
+}
+.radioLayer() {
+	@w: 15px;
+	@h: 15px;
+	@border: 1px solid @radioBorderColor;
+    @border-radius: 50%;
+	@margin-right: 7px;
+	@bg: @radioBg;
+}
+.radioCheck() {
+	@w: 9px;
+	@h: 9px;
+    @border-radius: 50%;
+	@top: calc(50% - 4.5px);
+	@left: calc(50% - 4.5px);
+	@bg: @radioDefaultBgOnMode;
+}
+.checkedRadioLayer() {
+	@border: 1px solid @radioDefaultBgOnMode;
+}
+.defaultRadioFocus() {
+    @box-shadow: 0 0 4px 0 @radioDefaultBgOnMode;
+}
+.radioLabelHover() {
+    @color: @radioTextHoverColor;
+}
+.radioPrimaryCheck() {
+    @bg: @radioPrimaryBgOnMode;
+}
+.checkedRadioPrimaryLayer() {
+    @border: 1px solid @radioPrimaryBgOnMode;
+}
+.primaryRadioFocus() {
+    @box-shadow: 0 0 4px 0 @radioPrimaryBgOnMode;
+}
+.radioSecondaryCheck() {
+    @bg: @radioSecondaryBgOnMode;
+}
+.checkedRadioSecondaryLayer() {
+    @border: 1px solid @radioSecondaryBgOnMode;
+}
+.secondaryRadioFocus() {
+    @box-shadow: 0 0 4px 0 @radioSecondaryBgOnMode;
+}
+.radioSwitch() {
+	@w: 28px;
+	@h: 16px;
+	@border-radius: 20px;
+	@bg: #d3d3d3;
+}
+.radioSwitchCircle() {
+	@w: 12px;
+	@h: 12px;
+	@bg: #fff;
+	@border-radius: 50%;
+	@left: 2px;
+	@top: calc(50% - 6px);
+}
+.radioSwitchFocus() {
+    @box-shadow: 0 0 3px 1px #d3d3d3;
+}
+.radioSwitchOn() {
+    @bg: @radioPrimaryBgOnMode;
+}
+.radioSwitchCheckedFocus() {
+    @box-shadow: 0 0 3px 1px @radioPrimaryBgOnMode;
+}
+.radioSwitchOnCircle() {
+	@left: 14px;
+}
+
+.radioSlider() {
+	@h: 1.4rem;
+}
+.radioSliderCircle() {
+	@w: 1.40rem;
+	@h: 1.40rem;
+    @bg: #fff;
+	@box-shadow: 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+	@border-radius: 50%;
+	@left: 0;
+}
+.radioSliderCircleChecked() {
+    @left: 2.25rem;
+}
+.radioSliderBar() {
+	@w: 3.5rem;
+	@h: 0.20rem;
+	@top: 0.60rem;
+	@left: 0;
+	@bg: #b5b1b1;
+}
+.radioSliderBarChecked() {
+	@bg: #000;
+}
+.radioSliderText() {
+	@padding-left: 4.25rem;
+}
+.disabledRadioLayer() {
+    @opacity: 0.5;
+}
+.disabledRadioSliderBefore() {
+    @opacity: 0.8;
+    @bg: #f5f5f5;
+}
+.disabledRadioLayerHover() {
+    @border: 1px solid @radioBorderColor;
+}
+.disabledRadioLabelHover() {
+    @color: @radioTextColor;
+}

@@ -1,0 +1,541 @@
+.lyteGlobalCSSVariablesMixin() {
+	--lyte-primary-font: 'LatoRegular', sans-serif;
+	--lyte-secondary-font: 'LatoBold', sans-serif;
+	--lyte-sprite-image: url(../../images/sprite_lyte.svg);
+	--lyte-video-sprite: url(../../images/sprite_lyte_video.svg);
+	--lyte-theme-body-bg: #fff;
+	--lyte-common-text-color: #333;
+	--lyte-common-text-hover-color: #111;
+	--lyte-common-text-color2: #111;
+	--lyte-heading-text-color: #111;
+	--lyte-theme-active-element-bg: #5ba1e5;
+	--lyte-theme-active-element-color: #2c7bd0;
+	--lyte-level1-zindex: 1000;
+	--lyte-level2-zindex: 1020;
+	--lyte-level3-zindex: 1040;
+	--lyte-level4-zindex: 1060;
+	--lyte-level5-zindex: 1080;
+}
+
+@primaryFont: var(--lyte-primary-font);
+@secondaryFont: var(--lyte-secondary-font);
+
+@lytesprite: var(--lyte-sprite-image);
+@lyteVideoSprite: var(--lyte-video-sprite);
+
+
+@themeBodyBackground: var(--lyte-theme-body-bg);
+@commonTextColor: var(--lyte-common-text-color);
+@commonTextHoverColor: var(--lyte-common-text-hover-color);
+@commonTextColor2: var(--lyte-common-text-color2);
+@headingTextColor: var(--lyte-heading-text-color);
+
+
+@themeActiveElementBg: var(--lyte-theme-active-element-bg);
+@themeActiveElementColor: var(--lyte-theme-active-element-color);
+
+@Level1zIndex: var(--lyte-level1-zindex);
+@Level2zIndex: var(--lyte-level2-zindex);
+@Level3zIndex: var(--lyte-level3-zindex);    //  Used for Colorpicker, Alert, Popover, Colorbox and Modal
+@Level4zIndex: var(--lyte-level4-zindex);    //  Used for Dateselect, Dropbox, MentionsInput, Calendar and Menu
+@Level5zIndex: var(--lyte-level5-zindex);    //  Used for Messagebox and Tooltip
+
+//  Input related Variables Begins
+
+@lyteInputBg: var(--lyte-input-bg);
+@lyteInputTextColor: var(--lyte-input-text-color);
+@lyteInputBorderColor: var(--lyte-input-border-color);
+@lyteInputBorderHover: var(--lyte-input-hover-border-color);
+@lyteInputBorderFocus: var(--lyte-input-focus-border-color);
+@lyteInputBorderRadius: var(--lyte-input-border-radius);
+@lyteInputDisabled: var(--lyte-input-disabled-bg);
+@lyteInputLabelColor: var(--lyte-input-label-text-color);
+@lyteInputFontSize: var(--lyte-input-font-size);
+
+//  Input related Variables Ends
+
+//  Checkbox related Variables Begins
+
+@chboxLabelColor: var(--lyte-chbox-label-text-color);
+@chboxLabelHoverColor: var(--lyte-chbox-label-hover-text-color);
+@chboxFontSize: var(--lyte-chbox-font-size);
+@chboxSwitchBg: var(--lyte-chbox-switch-bg);
+@chboxSwitchBgOnMode: var(--lyte-chbox-switch-bg-on-mode);
+@chboxCircleBg: var(--lyte-chbox-circle-bg);
+
+//  Checkbox related Variables Ends
+
+//	Date time input Variables Begins
+
+@lyteDateTimeInputBg: var(--lyte-datetime-input-bg);
+@lyteDateTimeInputTextColor: var(--lyte-datetime-input-text-color);
+@lyteDateTimeInputBorderColor: var(--lyte-datetime-input-border-color);
+@lyteDateTimeInputBorderHover: var(--lyte-datetime-input-hover-border-color);
+@lyteDateTimeInputBorderFocus: var(--lyte-datetime-input-focus-border-color);
+@lyteDateTimeInputBorderRadius: var(--lyte-datetime-input-border-radius);
+@lyteDateTimeInputFontSize: var(--lyte-datetime-input-font-size);
+
+//	Date time input Variables Ends
+
+//  Accordion related variables Begins
+
+@accordionBorderColor: var(--lyte-accordion-border-color);
+@accordionBorderHover: var(--lyte-accordion-hover-border-color);
+@accordionBorderActive: var(--lyte-accordion-active-border-color);
+@accordionBg: var(--lyte-accordion-bg);
+@accordionColor: var(--lyte-accordion-color);
+@accordionHeaderColor: var(--lyte-accordion-header-text-color);
+@accordionHeaderHoverColor: var(--lyte-accordion-header-hover-text-color);
+@accordionHeaderActiveColor: var(--lyte-accordion-header-active-text-color);
+@accordionHeaderFontSize: var(--lyte-accordion-header-font-size);
+@accordionBodyFontSize: var(--lyte-accordion-body-font-size);
+
+//  Accordion related variables Ends
+
+//  Alert related variables Begins
+
+@alertPopupBg: var(--lyte-alert-popup-bg);
+@alertPopBorder: var(--lyte-alert-popup-border-color);
+@alertPopupBoxShadow: var(--lyte-alert-popup-boxshadow-color);
+@alertPopupHeaderColor: var(--lyte-alert-popup-header-color);
+@alertPopupContentColor: var(--lyte-alert-popup-content-color);
+@alertPopupzIndex: var(--lyte-alert-popup-zindex);
+
+//  Alert related variables Ends
+
+
+//  Autocomplete related variable Begins
+
+@autoCompHighlightColor: var(--lyte-autocomplete-highlight-color);
+@autoCompHighlightBg: var(--lyte-autocomplete-highlight-bg);
+@autoCompleteText: var(--lyte-autocomplete-text-color);
+@autocompleteBoxShadow: var(--lyte-autocomplete-box-shadow);
+@autoCompFocusBorderColor: var(--lyte-autocomplete-focus-border-color);
+
+//  Autocomplete related variable Ends
+
+//  Avatar Navigator related variable Begins
+
+@lyteAvatarItemHoverColor: var(--lyte-avatar-item-hover-color);
+@lyteAvatarItemSelectedColor: var(--lyte-avatar-item-selected-color);
+@lyteAvatarItemLoadingBg: var(--lyte-avatar-item-loading-bg);
+
+//  Avatar Navigator related variable Ends
+
+//  Breadcrumb related variable Begins
+
+@breadCrumbColor: var(--lyte-breadcrumb-text-color);
+@breadCrumbHoverColor: var(--lyte-breadcrumb-hover-text-color);
+@breadCrumbActiveColor: var(--lyte-breadcrumb-active-text-color);
+
+//  Breadcrumb related variable Ends
+
+//  Button related variable Begins
+
+@buttonBorderWidth: var(--lyte-button-border-width);
+@buttonBorderStyle: var(--lyte-button-border-style);
+
+//  Button related variable Ends
+
+//  Button group related variable Begins
+
+@buttongGroupFillBg: var(--lyte-buttong-group-fill-bg);
+@buttonGroupFillHoverBg: var(--lyte-button-group-fill-hover-bg);
+@buttonGroupFillSelectedBg: var(--lyte-button-group-fill-selected-bg);
+@buttonGroupBtnBorderColor: var(--lyte-button-group-line-type-border-color);
+@buttonGroupLineTypeBg: var(--lyte-button-group-line-type-bg);
+@buttonGroupLineTypeHoverBg: var(--lyte-button-group-line-type-hover-bg);
+@buttonGroupLineTypeSelectedBg: var(--lyte-button-group-line-type-selected-bg);
+@buttonGroupTextColor: var(--lyte-button-group-text-color);
+
+//  Button group related variable Ends
+
+//  Calendar related variable Begins
+
+@calendarPopupBG: var(--lyte-calendar-popup-bg);
+@calendarDropdownColor: var(--lyte-calendar-dropdown-text-color);
+@calendarDropdownHoverColor: var(--lyte-calendar-dropdown-hover-text-color);
+@calendarTextColor: var(--lyte-calendar-text-color);
+@calendarHorizontalCellSpacing: var(--lyte-calendar-horizontal-cell-spacing);
+@calSelElemBg: var(--lyte-calendar-selected-elem-bg);
+@calHoverElemBg: var(--lyte-calendar-hover-elem-bg);
+@calNavBg: var(--lyte-calendar-nav-bg);
+@calzIndex: var(--lyte-calendar-zindex);
+
+//  Calendar related variable Ends
+
+//  Card related variable Begins
+
+@cardBg: var(--lyte-card-bg);
+@cardImgBg: var(--lyte-card-img-bg);
+@cardTextColor: var(--lyte-card-text-color);
+
+//  Card related variable Ends
+
+//  Clock related variable Begins
+
+@clockTextColor: var(--lyte-clock-text-color);
+
+//  Clock related variable Ends
+
+//  Colorbox related variable Begins
+
+@colorboxFreezeBg: var(--lyte-colorbox-freeze-bg);
+@colorboxWrapperBg: var(--lyte-colorbox-wrapper-bg);
+@colorboxTextColor: var(--lyte-colorbox-text-color);
+@colorboxzIndex: var(--lyte-colorbox-zindex);
+
+//  Colorbox related variable Begins
+
+//  Drawer related variable Begins
+
+@drawerActiveBg: var(--lyte-drawer-active-bg);
+@drawerDisabledItemBg: var(--lyte-drawer-item-disabled-bg);
+@drawerFreezeBg: var(--lyte-drawer-freeze-bg);
+@drawerTextColor: var(--lyte-drawer-text-color);
+
+//  Drawer related variable Ends
+
+//  Colorpicker related variable Begins
+
+@LCP_BorderColor: var(--lyte-colorpicker-border-color);
+@LCP_boxShadowColor: var(--lyte-colorpicker-boxshadow-color);
+@LCP_colorpanBorderColor: var(--lyte-colorpicker-colorpan-border-color);
+@LCP_colorpanHoverBorderColor: var(--lyte-colorpicker-colorpan-hover-border-color);
+@LCP_morelinkHoverBg: var(--lyte-colorpicker-morelink-hover-bg);
+@LCP_commonText: var(--lyte-colorpicker-common-text-color);
+@LCP_advancedLink: var(--lyte-colorpicker-advanced-link-text-color);
+@LCP_colorSliderHandle: var(--lyte-colorpicker-color-slider-handle-border-color);
+@LCP_inputBorder: var(--lyte-colorpicker-input-border-color);
+@LCP_inputHoverBorder: var(--lyte-colorpicker-input-hover-border-color);
+@LCP_formatdropdownColor: var(--lyte-colorpicker-formatdropdown-text-color);
+@LCP_formatdropdownActiveColor: var(--lyte-colorpicker-formatdropdown-active-text-color);
+
+//  Colorpicker related variable Ends
+
+//  Date range picker related variable Begins
+
+@DRP-bg: var(--lyte-daterangepicker-bg);
+@DRP-inrangeBG: var(--lyte-daterangepicker-inrange-bg);
+@DRP-selElemBG: var(--lyte-daterangepicker-selelem-bg);
+@DRP-inrangeColor: var(--lyte-daterangepicker-inrange-text-color);
+
+//  Date range picker related variable Ends
+
+//  Dropdown related variable Begins
+
+@dropdownBg: var(--lyte-dropdown-bg);
+@dropdownTextColor: var(--lyte-dropdown-text-color);
+@dropdownBtnBorderColor: var(--lyte-dropdown-btn-border-color);
+@dropdownBtnBorderHoverColor: var(--lyte-dropdown-btn-hover-border-color);
+@dropBoxBorderColor: var(--lyte-dropbox-border-color);
+@dropBoxBoxShadowColor: var(--lyte-dropbox-box-shadow-color);
+@dropBoxItemHoverBg: var(--lyte-dropbox-item-hover-bg);
+@dropBoxArrowBg: var(--lyte-dropbox-arrow-border-color);
+@dropboxBorderRadius: var(--lyte-dropbox-border-radius);
+@dropboxTranslateWidth: var(--lyte-dropbox-translate-width);
+@dropboxzIndex: var(--lyte-dropbox-zindex);
+
+//  Dropdown related variable Ends
+
+//  DateSelect related variable Begins
+
+@dateSelectBg: var(--lyte-dateselect-bg);
+@dateSelectBorderColor: var(--lyte-dateselect-border-color);
+@dateSelectzIndex: var(--lyte-dateselect-zindex);
+
+//  DateSelect related variable Ends
+
+//  Express Table related variable Starts
+
+@expressTableBg: var(--lyte-express-table-resize-hover-bg);
+@expressTableThBg: var(--lyte-express-table-th-bg);
+@expressTableBorderColor: var(--lyte-express-table-border-color);
+@expressTableFixedBoxShadow: var(--lyte-express-table-fixed-box-shadow);
+@expressTableThTextColor: var(--lyte-express-table-th-text-color);
+@expressTableTdTextColor: var(--lyte-express-table-td-text-color);
+
+//  Express Table related variable Ends
+
+//  File upload related variable Begins
+
+@fileUploadBg: var(--lyte-fileupload-bg);
+@fileUploadMsgColor: var(--lyte-fileupload-msg-text-color);
+@fileUploadFileNameTextColor: var(--lyte-fileupload-file-name-text-color);
+@fileUploadListFileBg: var(--lyte-fileupload-list-file-bg);
+@fileUploadListFileBorderColor: var(--lyte-fileupload-list-file-border-color);
+@fileUploadListFileErrorBg: var(--lyte-fileupload-list-file-error-bg);
+@fileUploadListFileErrorBorderColor: var(--lyte-fileupload-list-file-error-border-color);
+@fileUploadRetryColor: var(--lyte-fileupload-retry-color);
+
+//  File upload related variable Ends
+
+//  Gridstack related variable Begins
+
+@gridStackSquaresBg: var(--lyte-gridstack-squares-bg);
+@gridStackItemBorder: var(--lyte-gridstack-item-border-color);
+@gridStackFocusBorder: var(--lyte-gridstack-item-focus-border-color);
+
+//  Gridstack related variable Ends
+
+//  Hover Card related variable Starts
+
+@hoverCardBg: var(--lyte-hover-card-bg);
+@hoverCardTextColor: var(--lyte-hover-card-text-color);
+@hoverCardzIndex: var(--lyte-hover-card-zindex);
+
+//  Hover Card related variable Ends
+
+//  Kanbanview related Variable Begins
+
+@kanbanviewBg: var(--lyte-kanbanview-bg);
+@kanbanviewTextColor: var(--lyte-kanbanview-text-color);
+@kanbanviewHoverBg: var(--lyte-kanbanview-hover-bg);
+@kanbanviewBorderColor: var(--lyte-kanbanview-border-color);
+
+//  Kanbanview related Variable Ends
+
+//  Listbox related Variable Begins
+
+@listboxBorderColor: var(--lyte-listbox-border-color);
+@listboxToolbarIconsColor: var(--lyte-listbox-toolbar-icons-color);
+@listboxTextColor: var(--lyte-listbox-text-color);
+@listboxActiveTextColor: var(--lyte-listbox-active-text-color);
+@listboxBg: var(--lyte-listbox-bg);
+
+//  Listbox related Variable Ends
+
+//  Mentions input related variable Begins
+
+@MIBg: var(--lyte-mentionsinput-bg);
+@MITextColor: var(--lyte-mentionsinput-text-color);
+@MIPlaceholderColor: var(--lyte-mentionsinput-placeholder-text-color);
+@MIBorderColor: var(--lyte-mentionsinput-border-color);
+@MIActiveElemBg: var(--lyte-mentionsinput-active-elem-bg);
+@MIHighlightElemBg: var(--lyte-mentionsinput-highlight-elem-bg);
+@MISelectedValBg: var(--lyte-mentionsinput-selected-val-bg);
+@MIzIndex: var(--lyte-mentionsinput-zindex);
+
+//  Mentions input related variable Ends
+
+//  Menu related variable Begins
+
+@menuBg: var(--lyte-menu-bg);
+@menuHeaderColor: var(--lyte-menu-header-text-color);
+@menuLabelColor: var(--lyte-menu-label-text-color);
+@menuBorderColor: var(--lyte-menu-border-color);
+@menuItemHover: var(--lyte-menu-item-hover-bg);
+@menuDescColor: var(--lyte-menu-desc-text-color);
+@menuGroupBorder: var(--lyte-menu-group-border-color);
+@menuzIndex: var(--lyte-menu-zindex);
+
+//  Menu related variable Ends
+
+//  MessageBox related variable Begins
+
+@messageBoxBg: var(--lyte-messagebox-bg);
+@messageBoxContentColor: var(--lyte-messagebox-content-text-color);
+@messageBoxSuccessBg: var(--lyte-messagebox-success-bg);
+@messageBoxErrorBg: var(--lyte-messagebox-error-bg);
+@messageBoxWarningBg: var(--lyte-messagebox-warning-bg);
+@messageBoxInfoBg: var(--lyte-messagebox-info-bg);
+@messageBoxzIndex: var(--lyte-messagebox-zindex);
+
+//  MessageBox related variable Ends
+
+//  Modal related variable Begins
+
+@modalBg: var(--lyte-modal-bg);
+@modalBoxShadow: var(--lyte-modal-box-shadow-color);
+@modalHeaderColor: var(--lyte-modal-header-text-color);
+@modalContentColor: var(--lyte-modal-content-text-color);
+@modalFreezeBg: var(--lyte-modal-freeze-bg);
+@modalzIndex: var(--lyte-modal-zindex);
+
+//  Modal related variable Ends
+
+//  Navbar related variable Begins
+
+@navBarBg: var(--lyte-navbar-bg);
+@navBarHoverBg: var(--lyte-navbar-hover-bg);
+@navBarTextColor: var(--lyte-navbar-text-color);
+@navBarActive: var(--lyte-navbar-active);
+@navBarActiveText: var(--lyte-navbar-active-text-color);
+@navBarBoxShadowColor: var(--lyte-navbar-boxshadow-color);
+@navBarTriangleBg: var(--lyte-navbar-triangle-bg);
+
+//  Navbar related variable Ends
+
+//  Navigation related variable Begins
+
+@navigationTextColor: var(--lyte-navigator-text-color);
+@navigationTextHoverColor: var(--lyte-navigator-text-hover-color);
+@navigationNumHoverBorderColor: var(--lyte-navigator-num-hover-border-color);
+@navigationArrowBorder: var(--lyte-navigator-arrow-border-color);
+@navigationActiveColor: var(--lyte-navigator-active-color);
+
+//  Navigation related variable Ends
+
+//	Number related variable Begins
+
+@lyteNumberLabelColor: var(--lyte-number-label-text-color);
+@lyteNumberTextColor: var(--lyte-number-input-text-color);
+@lyteNumberDisabledBg: var(--lyte-number-disabled-bg);
+@lyteNumberDisabledTextColor: var(--lyte-number-disabled-text-color);
+@lyteNumberPlaceholderColor: var(--lyte-number-placeholder-text-color);
+@lyteNumberFontSize: var(--lyte-number-font-size);
+
+//	Number related variable Ends
+
+//  Popover related variable Begins
+
+@popoverBg: var(--lyte-popover-bg);
+@popoverOuterBorder: var(--lyte-popover-border-color);
+@popoverFreezeBg: var(--lyte-popover-freeze-bg);
+@popoverTextColor: var(--lyte-popover-text-color);
+@popoverzIndex: var(--lyte-popover-zindex);
+
+//  Popover related variable Ends
+
+//  Progress bar related variable Begins
+
+@progressBarHorizontalBg: var(--lyte-progressbar-horizontal-bg);
+@progressStatusColor: var(--lyte-progress-status-text-color);
+@progressBarHorizonCompletedBg: var(--lyte-progressbar-horizon-completed-bg);
+@progressBarCircleTextColor: var(--lyte-progressbar-circle-text-color);
+
+//  Progress bar related variable Ends
+
+//  Radio button related variable Begins
+
+@radioTextColor: var(--lyte-radio-text-color);
+@radioTextHoverColor: var(--lyte-radio-text-hover-color);
+@radioBorderColor: var(--lyte-radio-border-color);
+@radioBg: var(--lyte-radio-bg);
+@radioDefaultBgOnMode: var(--lyte-radio-default-bg-on-mode);
+@radioPrimaryBgOnMode: var(--lyte-radio-primary-bg-on-mode);
+@radioSecondaryBgOnMode: var(--lyte-radio-secondary-bg-on-mode);
+
+//  Radio button related variable Ends
+
+//  Range slider related variable Begins
+
+@rangeSliderBg: var(--lyte-range-slider-bg);
+@rangeSliderFillBg: var(--lyte-range-slider-fill-bg);
+@rangeSliderHandleBg: var(--lyte-range-slider-handle-bg);
+@rangeSliderHandleBorderColor: var(--lyte-range-slider-handle-border-color);
+@rangeSliderTickBg: var(--lyte-range-slider-tick-bg);
+@rangeSliderTextColor: var(--lyte-range-slider-text-color);
+
+//  Range slider related variable Ends
+
+//	Scrollbar related variable Begins
+
+@lyteScrollbarZindex: var(--lyte-scrollbar-zindex);
+
+//	Scrollbar related variable Ends
+
+//  Sortable related variable Begins
+
+@sortableDisabledBg: var(--lyte-sortable-placeholder-disabled-bg);
+@sortableDisabledBorder: var(--lyte-sortable-placeholder-disabled-border-color);
+
+//  Sortable related variable Ends
+
+//  Splitter related variable Begins
+
+@splitterBg: var(--lyte-splitter-bg);
+@splitterTextColor: var(--lyte-splitter-text-color);
+@splitterHandleBg: var(--lyte-splitter-handle-bg);
+@splitterHandleHoverBg: var(--lyte-splitter-handle-hover-bg);
+@splitterHandleIconBg: var(--lyte-splitter-handle-icon-bg);
+@splitterBorderColor: var(--lyte-splitter-border-color);
+
+//  Splitter related variable Ends
+
+//  Step related variable Begins
+
+@stepArrowColor: var(--lyte-step-arrow-color);
+@stepArrowHoverColor: var(--lyte-step-arrow-hover-color);
+
+@stepBulletLine: var(--lyte-step-bullet-line);
+@stepBulletHoverBorder: var(--lyte-step-bullet-hover-border-color);
+@stepBulletBg: var(--lyte-step-bullet-bg);
+@stepBulletActiveBg: var(--lyte-step-bullet-active-bg);
+@stepBulletTextColor: var(--lyte-step-bullet-text-color);
+@stepBulletActiveTextColor: var(--lyte-step-bullet-active-text-color);
+
+@stepBoxBg: var(--lyte-step-box-bg);
+@stepBoxHoverBg: var(--lyte-step-box-hover-bg);
+@stepBoxTriangleColor: var(--lyte-step-box-triangle-color);
+@stepBoxActiveBg: var(--lyte-step-box-active-bg);
+@stepBoxColor: var(--lyte-step-box-text-color);
+@stepBoxActiveColor: var(--lyte-step-box-active-text-color);
+@stepBoxCountColor: var(--lyte-step-box-count-text-color);
+
+//  Step related variable Ends
+
+//  Tab related variable Starts
+
+@tabBg: var(--lyte-tab-bg);
+@tabBorder: var(--lyte-tab-border-color);
+@tabActiveColor: var(--lyte-tab-active-color);
+@tabTitleColor: var(--lyte-tab-title-text-color);
+@tabTextColor: var(--lyte-tab-content-text-color);
+@tabTitleBorder: var(--lyte-tab-title-border-color);
+@tabTitleHoverBorder: var(--lyte-tab-title-hover-border-color);
+@tabRightLeftItemBg: var(--lyte-tab-right-left-item-bg);
+@tabRightLeftItemHoverBg: var(--lyte-tab-right-left-item-hover-bg);
+
+//  Tab related variable Ends
+
+//  Table related variable Starts
+
+@tableBg: var(--lyte-table-bg);
+@tableThBg: var(--lyte-table-th-bg);
+@tableBorderColor: var(--lyte-table-border-color);
+@tableFixedBoxShadow: var(--lyte-table-fixed-column-box-shadow-color);
+@tableSortHelperBg: var(--lyte-table-sort-helper-bg);
+@tableThTextColor: var(--lyte-table-th-text-color);
+@tableTdTextColor: var(--lyte-table-td-text-color);
+
+//  Table related variable Ends
+
+//  Tooltip related variable Starts
+
+@tooltipBg: var(--lyte-tooltip-bg);
+@tooltipTextColor: var(--lyte-tooltip-text-color);
+@tooltipzIndex: var(--lyte-tooltip-zindex);
+
+@alternatetooltipBg: var(--lyte-tooltip-alternate-bg);
+@alternatetooltipBorder: var(--lyte-tooltip-alternate-border-color);
+@alternatetooltipTextColor: var(--lyte-tooltip-alternate-text-color);
+
+//  Tooltip related variable Ends
+
+//  Tree related variable Starts
+
+@treeBg: var(--lyte-tree-bg);
+@treeBorderColor: var(--lyte-tree-border-color);
+@treeCollpaseHoverBorder: var(--lyte-tree-collpase-hover-border-color);
+@treeTextcolor: var(--lyte-tree-text-color);
+@treeTextHovercolor: var(--lyte-tree-text-hover-color);
+@treeArrowBg: var(--lyte-tree-arrow-bg);
+
+//  Tree related variable Ends
+
+//  Calculator related variable Starts
+
+@calculatorBorder: var(--lyte-calculator-border-color);
+@calculatorMainTextColor: var(--lyte-calculator-main-text-color);
+@calculatorDisplayBg: var(--lyte-calculator-display-bg);
+
+//  Calculator related variable Ends
+
+//  Tour related variable Starts
+
+@tourBg: var(--lyte-tour-bg);
+@tourTextColor: var(--lyte-tour-text-color);
+@tourBorderColor: var(--lyte-tour-border-color);
+
+//  Tour related variable Ends

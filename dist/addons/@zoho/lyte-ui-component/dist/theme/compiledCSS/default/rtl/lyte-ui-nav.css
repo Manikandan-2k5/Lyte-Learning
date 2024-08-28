@@ -1,0 +1,105 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+/*  Navbar related CSS BEGINS */
+lyte-nav {
+  display: flex;
+  background: #edf4f9;
+}
+lyte-nav > lyte-yield {
+  display: flex;
+}
+lyte-nav lyte-nav-item {
+  padding: 10px 20px;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #222;
+  cursor: pointer;
+}
+lyte-nav lyte-nav-item:hover {
+  background: #dfeaf5;
+}
+lyte-nav-item.lyteNavActive,
+lyte-nav-item.lyteNavActive:hover {
+  background: #5ba1e5;
+  color: #fff;
+}
+lyte-nav[lt-prop-alignment="vertical"] {
+  height: 200px;
+  overflow: hidden;
+  flex-direction: column;
+}
+lyte-nav[lt-prop-alignment="vertical"] > lyte-yield {
+  flex-direction: column;
+}
+.lyteNavDiv {
+  display: flex;
+  flex-direction: column;
+}
+lyte-nav lyte-arrow {
+  position: relative;
+  height: 15px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.lyteNavDiv + lyte-arrow {
+  box-shadow: 0 -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.arrow-down,
+.arrow-up {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 5px;
+  left: calc(50% - 5px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #555;
+}
+.arrow-down {
+  top: 4px;
+  border-bottom: 0;
+  border-top: 5px solid #555;
+}
+.lyteNavKebabMenu {
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -294px -165px;
+  width: 17px;
+  height: 5px;
+}
+.lyteNavIconContainer {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.lyteNavIconContainer:hover,
+.lyteNavIconContainer.lyteMenuSelected {
+  background: #dfeaf5;
+}
+lyte-nav[lt-prop-alignment="vertical"] .lyteNavDivFullHeight.lyteNavDiv {
+  height: 100%;
+}
+.lyteVisuallyHidden {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+}
+/* import theme overrides - styles */
+/* import custom css */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/nav.less file
+ */
+/*  Navbar related CSS BEGINS */

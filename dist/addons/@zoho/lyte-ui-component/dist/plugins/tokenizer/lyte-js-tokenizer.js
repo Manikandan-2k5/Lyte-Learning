@@ -1,0 +1,65 @@
+( function() {
+	$L.snippets.registerLanguage( 'js', {
+		tokenConfig: [ {
+			'token': 'literal',
+			'regex': /(?<stringStart>['"]).*?(?<!\\)(\\\\)*\k<stringStart>/,
+			'class': 'lyteJSStringLiteral'
+		}, {
+			'group': 'Indentifiers',
+			'regex': /[a-zA-Z\_$][a-zA-Z\_$]*(\()?/,
+			'matched-elements': [ {
+				'token': 'keyword',
+				'regex': /\b(?:break|export|super|case|extends|switch|catch|finally|this|class|for|throw|const|function|try|continue|if|typeof|debugger|import|var|default|in|void|delete|instanceof|while|do|new|with|else|return|yield|enum|implements|package|public|interface|private|static|let|protected|await)\b/,
+				'class': 'lyteJSKeyword'
+			}, {
+				'token': 'boolean',
+				'regex': /\b(?:true|false)\b/,
+				'class': 'lyteJSBoolean'
+			}, {
+				'token': 'undefined',
+				'regex': /\b(?:undefined)\b/,
+				'class': 'lyteJSUndefined'
+			}, {
+				'token': 'null',
+				'regex': /\b(?:null)\b/,
+				'class': 'lyteJSNull'
+			}, {
+				'group': 'function-call',
+				'regex': /[a-zA-Z\_][a-zA-Z\_]*\(/,
+				'matched-elements': [ {
+					'token': 'function-call',
+					'regex': /[a-zA-Z\_][a-zA-Z\_]*/,
+					'class': 'lyteJSFunction'
+				}, {
+					'token': 'punctuator',
+					'regex': /\(/,
+					'class': 'lyteJSPunctuator'
+				} ]
+			}, {
+				'token': 'Indentifier',
+				'regex': 'remaining',
+				'class': 'lyteJSIndentifier'
+			} ]
+		}, {
+			'token': 'comment',
+			'regex': /(\/\/.*|\/\*[\s\S]*?\*\/)/,
+			'class': 'lyteJSComment'
+		}, {
+			'token': 'operator',
+			'regex': /(>>>=|===|!==|\*\*=|<<=|>>=|>>>|\.\.\.|\+=|-=|\*=|\/=|%=|&=|\^=|\|=|==|!=|>=|<=|\+\+|--|\*\*|<<|>>|&&|\|\||=>|\.|\?|~|>|<|=|!|\+|-|\*|%|&|\||\^|\\|\/)/,
+			'class': 'lyteJSOperator'
+		}, {
+			'token': 'punctuator',
+			'regex': /\(|\{|\[|\)|\}|\]|;|,|:/,
+			'class': 'lyteJSPunctuator'
+		}, {
+			'token': 'number',
+			'regex': /[0-9]+(\.[0-9]+)?/,
+			'class': 'lyteJSNumber'
+		}, {
+			'token': 'regex',
+			'class': 'lyteJSRegex',
+			'regex': /\/(?![\/\*]).*?\//
+		} ]
+	} );
+} )();

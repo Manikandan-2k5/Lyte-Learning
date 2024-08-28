@@ -1,0 +1,644 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/video/video.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{video}/ui-elements/video/video.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{video}/global/@{direction}.less";
+
+lyte-video {
+	.lyteVideoMixin();
+	display: block;
+	width: @w;
+}
+lyte-video .lyteVideo {
+	.lyteVideoHTMLElemMixin();
+	width: @w;
+	cursor: none;
+}
+.lyteVideoContainer {
+	.lyteVideoContainerMixin();
+	width: @w;
+	position: relative;
+	overflow: hidden;
+}
+.lyteVideoControlsShow .lyteVideo {
+	cursor: default;
+}
+.lyteVideoControls {
+	.lyteVideoControlsMixin();
+	position: absolute;
+	bottom: @bottom;
+	width: @w;
+	background: @bg;
+	padding: @padding;
+	box-sizing: border-box;
+	opacity: @opacity;
+	transition: opacity 0.1s ease, transform 0.1s ease;
+	transform: @transform;
+	z-index: @z-index;
+}
+.lyteVideoControlsShow .lyteVideoControls {
+	.lyteVideoControlsShowMixin();
+	opacity: @opacity;
+	transform: @transform;
+}
+
+
+.lyteVideoProgressWrapper {
+	.lyteVideoProgressWrapperMixin();
+	display: flex;
+	align-items: center;
+	margin-bottom: @margin-bottom;
+	& when (@rtlEnabled = true) {
+		flex-direction: row-reverse;
+	}
+}
+.lyteVideoToolTip {
+	.lyteVideoToolTipMixin();
+	position: absolute;
+	padding: @padding;
+	border-radius: @border-radius;
+	background: @bg;
+	color: @color;
+	transform: @transform;
+	font-size: @font-size;
+	display: none;
+}
+.lyteVideoProgressBar:hover .lyteVideoToolTip {
+	display: block;
+}
+.lyteVideoProgressBar {
+	.lyteVideoProgressBarMixin();
+	height: @h;
+	position: relative;
+	border-radius: @border-radius;
+	flex-grow: 1;
+	transition: height 0.1s ease,transform 0.1s ease;
+	background: @bg;
+	cursor: pointer;
+}
+.lyteVideoProgressBar.lyteVideoBgTransparent {
+	.lyteVideoProgressBarVideobgtransparentMixin();
+	background: @bg;
+}
+.lyteVideoProgressBar:hover {
+	.lyteVideoProgressBarHoverMixin();
+	opacity: @opacity;
+	height: @h;
+}
+.lyteVideoProgressed {
+	.lyteVideoProgressedMixin();
+	height: @h;
+	background-color: @background-color;
+	position: absolute;
+	left: @left;
+	top: @top;
+	z-index: @z-index;
+	border-radius: @border-radius;
+}
+.lyteVideoProgressHandler {
+	.lyteVideoProgressHandlerMixin();
+	position: absolute;
+	top: @top;
+	display: block;
+	width: @w;
+	height: @h;
+	background: @bg;
+	box-shadow: @box-shadow;
+	border-radius: @border-radius;
+	z-index: @z-index;
+	transform: @transform;
+	transition: transform 0.1s ease;
+}
+.lyteVideoProgressBar:hover .lyteVideoProgressHandler {
+	.lyteVideoProgressBarHoverProgressHandlerMixin();
+	transform: @transform;
+	top: @top;
+}
+.lyteVideoChapterWrapper,
+.lyteVideoProgressLoad {
+	.lyteVideoChapterWrapperProgressLoadCommonMixin();
+	height: @h;
+	position: absolute;
+	left: @left;
+	top: @top;
+}
+.lyteVideoChapterWrapper {
+	.lyteVideoChapterWrapperMixin();
+	width: @w;
+	display: flex;
+}
+.lyteVideoChapter {
+	.lyteVideoChapterMixin();
+	position: relative;
+	background: @bg;
+	@{property-margin-right}: @margin-right;
+	border-radius: @border-radius;
+}
+.lyteVideoProgressLoad {
+	.lyteVideoProgressLoadMixin();
+	background-color: @background-color;
+	border-radius: @border-radius;
+}
+.lyteVideoIconsWrap {
+	display: flex;
+	align-items: center;
+	& when (@rtlEnabled = true) {
+		flex-direction: row-reverse;
+	}
+}
+.lyteVideoPlayPauseIconWrap {
+	.lyteVideoPlayPauseIconWrapMixin();
+	padding-right: @padding-right;
+}
+.lyteVideoPip,
+.lyteVideoSettings,
+.lyteVideoRewind,
+.lyteVideoForward {
+	.lyteVideoForwardMixin();
+	padding: @padding;
+}
+.lyteVideoFullScreenControl {
+	.lyteVideoFullScreenControlMixin();
+	padding-left: @padding-left;
+}
+.lyteVideoIcons {
+	.lyteVideoIconsMixin();
+	background-color: @background-color;
+	border: @border;
+	outline: @outline;
+	display: block;
+	cursor: pointer;
+	background-image: @bg-img;
+}
+.lyteVideoPlayIcon {
+	.lyteVideoPlayIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.lyteVideoPlayIcon.lyteVideoPaused {
+	.lyteVideoPlayIconVideoPausedMixin();
+	background-position: @bg-pos;
+}
+.lyteVideoRightIcons {
+	.lyteVideoRightIconsMixin();
+	display: flex;
+	margin-left: @margin-left;
+	& when (@rtlEnabled = true) {
+		flex-direction: row-reverse;
+	}
+}
+.lyteVideoForwardIcon,
+.lyteVideoRewindIcon {
+	.lyteVideoRewindIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.lyteVideoForwardIcon {
+	.lyteVideoForwardIconMixin();
+	background-position: @bg-pos;
+}
+.lyteVideoPipIcon {
+	.lyteVideoPipIconMixin();
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+}
+.lyteVideoSettingsIcon {
+	.lyteVideoSettingsIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.lyteVideoFullScreen {
+	.lyteVideoFullScreenMixin();
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+}
+.lyteVideoFullScreenExit {
+	.lyteVideoFullScreenExitMixin();
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+}
+.lyteVideoVolumeControls {
+	.lyteVideoVolumeControlsMixin();
+	display: flex;
+	align-items: center;
+	padding: @padding;
+	position: relative;
+	& when (@rtlEnabled = true) {
+		flex-direction: row-reverse;
+	}
+}
+.lyteVideoVolumeIcon {
+	.lyteVideoVolumeIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: block;
+	margin: @margin;
+	cursor: pointer;
+}
+.lyteVideoVolumeIcon.lyteVideoLow {
+	.lyteVideoVolumeIconLowMixin();
+	background-position: @bg-pos;
+}
+.lyteVideoVolumeIcon.lyteVideoMuted {
+	.lyteVideoVolumeIconMutedMixin();
+	background-position: @bg-pos;
+}
+.lyteVideoVolumeSlider {
+	.lyteVideoVolumeSliderMixin();
+	width: @w;
+	margin-left: @margin-left;
+}
+.lyteVideoVolumeSlider lyte-multislider {
+	display: block;
+}
+.lyteVideoVolumeSlider .lyteRangeSlider {
+	.lyteVideoVolumeSliderRangeSliderMixin();
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+}
+.lyteVideoVolumeSlider lyte-multislider .lyteSlide {
+	.lyteVideoVolumeSliderSlideElemMixin();
+	width: @w;
+	height: @h;
+}
+.lyteVideoVolumeSlider .lyteSliderFill {
+	.lyteVideoVolumeSliderFillMixin();
+	background: @bg;
+	right: unset !important;
+}
+.lyteVideoVolumeSlider .lyteSliderFill.endFill {
+	.lyteVideoVolumeSliderFillEndMixin();
+	background: @bg;
+}
+
+.lyteVideoVolumeSlider .lyteSliderHandler {
+	.lyteVideoVolumeSliderHandlerMixin();
+	border: @border;
+	background: @bg;
+}
+.lyteVideoAnimateForward,
+.lyteVideoAnimateBackward,
+.lyteVideoAnimatePlay {
+	.lyteVideoAnimatePlayMixin();
+	pointer-events: none;
+	position: absolute;
+	top: @top;
+	left: @left;
+	margin-left: @margin-left;
+	margin-top: @margin-top;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background-color: @background-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: @opacity;
+}
+.lyteVideoAnimateBackward {
+	.lyteVideoAnimateBackwardMixin();
+	left: @left;
+}
+.lyteVideoAnimateForward {
+	.lyteVideoAnimateForwardMixin();
+	left: @left;
+}
+.lyteVideoAnimate.lyteVideoAnimateBackward,
+.lyteVideoAnimate.lyteVideoAnimateForward {
+	.lyteVideoAnimateBackwardForwardCommonMixin();
+	opacity: @opacity;
+}
+.lyteVideoAnimateBackArrow {
+	.lyteVideoAnimateBackArrowMixin();
+	width: @w;
+	height: @h;
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	border-right: @border-right;
+	margin: @margin;
+}
+.lyteVideoAnimate .lyteVideoAnimateArrow1 {
+	animation: lyteVideoArrowAnimation1 1.2s linear infinite;
+}
+.lyteVideoAnimate .lyteVideoAnimateArrow2 {
+	animation: lyteVideoArrowAnimation2 1.2s linear infinite;
+}
+.lyteVideoAnimate .lyteVideoAnimateArrow3 {
+	animation: lyteVideoArrowAnimation3 1.2s linear infinite;
+}
+.lyteVideoAnimateForwardArrow {
+	.lyteVideoAnimateForwardArrowMixin();
+	width: @w;
+	height: @h;
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	border-left: @border-left;
+	margin: @margin;
+}
+@keyframes lyteVideoArrowAnimation1 {
+	0% {
+	opacity: 0.3;
+	}
+	25% {
+	opacity: 1;
+	}
+	50% {
+	opacity: 0.5;
+	}
+	100% {
+	opacity: 0.3;
+	}
+}
+@keyframes lyteVideoArrowAnimation2 {
+	0%, 25% {
+	opacity: 0.3;
+	}
+	50% {
+	opacity: 1;
+	}
+	75% {
+	opacity: 0.5;
+	}
+	100% {
+	opacity: 0.3;
+	}
+}
+@keyframes lyteVideoArrowAnimation3 {
+	0%, 50% {
+	opacity: 0.3;
+	}
+	75% {
+	opacity: 1;
+	}
+	100% {
+	opacity: 0.3;
+	}
+}
+
+.lyteVideoAnimatePlay.lyteVideoAnimate {
+	animation: lyteVideoPlayPause 0.5s linear;
+}
+@keyframes lyteVideoPlayPause {
+	from {
+	opacity: 1;
+	transform: scale(0.5);
+	}
+	to {
+	opacity: 0;
+	transform: scale(1.5);
+	}
+}
+.lyteVideoAnimatePlayIcon {
+	.lyteVideoAnimatePlayIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	transform: @transform;
+	margin-left: @margin-left;
+}
+.lyteVideoAnimatePauseIcon {
+	.lyteVideoAnimatePauseIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+	transform: @transform;
+}
+
+
+.lyteVideoSettingsWrapper {
+	.lyteVideoSettingsWrapperMixin();
+	position: absolute;
+	background: @bg;
+	color: @color;
+	font-size: @font-size;
+	bottom: @bottom;
+	padding: @padding;
+	border-radius: @border-radius;
+	min-width: @min-w;
+	z-index: @z-index;
+}
+.lyteVideoSettingsItem {
+	.lyteVideoSettingsItemMixin();
+	padding: @padding;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+.lyteVideoSettingDropItem {
+	.lyteVideoSettingDropItemMixin();
+	padding: @padding;
+	cursor: pointer;
+	position: relative;
+}
+.lyteVideoSettingsItemSelected,
+.lyteVideoSettingsItemHover .lyteVideoSettingDropItem:hover,
+.lyteVideoSettingsItemHover .lyteVideoSettingsItem:hover {
+	.lyteVideoSettingsItemHoverMixin();
+	background: @bg;
+}
+.lyteVideoOptionselected::before {
+	.lyteVideoOptionselectedBeforeMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	border-left: @border-left;
+	border-bottom: @border-bottom;
+	transform: @transform;
+	top: @top;
+	position: absolute;
+	@{property-left}: @left;
+}
+.lyteVideoSettingsDropdownHead {
+	.lyteVideoSettingsDropdownHeadMixin();
+	padding: @padding;
+	border-bottom: @border-bottom;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+}
+.lyteVideoSettingsBackIcon {
+	.lyteVideoSettingsBackIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	@{property-margin-right}: @margin-right;
+	cursor: pointer;
+}
+
+.lyteVideoSettingsKey::after {
+	.lyteVideoSettingsKeyAfterMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	border-top: @border-top;
+	border-right: @border-right;
+	transform: @transform;
+	display: inline-block;
+	margin-left: @margin-left;
+}
+
+
+.lyteVideoTimer {
+	.lyteVideoTimerMixin();
+	color: @color;
+	font-size: @font-size;
+	margin-left: @margin-left;
+	& when (@rtlEnabled = true) {
+		direction: ltr;
+	}
+}
+.lyteVideoMenuHide {
+	display: none;
+}
+.lyteVideoPoster {
+	.lyteVideoPosterMixin();
+	position: absolute;
+	height: @h;
+	width: @w;
+	z-index: @z-index;
+}
+
+.lyteVideoSubtitleWrapper {
+	.lyteVideoSubtitleWrapperMixin();
+	position: absolute;
+	transition: bottom 0.1s ease;
+	bottom: @bottom;
+	z-index: @z-index;
+	left: @left;
+	right: @right;
+	text-align: center;
+	pointer-events: none;
+}
+.lyteVideoControlsShow .lyteVideoSubtitleWrapper {
+	.lyteVideoControlsShowSubtitleWrapperMixin();
+	bottom: @bottom;
+}
+.lyteVideoSubtitle {
+	.lyteVideoSubtitleMixin();
+	background: @bg;
+	color: @color;
+	padding: @padding;
+	border-radius: @border-radius;
+	display: inline-block;
+	pointer-events: auto;
+}
+.lyteVideoSubtitle:empty {
+	visibility: hidden;
+}
+
+.lyteVideoPrefetchControlsContainer .lyteVideoPipIcon,
+.lyteVideoPrefetchControlsContainer .lyteVideoFullScreen,
+.lyteVideoPrefetchControlsContainer .lyteVideoSettingsIcon,
+.lyteVideoPrefetchControlsContainer .lyteVideoForwardIcon,
+.lyteVideoPrefetchControlsContainer .lyteVideoRewindIcon {
+	cursor: not-allowed;
+}
+.lyteVideoPrefetchControlsContainer .lyteVideoProgressBar {
+	cursor: default;
+}
+.lyteVideoPrefetchControlsContainer .lyteVideoProgressBar:hover {
+	height: 3px;
+}
+.lyteVideoPrefetchControlsContainer .lyteVideoProgressBar:hover .lyteVideoProgressHandler {
+	transform: translateX(-50%) translateY(-50%) scale(0.5);
+	top: 1px;
+}
+.lyteVideoPosterBeforeVideoLoad {
+	position: relative;
+}
+.lyteVideoPosterHide {
+	display: none;
+}
+.lyteVideoPrefetchLoadingContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 5;
+	background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lyteCircleLoader {
+	.lyteCircleLoaderMixin();
+	height: @h;
+	width: @w;
+	animation: @animation;
+}
+
+@keyframes lyteCircleLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.lyteCircleInnerLoader {
+	.lyteCircleInnerLoaderMixin();
+	display: block;
+	/* clip: rect(0, 32px, 32px, 16px); */
+	animation: @animation;
+}
+.lyteCircleInnerLoader,
+.lyteCircleInnerLoader::after {
+	.lyteCircleInnerLoaderAndAfterMixin();
+	position: absolute;
+	top: @top;
+	left: @left;
+	bottom: @bottom;
+	right: @right;
+	margin: @margin;
+	height: @h;
+	width: @w;
+	clip-path: @clip-path;
+	box-sizing: border-box;
+}
+
+@keyframes lyteCircleInnerLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(220deg);
+	}
+}
+.lyteCircleInnerLoader::after {
+	.lyteCircleInnerLoaderAfterMixin();
+	content: "";
+	/* clip: rect(0, 32px, 32px, 16px); */
+	border: @border;
+	border-radius: @border-radius;
+	animation: @animation;
+}
+@keyframes lyteCircleInnerLoaderAfterAnim {
+	0% {
+		transform: rotate(-140deg);
+	}
+	50% {
+		transform: rotate(-160deg);
+	}
+	100% {
+		transform: rotate(140deg);
+	}
+}

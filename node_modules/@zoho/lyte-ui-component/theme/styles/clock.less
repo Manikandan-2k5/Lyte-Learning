@@ -1,0 +1,301 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/clock/clock.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{clock}/ui-elements/clock/clock.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{clock}/global/@{direction}.less";
+
+lyte-clock {
+    .lyteClockMixin();
+    display: inline-block;
+    font-family: @font-family;
+    color: @color;
+}
+.lyteClkFrameOuter {
+    .lyteClkFrameOuterMixin();
+    display: inline-block;
+    padding: @padding;
+    border-radius: @border-radius;
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+.lyteClkFrameInner {
+    .lyteClkFrameInnerMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: @bg;
+}
+
+.lyteClkAlogTik {
+    .lyteClkAlogTikMixin();
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    width: @w;
+    display: none;
+}
+
+.lyteClkTik126,
+.lyteClkTik39 {
+    .lyteClkTik126Mixin();
+    border-top: @border-top;
+    border-bottom: @border-bottom;
+}
+
+.lyteClkTik17,
+.lyteClkTik28,
+.lyteClkTik410,
+.lyteClkTik511 {
+    .lyteClkSmallTiksMixin();
+    border-top: @border-top;
+    border-bottom: @border-bottom;
+}
+
+.lyteClkTik17 {
+    .lyteClkTik17Mixin();
+    transform: @transform;
+}
+
+.lyteClkTik28 {
+    .lyteClkTik28Mixin();
+    transform: @transform;
+}
+
+.lyteClkTik39 {
+    .lyteClkTik39Mixin();
+    transform: @transform;
+}
+
+.lyteClkTik410 {
+    .lyteClkTik410Mixin();
+    transform: @transform;
+}
+
+.lyteClkTik511 {
+    .lyteClkTik511Mixin();
+    transform: @transform;
+}
+
+.lyteClkAlogDial {
+    .lyteClkAlogDialMixin();
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    transform: @transform;
+}
+.lyteClockMidCircle {
+    .lyteClockMidCircleMixin();
+    height: @h;
+    width: @w;
+    border-radius: @border-radius;
+    background: @bg;
+    z-index: @z-index;
+    position: relative;
+    box-shadow: @box-shadow;
+}
+
+.lyteClockHrDial {
+    .lyteClockHrDialMixin();
+    width: @w;
+    left: @left;
+}
+.lyteClockMinDial {
+    .lyteClockMinDialMixin();
+    width: @w;
+    left: @left;
+}
+.lyteClockSecDial {
+    .lyteClockSecDialMixin();
+    width: @w;
+    left: @left;
+}
+
+.lyteClkHrDialElem,
+.lyteClkMinDialElem,
+.lyteClkSecDialElem {
+    .lyteClkDialsMixin();
+    border-radius: @border-radius;
+    position: absolute;
+    bottom: @bottom;
+    background: @bg;
+    width: @w;
+}
+
+.lyteClkHrDialElem {
+    .lyteClkHrDialElemMixin();
+    height: @h;
+}
+
+.lyteClkMinDialElem {
+    .lyteClkMinDialElemMixin();
+    height: @h;
+}
+
+.lyteClkSecDialElem {
+    .lyteClkSecDialElemMixin();
+    height: @h;
+    background: @bg;
+}
+
+
+.lyteClkWatch,
+.lyteClkTimer {
+    .lyteClkWatchMixin();
+    display: flex;
+    font-size: @font-size;
+}
+.lyteClkWatchColon,
+.lyteClkTimerColon {
+    .lyteClkWatchColonMixin();
+    margin: @margin;
+}
+
+.lyteClkWatchDefAMPM {
+    .lyteClkWatchDefAMPMMixin();
+    margin-left: @margin-left;
+}
+.lyteClkWatchFrameAMPM {
+    .lyteClkWatchFrameAMPMMixin();
+    position: absolute;
+    bottom: @bottom;
+    width: @w;
+    text-align: center;
+    left: @left;
+    font-size: @font-size;
+}
+
+.lyteClkTimerDefLabel {
+    .lyteClkTimerDefLabelMixin();
+    font-size: @font-size;
+    color: @color;
+}
+.lyteClkTimerFrameBox {
+    .lyteClkTimerFrameBoxMixin();
+    position: relative;
+    padding-bottom: @padding-bottom;
+}
+.lyteClkTimerFrameLabel {
+    .lyteClkTimerFrameLabelMixin();
+    font-size: @font-size;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: @bottom;
+    width: @w;
+    left: @left;
+    text-align: center;
+}
+
+
+/*  Lyte Stop watch related code starts */
+
+.lyteClockStopWatch {
+    .lyteClockStopWatchMixin();
+    text-align: center;
+    border: @border;
+    border-radius: @border-radius;
+}
+.lyteClockStopWatch .lyteClkOuterDiv {
+    .lyteClockStopWatchOuterDivMixin();
+    margin: @margin;
+}
+.lyteClockSwLapWrapper {
+    .lyteClockSwLapWrapperMixin();
+    border-top: @border-top;
+}
+.lyteClockSwWrap {
+    .lyteClockSwWrapMixin();
+    font-size: @font-size;
+}
+.lyteClockSwLap {
+    .lyteClockSwLapMixin();
+    display: flex;
+    font-size: @font-size;
+    margin: @margin;
+    border-bottom: @border-bottom;
+    padding: @padding;
+}
+.lyteClockSwLap:last-child {
+    .lyteClockSwLapLastChildMixin();
+    border-bottom: @border-bottom;
+}
+.lyteClockSwLapLabel {
+    .lyteClockSwLapLabelMixin();
+	margin-right: auto;
+    padding: @padding;
+}
+.lyteClockSwLapTime {
+    .lyteClockSwLapTimeMixin();
+	padding: @padding;
+}
+.lyteClockSwActionBtnWrap {
+    .lyteClockSwActionBtnWrapMixin();
+    display: flex;
+    padding: @padding;
+}
+.lyteClockSwActionBtn {
+    .lyteClockSwActionBtnMixin();
+    width: @w;
+    height: @h;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: @font-size;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: @border-radius;
+}
+.lyteClockSWStart {
+    .lyteClockSWStartMixin();
+    border: @border;
+    color: @color;
+}
+.lyteClockSWStart:hover {
+    .lyteClockSWStartHoverMixin();
+    background: @bg;
+}
+.lyteClockSWReset,
+.lyteClockSWLap {
+    .lyteClockSWResetMixin();
+    border: @border;
+    color: @color;
+    margin-left: auto;
+}
+.lyteClockSWReset:hover,
+.lyteClockSWLap:hover {
+    .lyteClockSWResetHoverMixin();
+    background: @bg;
+}
+.lyteClockSWPause {
+    .lyteClockSWPauseMixin();
+    border: @border;
+    color: @color;
+}
+.lyteClockSWPause:hover {
+    .lyteClockSWPauseHoverMixin();
+    background: @bg;
+}
+.lyteClkTimerColon {
+  display: none;
+}
+.lyteClkTimerBox + .lyteClkTimerColon {
+  display: block;
+}
+.lyteClkTimerBox:last-of-type + .lyteClkTimerColon {
+  display: none;
+}
+
+/*  Lyte Stop watch related code ends */

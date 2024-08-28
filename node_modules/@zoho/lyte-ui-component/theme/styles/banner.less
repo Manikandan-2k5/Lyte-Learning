@@ -1,0 +1,80 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/banner/banner.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{banner}/ui-elements/banner/banner.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{banner}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/banner.variables.less";
+
+lyte-banner {
+    display: block;
+}
+.lyteBannerModalContent {
+    .BannerModalContentMixin();
+    background: @bg;
+    padding: @padding;
+    text-align: center;
+    color: @color;
+}
+.lyteBannerModal .lyteModal {
+    .BannerModalMixin();
+    border: @border;
+}
+.lyteBannerModal .lyteModalFromBottom {
+    .BannerModalFromBottomMixin();
+    box-shadow: @box-shadow;
+}
+.lyteBannerModal .lyteModalFromTop {
+    .BannerModalFromTopMixin();
+    box-shadow: @box-shadow;
+}
+.lyteBannerNonFloating .lyteModalClose,
+.lyteBannerModal .lyteModalClose {
+    .BannerModalCloseMixin();
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    transform: scale(1);
+    top: @top;
+    opacity: @opacity;
+}
+.lyteBannerNonFloating {
+    .lyteBannerNonFloatingMixin();
+    background: @bg;
+    font-family: @primaryFont;
+    padding: @padding;
+    text-align: center;
+    position: relative;
+    color: @color;
+    font-size: @font-size;
+    box-sizing: border-box;
+}
+.lyteBannerFloating {
+    .lyteBannerFloatingMixin();
+    background: @bg;
+    font-family: @font-family;
+    padding: @padding;
+    text-align: center;
+    position: absolute;
+    color: @color;
+    font-size: @font-size;
+    box-sizing: border-box;
+}
+.lyteBannerInlineFloating {
+    .lyteBannerInlineFloatingMixin();
+    overflow: hidden;
+    position: absolute;
+    width: @w;
+    pointer-events: none;
+}
+.lyteBannerInlineFloating .lyteBannerFloating {
+    pointer-events: auto;
+}

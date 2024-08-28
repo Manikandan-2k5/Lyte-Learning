@@ -1,0 +1,14 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+.lyteCBoxGroupHorizontal {
+  display: flex;
+  flex-direction: row;
+}
+.lyteCBoxGroupVertical {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,327 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-TABS CSS BEGINS */
+lyte-tabs {
+  display: block;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+}
+lyte-tab-head {
+  display: flex;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+lyte-tab-title {
+  display: inline-block;
+  font-size: 15px;
+  color: #555;
+  padding: 10px 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+lyte-tab-title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+lyte-tab-title:hover {
+  color: #222;
+}
+lyte-tab-title.lyteTabActive,
+lyte-tab-title.lyteTabActive:hover {
+  color: #2c7bd0;
+  font-weight: normal;
+}
+lyte-tab-body {
+  display: block;
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 14px;
+  text-align: left;
+  overflow: auto;
+  box-sizing: border-box;
+}
+lyte-tab-content {
+  color: #222;
+}
+.lyteTabShow {
+  display: block;
+  flex-grow: 1;
+}
+.lyteTabHide {
+  display: none;
+}
+/*  Tab top starts */
+.lyteTabDefaultTop lyte-tab-body {
+  border-top: 0;
+}
+.lyteTabDefaultTop lyte-tab-head {
+  border-bottom-color: #e5e5e5;
+}
+.lyteTabDefaultTop lyte-tab-title {
+  margin-bottom: -1px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive {
+  border-bottom: 1px solid #2c7bd0;
+}
+.lyteTabDefaultTop lyte-tab-title:hover {
+  border-bottom-color: #666;
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive:hover {
+  border-bottom-color: #2c7bd0;
+}
+/*  Tab top ends */
+/*  Tab bottom starts */
+.lyteTabDefaultBottom lyte-yield {
+  display: flex;
+  flex-direction: column;
+}
+.lyteTabDefaultBottom lyte-tab-head {
+  order: 2;
+  border-top-color: #e5e5e5;
+}
+.lyteTabDefaultBottom lyte-tab-body {
+  order: 1;
+  border-bottom: 0;
+}
+.lyteTabDefaultBottom lyte-tab-title {
+  border-top: 1px solid #e5e5e5;
+  margin-top: -1px;
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive {
+  border-top: 1px solid #2c7bd0;
+}
+.lyteTabDefaultBottom lyte-tab-title:hover {
+  border-top-color: #666;
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive:hover {
+  border-top-color: #2c7bd0;
+}
+/*  Tab bottom ends */
+/*  Tab left and right starts */
+.lyteTabDefaultLeft lyte-yield {
+  display: flex;
+}
+.lyteTabDefaultLeft lyte-tab-head,
+.lyteTabDefaultRight lyte-tab-head {
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px 0;
+  width: 200px;
+  text-align: left;
+  overflow: auto;
+}
+.lyteTabDefaultLeft lyte-tab-head {
+  border-right: 0;
+}
+.lyteTabDefaultLeft lyte-tab-body,
+.lyteTabDefaultRight lyte-tab-body {
+  flex-grow: 10;
+  width: calc(100% - 200px);
+  padding-top: 18px;
+}
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive,
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive:hover,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive:hover {
+  border-left: 1px solid #2c7bd0;
+  background: #f5f5f5;
+  position: relative;
+  z-index: 10;
+}
+.lyteTabDefaultRight lyte-yield {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.lyteTabDefaultRight lyte-tab-head {
+  border-left: 0;
+}
+.lyteTabDefaultLeft lyte-tab-title,
+.lyteTabDefaultRight lyte-tab-title {
+  margin: 0;
+  padding: 10px 15px;
+  overflow: visible;
+}
+.lyteTabDefaultLeft lyte-tab-title:hover,
+.lyteTabDefaultRight lyte-tab-title:hover {
+  background: #fafafa;
+}
+/*  Tab left and right ends */
+.lyteTabCloseIcon {
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.lyteTabAlignStart {
+  justify-content: flex-start;
+}
+.lyteTabAlignCenter {
+  justify-content: center;
+}
+.lyteTabAlignEnd {
+  justify-content: flex-end;
+}
+.lyteTabOverflowV lyte-tab-title {
+  overflow: visible;
+}
+.lyteTabForceHide {
+  display: none;
+}
+#moreMenu {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 10px;
+}
+#moreMenu.lyteMenuSelected,
+#moreMenu:hover {
+  opacity: 1;
+}
+#moreMenu span {
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -294px -165px;
+  width: 17px;
+  height: 5px;
+}
+.lyteTabRightCollapse {
+  flex-flow: row-reverse;
+  justify-content: flex-start;
+}
+.lyteTabVH lyte-tab-title,
+.lyteTabVH .lyteMenuSelected {
+  visibility: hidden;
+}
+lyte-tab-title.lyteTabDisable {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7;
+}
+/*  Lyte Nested Tabs CSS Begins */
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield {
+  display: block;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head {
+  flex-direction: row;
+  padding: 0;
+  width: auto;
+  border: 1px solid #ddd;
+  overflow: visible;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title {
+  margin: 0 10px;
+  padding: 10px 5px;
+  overflow: hidden;
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+  background: #fff;
+  border: 0;
+  border-bottom: 1px solid #666;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-bottom: 1px solid #2c7bd0;
+  background: #fff;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-body {
+  width: auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield {
+  flex-direction: column;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head {
+  flex-direction: row;
+  padding: 0;
+  width: auto;
+  border: 1px solid #ddd;
+  overflow: visible;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title {
+  margin: 0 10px;
+  padding: 10px 5px;
+  overflow: hidden;
+  margin-top: -1px;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+  background: #fff;
+  border: 0;
+  border-top: 1px solid #666;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-top: 1px solid #2c7bd0;
+  background: #fff;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-body {
+  width: auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield {
+  flex-direction: row;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head {
+  order: 0;
+  border: 1px solid #ddd;
+  border-right: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title {
+  border: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border-bottom: 0;
+  border-left: 1px solid #2c7bd0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-body {
+  border: 1px solid #ddd;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield {
+  flex-direction: row-reverse;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head {
+  border: 1px solid #ddd;
+  border-left: 0;
+  order: 0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title {
+  border: 0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-left: 1px solid #2c7bd0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-body {
+  border: 1px solid #ddd;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-TABS CSS ENDS   */

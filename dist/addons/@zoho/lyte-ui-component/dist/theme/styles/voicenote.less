@@ -1,0 +1,327 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/voicenote/voicenote.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{voicenote}/ui-elements/voicenote/voicenote.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{voicenote}/global/@{direction}.less";
+
+lyte-voicenote {
+	.lyteVoicenoteMixin();
+	display: flex;
+	background: @bg;
+	align-items: center;
+	border-radius: @border-radius;
+	width: @w;
+	padding: @padding;
+}
+.lyteVoiceNotePrefetchContainer {
+	display: flex;
+	flex-grow: 1;
+}
+.lyteVoiceNotePrefetchPlayIcon,
+.lyteVoiceNotePausePlayIcon {
+	.lyteVoiceNotePausePlayIconMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	border-radius: @border-radius;
+	border: @border;
+	box-shadow: @box-shadow;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lyteVoiceNotePrefetchPlayIcon::after,
+.lyteVoiceNotePausePlayIcon::after {
+	.lyteVoiceNotePausePlayIconAfterMixin();
+	content: '';
+	-webkit-mask-image: @mask-img;
+	mask-image: @mask-img;
+	-webkit-mask-position: @mask-pos;
+	mask-position: @mask-pos;
+	background-color: @bg-color;
+	width: @w;
+	height: @h;
+}
+.lyteVoiceNotePrefetchPlayIcon::after,
+.lyteVoiceNotePausePlayIcon.paused::after {
+	.lyteVoiceNotePausePlayIconPausedAfterMixin();
+	-webkit-mask-position: @mask-pos;
+	mask-position: @mask-pos;
+	width: @w;
+	height: @h;
+	margin-left: @margin-left;
+}
+.lyteVoiceNotePrefetchLoading .lyteVoiceNotePrefetchPlayIcon::after {
+	display: none;
+}
+.lyteVoiceNotePrefetchLoading .lyteVoiceNotePrefetchPlayIcon {
+	pointer-events: none;
+}
+.lyteVoiceNotePrefetchLoadBarWrap {
+	.lyteVoiceNotePrefetchLoadBarWrapMixin();
+	margin: @margin;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+.lyteVoiceNotePrefetchLoadingBar {
+	.lyteVoiceNotePrefetchLoadingBarMixin();
+	background: @bg;
+	height: @h;
+	display: block;
+	flex-grow: 1;
+	position: relative;
+}
+.lyteVoiceNoteProgress {
+	.lyteVoiceNoteProgressMixin();
+	position: relative;
+	outline: @outline;
+	margin: @margin;
+	flex-grow: 1;
+	background: @bg;
+}
+.lyteVoiceNotePrefetchLoadingBar::before {
+	content: '';
+}
+.lyteVoiceNotePrefetchLoadingBar::before,
+.lyteVoiceNoteHandler {
+	.lyteVoiceNoteHandlerMixin();
+	width: @w;
+	height: @h;
+	position: absolute;
+	transform: @transform;
+	border-radius: @border-radius;
+	background: @bg;
+	top: @top;
+}
+.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler {
+	.lyteVoiceNoteMetaLoadedHandlerMixin();
+	background: @bg;
+}
+.lyteVoiceNoteMetaLoaded .lyteVoiceNoteProgress {
+	cursor: pointer;
+}
+.lyteVoiceNoteCompletion {
+	.lyteVoiceNoteCompletionMixin();
+	display: block;
+	pointer-events: none;
+	background: @bg;
+	height: @h;
+	width: @w;
+}
+.lyteVoiceNoteElapsedTime,
+.lyteVoiceNoteDurationSpan {
+	.lyteVoiceNoteElapsedAndDurationSpanMixin();
+	color: @color;
+	font-size: @font-size;
+}
+.lyteVoiceNoteDurationSpan {
+	.lyteVoiceNoteDurationSpanMixin();
+	@{property-margin-right}: @margin-right;
+}
+.lyteVoiceNoteTimeSeparate {
+	.lyteVoiceNoteTimeSeparateMixin();
+	margin: @margin;
+	color: @color;
+}
+.lyteVoiceNoteVolumeController {
+	.lyteVoiceNoteVolumeControllerMixin();
+	display: flex;
+	@{property-margin-left}: @margin-left;
+}
+.lyteVoiceNotePlaybackRate {
+	.lyteVoiceNotePlaybackRateMixin();
+	margin: @margin;
+}
+.lyteVoiceNoteVolumeIcon,
+.lyteVoiceNoteVolumeControl {
+	.lyteVoiceNoteVolumeControlMixin();
+	-webkit-mask-image: @mask-image;
+	mask-image: @mask-image;
+	-webkit-mask-position: @mask-position;
+	mask-position: @mask-position;
+	background-color: @background-color;
+	width: @w;
+	height: @h;
+	display: block;
+	cursor: pointer;
+}
+.lyteVoiceNotePopover {
+	.lyteVoiceNotePopoverMixin();
+	padding: @padding;
+}
+.lyteVoiceNoteVolumeIcon {
+	.lyteVoiceNoteVolumeIconMixin();
+	@{property-margin-right}: @margin-right;
+}
+.lyteVoiceNoteMuteIcon {
+	.lyteVoiceNoteMuteIconMixin();
+	-webkit-mask-position: @mask-position;
+	mask-position: @mask-position;
+}
+.lyteVoiceNoteFullVolumeIcon {
+	.lyteVoiceNoteFullVolumeIconMixin();
+	-webkit-mask-position: @mask-position;
+	mask-position: @mask-position;
+}
+.lyteVoiceNoteVolumeSlider {
+	display: flex;
+	align-items: center;
+}
+.lyteVoiceNoteVolumeSlider .lyteRangeSlider {
+	.lyteVoiceNoteVolumeSliderRangeSliderMixin();
+	background: @bg;
+	height: @h;
+}
+.lyteVoiceNoteVolumeSlider .lyteRangeSlider.lyteHorizontal .lyteSliderFill {
+	.lyteVoiceNoteVolumeSliderRangeSliderFillMixin();
+	height: @h;
+	top: @top;
+	background: @bg;
+}
+
+.lyteVoiceNoteVolumeSlider .lyteSliderHandler {
+	.lyteVoiceNoteVolumeSliderHandlerMixin();
+	background: @bg;
+	top: @top;
+	border: @border;
+}
+.lyteVoiceNotePlaybackRate lyte-drop-button {
+	.lyteVoiceNotePlaybackRateDropButtonMixin();
+	padding: @padding;
+	display: block;
+	border-radius: @border-radius;
+	color: @color;
+	font-size: @font-size;
+	line-height: @line-height;
+	text-align: center;
+}
+.lyteVoiceNotePlaybackRate lyte-icon.dropdown {
+	display: none;
+}
+lyte-drop-box.lyteVoiceNotePlaybackRateDropbox {
+	.lyteVoiceNotePlaybackRateDropboxMixin();
+	border-radius: @border-radius;
+}
+.lyteVoiceNotePlaybackRateDropbox .lyteArrow {
+	display: none !important;
+}
+lyte-drop-box.lyteDropdownDown.lyteVoiceNotePlaybackRateDropbox {
+	.ManualName1_7yteDropBox_lytedropdowndownMixin();
+	transform: @transform;
+}
+lyte-drop-box.lyteDropdownUp.lyteVoiceNotePlaybackRateDropbox {
+	.ManualName1_7yteDropBox_lytedropdownupMixin();
+	transform: @transform;
+}
+.lyteVoiceNotePlaybackRateDropbox lyte-drop-item {
+	.lyteVoiceNotePlaybackRateDropboxDropItemMixin();
+	padding: @padding;
+	font-size: @font-size;
+	color: @color;
+}
+.lyteVoiceNotePlaybackRateDropbox lyte-drop-item[selected="true"]::before {
+	.lyteVoiceNotePlaybackRateDropboxDropItemSelectedBeforeMixin();
+	@{property-left}: @left;
+	top: @top;
+}
+
+.lyteVoiceNotePrefetchContainer .lyteCircleLoader {
+	display: none;
+}
+.lyteVoiceNotePrefetchLoading .lyteCircleLoader {
+	display: block;
+}
+.lyteVoiceNotePrefetchContainer ~ lyte-dropdown,
+.lyteVoiceNotePrefetchContainer ~ .lyteVoiceNoteVolumeController {
+	.lyteVoiceNotePrefetchContainerDisabledElementsMixin();
+	pointer-events: none;
+	opacity: @opacity;
+}
+
+.lyteCircleLoader {
+	.lyteCircleLoaderMixin();
+	height: @h;
+	width: @w;
+	animation: @animation;
+}
+
+@keyframes lyteCircleLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.lyteCircleInnerLoader {
+	.lyteCircleInnerLoaderMixin();
+	display: block;
+	/* clip: rect(0, 32px, 32px, 16px); */
+	animation: @animation;
+}
+.lyteCircleInnerLoader,
+.lyteCircleInnerLoader::after {
+	.lyteCircleInnerLoaderAndAfterMixin();
+	position: absolute;
+	top: @top;
+	left: @left;
+	bottom: @bottom;
+	right: @right;
+	margin: @margin;
+	height: @h;
+	width: @w;
+	clip-path: @clip-path;
+	box-sizing: border-box;
+}
+
+@keyframes lyteCircleInnerLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(220deg);
+	}
+}
+.lyteCircleInnerLoader::after {
+	.lyteCircleInnerLoaderAfterMixin();
+	content: "";
+	/* clip: rect(0, 32px, 32px, 16px); */
+	border: @border;
+	border-radius: @border-radius;
+	animation: @animation;
+}
+@keyframes lyteCircleInnerLoaderAfterAnim {
+	0% {
+		transform: rotate(-140deg);
+	}
+	50% {
+		transform: rotate(-160deg);
+	}
+	100% {
+		transform: rotate(140deg);
+	}
+}
+
+.lyteVoiceNoteError .lyteVoiceNotePlaybackRate,
+.lyteVoiceNoteError .lyteVoiceNoteVolumeControl,
+.lyteVoiceNoteError .lyteVoiceNotePausePlayIcon {
+	.lyteVoiceNoteErrorDisableActionElementsMixin();
+	pointer-events: none;
+	opacity: @opacity;
+}
+.lyteVoiceNoteError .lyteVoiceNoteProgress {
+	pointer-events: none;
+}
+.lyteVoiceNoteError .lyteVoiceNoteHandler {
+	.lyteVoiceNoteErrorHandlerMixin();
+	background: @bg;
+}

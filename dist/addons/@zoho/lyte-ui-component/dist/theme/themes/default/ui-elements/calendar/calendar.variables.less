@@ -1,0 +1,225 @@
+.CalendarPopup() {
+    @bg: @calendarPopupBG;
+    @z-index: @calzIndex;
+    @box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    @font-size: 14px;
+    @border: 1px solid #d1d1d1;
+}
+.CalendarNavigator() {
+    @padding: 15px 20px 10px 20px;
+}
+.CalMonthDD() {
+    @max-w: 150px;
+}
+.calPopDropBtn() {
+    @color: @calendarDropdownColor;
+    @padding: 3px 25px 3px 1px;
+}
+.calMonthDropBtn() {
+    @font-size: 18px;
+}
+.calYearDropBtn() {
+    @font-size: 16px;
+}
+.calPopDropicon() {
+    @top: calc(50% - 2px);
+}
+.calPopDropBtnHover() {
+    @color: @calendarDropdownHoverColor;
+    @padding: 3px 25px 3px 1px;
+}
+.calPopDropItem() {
+    @min-w: 40px;
+}
+.CalNav() {
+    @w: 20px;
+    @h: 20px;
+    @border: 1px solid #999;
+}
+.CalNavHover() {
+    @border: 1px solid #333;    
+}
+.CaldLft() {
+    @top: 6px;
+    @left: 5px;
+    @w: 10px;
+    @h: 10px;
+    @bg-img: @lytesprite;
+    @bg-pos: -40px -1px;
+    @opacity: 0.5;
+}
+.lyteCaldRgt() {
+    @margin-left: 10px;
+}
+.caldLftBefore() {
+    @top: 5px;
+}
+.CalNavHoverBefore() {
+    @opacity: 1;
+}
+.CalMonthYear() {
+    @color: @calendarTextColor;
+}
+.CalMonthText() {
+    @font-size: 18px;
+}
+.CalYearText() {
+    @font-size: 16px;
+}
+.CalTableContainer() {
+    @border-spacing: @calendarHorizontalCellSpacing 5px;
+    @padding: 0 12px 8px;
+}
+.CalTableCellHeader() {
+    @color: #777;
+    @font-size: 13px;
+    @text-transform: uppercase;
+    @padding-bottom: 6px;
+}
+.CalTableCell() {
+    @border: 1px solid transparent;
+    @color: @calendarTextColor;
+    @font-size: 14px;
+    @line-height: 28px;
+    @padding: 0;
+    @w: 30px;
+    @h: 30px;
+    @border-radius: 50%;
+}
+.CalGray() {
+    @opacity: 0.4;
+}
+.CalToday() {
+    @bg: @calendarPopupBG;
+    @color: @calSelElemBg;
+    @border: 1px solid @calSelElemBg;
+}
+.CalTodayHover() {
+    @bg: @calHoverElemBg;
+}
+.CalSelHover() {
+    @bg: @calSelElemBg;
+    @color: #fff;
+    @border: 1px solid @calSelElemBg;
+}
+.CalBtns() {
+    @padding: 10px;
+    @border-top: 1px solid #e0e0e0;
+}
+.CalCurrentDate() {
+    @color: @themeActiveElementColor;
+}
+.lyteCalDropdownOpenedMixin() {
+    @border: 0;
+    @box-shadow: none;
+}
+.DRPDisabledDate() {
+    @bg: transparent;
+    @opacity: 0.5;
+}
+.lyteCalDisabledDateMixin() {
+	@bg: transparent;
+	@opacity: 0.5;
+}
+.lyteCalDisabledDateHoverMixin() {
+	@bg: transparent;
+}
+.drillCalYearViewMixin() {
+    @border-spacing: 20px 40px;
+}
+.drillCalYearViewCellMixin() {
+    @w: 40px;
+    @padding: 0 5px;
+    @border-radius: 3px;
+}
+.drillCalCurrentYearMixin() {
+    @color: @calSelElemBg;
+    @border: 1px solid @calSelElemBg;
+}
+.drillCalHeaderButtonMixin() {
+    @padding: 2px 10px;
+    @color: #777;
+    @border: 1px solid #bbb;
+    @border-radius: 3px;
+    @font-size: 16px;
+}
+.drillCalHeaderButtonHoverMixin() {
+    @bg: #eee;
+}
+.lyteDrillCalYearListHeaderMixin() {
+    @border-color: transparent;
+    @bg: transparent;
+}
+.drillCalHeaderButtonCalMonthMixin() {
+    @font-size: 16px;
+}
+.calDisableNavMixin() {
+    @opacity: 0.5;
+}
+
+.lyteCalWeekSelTypeTableCellMixin() {
+	@border-radius: 0;
+}
+.lyteCalWeekSelTypeRowHoverTableCellMixin() {
+	@bg: @calHoverElemBg;
+	@color: @calendarTextColor;
+}
+.lyteCalWeekSelTypeTodayWeekSelMixin() {
+	@border-radius: 0;
+	@color: @calendarTextColor;
+	@border-color: transparent;
+}
+.lyteCalWeekSelMixin() {
+	@bg: @calHoverElemBg;
+}
+.lyteCalWeekSelTypeFirstTableCellMixin() {
+	@border-radius: 50% 0 0 50%;
+}
+.lyteCalWeekSelTypeLastTableCellMixin() {
+	@border-radius: 0 50% 50% 0;
+}
+.lyteCalWeekSelTypeTodayCellMixin() {
+	@border-radius: 50%;
+}
+.lyteCalWeekSelTypeWeekSelFirstAndLastChildMixin() {
+	@color: #fff;
+	@z-index: 0;
+}
+.lyteCalWeekSelTypeRowHoverWeekSelFirstAndLastChildMixin() {
+	@color: #fff;
+}
+.lyteCalWeekSelFirstAndLastChildBeforeMixin() {
+	@bg: @calSelElemBg;
+	@w: 100%;
+	@h: 100%;
+	@border-radius: 50%;
+	@z-index: -1;
+}
+.lyteCalWeekSelFirstChildBeforeMixin() {
+	@left: 0;
+}
+.lyteCalWeekSelLastChildBeforeMixin() {
+	@right: 0;
+}
+.lyteCalWeekSelTypeTableCellAfterMixin() {
+	@left: calc(100% + 1px);
+	@w: @calendarHorizontalCellSpacing;
+	@top: -1px;
+	@h: 32px;
+}
+.lyteCalWeekSelTypeRowHoverTableCellAfterMixin() {
+	@bg: @calHoverElemBg;
+}
+.lyteCalMonthSelTypeMixin() {
+	@border-spacing: 16px 40px;
+}
+.lyteCalMonthSelTypeTableCellMixin() {
+	@h: auto;
+	@w: 40px;
+	@padding: 0 5px;
+	@border-radius: 3px;
+}
+.lyteCalMonthSelMixin() {
+	@bg: @calSelElemBg;
+	@color: #fff;
+}

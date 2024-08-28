@@ -1,0 +1,58 @@
+:root {
+	--lyte-fileupload-bg: @themeBodyBackground;
+	--lyte-fileupload-msg-text-color: #666;
+	--lyte-fileupload-file-name-text-color: @commonTextColor;
+	--lyte-fileupload-list-file-bg: #f7f7f7;
+	--lyte-fileupload-list-file-border-color: #f1f1f1;
+	--lyte-fileupload-list-file-error-bg: #ffeeee;
+	--lyte-fileupload-list-file-error-border-color: #f8dcdc;
+	--lyte-fileupload-retry-color: #555;
+	--lyte-fileupload-message-wrap-border-color: #b8bdbe;
+	--lyte-fileupload-message-wrap-hover-border-color: #969b9c;
+	--lyte-fileupload-file-entered-message-wrap-border-color: #6eb0cb;
+	--lyte-fileupload-file-entered-message-wrap-bg: #fafcff;
+	--lyte-fileupload-thumb-border-color: #aaa;
+	--lyte-fileupload-progressbar-bg: #dfecfb;
+	--lyte-fileupload-progressbar-fill-bg: #4ea2f7;
+	--lyte-fileupload-failure-msg-text-color: #f00;
+	--lyte-fileupload-input-type-message-wrap-border-color: #c7c7c7;
+	--lyte-fileupload-input-type-message-wrap-hover-border-color: #969b9c;
+	--lyte-fileupload-input-type-file-sucess-border-color: #c7c7c7;
+}
+
+.fileUpdBoxTypeMsgWrapMixin() {
+	@border: 1px dashed var(--lyte-fileupload-message-wrap-border-color);
+}
+.fileUpdBoxTypeMsgWrapHoverMixin() {
+	@border: 1px dashed var(--lyte-fileupload-message-wrap-hover-border-color);
+}
+.fileDragEnterFileUpdBoxTypeMsgWrapMixin() {
+	@border: 1px dashed var(--lyte-fileupload-file-entered-message-wrap-border-color);
+	@bg: var(--lyte-fileupload-file-entered-message-wrap-bg);
+}
+.fileUpdThumbMixin() {
+	@border: 1px solid var(--lyte-fileupload-thumb-border-color);
+}
+.fileUpdProgressBarMixin() {
+	@bg: var(--lyte-fileupload-progressbar-bg);
+}
+.fileUpdProgressFillMixin() {
+	@bg: var(--lyte-fileupload-progressbar-fill-bg);
+}
+.fileUpdFailMsgMixin() {
+	@color: var(--lyte-fileupload-failure-msg-text-color);
+}
+.fileUpdSelectedFileMixin() {
+	//	This mixin needs to be checked.
+	@bg: #ddd;
+	@border: 1px solid #ccc;
+}
+.fileUpdInputTypeMsgWrapMixin() {
+	@border: 1px dashed var(--lyte-fileupload-input-type-message-wrap-border-color);
+}
+.fileUpdInputTypeMsgWrapHoverMixin() {
+	@border: 1px dashed var(--lyte-fileupload-input-type-message-wrap-hover-border-color);
+}
+.fileUpdInputTypeListFileMixin() {
+	@border: 1px dashed var(--lyte-fileupload-input-type-file-sucess-border-color);
+}

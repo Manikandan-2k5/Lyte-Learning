@@ -1,0 +1,82 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* CSS Common for all scrollbars */
+.lyteScrollBar {
+  overflow: hidden !important;
+  position: relative !important;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  box-sizing: border-box;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+}
+.lyteScrollContainer {
+  position: absolute;
+  border-radius: 4px;
+  z-index: 1000;
+}
+.lyteScrollContainer:hover {
+  background: #eee;
+  opacity: 0.9;
+}
+.lyteScrollContainer .lyteScrollDiv:hover {
+  background: #999;
+}
+.lyteScrollContainer.lyteScrollContainerY {
+  width: 8px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: auto;
+}
+.lyteScrollContainer.lyteScrollContainerX {
+  height: 8px;
+  top: auto;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.lyteScrollContainer .lyteScrollDiv {
+  background: #aaa;
+  position: relative;
+  border-radius: 5px;
+}
+.lyteScrollContainerY .lyteScrollDiv {
+  width: 100%;
+}
+.lyteScrollContainerX .lyteScrollDiv {
+  height: 100%;
+}
+.lyteScrollContainer.lyteScrollContainerX.top {
+  top: 0px;
+  bottom: auto;
+}
+.lyteScrollContainer.lyteScrollContainerY.left {
+  right: 0px;
+  left: auto;
+}
+@supports (-ms-overflow-style: none) {
+  .lyteScrollBar {
+    overflow: auto !important;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .lyteScrollBar {
+    overflow: auto !important;
+  }
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/scrollbar.less file
+ */

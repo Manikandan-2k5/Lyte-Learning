@@ -1,0 +1,457 @@
+lyte-annotator-wrapper,lyte-annotator-overlay{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    max-height: 100vh;
+}
+
+lyte-annotator-header{
+	display: flex;
+	justify-content: end;
+	position: relative;
+	z-index: 10;
+}
+
+lyte-annotator-content, lyte-annotator-footer{
+	display: flex;
+	flex-direction: column;
+}
+
+lyte-annotator-whiteboard-content{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+lyte-annotator-content{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top : 0;
+	bottom: 0;
+	overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+lyte-annotator-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+}
+
+lyte-whiteboard-area{
+	height: calc( 100% - 140px);
+	width: calc( 100% - 140px);
+    display: block;
+    background: white;
+    position: relative;
+}
+
+.lyteAnnotatorSvg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 11;
+}
+
+.lyteAnnotatorElem{
+	pointer-events: auto;
+	cursor: move;
+}
+
+/*.lyteAnnotatorOriginalElem{
+	pointer-events: none;
+}*/
+
+.lyteAnnotatorResizeWrapper{
+	fill: transparent;
+}
+
+.lyteAnnotatorResizeHandler{
+	stroke: #ea2121;
+    stroke-width: 1;
+    fill: white;
+}
+
+.lyteAnnotatorResizeWrapper, .lyteAnnotatorResizeHandler{
+	display: none;
+}
+
+.lyteAnnotatorElementSelected .lyteAnnotatorResizeWrapper, .lyteAnnotatorElementSelected .lyteAnnotatorResizeHandler{
+	display: block;
+}
+
+.lyteAnnotatorTextarea{
+	pointer-events: auto;
+	width: 100%;
+	/*height: 100%;*/
+	padding: 20px;
+	background: transparent;
+	box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    border : none;
+    color: inherit;
+    font-size: inherit;
+}
+
+lyte-annotator-sidepanel{
+	flex-direction: column;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    z-index: 101;
+    white-space: nowrap;
+    outline: none;
+}
+
+.lyteAnnotatorChildWrapper{
+	transform: scaleX(0);
+	position: absolute;
+    left: 100%;
+    background: black;
+    top: 0;
+    transform-origin: left;
+    transition-property: transform;
+    transition-duration: 400ms;
+    display: flex;
+}
+
+.lyteAnnotatorSideItem{
+	padding: 15px;
+	position: relative;
+}
+
+.lyteSidepanelOpen{
+	transform: scaleX(1);
+}
+
+.lyteLeftSidepanel .lyteAnnotatorChildWrapper{
+	left: auto;
+	right: 100%;
+	transform-origin: right;
+}
+
+.lyteAnnotatorActive:after{
+	content: "";
+	background: linear-gradient(to right, rgba(49, 229, 134, 0.5), rgba(49, 229, 134, 0));
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    opacity: 0.45;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.lyteAnnotatorActive:before{
+	content: '';
+    background: #31e586;
+    width: 2px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    float: left;
+}
+
+lyte-sidepanel-resize-handler{
+	text-align: center;
+	cursor: move;
+}
+
+.lyteLeftSidepanel:before{
+	left: calc( 100% - 2px );
+}
+
+.lyteLeftSidepanel:after{
+	background : linear-gradient(to left, rgba(49, 229, 134, 0.5), rgba(49, 229, 134, 0));
+}
+
+.lyteTaggingActive{
+	display: none;
+	pointer-events: none;
+}
+
+.lyteTaggingPositionCircles{
+	display: none;
+}
+
+.lyteAnnotatorElementSelected .lyteTaggingActive, .lyteAnnotatorElementSelected .lyteTaggingPositionCircles{
+	display: block;
+}
+
+lyte-crop-wrapper{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	position: absolute;
+	z-index: 11;
+}
+
+lyte-crop-left,lyte-crop-right,lyte-crop-top,lyte-crop-bottom{
+	display: block;
+	position: absolute;
+	background: black;
+	opacity: 0.3
+}
+
+lyte-crop-left{
+	height: 100%;
+    left: 0;
+    top: 0;
+    width: 10px;
+}
+
+lyte-crop-right{
+	height: 100%;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+
+lyte-crop-top{
+	top: 0;
+    left: 10px;
+    width: calc( 100% - 20px );
+    height: 10px;
+}
+
+lyte-crop-bottom{
+	bottom: 0;
+    left: 10px;
+    width: calc( 100% - 20px );
+    height: 10px;
+}
+
+lyte-crop-content{
+	display: block;
+	background: transparent;
+	left: 10px;
+    top: 10px;
+    height: calc( 100% - 20px );
+    width: calc( 100% - 20px );
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lyteAnnotatorcrop .lyteResizeHandle{
+	display: block;
+}
+
+.lyteAnnotatorCanvas{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+lyte-annotator-loading, .lyteAnnotatorHidden{
+	display: none;
+}
+
+lyte-annotator-loading.lyteAnnotatorLoading{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: pink;
+    display: block;
+}
+
+.lyteCanvasBlurElement, .lyteCanvasSmudgeElement{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    pointer-events: none;
+    z-index: 10;
+}
+
+lyte-annotator-editorpanel{
+	flex-direction: row;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin: auto;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    z-index: 102;
+    white-space: nowrap;
+}
+
+.lyteAnnotatorInnerSpan{
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+}
+
+.lyteAnnotatorInnerSpan:after{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: red;
+    display: block;
+    transform: translateX( -50% ) rotate(45deg);
+    position: absolute;
+    left: 50%;
+}
+
+.lyteAnnotatorSelected:after{
+    display: none;
+}
+
+lyte-annotator-editorpanel>*{
+    padding: 10px;
+}
+
+.lyteAnnotatorColorsWrapper, .lyteAnnotatorBorder, .lyteAnnotatorFont{
+    background: #26282b;
+    max-width: 170px;
+}
+
+.lyteAnnotatorBorder{
+    display: flex;
+}
+
+.lyteAnnotatorColorContainer, .lyteAnnotatorOutput{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+}
+
+.lyteAnnotatorOutput{
+    background: black;
+}
+
+.lyteAnnotatorOpacitySlider{
+    display: block;
+    width: 100%;
+}
+
+.lyteAnnotator_no_color{
+    background: white !important;
+}
+
+.lyteAnnotator_no_color:after{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: red;
+    display: block;
+    transform: translateX( -50% ) rotate(45deg);
+    position: absolute;
+    left: 50%;
+}
+
+.lyteAnnotatorborderContainer, .lyteAnnotatordashedContainer {
+    display: inline-block;
+    width: 20px;
+    border-color: gray;
+    border-style: solid;
+    height: 4px;
+    border-width: inherit;
+    margin-left: 10px;
+}
+
+.lyteAnnotatorBorder .lyteAnnotatorInnerSpan{
+    height: 4px;
+    border-radius: unset;
+    background: gray;
+}
+
+.lyteAnnotatorDashed .lyteAnnotatorInnerSpan{
+    height: 1px;
+    border-radius: unset;
+    background: gray;
+    border-top-width: 1px !important;
+    border-top-style: dashed;
+}
+
+.lyteAnnotatorFontSlider{
+    width: 100px;
+    display: block;
+}
+
+foreignObject.lyteTextElement[outline="active"] textarea{
+    text-shadow: rgb(255, 255, 255) 0px 0.07em 0px, 
+    rgb(255, 255, 255) 0px -0.07em 0px, 
+    rgb(255, 255, 255) 0.07em 0px 0px, 
+    rgb(255, 255, 255) -0.07em 0px 0px, 
+    rgb(255, 255, 255) 0.07em 0.07em 0px, 
+    rgb(255, 255, 255) -0.07em 0.07em 0px, 
+    rgb(255, 255, 255) 0.07em -0.07em 0px, 
+    rgb(255, 255, 255) -0.07em -0.07em 0px, 
+
+    rgba(0, 0, 0, 0.133) 0px -0.15em 0.15em, 
+    rgba(0, 0, 0, 0.133) 0px 0.15em 0.15em, 
+    rgba(0, 0, 0, 0.133) -0.15em 0px 0.15em, 
+    rgba(0, 0, 0, 0.133) 0.15em 0px 0.15em, 
+    rgba(0, 0, 0, 0.133) 0.15em 0.15em 0.15em, 
+    rgba(0, 0, 0, 0.133) -0.15em -0.15em 0.15em, 
+    rgba(0, 0, 0, 0.133) -0.15em 0.15em 0.15em, 
+    rgba(0, 0, 0, 0.133) 0.15em -0.15em 0.15em;
+}
+
+.lyteAnnotatorZoom{
+    display: flex;
+}
+
+.lyteAnnotatorZoomPrev, .lyteAnnotatorZoomNext{
+    width: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lyteAnnotatorButtonDisabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.lyteTaggingElement input{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: transparent;
+    background: transparent;
+    text-align: center;
+}
+
+.lyteAnnotatorSmartGuides{
+    position: absolute;
+    border: 1px dotted black;
+    box-sizing: border-box;
+    z-index: 100;
+}

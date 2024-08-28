@@ -1,0 +1,72 @@
+.lyteResizeElement {
+    position: relative;
+}
+
+.lyteResizeHandle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #5ba1e5;
+    transform: translate( -50%, -50%);
+    display: none;
+}
+
+.lyteResizeSelected .lyteResizeHandle {
+    display: block;
+}
+
+.lyteResizeN {
+    top: 0;
+    left: 50%;
+    cursor: ns-resize;
+}
+
+.lyteResizeNW {
+    top: 0;
+    left: 0%;
+    cursor: nwse-resize;
+}
+
+.lyteResizeNE {
+    top: 0;
+    left: 100%;
+    cursor: nesw-resize;
+}
+
+.lyteResizeS {
+    left: 50%;
+    top: 100%;
+    cursor: ns-resize;
+}
+
+.lyteResizeSW {
+    left: 0%;
+    top: 100%;
+    cursor: nesw-resize;
+}
+
+.lyteResizeSE {
+    left: 100%;
+    top: 100%;
+    cursor: nwse-resize;
+}
+
+.lyteResizeW {
+    left: 0;
+    top: 50%;
+    cursor: ew-resize;
+}
+
+.lyteResizeE {
+    left: 100%;
+    top: 50%;
+    cursor: ew-resize;
+}
+
+.lyteResizeInfoDiv {
+    position: absolute;
+    display: block;
+    border: 1px solid #d6d6d6;
+    padding: 8px;
+    pointer-events: none;
+}

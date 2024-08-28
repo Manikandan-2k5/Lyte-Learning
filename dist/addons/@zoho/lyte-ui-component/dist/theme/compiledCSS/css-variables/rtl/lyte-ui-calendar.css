@@ -1,0 +1,379 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-calendar-popup-bg: var(--lyte-theme-body-bg);
+  --lyte-calendar-popup-boxshadow-color: rgba(0, 0, 0, 0.1);
+  --lyte-calendar-popup-border-color: #d1d1d1;
+  --lyte-calendar-dropdown-text-color: #666;
+  --lyte-calendar-dropdown-hover-text-color: #111;
+  --lyte-calendar-text-color: var(--lyte-common-text-color2);
+  --lyte-calendar-horizontal-cell-spacing: 8px;
+  --lyte-calendar-selected-elem-bg: var(--lyte-theme-active-element-bg);
+  --lyte-calendar-hover-elem-bg: #e6f3fd;
+  --lyte-calendar-nav-bg: #faf9f9;
+  --lyte-calendar-nav-border-color: #999;
+  --lyte-calendar-nav-hover-border-color: #333;
+  --lyte-calendar-zindex: var(--lyte-level4-zindex);
+  --lyte-calender-weeklabel-text-color: #777;
+  --lyte-calendar-selected-element-text-color: #fff;
+  --lyte-calendar-footer-btn-border-color: #e0e0e0;
+  --lyte-calendar-drilldown-button-text-color: #777;
+  --lyte-calendar-drilldown-button-border-color: #bbb;
+  --lyte-calendar-drilldown-button-hover-bg: #eee;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+/*  Calendar related CSS BEGINS     */
+lyte-calendar {
+  display: inline-block;
+}
+.lyteCalendarPopup {
+  background: var(--lyte-calendar-popup-bg);
+  z-index: var(--lyte-calendar-zindex);
+  box-shadow: 0 1px 3px 1px var(--lyte-calendar-popup-boxshadow-color);
+  font-family: var(--lyte-primary-font);
+  font-size: 14px;
+  display: inline-block;
+  border: 1px solid var(--lyte-calendar-popup-border-color);
+}
+.lyteCalendarNavigator {
+  padding: 15px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.lyteCalMonthDD {
+  max-width: 150px;
+  width: auto;
+}
+.lyteCalYearDD {
+  width: auto;
+}
+.lyteCalendarPopup lyte-dropdown lyte-drop-button {
+  box-sizing: border-box;
+  color: var(--lyte-calendar-dropdown-text-color);
+  padding: 3px 1px 3px 25px;
+  border: 0;
+}
+.lyteCalMonthDD lyte-drop-button {
+  font-size: 18px;
+}
+.lyteCalYearDD lyte-drop-button {
+  font-size: 16px;
+}
+.lyteCalendarPopup lyte-dropdown lyte-icon.dropdown {
+  top: calc(50% - 2px);
+}
+.lyteCalendarPopup lyte-dropdown lyte-drop-button.lyteDropButtonDown,
+.lyteCalendarPopup lyte-dropdown lyte-drop-button.lyteDropButtonUp,
+.lyteCalendarPopup lyte-dropdown lyte-drop-button:hover {
+  color: var(--lyte-calendar-dropdown-hover-text-color);
+  padding: 3px 1px 3px 25px;
+  border: 0;
+}
+.lyteCalendarDropdown lyte-drop-item {
+  min-width: 40px;
+}
+.lyteCalNav {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  order: 2;
+  border: 1px solid var(--lyte-calendar-nav-border-color);
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.lyteCalNav:hover {
+  border: 1px solid var(--lyte-calendar-nav-hover-border-color);
+}
+.lyteCaldLft::before,
+.lyteCaldRgt::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-image: var(--lyte-sprite-image);
+  background-position: -40px -1px;
+  opacity: 0.5;
+}
+.lyteCaldRgt {
+  margin-right: 10px;
+}
+.lyteCaldLft::before {
+  top: 5px;
+  transform: rotate(180deg);
+}
+.lyteCalNav:hover::before {
+  opacity: 1;
+}
+.lyteCalsCalMon {
+  flex-grow: 3;
+  text-align: right;
+  order: 1;
+  cursor: default;
+  color: var(--lyte-calendar-text-color);
+}
+.lyteCalsCalMonth {
+  font-size: 18px;
+}
+.lyteCalsCalYear {
+  font-size: 16px;
+}
+.lyteCalTableContainer {
+  border-spacing: var(--lyte-calendar-horizontal-cell-spacing) 5px;
+  box-sizing: border-box;
+  display: table;
+  padding: 0 12px 8px;
+  width: 100%;
+}
+.lyteCalTableRow,
+.lyteCalTableRowHeader {
+  display: table-row;
+}
+.lyteCalTableCellHeader {
+  color: var(--lyte-calender-weeklabel-text-color);
+  cursor: default;
+  display: table-cell;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 6px;
+}
+.lyteCalTableCell {
+  border: 1px solid transparent;
+  color: var(--lyte-calendar-text-color);
+  cursor: pointer;
+  font-size: 14px;
+  display: table-cell;
+  line-height: 28px;
+  padding: 0;
+  text-align: center;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.lyteCalGray {
+  opacity: 0.4;
+}
+.lyteCalGray:hover,
+.lyteCalGray.lyteCalSel {
+  opacity: 1;
+}
+.lyteCalToday {
+  background: var(--lyte-calendar-popup-bg);
+  color: var(--lyte-calendar-selected-elem-bg);
+  border: 1px solid var(--lyte-calendar-selected-elem-bg);
+}
+.lyteCalTableCell:hover,
+.lyteCalToday:hover {
+  background: var(--lyte-calendar-hover-elem-bg);
+}
+.lyteCalDisabled.lyteCalSel,
+.lyteCalSel,
+.lyteCalSel:hover {
+  background: var(--lyte-calendar-selected-elem-bg);
+  color: var(--lyte-calendar-selected-element-text-color);
+  border: 1px solid var(--lyte-calendar-selected-elem-bg);
+}
+.lyteCalBtns .lyteCalCurrentDate {
+  padding: 10px;
+  border-top: 1px solid var(--lyte-calendar-footer-btn-border-color);
+  text-align: center;
+}
+.lyteCalCurrentDate a {
+  color: var(--lyte-theme-active-element-color);
+  cursor: pointer;
+}
+.lyteCalEmpty {
+  display: table-cell;
+}
+.lyteCalendarHidden,
+.lyteCalyearNavLft,
+.lyteCalyearNavRgt {
+  display: none;
+}
+.lyteCalendarPopup .lyteDummyEventContainer:focus lyte-drop-button,
+.lyteCalendarPopup .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.lyteCalendarPopup lyte-drop-button.lyteDropButtonUp,
+.lyteCalendarPopup lyte-drop-button.lyteDropButtonDown {
+  border: 0;
+  box-shadow: none;
+}
+.lyteCalTableRowGroup {
+  display: table-row-group;
+}
+.lyteCalDisabled {
+  background: transparent;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.lyteCalendarDisabledDate {
+  background: transparent;
+  opacity: 0.5;
+  cursor: default;
+}
+.lyteCalendarDisabledDate:hover {
+  background: transparent;
+}
+/*  Drilldown calendar CSS BEGINS   */
+.lyteDrillCalYearView,
+.lyteDrillCalMonthView {
+  border-spacing: 20px 40px;
+}
+.lyteDrillCalYearView .lyteCalTableCell,
+.lyteDrillCalMonthView .lyteCalTableCell {
+  height: auto;
+  width: 40px;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+.lyteDrillCalCurrentYear,
+.lyteDrillCalCurrentMonth {
+  color: var(--lyte-calendar-selected-elem-bg);
+  border: 1px solid var(--lyte-calendar-selected-elem-bg);
+}
+.lyteDrillCalHeaderButton {
+  padding: 2px 10px;
+  color: var(--lyte-calendar-drilldown-button-text-color);
+  border: 1px solid var(--lyte-calendar-drilldown-button-border-color);
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.lyteDrillCalHeaderButton:hover {
+  background: var(--lyte-calendar-drilldown-button-hover-bg);
+}
+.lyteDrillCalYearListHeader:hover,
+.lyteDrillCalYearListHeader {
+  border-color: transparent;
+  background: transparent;
+  cursor: default;
+}
+.lyteDrillCalHeaderButton .lyteCalsCalMonth {
+  font-size: 16px;
+}
+.lyteCalDisableNav {
+  pointer-events: none;
+  opacity: 0.5;
+}
+/*  Drilldown calendar CSS ENDS   */
+.lyteVisuallyHidden {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+}
+/*	Calendar weekly selection CSS Begins */
+.lyteCalWeekSelType .lyteCalTableCell {
+  position: relative;
+  border-radius: 0;
+}
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalTableCell {
+  background: var(--lyte-calendar-hover-elem-bg);
+  color: var(--lyte-calendar-text-color);
+}
+.lyteCalWeekSelType .lyteCalToday.lyteCalWeekSel,
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalToday {
+  border-color: transparent;
+  border-radius: 0;
+  color: var(--lyte-calendar-text-color);
+}
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalWeekSel,
+.lyteCalWeekSel {
+  background: var(--lyte-calendar-hover-elem-bg);
+}
+.lyteCalWeekSelType .lyteCalToday.lyteCalWeekSel:first-child,
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalToday:first-child,
+.lyteCalWeekSelType .lyteCalTableCell:first-child {
+  border-radius: 0 50% 50% 0;
+}
+.lyteCalWeekSelType .lyteCalToday.lyteCalWeekSel:last-child,
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalToday:last-child,
+.lyteCalWeekSelType .lyteCalTableCell:last-child {
+  border-radius: 50% 0 0 50%;
+}
+.lyteCalWeekSelType .lyteCalToday,
+.lyteCalWeekSelType .lyteCalToday:first-child,
+.lyteCalWeekSelType .lyteCalToday:last-child {
+  border-radius: 50%;
+}
+.lyteCalWeekSelType .lyteCalWeekSel:first-child,
+.lyteCalWeekSelType .lyteCalWeekSel:last-child {
+  color: var(--lyte-calendar-selected-element-text-color);
+  z-index: 0;
+}
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalWeekSel:first-child,
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalWeekSel:last-child {
+  color: var(--lyte-calendar-selected-element-text-color);
+}
+.lyteCalWeekSel:last-child::before,
+.lyteCalWeekSel:first-child::before {
+  content: '';
+  background: var(--lyte-calendar-selected-elem-bg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.lyteCalWeekSel:first-child::before {
+  right: 0;
+}
+.lyteCalWeekSel:last-child::before {
+  left: 0;
+}
+.lyteCalWeekSelType .lyteCalTableRow .lyteCalTableCell::after {
+  content: '';
+  position: absolute;
+  right: calc(100% + 1px);
+  width: var(--lyte-calendar-horizontal-cell-spacing);
+  top: -1px;
+  height: 32px;
+}
+.lyteCalWeekSel::after,
+.lyteCalWeekSelType .lyteCalTableRow:hover .lyteCalTableCell::after {
+  background: var(--lyte-calendar-hover-elem-bg);
+}
+.lyteCalWeekSelType .lyteCalTableRow .lyteCalTableCell:last-child::after {
+  content: none;
+}
+/*	Calendar weekly selection CSS Ends */
+/*	Calendar Monthly selection, Yearly Selection CSS Begins */
+.lyteCalYearSelType,
+.lyteCalMonthSelType {
+  border-spacing: 16px 40px;
+}
+.lyteCalYearSelType .lyteCalTableCell,
+.lyteCalMonthSelType .lyteCalTableCell {
+  height: auto;
+  width: 40px;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+.lyteCalYearSel:hover,
+.lyteCalYearSel,
+.lyteCalMonthSel:hover,
+.lyteCalMonthSel {
+  background: var(--lyte-calendar-selected-elem-bg);
+  color: var(--lyte-calendar-selected-element-text-color);
+}
+/*	Calendar Monthly selection, Yearly Selection CSS Ends */
+/* import theme overrides - styles */
+/* import custom css */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/calendar.less file
+ */
+/*  Calendar related CSS ENDS     */

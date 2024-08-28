@@ -1,0 +1,148 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-tour-bg: var(--lyte-theme-body-bg);
+  --lyte-tour-text-color: var(--lyte-common-text-color);
+  --lyte-tour-border-color: #d6d6d6;
+  --lyte-tour-freezelayer-bg: #000;
+  --lyte-tour-container-boxshadow-color: rgba(0, 0, 0, 0.1);
+  --lyte-tour-step-indicator-bg: #ddd;
+  --lyte-tour-step-indicator-hover-bg: #5ba1e5;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteTourFreezeLayer,
+.lyteTourDummyWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.lyteTourFreezeLayer {
+  mix-blend-mode: hard-light;
+  position: fixed;
+  background: var(--lyte-tour-freezelayer-bg);
+  opacity: 0.3;
+}
+.lyteTourClipMask {
+  background: gray;
+}
+.lyteTourContainer {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s linear;
+  z-index: 1040;
+  box-shadow: 0 0 4px 1px var(--lyte-tour-container-boxshadow-color);
+}
+.lyteTourArrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: var(--lyte-tour-bg);
+  display: none;
+  left: 0;
+}
+.lyteTourLeftArrow {
+  border-left: 1px solid var(--lyte-tour-border-color);
+  border-bottom: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourRightArrow {
+  right: 0;
+  border-top: 1px solid var(--lyte-tour-border-color);
+  border-right: 1px solid var(--lyte-tour-border-color);
+  left: unset;
+}
+.lyteTourTopArrow {
+  top: 0;
+  border-top: 1px solid var(--lyte-tour-border-color);
+  border-left: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourBottomArrow {
+  bottom: 0;
+  border-bottom: 1px solid var(--lyte-tour-border-color);
+  border-right: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourStep {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: var(--lyte-tour-bg);
+  border: 1px solid var(--lyte-tour-border-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+lyte-tour-step-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+lyte-tour-step-head {
+  font-family: var(--lyte-secondary-font);
+  font-size: 20px;
+  padding: 10px;
+  color: var(--lyte-tour-text-color);
+}
+lyte-tour-step-content {
+  flex-grow: 1;
+}
+lyte-tour-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+lyte-tour-step-indicator-wrapper {
+  display: flex;
+}
+lyte-tour-step-indicator {
+  width: 10px;
+  height: 10px;
+  background: var(--lyte-tour-step-indicator-bg);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+lyte-tour-step-indicator.lyteCurTourStep,
+lyte-tour-step-indicator:hover {
+  background: var(--lyte-tour-step-indicator-hover-bg);
+}
+.lyteTourActiveTarget {
+  z-index: 1040;
+}
+.lyteTourTargetBackground {
+  position: absolute;
+  background: var(--lyte-tour-bg);
+  z-index: 1020;
+  transition: top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+}
+.lyteTourDefaultArrow,
+.lyteTourActive,
+.lyteTourActiveStep {
+  display: block;
+}
+.lyteTourResetSpacing {
+  margin: 0;
+}
+.lyteTourDummyTarget {
+  position: absolute;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+.lyteTourDummyTarget.lyteTourActiveTarget {
+  visibility: visible;
+}
+.lyteTourStepHidden {
+  display: none;
+}

@@ -1,0 +1,46 @@
+:root {
+	--lyte-listbox-border-color: #d6d6d6;
+	--lyte-listbox-toolbar-icons-color: #555;
+	--lyte-listbox-text-color: @commonTextColor;
+	--lyte-listbox-active-text-color: @commonTextColor2;
+	--lyte-listbox-bg: @themeBodyBackground;
+	--lyte-listbox-toolbar-item-hover-border-color: #aaa;
+	--lyte-listbox-add-remove-icon-color: #666;
+	--lyte-listbox-element-hover-bg: #f5f5f5;
+	--lyte-listbox-element-active-bg: #f5f5f5;
+	--lyte-listbox-collapse-icon-color: #555;
+	--lyte-listbox-badge-content-bg: #f00;
+	--lyte-listbox-badge-content-text-color: #fff;
+	--lyte-listbox-leftpanel-dropzone-bg: #f6fad2;
+	--lyte-listbox-leftpanel-dropzone-b-border-color: #57a5c6;
+	--lyte-listbox-noresults-text-color: #777;
+}
+
+.LBToolbarItemsHoverMixin() {
+	@border: 1px solid var(--lyte-listbox-toolbar-item-hover-border-color);
+}
+.lbRemoveAddBeforeAfterMixin() {
+	@bg: var(--lyte-listbox-add-remove-icon-color);
+}
+.ListBoxLeftRightElementHoverMixin() {
+	@bg: var(--lyte-listbox-element-hover-bg);
+}
+.LBRightActiveMixin() {
+	@bg: var(--lyte-listbox-element-active-bg);
+}
+.lbCollapsebeforeMixin() {
+	@border-top: 4px solid var(--lyte-listbox-collapse-icon-color);
+}
+.ListboxBadgeContentMixin() {
+	@bg: var(--lyte-listbox-badge-content-bg);
+	@color: var(--lyte-listbox-badge-content-text-color);
+}
+.lyteLBLeftPanelDropZoneMixin() {
+	@bg: var(--lyte-listbox-leftpanel-dropzone-bg);
+}
+.lyteLBLeftPanelDropZoneBMixin() {
+	@border: 1px dashed var(--lyte-listbox-leftpanel-dropzone-b-border-color);
+}
+.lyteListBoxNoResultsFoundMixin() {
+	@color: var(--lyte-listbox-noresults-text-color);
+}

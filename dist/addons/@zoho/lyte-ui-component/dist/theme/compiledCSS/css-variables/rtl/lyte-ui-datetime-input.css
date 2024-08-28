@@ -1,0 +1,94 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-datetime-input-bg: var(--lyte-input-bg);
+  --lyte-datetime-input-text-color: var(--lyte-input-text-color);
+  --lyte-datetime-input-border-color: var(--lyte-input-border-color);
+  --lyte-datetime-input-hover-border-color: var(--lyte-input-hover-border-color);
+  --lyte-datetime-input-focus-border-color: var(--lyte-input-focus-border-color);
+  --lyte-datetime-input-border-radius: var(--lyte-input-border-radius);
+  --lyte-datetime-input-font-size: var(--lyte-input-font-size);
+}
+/* rtl files loading */
+lyte-datetime-input {
+  display: inline-block;
+}
+.lyteDateTimeInputWrapper {
+  display: flex;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+  border: 1px solid var(--lyte-datetime-input-border-color);
+  border-radius: var(--lyte-datetime-input-border-radius);
+}
+.lyteDateTimeInputBox:hover .lyteDateTimeInputWrapper {
+  border: 1px solid var(--lyte-datetime-input-hover-border-color);
+}
+.lyteDateInputFocused.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+  border: 1px solid var(--lyte-datetime-input-focus-border-color);
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > input {
+  border-left: 1px solid var(--lyte-datetime-input-border-color);
+  border-radius: var(--lyte-datetime-input-border-radius) 0 0 var(--lyte-datetime-input-border-radius);
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > div input {
+  border-radius: 0 var(--lyte-datetime-input-border-radius) var(--lyte-datetime-input-border-radius) 0;
+}
+.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+  border-bottom: 1px solid var(--lyte-datetime-input-border-color);
+}
+.lyteDateTimeInputFlat:hover .lyteDateTimeInputWrapper {
+  border-bottom: 1px solid var(--lyte-datetime-input-hover-border-color);
+}
+.lyteDateInputFocused.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+  border-bottom: 1px solid var(--lyte-datetime-input-focus-border-color);
+}
+.lyteDateTimeInputWrapper input {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-datetime-input-font-size);
+  background: var(--lyte-datetime-input-bg);
+  color: var(--lyte-datetime-input-text-color);
+  border: 0;
+  box-shadow: none;
+  outline: 0;
+}
+.lyteDateTimeInputBox input {
+  padding: 9px 10px;
+}
+.lyteDateTimeInputFlat input {
+  padding: 9px 0;
+}
+.lyteDateTimeInputWrapper lyte-drop-button {
+  padding: 0;
+}
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button,
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button {
+  border: 0;
+  box-shadow: none;
+}
+.lyteDateTimeInputWormhole {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  z-index: var(--lyte-calendar-zindex);
+}
+.lyteDateTimeInputHidden {
+  display: none;
+}
+.lyteDateTimezone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  color: var(--lyte-datetime-input-text-color);
+}

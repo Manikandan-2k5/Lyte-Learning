@@ -1,0 +1,85 @@
+:root {
+	--lyte-step-arrow-color: @commonTextColor;
+	--lyte-step-arrow-active-color: #2C7BD0;
+	--lyte-step-arrow-completed-color: #72c880;
+	--lyte-step-arrow-hover-color: @commonTextHoverColor;
+	--lyte-step-bullet-line: #d4e9e2;
+	--lyte-step-bullet-hover-border-color: #bbb;
+	--lyte-step-bullet-bg: @themeBodyBackground;
+	--lyte-step-bullet-active-bg: #3ac998;
+	--lyte-step-bullet-text-color: #949d9a;
+	--lyte-step-bullet-active-text-color: @stepBulletActiveBg;
+	--lyte-step-box-bg: @themeBodyBackground;
+	--lyte-step-box-hover-bg: #f5f5f5;
+	--lyte-step-box-triangle-color: #c3c3c3;
+	--lyte-step-box-active-bg: #1d414e;
+	--lyte-step-box-text-color: @commonTextColor;
+	--lyte-step-box-active-text-color: #fff;
+	--lyte-step-box-count-text-color: #666;
+	--lyte-step-advanced-bg: #dce9f8;
+	--lyte-step-advanced-border-color: transparent;
+	--lyte-step-advanced-text-color: #333;
+	--lyte-step-advanced-hover-bg: #b9d5f5;
+	--lyte-step-advanced-completed-bg: #adccf0;
+	--lyte-step-advanced-active-bg: #3891f8;
+	--lyte-step-advanced-active-text-color: #fff;
+	--lyte-step-advanced-warning-border-color: #3891F8;
+	--lyte-step-advanced-connector-border-color: #fff;
+	--lyte-step-advanced-nav-bg: #dce9f8;
+	--lyte-step-advanced-nav-border-color: #dce9f8;
+	--lyte-step-advanced-nav-text-color: #333;
+}
+.stepArrowActiveItem() {
+	@color: var(--lyte-step-arrow-active-color);
+}
+.stepArrowCompletedItem() {
+	@color: var(--lyte-step-arrow-completed-color);
+}
+.stepAdvancedStepItemMixin() {
+	@bg: var(--lyte-step-advanced-bg);
+	@border: 1px solid var(--lyte-step-advanced-border-color);
+	@color: var(--lyte-step-advanced-text-color);
+}
+.stepAdvancedStepItemHoverMixin() {
+	@bg: var(--lyte-step-advanced-hover-bg);
+}
+.stepAdvancedStepItemCompletedMixin() {
+	@bg: var(--lyte-step-advanced-completed-bg);
+}
+.stepAdvancedStepItemActiveMixin() {
+	@bg: var(--lyte-step-advanced-active-bg);
+	@color: var(--lyte-step-advanced-active-text-color);
+}
+.stepAdvancedStepItemAfterMixin() {
+	@border-top: 1px solid var(--lyte-step-advanced-connector-border-color);
+	@border-right: 1px solid var(--lyte-step-advanced-connector-border-color);
+}
+.stepAdvancedBackwardStepItemBeforeMixin() {
+	@border-top: 1px solid var(--lyte-step-advanced-connector-border-color);
+	@border-left: 1px solid var(--lyte-step-advanced-connector-border-color);
+}
+.stepAdvancedBackwardStepItemWarningBeforeMixin() {
+	@border-top: 1px dashed var(--lyte-step-advanced-warning-border-color);
+	@border-left: 1px dashed var(--lyte-step-advanced-warning-border-color);
+}
+.stepAdvancedStepItemWarningMixin() {
+	@border-top: 1px dashed var(--lyte-step-advanced-warning-border-color);
+	@border-bottom: 1px dashed var(--lyte-step-advanced-warning-border-color);
+}
+.stepAdvancedStepBackwardNextWarningStepItemMixin() {
+	@border-left: 1px dashed var(--lyte-step-advanced-warning-border-color);
+}
+.stepAdvancedStepItemWarningAfterMixin() {
+	@border-top: 1px dashed var(--lyte-step-advanced-warning-border-color);
+	@border-right: 1px dashed var(--lyte-step-advanced-warning-border-color);
+}
+.stepAdvancedStepForwardBackwardMixin() {
+	@bg: var(--lyte-step-advanced-nav-bg);
+	@border-top: 1px solid var(--lyte-step-advanced-nav-border-color);
+	@border-bottom: 1px solid var(--lyte-step-advanced-nav-border-color);
+	@color: var(--lyte-step-advanced-nav-text-color);
+}
+.stepAdvancedStepBackwardBeforeMixin() {
+	@border-bottom: 1px solid var(--lyte-step-advanced-connector-border-color);
+	@border-left: 1px solid var(--lyte-step-advanced-connector-border-color);
+}

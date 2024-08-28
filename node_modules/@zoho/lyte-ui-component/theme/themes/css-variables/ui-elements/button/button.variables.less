@@ -1,0 +1,117 @@
+:root {
+	--lyte-button-border-width: 1px;
+	--lyte-button-border-style: solid;
+
+	--lyte-button-default-bg: #fff;
+	--lyte-button-default-text-color: #3c3c3c;
+	--lyte-button-default-border-color: #c4c4c4;
+	--lyte-button-default-hover-border-color: #abaaaa;
+
+	--lyte-button-primary-bg: @themeActiveElementBg;
+	--lyte-button-primary-text-color: #fff;
+	--lyte-button-primary-border-color: @themeActiveElementBg;
+	--lyte-button-primary-hover-bg: #3c98dd;
+	--lyte-button-primary-hover-text-color: #fff;
+	--lyte-button-primary-hover-border-color: #3c98dd;
+
+	--lyte-button-secondary-bg: #555;
+	--lyte-button-secondary-text-color: #fff;
+	--lyte-button-secondary-border-color: #555;
+	--lyte-button-secondary-hover-bg: #474747;
+	--lyte-button-secondary-hover-color: #fff;
+	--lyte-button-secondary-hover-border-color: #444;
+
+	--lyte-button-success-bg: #19bc7d;
+	--lyte-button-success-text-color: #fff;
+	--lyte-button-success-border-color: #19bc7d;
+	--lyte-button-success-hover-bg: #10ab6f;
+	--lyte-button-success-hover-border-color: #10ab6f;
+
+	--lyte-button-outline-success-bg: #fff;
+	--lyte-button-outline-success-text-color: #19bc7d;
+	--lyte-button-outline-success-border-color: #19bc7d;
+	--lyte-button-outline-success-hover-bg: #19bc7d;
+	--lyte-button-outline-success-hover-text-color: #fff;
+	--lyte-button-outline-success-hover-border-color: #19bc7d;
+
+	--lyte-button-failure-bg: #ec4844;
+	--lyte-button-failure-text-color: #fff;
+	--lyte-button-failure-border-color: #ec4844;
+	--lyte-button-failure-hover-bg: #da3e3e;
+	--lyte-button-failure-hover-border-color: #da3e3e;
+
+	--lyte-button-outline-failure-bg: #fff;
+	--lyte-button-outline-failure-text-color: #ec4844;
+	--lyte-button-outline-failure-border-color: #ec4844;
+	--lyte-button-outline-failure-hover-bg: #ec4844;
+	--lyte-button-outline-failure-hover-text-color: #fff;
+	--lyte-button-outline-failure-hover-border-color: #ec4844;
+
+}
+
+.DefaultBtn() {
+	@bg: var(--lyte-button-default-bg);
+	@color: var(--lyte-button-default-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-default-border-color);
+}
+.DefaultBtnHover() {
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-default-hover-border-color);
+}
+.PrimaryBtn() {
+	@bg: var(--lyte-button-primary-bg);
+	@color: var(--lyte-button-primary-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-primary-border-color);
+}
+.PrimaryBtnHover() {
+	@bg: var(--lyte-button-primary-hover-bg);
+	@color: var(--lyte-button-primary-hover-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-primary-hover-border-color);
+}
+.Secondary() {
+	@bg: var(--lyte-button-secondary-bg);
+	@color: var(--lyte-button-secondary-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-secondary-border-color);
+}
+.SecondaryHover() {
+	@bg: var(--lyte-button-secondary-hover-bg);
+	@color: var(--lyte-button-secondary-hover-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-secondary-hover-border-color);
+}
+.SuccessButton() {
+    @bg: var(--lyte-button-success-bg);
+	@color: var(--lyte-button-success-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-success-border-color);
+}
+.SuccessButtonHover() {
+    @bg: var(--lyte-button-success-hover-bg);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-success-hover-border-color);
+}
+.defaultSuccess() {
+	@bg: var(--lyte-button-outline-success-bg);
+	@color: var(--lyte-button-outline-success-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-outline-success-border-color);
+}
+.defaultSuccessHover() {
+	@bg: var(--lyte-button-outline-success-hover-bg);
+	@color: var(--lyte-button-outline-success-hover-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-outline-success-hover-border-color);
+}
+.FailureButton() {
+	@bg: var(--lyte-button-failure-bg);
+	@color: var(--lyte-button-failure-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-failure-border-color);
+}
+.FailureButtonHover() {
+	@bg: var(--lyte-button-failure-hover-bg);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-failure-hover-border-color);
+}
+.defaultFailure() {
+	@bg: var(--lyte-button-outline-failure-bg);
+	@color: var(--lyte-button-outline-failure-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-outline-failure-border-color);
+}
+.defaultFailureHover() {
+	@bg: var(--lyte-button-outline-failure-hover-bg);
+	@color: var(--lyte-button-outline-failure-hover-text-color);
+	@border: @buttonBorderWidth @buttonBorderStyle var(--lyte-button-outline-failure-hover-border-color);
+}

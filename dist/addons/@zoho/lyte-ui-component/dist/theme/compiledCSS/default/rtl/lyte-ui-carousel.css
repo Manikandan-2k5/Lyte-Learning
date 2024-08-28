@@ -1,0 +1,189 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+lyte-carousel {
+  display: block;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+}
+.lyteCarouselWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+.lyteCarouselWrapper lyte-yield {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+lyte-carousel-content {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  min-height: inherit;
+}
+lyte-carousel-item {
+  width: 100%;
+  height: 100%;
+  padding: 15px 35px;
+  box-sizing: border-box;
+  display: none;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+lyte-carousel-item.lyteActive {
+  display: flex;
+}
+.lyteActiveNext {
+  display: flex;
+  transform: translateX(-100%);
+}
+.lyteActivePrev {
+  display: flex;
+  transform: translateX(100%);
+}
+lyte-carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+lyte-carousel-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+lyte-carousel-indicator-item {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+lyte-carousel-indicator-item:hover {
+  background: #bbb;
+}
+lyte-carousel-indicator-item li {
+  list-style: none;
+}
+lyte-carousel-indicator-item.lyteActive {
+  background: #5ba1e5;
+}
+lyte-carousel-next,
+lyte-carousel-prev {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+  top: calc(50% - 15px);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  transform: rotate(180deg);
+}
+lyte-carousel-next:hover,
+lyte-carousel-prev:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+lyte-carousel-next {
+  left: 0;
+}
+lyte-carousel-prev.lyteDisabled,
+lyte-carousel-next.lyteDisabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+lyte-carousel-prev::before,
+lyte-carousel-next::before {
+  content: '';
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -94px -109px;
+  width: 9px;
+  height: 11px;
+}
+lyte-carousel-next::before {
+  transform: rotate(180deg);
+}
+.lyteFade lyte-carousel-item {
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.lyteFade lyte-carousel-item.lyteActive {
+  opacity: 1;
+}
+lyte-carousel-sub-item {
+  height: 100%;
+  margin: 10px;
+}
+.lyteCarouselFrames lyte-carousel-item.lyteActive {
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.lyteCarouselFrames lyte-carousel-sub-item {
+  width: 150px;
+  height: 200px;
+  margin: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+lyte-carousel.lyteCarouselVertical {
+  min-height: 300px;
+}
+.lyteCarouselVertical .lyteCarouselWrapper > lyte-yield {
+  flex-direction: row;
+}
+.lyteCarouselVertical lyte-carousel-item {
+  padding: 45px 15px;
+}
+.lyteCarouselVertical lyte-carousel-indicator {
+  flex-direction: column;
+  width: auto;
+  margin-top: 0;
+}
+.lyteCarouselVertical lyte-carousel-indicator-item {
+  margin: 10px 0;
+}
+.lyteCarouselVertical lyte-carousel-next,
+.lyteCarouselVertical lyte-carousel-prev {
+  right: calc(50% - 15px);
+  transform: rotate(90deg);
+  top: 0;
+}
+.lyteCarouselVertical lyte-carousel-next {
+  top: unset;
+  bottom: 0;
+}
+.lyteCarouselVertical .lyteActiveNext {
+  transform: translateY(100%);
+}
+.lyteCarouselVertical .lyteActivePrev {
+  transform: translateY(-100%);
+}

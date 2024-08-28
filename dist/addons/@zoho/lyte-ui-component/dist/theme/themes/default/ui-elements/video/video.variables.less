@@ -1,0 +1,323 @@
+.lyteVideoMixin() {
+	@w: 100%;
+}
+.lyteVideoHTMLElemMixin() {
+	@w: 100%;
+}
+.lyteVideoContainerMixin() {
+	@w: 100%;
+}
+.lyteVideoControlsMixin() {
+	@bottom: 0;
+	@w: 100%;
+	@bg: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+	@padding: 20px 30px;
+	@opacity: 0;
+	@transform: translateY(100%);
+	@z-index: 5;
+}
+.lyteVideoControlsShowMixin() {
+	@opacity: 1;
+	@transform: translateY(0);
+}
+.lyteVideoProgressWrapperMixin() {
+	@margin-bottom: 20px;
+}
+.lyteVideoToolTipMixin() {
+	@padding: 3px 7px;
+	@border-radius: 2px;
+	@bg: #333;
+	@color: #fff;
+	@transform: translateY(calc(-100% - 5px));
+	@font-size: 13px;
+}
+.lyteVideoProgressBarMixin() {
+	@h: 3px;
+	@border-radius: 3px;
+	@bg: rgba(255, 255, 255, .3);
+}
+.lyteVideoProgressBarVideobgtransparentMixin() {
+	@bg: transparent;
+}
+.lyteVideoProgressBarHoverMixin() {
+	@opacity: 1;
+	@h: 7px;
+}
+.lyteVideoProgressedMixin() {
+	@h: 100%;
+	@background-color: #338cf0;
+	@left: 0;
+	@top: 0;
+	@z-index: 5;
+	@border-radius: 3px;
+}
+.lyteVideoProgressHandlerMixin() {
+	@top: 1px;
+	@w: 16px;
+	@h: 16px;
+	@bg: #fff;
+	@box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.69);
+	@border-radius: 50%;
+	@z-index: 10;
+	@transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+.lyteVideoProgressBarHoverProgressHandlerMixin() {
+	@transform: translateX(-50%) translateY(-50%) scale(1);
+	@top: 3px;
+}
+.lyteVideoChapterWrapperProgressLoadCommonMixin() {
+	@h: 100%;
+	@left: 0;
+	@top: 0;
+}
+.lyteVideoChapterWrapperMixin() {
+	@w: 100%;
+}
+.lyteVideoChapterMixin() {
+	@bg: rgba(255, 255, 255, .3);
+	@margin-right: 2px;
+	@border-radius: 3px;
+}
+.lyteVideoProgressLoadMixin() {
+	@background-color: rgba(255,255,255,.6);
+	@border-radius: 3px;
+}
+.lyteVideoPlayPauseIconWrapMixin() {
+	@padding-right: 10px;
+}
+.lyteVideoForwardMixin() {
+	@padding: 0 10px;
+}
+.lyteVideoFullScreenControlMixin() {
+	@padding-left: 10px;
+}
+.lyteVideoIconsMixin() {
+	@background-color: transparent;
+	@border: 0;
+	@outline: 0;
+	@bg-img: @lyteVideoSprite;
+}
+.lyteVideoPlayIconMixin() {
+	@bg-pos: -210px -5px;
+	@w: 14px;
+	@h: 19px;
+}
+.lyteVideoPlayIconVideoPausedMixin() {
+	@bg-pos: -186px -4px;
+}
+.lyteVideoRightIconsMixin() {
+	@margin-left: auto;
+}
+.lyteVideoRewindIconMixin() {
+	@bg-pos: -268px -2px;
+	@w: 19px;
+	@h: 22px;
+}
+.lyteVideoForwardIconMixin() {
+	@bg-pos: -296px -2px;
+}
+.lyteVideoPipIconMixin() {
+	@bg-pos: -235px -5px;
+	@h: 18px;
+	@w: 22px;
+}
+.lyteVideoSettingsIconMixin() {
+	@bg-pos: -4px -4px;
+	@w: 18px;
+	@h: 19px;
+}
+.lyteVideoFullScreenMixin() {
+	@bg-pos: -33px -6px;
+	@h: 16px;
+	@w: 16px;
+}
+.lyteVideoFullScreenExitMixin() {
+	@bg-pos: -59px -5px;
+	@h: 18px;
+	@w: 18px;
+}
+.lyteVideoVolumeControlsMixin() {
+	@padding: 0 10px;
+}
+.lyteVideoVolumeIconMixin() {
+	@bg-img: @lyteVideoSprite;
+	@bg-pos: -153px -4px;
+	@w: 20px;
+	@h: 19px;
+	@margin: auto;
+}
+.lyteVideoVolumeIconLowMixin() {
+	@bg-pos: -125px -4px;
+}
+.lyteVideoVolumeIconMutedMixin() {
+	@bg-pos: -89px -4px;
+}
+.lyteVideoVolumeSliderMixin() {
+	@w: 90px;
+	@margin-left: 10px;
+}
+.lyteVideoVolumeSliderRangeSliderMixin() {
+	@h: 4px;
+	@border-radius: 5px;
+	@bg: rgba(255, 255, 255, 0.3);
+}
+.lyteVideoVolumeSliderSlideElemMixin() {
+	@w: 100% !important;
+	@h: auto !important;
+}
+.lyteVideoVolumeSliderFillMixin() {
+	@bg: #fff;
+}
+.lyteVideoVolumeSliderFillEndMixin() {
+	@bg: transparent;
+}
+.lyteVideoVolumeSliderHandlerMixin() {
+	@border: 0;
+	@bg: #fff;
+}
+.lyteVideoAnimatePlayMixin() {
+	@top: 50%;
+	@left: 50%;
+	@margin-left: -40px;
+	@margin-top: -40px;
+	@w: 80px;
+	@h: 80px;
+	@border-radius: 50%;
+	@background-color: rgba(0, 0, 0, 0.3);
+	@opacity: 0;
+}
+.lyteVideoAnimateBackwardMixin() {
+	@left: 30%;
+}
+.lyteVideoAnimateForwardMixin() {
+	@left: 70%;
+}
+.lyteVideoAnimateBackwardForwardCommonMixin() {
+	@opacity: 1;
+}
+.lyteVideoAnimateBackArrowMixin() {
+	@w: 0;
+	@h: 0;
+	@border-top: 7px solid transparent;
+	@border-bottom: 7px solid transparent;
+	@border-right: 7px solid #fff;
+	@margin: 0 5px;
+}
+.lyteVideoAnimateForwardArrowMixin() {
+	@w: 0;
+	@h: 0;
+	@border-top: 7px solid transparent;
+	@border-bottom: 7px solid transparent;
+	@border-left: 7px solid #fff;
+	@margin: 0 5px;
+}
+.lyteVideoAnimatePlayIconMixin() {
+	@bg-img: @lyteVideoSprite;
+	@bg-pos: -186px -4px;
+	@w: 14px;
+	@h: 19px;
+	@transform: scale(1.5);
+	@margin-left: 10px;
+}
+.lyteVideoAnimatePauseIconMixin() {
+	@bg-img: @lyteVideoSprite;
+	@bg-pos: -210px -5px;
+	@h: 14px;
+	@w: 14px;
+	@transform: scale(1.5);
+}
+.lyteVideoSettingsWrapperMixin() {
+	@bg: rgba(28, 28, 28, 0.9);
+	@color: #fff;
+	@font-size: 13px;
+	@bottom: 45px;
+	@padding: 5px 0;
+	@border-radius: 3px;
+	@min-w: 200px;
+	@z-index: 10;
+}
+.lyteVideoSettingsItemMixin() {
+	@padding: 8px 15px;
+}
+.lyteVideoSettingDropItemMixin() {
+	@padding: 8px 25px;
+}
+.lyteVideoSettingsItemHoverMixin() {
+	@bg: rgba(255, 255, 255, 0.1);
+}
+.lyteVideoOptionselectedBeforeMixin() {
+	@w: 12px;
+	@h: 5px;
+	@border-left: 1px solid #fff;
+	@border-bottom: 1px solid #fff;
+	@transform: rotate(-45deg);
+	@top: 12px;
+	@left: 7px;
+}
+.lyteVideoSettingsDropdownHeadMixin() {
+	@padding: 3px 8px 8px;
+	@border-bottom: 1px solid #bbb;
+}
+.lyteVideoSettingsBackIconMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -94px -109px;
+	@w: 9px;
+	@h: 11px;
+	@margin-right: 8px;
+}
+.lyteVideoSettingsKeyAfterMixin() {
+	@w: 6px;
+	@h: 6px;
+	@border-top: 1px solid #eee;
+	@border-right: 1px solid #eee;
+	@transform: rotate(45deg);
+	@margin-left: 3px;
+}
+.lyteVideoTimerMixin() {
+	@color: #fff;
+	@font-size: 12px;
+	@margin-left: 15px;
+}
+.lyteVideoPosterMixin() {
+	@h: 100%;
+	@w: 100%;
+	@z-index: 1;
+}
+.lyteVideoSubtitleWrapperMixin() {
+	@bottom: 20px;
+	@z-index: 5;
+	@left: 20px;
+	@right: 20px;
+}
+.lyteVideoControlsShowSubtitleWrapperMixin() {
+	@bottom: 80px;
+}
+.lyteVideoSubtitleMixin() {
+	@bg: #333c;
+	@color: #fff;
+	@padding: 5px;
+	@border-radius: 3px;
+}
+.lyteCircleLoaderMixin() {
+	@h: 32px;
+	@w: 32px;
+	@animation: lyteCircleLoaderAnim 4.8s linear infinite;
+}
+.lyteCircleInnerLoaderMixin() {
+	@animation: lyteCircleInnerLoaderAnim 1.2s linear infinite;
+}
+.lyteCircleInnerLoaderAndAfterMixin() {
+	@top: 0;
+	@left: 0;
+	@bottom: 0;
+	@right: 0;
+	@margin: auto;
+	@h: 20px;
+	@w: 20px;
+	@clip-path: polygon(10px 0, 20px 0px, 20px 20px, 10px 20px);
+}
+.lyteCircleInnerLoaderAfterMixin() {
+	@border: 2px solid #FFF;
+	@border-radius: 50%;
+	@animation: lyteCircleInnerLoaderAfterAnim 1.2s cubic-bezier(0.77, 0, 0.175, 1.000) infinite;
+}

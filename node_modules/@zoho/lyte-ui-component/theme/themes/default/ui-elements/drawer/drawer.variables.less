@@ -1,0 +1,167 @@
+@lyteDrawerWidth: var(--lyte-drawer-width);
+@lyteDrawerMiniVariantWidth: var(--lyte-drawer-mini-variant-width);
+@lyteDrawerTransitionDuration: 2s;
+
+.lyteDrawerMixin() {
+	@max-h: 500px;
+	@border: 1px solid @drawerBorderColor;
+	@color: @drawerTextColor;
+}
+.drawerPanelMixin() {
+	@w: @lyteDrawerWidth;
+}
+.lyteDrawerGroupMixin() {
+	@border-bottom: 1px solid #d6d6d6;
+	@margin-bottom: 20px;
+	@padding-bottom: 7px;
+}
+.lyteDrawerGroupLastOfTypeMixin() {
+	@border-bottom: 0;
+	@margin-bottom: 0;
+	@padding-bottom: 0;
+}
+.drawerLabelMixin() {
+	@padding: 10px 10px 3px;
+	@font-size: 15px;
+	@color: @drawerTextColor;
+}
+.drawerItemMixin() {
+	@color: @drawerTextColor;
+	@padding: 8px 12px;
+	@font-size: 15px;
+	@margin: 5px 0;
+}
+.drawerItemhoverMixin() {
+	@bg: #eee;
+}
+.DrawerActiveItemMixin() {
+	@bg: @drawerActiveBg;
+	@color: #fff;
+}
+.DrawerDisabledItemMixin() {
+	@opacity: 0.5;
+	@bg: @drawerDisabledItemBg;
+}
+.lyteDrawerContentMixin() {
+	@flex: 1;
+	@padding: 40px 15px 15px;
+}
+.drawerFreezeMixin() {
+	@z-index: 5;
+	@bg: @drawerFreezeBg;
+	@transition: opacity @lyteDrawerTransitionDuration ease;
+	@left: 0;
+	@top: 0;
+	@bottom: 0;
+	@right: 0;
+	@opacity: 0;
+}
+.lyteDrawerFreezeLayerShownMixin() {
+	@opacity: 0.3;
+}
+.lyteDrawerToggleButtonMixin() {
+	@z-index: 5;
+	@w: 30px;
+	@h: 30px;
+	@border-radius: 50%;
+	@border: 1px solid @drawerToggleButtonBorderColor;
+	@box-shadow: 0px 0 3px 1px rgba(0, 0, 0, 0.06);
+	@bg: @drawerToggleButtonBg;
+	@right: -35px;
+	@top: 5px;
+}
+.lyteDrawerToggleIconMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -153px -52px;
+	@w: 11px;
+	@h: 20px;
+}
+.lyteDrawerOpenToggleIconMixin() {
+	@transform: @value-rotate-180deg;
+}
+.lyteDrawerPanelRightOpenToggleIconMixin() {
+	@transform: @value-rotate-0deg;
+}
+.lyteDrawerPanelRightCloseToggleIconMixin() {
+	@transform: @value-rotate-180deg;
+}
+.lyteDrawerPanelRightToggleButtonMixin() {
+	@left: -35px;
+	@right: unset;
+}
+.lyteDrawerInlineBodyDrawerPanelMixin() {
+	@transition: transform @lyteDrawerTransitionDuration ease;
+	@top: 0;
+	@bottom: 0;
+	@bg: @drawerPanelBg;
+	@z-index: 10;
+}
+.lyteDrawerInlineBodyLeftPanelMixin() {
+	@left: 0;
+	@transform: translateX(-100%);
+}
+.lyteDrawerInlineBodyRightPanelMixin() {
+	@right: 0;
+	@transform: translateX(100%);
+}
+.lyteDrawerShownPanelMixin() {
+	@transform: translateX(0);
+}
+.lyteDrawerInlineDisplaceContentMixin() {
+	@transition: margin @lyteDrawerTransitionDuration ease;
+	@margin-left: 0;
+	@margin-right: 0;
+}
+.lyteDrawerInlineDisplacePanelLeftContentMixin() {
+	@margin-left: 200px;
+}
+.lyteDrawerInlineDisplacePanelRightContentMixin() {
+	@margin-right: 200px;
+}
+.lyteDrawerMiniVariantIconMixin() {
+	@w: 30px;
+	@h: 30px;
+	@bg-size: 100%;
+	@flex-shrink: 0;
+}
+.lyteDrawerMiniVariantToggleButtonMixin() {
+	@right: -15px;
+}
+.lyteDrawerPanelRightMiniVariantToggleButtonMixin() {
+	@left: -15px;
+}
+.lyteDrawerInlineMiniVariantPanelMixin() {
+	@w: @lyteDrawerMiniVariantWidth;
+	@transition: width @lyteDrawerTransitionDuration ease;
+	@border-right: 1px solid #ddd;
+	@transform: translateX(0);
+}
+.lyteDrawerInlinePanelRightMiniVariantPanelMixin() {
+	@border-left: 1px solid #ddd;
+	@border-right: 0;
+}
+.lyteDrawerMiniVariantPanelExpandedMixin() {
+	@w: @lyteDrawerWidth;
+}
+.lyteDrawerMiniVariantBodyMixin() {
+	@w: 100%;
+}
+.lyteDrawerMiniVariantLabelMixin() {
+	@margin-left: 10px;
+}
+.lyteDrawerMiniVariantWrapperMixin() {
+	@w: 100%;
+}
+.lyteDrawerActionsMixin() {
+	@w: 100%;
+	@padding: 10px 12px;
+}
+.lyteDrawerOverlayShowMixin() {
+	@top: 0;
+	@bottom: 0;
+	@bg: #fff;
+	@z-index: 1;
+}
+.lyteDrawerMiniVariantDrawerContentMixin() {
+	@margin-left: @lyteDrawerMiniVariantWidth;
+}

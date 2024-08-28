@@ -1,0 +1,118 @@
+/* Default theme imported */
+
+@import "../themes/default/ui-elements/number/number.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{number}/ui-elements/number/number.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{number}/global/@{direction}.less";
+
+
+lyte-number {
+    .lyteNumberMixin();
+    position: relative;
+    display: inline-flex;
+    font-family: @font-family;
+}
+lyte-number .lyteLabel {
+    .lyteNumberLabelMixin();
+    font-family: @font-family;
+    font-size: @font-size;
+    @{property-padding-right}: @padding-right;
+    color: @color;
+    flex-grow: @flex-grow;
+}
+lyte-number .lyteField {
+    .lyteNumberFieldMixin();
+    flex-grow: @flex-grow;
+}
+lyte-number input {
+    .lyteNumberInputMixin();
+    font-family: @font-family;
+    font-size: @font-size;
+    color: @color;
+    outline: none;
+    box-sizing: border-box;
+}
+lyte-number input:disabled {
+    .lyteNumberInputDisabledMixin();
+    background: @bg;
+    cursor: @cursor;
+    color: @color;
+}
+lyte-number input::placeholder {
+    .lyteNumberInputPlaceholderMixin();
+    font-family: @font-family;
+    color: @color;
+}
+lyte-number input:-ms-input-placeholder {
+    .lyteNumberInputPlaceholderMixin();
+    font-family: @font-family;
+    color: @color;
+}
+lyte-number input::-ms-input-placeholder {
+    .lyteNumberInputPlaceholderMixin();
+    font-family: @font-family;
+    color: @color;
+}
+lyte-number input::-ms-clear {
+    display: none;
+}
+lyte-number.horizontal .lyteLabel {
+    .lyteNumberHorizontalLabelMixin();
+    min-width: @min-w;
+    width: @w;
+    box-sizing: border-box;
+}
+lyte-number.horizontal .lyteField {
+    .lyteNumberHorizontalFieldMixin();
+    min-width: @min-w;
+    width: @w;
+}
+lyte-number.vertical {
+    flex-direction: column;
+    text-align: @value-textalign-left;
+}
+lyte-number.vertical .lyteLabel {
+    .lyteNumberVerticalLabelMixin();
+    @{property-padding-right}: @padding-right;
+    margin-bottom: @margin-bottom;
+}
+.lyteInputFocus.lyteErrorInput .lyteField,
+.lyteErrorInput .lyteField:hover,
+.lyteErrorInput .lyteField {
+	.lyteErrorInputFieldMixin();
+	border-color: @border-color;
+	position: relative;
+}
+.lyteErrorInput .lyteField::after {
+	.lyteErrorInputFieldAfterMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: block;
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	transform: @transform;
+}
+.lyteErrorInput input {
+	.lyteErrorInputOriginalInputMixin();
+	@{property-padding-right}: @padding-right;
+}
+.lyteNumberErrorMessage {
+	.lyteNumberErrorMessageMixin();
+	color: @color;
+	font-size: @font-size;
+	margin-top: @margin-top;
+	display: block;
+}

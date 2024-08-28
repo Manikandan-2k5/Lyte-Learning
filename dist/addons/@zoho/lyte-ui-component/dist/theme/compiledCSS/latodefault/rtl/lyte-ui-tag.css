@@ -1,0 +1,67 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+/* tag styles BEGINS */
+lyte-tag {
+  position: relative;
+  display: block;
+}
+lyte-tag-label {
+  padding-bottom: 5px;
+}
+lyte-tag lyte-dropdown {
+  width: 100%;
+  display: inline-block;
+}
+lyte-tag-description {
+  opacity: 0.4;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.lyteTagDropdown lyte-drop-item {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.lyteTagDropdown lyte-drop-item.lyteDropdownActive {
+  display: none;
+}
+lyte-tag lyte-dropdown .lyteTagInputLi {
+  background: #fff;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  max-width: 100%;
+}
+lyte-tag lyte-dropdown .lyteTagInputLi input {
+  max-width: 100%;
+}
+lyte-tag .lyteTagItem {
+  display: block;
+  max-width: 100%;
+  -ms-word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+lyte-tag .lyteTagRemoveIcon lyte-drop-button::after {
+  display: none;
+}
+.lyteTagDropdown .lyteTagHidden {
+  display: none;
+}
+.lyteTagDropdown .lyteTagGroupHidden {
+  display: none;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* tag styles ENDS */

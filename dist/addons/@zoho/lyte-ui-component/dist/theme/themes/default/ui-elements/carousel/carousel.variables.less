@@ -1,0 +1,116 @@
+.carouselMixin() {
+	@w: 100%;
+	@h: 100%;
+	@min-h: 150px;
+}
+.carouselWrapperMixin() {
+	@w: 100%;
+	@h: 100%;
+}
+.carouselWrapperYieldMixin() {
+	@w: 100%;
+	@h: 100%;
+}
+.carouselContentMixin() {
+	@w: 100%;
+	@h: 100%;
+}
+.carouselItemMixin() {
+	@w: 100%;
+	@h: 100%;
+	@padding: 15px 35px;
+}
+.carouselActiveNextItemMixin() {
+	@transform: translateX(100%);
+}
+.carouselActivePrevItemMixin() {
+	@transform: translateX(-100%);
+}
+.carouselItemImgMixin() {
+    @w: 100%;
+	@h: 100%;
+}
+.carouselIndicatorMixin() {
+	@margin-top: 20px;
+    @w: 100%;
+}
+.carouselIndicatorItemMixin() {
+	@w: 10px;
+	@h: 10px;
+	@bg: #ddd;
+	@border-radius: 50%;
+	@margin: 0 10px;
+}
+.carouselIndicatorItemhoverMixin() {
+	@bg: #bbb;
+}
+.carouselIndicatorItemActiveMixin() {
+	@bg: #5ba1e5;
+}
+.carouselPrevMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border: 1px solid #ddd;
+	@top: calc(50% - 15px);
+	@bg: rgba(0, 0, 0, 0.2);
+}
+.carouselPrevHoverMixin() {
+	@bg: rgba(0, 0, 0, 0.4);
+}
+.carouselNextMixin() {
+	@right: 0;
+}
+.carouselNextbeforeMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -94px -109px;
+	@w: 9px;
+	@h: 11px;
+}
+.carouselItemFadeEffect() {
+	@opacity: 0;
+	@transition: opacity 0.6s ease-in-out;
+}
+.carouselActiveItemFadeEffect() {
+	@opacity: 1;
+}
+.carouselSubItemMixin() {
+	@h: 100%;
+	@margin: 10px;
+}
+.carouselFramesSubItemMixin() {
+	@w: 150px;
+	@h: 200px;
+	@margin: 10px;
+	@bg: #f5f5f5;
+	@border-radius: 5px;
+	@padding: 10px;
+	@border: 1px solid #ddd;
+}
+
+.lyteCarouselVerticalMixin() {
+	@min-h: 300px;
+}
+.lyteCarouselVerticalCarouselItemMixin() {
+	@padding: 45px 15px;
+}
+.lyteCarouselVerticalCarouselIndicatorMixin() {
+	@margin-top: 0;
+}
+.lyteCarouselVerticalCarouselIndicatorItemMixin() {
+	@margin: 10px 0;
+}
+.lyteCarouselVerticalCarouselNavArrowsCommonMixin() {
+	@left: calc(50% - 15px);
+	@transform: rotate(90deg);
+	@top: 0;
+}
+.lyteCarouselVerticalCarouselNextMixin() {
+	@top: unset;
+	@bottom: 0;
+}
+.lyteCarouselVerticalActiveNextItemMixin() {
+	@transform: translateY(100%);
+}
+.lyteCarouselVerticalActivePrevItemMixin() {
+	@transform: translateY(-100%);
+}

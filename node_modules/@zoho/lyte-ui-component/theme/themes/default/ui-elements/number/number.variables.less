@@ -1,0 +1,59 @@
+.lyteNumberMixin() {
+    @font-family: @primaryFont;
+}
+.lyteNumberLabelMixin() {
+    @font-family: @primaryFont;
+    @font-size: @lyteNumberFontSize;
+    @padding-right: 30px;
+    @color: @lyteNumberLabelColor;
+    @flex-grow: 1;
+}
+.lyteNumberFieldMixin() {
+    @flex-grow: 1;
+}
+.lyteNumberInputMixin() {
+    @font-family: @primaryFont;
+    @font-size: @lyteNumberFontSize;
+    @color: @lyteNumberTextColor;
+}
+.lyteNumberInputDisabledMixin() {
+    @bg: @lyteNumberDisabledBg;
+    @cursor: not-allowed;
+    @color: @lyteNumberDisabledTextColor;
+}
+.lyteNumberInputPlaceholderMixin() {
+    @font-family: @primaryFont;
+    @color: @lyteNumberPlaceholderColor;
+}
+.lyteNumberHorizontalLabelMixin() {
+    @min-w: 40%;
+    @w: 40%;
+}
+.lyteNumberHorizontalFieldMixin() {
+    @min-w: 60%;
+    @w: 60%;
+}
+.lyteNumberVerticalLabelMixin() {
+    @padding-right: 0;
+    @margin-bottom: 10px;
+}
+.lyteErrorInputFieldMixin() {
+	@border-color: #E74C3C;
+}
+.lyteErrorInputFieldAfterMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -263px -31px;
+	@w: 16px;
+	@h: 15px;
+	@right: 10px;
+	@top: 50%;
+	@transform: translateY(-50%);
+}
+.lyteErrorInputOriginalInputMixin() {
+	@padding-right: 35px;
+}
+.lyteNumberErrorMessageMixin() {
+	@color: #E74C3C;
+	@font-size: 13px;
+	@margin-top: 5px;
+}

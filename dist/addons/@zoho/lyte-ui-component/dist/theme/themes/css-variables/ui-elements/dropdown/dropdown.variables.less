@@ -1,0 +1,76 @@
+:root {
+	--lyte-dropdown-bg: @themeBodyBackground;
+	--lyte-dropdown-text-color: @commonTextColor2;
+	--lyte-dropdown-btn-border-color: #d6d6d6;
+	--lyte-dropdown-btn-hover-border-color: #c1c1c1;
+	--lyte-dropbox-border-color: @dropdownBtnBorderColor;
+	--lyte-dropbox-box-shadow-color: rgba(0, 0, 0, 0.15);
+	--lyte-dropbox-item-hover-bg: #ededed;
+	--lyte-dropbox-arrow-border-color: @dropdownBtnBorderColor;
+	--lyte-dropbox-border-radius: 2px;
+	--lyte-dropbox-translate-width: 8px;
+	--lyte-dropbox-zindex: @Level4zIndex;
+	--lyte-dropdown-multiselect-li-bg: #f1f1f1;
+	--lyte-dropdown-multiselect-li-border-color: #e8e8e8;
+	--lyte-dropdown-multiselect-li-selected-bg: #eef5fa;
+	--lyte-dropdown-multiselect-li-selected-border-color: #3ea7fc;
+	--lyte-dropdown-multiselect-li-selected-hover-bg: #daebf7;
+	--lyte-dropdown-multiselect-placeholder-text-color: #999;
+	--lyte-dropdown-multiselect-remove-hover-bg: #e8e8e8;
+	--lyte-dropdown-no-result-text-color: #8a8a8a;
+	--lyte-dropbox-button-overlap-bg: #ededed;
+	--lyte-dropbox-footer-border-color: #ddd;
+	--lyte-dropdown-freeze-layer-bg: #fff;
+	--lyte-dropdown-button-disabled-bg: #f3f3f3;
+	--lyte-dropdown-button-disabled-text-color: #999;
+	--lyte-dropdown-multiple-disabled-li-bg: #ebe9e9;
+	--lyte-dropdown-multiple-disabled-li-border-color: #d3d3d3;
+	--lyte-dropdown-placeholder-text-color: #828282;
+	--lyte-dropdown-deselect-icon-hover-bg: #eee;
+}
+.MultipleSelect() {
+	@bg: var(--lyte-dropdown-multiselect-li-bg);
+	@border: 1px solid var(--lyte-dropdown-multiselect-li-border-color);
+}
+.DropPlaceholderMultiple() {
+	@color: var(--lyte-dropdown-multiselect-placeholder-text-color);
+}
+.multiSelectCloseHover() {
+    @bg: var(--lyte-dropdown-multiselect-remove-hover-bg);
+}
+.DropdownNoResult() {
+	@color: var(--lyte-dropdown-no-result-text-color);
+}
+.dropBoxArrow() {
+	@bg: var(--lyte-dropbox-button-overlap-bg);
+}
+.dropFooter() {
+	@border-top: 1px solid var(--lyte-dropbox-footer-border-color);
+}
+.dropBoxFooter() {
+	@border-top: 1px solid var(var(--lyte-dropbox-footer-border-color));
+}
+.lyteDropdownFreezeLayerMixin() {
+	@bg: var(--lyte-dropdown-freeze-layer-bg);
+}
+.disableDropBtn() {
+	@bg: var(--lyte-dropdown-button-disabled-bg);
+	@color: var(--lyte-dropdown-button-disabled-text-color);
+}
+.lyteDropdownDisabledMultipleSelectLiMixin() {
+	@bg: var(--lyte-dropdown-multiple-disabled-li-bg);
+	@border: 1px solid var(--lyte-dropdown-multiple-disabled-li-border-color);
+}
+.DropPlaceholderNormal() {
+	@color: var(--lyte-dropdown-placeholder-text-color);
+}
+.multiSelectDropMark() {
+	@bg: var(--lyte-dropdown-multiselect-li-selected-bg);
+	@border: 1px solid var(--lyte-dropdown-multiselect-li-selected-border-color);
+}
+.multiSelectDropMarkHover() {
+	@bg: var(--lyte-dropdown-multiselect-li-selected-hover-bg);
+}
+.lyteDropdownDeselectIconHoverMixin() {
+	@bg: var(--lyte-dropdown-deselect-icon-hover-bg);
+}

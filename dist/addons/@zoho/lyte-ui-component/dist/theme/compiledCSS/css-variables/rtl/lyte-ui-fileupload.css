@@ -1,0 +1,275 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-fileupload-bg: var(--lyte-theme-body-bg);
+  --lyte-fileupload-msg-text-color: #666;
+  --lyte-fileupload-file-name-text-color: var(--lyte-common-text-color);
+  --lyte-fileupload-list-file-bg: #f7f7f7;
+  --lyte-fileupload-list-file-border-color: #f1f1f1;
+  --lyte-fileupload-list-file-error-bg: #ffeeee;
+  --lyte-fileupload-list-file-error-border-color: #f8dcdc;
+  --lyte-fileupload-retry-color: #555;
+  --lyte-fileupload-message-wrap-border-color: #b8bdbe;
+  --lyte-fileupload-message-wrap-hover-border-color: #969b9c;
+  --lyte-fileupload-file-entered-message-wrap-border-color: #6eb0cb;
+  --lyte-fileupload-file-entered-message-wrap-bg: #fafcff;
+  --lyte-fileupload-thumb-border-color: #aaa;
+  --lyte-fileupload-progressbar-bg: #dfecfb;
+  --lyte-fileupload-progressbar-fill-bg: #4ea2f7;
+  --lyte-fileupload-failure-msg-text-color: #f00;
+  --lyte-fileupload-input-type-message-wrap-border-color: #c7c7c7;
+  --lyte-fileupload-input-type-message-wrap-hover-border-color: #969b9c;
+  --lyte-fileupload-input-type-file-sucess-border-color: #c7c7c7;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+lyte-file-message,
+lyte-fileupload,
+lyte-file-select-area {
+  font-family: var(--lyte-primary-font);
+  display: block;
+}
+.lyteFileUpdMsgWrap {
+  font-size: 13px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  background: var(--lyte-fileupload-bg);
+  text-align: center;
+  color: var(--lyte-fileupload-msg-text-color);
+}
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px dashed var(--lyte-fileupload-message-wrap-border-color);
+}
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap:hover {
+  border: 1px dashed var(--lyte-fileupload-message-wrap-hover-border-color);
+}
+.fileDragEnter.lyteFileUpdInputType .lyteFileUpdMsgWrap,
+.fileDragEnter.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+  border: 1px dashed var(--lyte-fileupload-file-entered-message-wrap-border-color);
+  background: var(--lyte-fileupload-file-entered-message-wrap-bg);
+}
+.lyteFileUpdMsg {
+  position: relative;
+  line-height: 21px;
+}
+.fileDragEnter .lyteFileUpdMsg {
+  opacity: 0.7;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsg {
+  padding-right: 40px;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsg::before {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -155px -203px;
+  width: 30px;
+  height: 21px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+.lyteFileUpdThumb {
+  display: block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 1px solid var(--lyte-fileupload-thumb-border-color);
+}
+.lyteFileUpdList {
+  display: flex;
+  flex-direction: column;
+}
+.multiFileupload .lyteFileUpdList {
+  margin-top: 15px;
+}
+.multiFileupload .lyteFileUpdListFile {
+  margin-bottom: 10px;
+}
+.lyteFileUpdListFile {
+  position: relative;
+  display: flex;
+  padding: 10px 15px;
+  background: var(--lyte-fileupload-list-file-bg);
+  border: 1px solid var(--lyte-fileupload-list-file-border-color);
+  border-radius: 10px;
+  align-items: center;
+}
+.lyteFileUpdListFile.lyteFileError {
+  background: var(--lyte-fileupload-list-file-error-bg);
+  border: 1px solid var(--lyte-fileupload-list-file-error-border-color);
+}
+.lyteFileUpdTypePreview {
+  margin-left: 10px;
+}
+.lyteFileUpdTypeIcon::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  display: block;
+  background-position: -117px -198px;
+  width: 21px;
+  height: 26px;
+}
+.lyteFileUpdTypeIcon.pdf::after {
+  background-position: -8px -198px;
+}
+.lyteFileUpdTypeIcon.video::after {
+  background-position: -35px -198px;
+}
+.lyteFileUpdTypeIcon.image::after {
+  background-position: -63px -198px;
+}
+.lyteFileUpdTypeIcon.zip::after {
+  background-position: -90px -198px;
+}
+.lyteFileUpdFileName {
+  color: var(--lyte-fileupload-file-name-text-color);
+  font-size: 14px;
+  margin-left: 10px;
+  max-width: calc(100% - 300px);
+  white-space: nowrap;
+}
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+  max-width: calc(100% - 150px);
+}
+.lyteFileUpdFileSize {
+  font-size: 12px;
+  color: var(--lyte-fileupload-msg-text-color);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.lyteFileUpdFileStatus {
+  display: flex;
+  margin-left: 10px;
+}
+.lyteFileUpdProgressBar {
+  height: 5px;
+  width: 140px;
+  background: var(--lyte-fileupload-progressbar-bg);
+  flex-grow: 1;
+  border-radius: 5px;
+}
+.lyteFileUpdProgressFill {
+  height: 5px;
+  background: var(--lyte-fileupload-progressbar-fill-bg);
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+lyte-file-retry {
+  display: inline-flex;
+  margin-left: 10px;
+}
+.lyteFileUpdFailMsg {
+  font-size: 12px;
+  color: var(--lyte-fileupload-failure-msg-text-color);
+  margin-left: 10px;
+  text-transform: capitalize;
+  cursor: default;
+}
+.lyteFileUpdRetryMsg {
+  font-size: 12px;
+  color: var(--lyte-fileupload-retry-color);
+  text-transform: capitalize;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.lyteFileUpdRetryMsg:hover {
+  color: var(--lyte-fileupload-file-name-text-color);
+}
+lyte-file-close {
+  cursor: pointer;
+  background-image: var(--lyte-sprite-image);
+  background-position: -347px -157px;
+  width: 17px;
+  height: 17px;
+  opacity: 0.4;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.lyteFileUpdListFile.lyteFileSuccess lyte-file-close {
+  visibility: hidden;
+}
+.lyteFileUpdListFile.lyteFileSuccess:hover lyte-file-close {
+  visibility: visible;
+}
+lyte-file-close:hover {
+  opacity: 0.7;
+}
+.lyteFileUpdBoxType #lyteFileUpdSelectedFile {
+  background: #ddd;
+  border: 1px solid #ccc;
+}
+.lyteFileUpdInputType .lyteFileUpdMsgWrap {
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: 1px dashed var(--lyte-fileupload-input-type-message-wrap-border-color);
+  background: var(--lyte-fileupload-bg);
+  text-align: right;
+}
+.lyteFileUpdInputType .lyteFileUpdMsgWrap:hover {
+  border: 1px dashed var(--lyte-fileupload-input-type-message-wrap-hover-border-color);
+}
+.lyteFileUpdInputType .lyteFileUpdListFile {
+  padding: 7px 10px;
+  border: 1px dashed var(--lyte-fileupload-input-type-file-sucess-border-color);
+  border-radius: 3px;
+  background: var(--lyte-fileupload-bg);
+}
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileError {
+  background: var(--lyte-fileupload-list-file-error-bg);
+  border: 1px dashed var(--lyte-fileupload-list-file-error-border-color);
+}
+.lyteFileUpdInputType .lyteFileUpdFileName {
+  line-height: 21px;
+  font-size: 13px;
+  max-width: calc(100% - 250px);
+}
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+  max-width: calc(100% - 90px);
+}
+.lyteFileUpdInputType lyte-file-close {
+  background-position: -324px -162px;
+  width: 10px;
+  height: 10px;
+}
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap {
+  width: 30px;
+  height: 30px;
+  background: #4ea2f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -197px -205px;
+  width: 15px;
+  height: 19px;
+  display: block;
+}
+.lyteFileUpdListFile.lyteFileError .lyteFileUpdFileStatus,
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileStatus,
+.lyteFileUpdBtnType .lyteFileUpdMsg,
+.fileuploadInput,
+.lyteFileUpdInputType .lyteFileUpdTypePreview,
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap.lyteHide,
+lyte-fileupload .lyteHide {
+  display: none;
+}
+.lyteFileUpdDisabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */

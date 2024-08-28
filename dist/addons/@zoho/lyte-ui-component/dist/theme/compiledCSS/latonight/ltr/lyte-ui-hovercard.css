@@ -1,0 +1,66 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteHovercardPopover .lytePopover {
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 1080;
+  border: 1px solid transparent;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon {
+  background: #222;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowTop {
+  box-shadow: -1px -1px 0 0 #222;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowBottom {
+  box-shadow: 1px 1px 0 0 #222;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowRight {
+  box-shadow: 1px -1px 0 0 #222;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowLeft {
+  box-shadow: -1px 1px 0 0 #222;
+}
+lyte-hovercard-content {
+  padding: 15px;
+  display: block;
+  max-width: 500px;
+  overflow-wrap: break-word;
+}
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  position: absolute;
+}
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+  top: -10px;
+}
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before {
+  bottom: -10px;
+}
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+  content: '';
+  height: 100%;
+  width: 10px;
+  background: transparent;
+  position: absolute;
+}
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+  left: -10px;
+}
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before {
+  right: -10px;
+}

@@ -1,0 +1,272 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-range-slider-bg: #dee2ed;
+  --lyte-range-slider-fill-bg: var(--lyte-theme-active-element-bg);
+  --lyte-range-slider-handle-bg: #fff;
+  --lyte-range-slider-handle-border-color: #4495e4;
+  --lyte-range-slider-tick-bg: #c0c0c0;
+  --lyte-range-slider-text-color: var(--lyte-common-text-color2);
+}
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* Slider CSS BEGINS  */
+lyte-slider {
+  display: inline-block;
+}
+lyte-slider * {
+  box-sizing: content-box;
+}
+lyte-slider .lyteSlide {
+  height: 100%;
+}
+.lyteRangeSlider,
+.lyteSliderFill {
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.lyteRangeSlider {
+  height: 8px;
+  background: var(--lyte-range-slider-bg);
+  position: relative;
+  outline: none;
+}
+.lyteSliderFill {
+  background: var(--lyte-range-slider-fill-bg);
+  position: absolute;
+  top: 0;
+  /*  Altering this may cause alignment issue */
+}
+.lyteSlide,
+.lyteSliderHandler {
+  outline: none;
+}
+.lyteSliderHandler {
+  z-index: 5;
+}
+.lyteSliderHandler.lyteMultiSliderSelected {
+  z-index: 10;
+}
+.lyteSliderDisabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.lyteSquare.lyteSliderHandler,
+.lyteCircle.lyteSliderHandler {
+  width: 12px;
+  height: 12px;
+  background: var(--lyte-range-slider-handle-bg);
+  border-radius: 50%;
+  border: 2px solid var(--lyte-range-slider-handle-border-color);
+  cursor: pointer;
+  position: absolute;
+  top: -4px;
+  left: 10px;
+}
+.lyteSquare.lyteSliderHandler {
+  border-radius: 0;
+}
+.lyteRangeSlider .lyteScaleLine .lyteScalLable {
+  font-family: var(--lyte-primary-font);
+  font-size: 12px;
+  color: var(--lyte-range-slider-text-color);
+  padding-top: 10px;
+  display: inline-block;
+}
+/*  Horizontal slider related CSS Starts  */
+.lyteRangeSlider.lyteHorizontal .lyteScaleOption {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  /*  Altering this may cause alignment issue */
+  width: 100%;
+  height: 10px;
+}
+.lyteRangeSlider .lyteScaleLine {
+  width: 18px;
+  height: 8px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  margin-left: -9px;
+  left: 20px;
+}
+.lyteScaleLine span:first-child {
+  height: 100%;
+  width: 2px;
+  background: var(--lyte-range-slider-tick-bg);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 8px;
+}
+.lyteRangeSlider.lyteHorizontal .lyteSliderFill {
+  height: 100%;
+}
+.lyteRangeSlider.lyteHorizontal .lyteArrow.lyteSliderHandler {
+  border: 2px solid var(--lyte-range-slider-handle-border-color);
+  width: 10px;
+  height: 9px;
+  border-bottom-width: 1px;
+  top: -4px;
+  background: var(--lyte-range-slider-handle-bg);
+  cursor: pointer;
+  position: absolute;
+  left: 13px;
+}
+.lyteRangeSlider.lyteHorizontal .lyteArrow.lyteSliderHandler::after,
+.lyteRangeSlider.lyteHorizontal .lyteArrow.lyteSliderHandler::before {
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+}
+.lyteRangeSlider.lyteHorizontal .lyteArrow.lyteSliderHandler::before {
+  border-top-color: var(--lyte-range-slider-handle-border-color);
+  border-width: 7px;
+  margin-left: -2px;
+  top: 10px;
+}
+.lyteRangeSlider.lyteHorizontal .lyteArrow.lyteSliderHandler::after {
+  border-top-color: var(--lyte-range-slider-handle-bg);
+  border-width: 5px;
+  margin-left: 0;
+  top: 9px;
+}
+/*  Horizontal slider related CSS Ends  */
+/*  Vertical slider related CSS  Begins  */
+.lyteRangeSlider.lyteVertical {
+  width: 8px;
+  height: 100%;
+}
+.lyteVertical .lyteSliderFill {
+  width: 8px;
+}
+.lyteVertical .lyteCircle.lyteSliderHandler {
+  top: 10px;
+  left: -4px;
+}
+.lyteVertical .lyteSquare.lyteSliderHandler {
+  left: -4px;
+}
+.lyteVertical.lyteRangeSlider .lyteScaleLine .lyteScalLable {
+  position: absolute;
+  padding-top: 0;
+  top: -10px;
+  left: 10px;
+}
+.lyteVertical.lyteRangeSlider .lyteArrow .lyteScaleLine .lyteScalLable {
+  top: -10px;
+  left: 10px;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler,
+.lyteVertical .lyteArrowLeft.lyteSliderHandler {
+  top: 13px;
+  width: 9px;
+  height: 10px;
+  border: 2px solid var(--lyte-range-slider-handle-border-color);
+  background: var(--lyte-range-slider-handle-bg);
+  cursor: pointer;
+  position: absolute;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler {
+  border-right-width: 1px;
+  left: -4px;
+}
+.lyteVertical .lyteArrowLeft.lyteSliderHandler {
+  border-left-width: 1px;
+  left: 0;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler::after,
+.lyteVertical .lyteArrow.lyteSliderHandler::before,
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::after,
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::before {
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler::before,
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::before {
+  border-color: transparent;
+  border-width: 7px;
+  margin-top: -2px;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler::before {
+  border-left-color: var(--lyte-range-slider-handle-border-color);
+  left: 10px;
+}
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::before {
+  border-right-color: var(--lyte-range-slider-handle-border-color);
+  right: 10px;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler::after,
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::after {
+  border-color: transparent;
+  border-width: 5px;
+  margin-top: 0;
+}
+.lyteVertical .lyteArrow.lyteSliderHandler::after {
+  left: 9px;
+  border-left-color: var(--lyte-range-slider-handle-bg);
+}
+.lyteVertical .lyteArrowLeft.lyteSliderHandler::after {
+  right: 9px;
+  border-right-color: var(--lyte-range-slider-handle-bg);
+}
+.lyteVertical.lyteRangeSlider .lyteScaleOption {
+  position: absolute;
+  top: 0;
+  /*  Altering this may cause alignment issue */
+  left: 15px;
+  width: 10px;
+  height: 100%;
+}
+.lyteVertical.lyteRangeSlider .lyteScaleLine {
+  width: 6px;
+  height: 18px;
+  position: absolute;
+  margin-top: 0;
+  margin-left: -6px;
+  top: 20px;
+  left: 6px;
+}
+.lyteVertical.lyteRangeSlider .lyteArrow .lyteScaleLine {
+  left: 8px;
+}
+.lyteVertical .lyteScaleLine span:first-child {
+  height: 2px;
+  width: 6px;
+  left: 0;
+  top: -1px;
+}
+.lyteVertical.lyteRangeSlider .lyteArrowLeft .lyteScaleLine .lyteScalLable {
+  top: -8px;
+  left: unset;
+  right: 10px;
+}
+.lyteVertical.lyteRangeSlider .lyteArrowLeft.lyteScaleOption {
+  left: -15px;
+}
+/*  Vertical slider related CSS  Ends  */
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/slider.less file
+ */
+/* Slider CSS ENDS  */

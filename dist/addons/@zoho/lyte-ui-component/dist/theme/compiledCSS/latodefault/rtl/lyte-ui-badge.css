@@ -1,0 +1,51 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteBadge {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 12px;
+  background: #f06060;
+  border: 1px solid #fff;
+}
+.lyteBadgeContent {
+  color: #fff;
+  font-size: 8px;
+  margin: auto;
+}
+.lyteBadgeWidHeiD {
+  min-width: 10px;
+  height: 10px;
+  line-height: 10px;
+}
+.lyteBadgeWidHeiWD {
+  min-width: 6px;
+  min-height: 6px;
+}
+.lyteBadgeTopRight {
+  left: -3px;
+  top: -3px;
+}
+.lyteBadgeTopLeft {
+  right: -3px;
+  top: -3px;
+}
+.lyteBadgeBottomRight {
+  left: -3px;
+  bottom: -3px;
+}
+.lyteBadgeBottomLeft {
+  right: -3px;
+  bottom: -3px;
+}

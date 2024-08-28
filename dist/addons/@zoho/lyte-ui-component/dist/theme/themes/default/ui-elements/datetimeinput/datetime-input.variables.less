@@ -1,0 +1,58 @@
+.lyteDateTimeInputBoxWrapperMixin() {
+	@border: 1px solid @lyteDateTimeInputBorderColor;
+	@border-radius: @lyteDateTimeInputBorderRadius;
+}
+.lyteDateTimeInputBoxHoverWrapperMixin() {
+	@border: 1px solid @lyteDateTimeInputBorderHover;
+}
+.lyteDateInputFocusedBoxWrapperMixin() {
+	@border: 1px solid @lyteDateTimeInputBorderFocus;
+}
+.lyteDateTimeInputBoxWrapperInputMixin() {
+	@border-right: 1px solid @lyteDateTimeInputBorderColor;
+	@border-radius: @lyteDateTimeInputBorderRadius 0 0 @lyteDateTimeInputBorderRadius;
+}
+.lyteDateTimeInputBoxWrapperDivInputMixin() {
+	@border-radius: 0 @lyteDateTimeInputBorderRadius @lyteDateTimeInputBorderRadius 0;
+}
+.lyteDateTimeInputFlatWrapperMixin() {
+	@border-bottom: 1px solid @lyteDateTimeInputBorderColor;
+}
+.lyteDateTimeInputFlatHoverWrapperMixin() {
+	@border-bottom: 1px solid @lyteDateTimeInputBorderHover;
+}
+.lyteDateInputFocusedFlatWrapperMixin() {
+	@border-bottom: 1px solid @lyteDateTimeInputBorderFocus;
+}
+.lyteDateTimeInputWrapperInputMixin() {
+	@font-family: @primaryFont;
+	@font-size: @lyteDateTimeInputFontSize;
+	@bg: @lyteDateTimeInputBg;
+	@color: @lyteDateTimeInputTextColor;
+	@border: 0;
+	@box-shadow: none;
+	@outline: 0;
+}
+.lyteDateTimeInputBoxInputMixin() {
+	@padding: 9px 10px;
+}
+.lyteDateTimeInputFlatInputMixin() {
+	@padding: 9px 0;
+}
+.lyteDateTimeInputWrapperDropButtonMixin() {
+	@padding: 0;
+	@border: 0;
+	@box-shadow: none;
+}
+.lyteDateTimeInputWormholeMixin() {
+	@left: -9999px;
+	@top: -9999px;
+	@z-index: @calzIndex;
+}
+.lyteDateTimezoneMixin() {
+	@right: 0;
+	@top: 0;
+	@bottom: 0;
+	@padding: 0 5px;
+	@color: @lyteDateTimeInputTextColor;
+}

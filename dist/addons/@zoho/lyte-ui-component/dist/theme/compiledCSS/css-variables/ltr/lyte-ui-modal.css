@@ -1,0 +1,145 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-modal-bg: var(--lyte-theme-body-bg);
+  --lyte-modal-box-shadow-color: 0px 1px 5px rgba(0, 0, 0, 0.4);
+  --lyte-modal-header-text-color: var(--lyte-heading-text-color);
+  --lyte-modal-content-text-color: var(--lyte-common-text-color);
+  --lyte-modal-freeze-bg: #000;
+  --lyte-modal-zindex: var(--lyte-level3-zindex);
+}
+/* rtl files loading */
+/* Loading custom themes */
+/* modal Styles BEGINS */
+.lyteModal {
+  background: var(--lyte-modal-bg);
+  box-shadow: var(--lyte-modal-box-shadow-color);
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  box-sizing: border-box;
+  font-family: var(--lyte-primary-font);
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.bodyWrapper {
+  overflow: hidden;
+}
+.modalWrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--lyte-modal-zindex);
+  position: fixed;
+  overflow: auto;
+}
+.modalWrapper.noFreeze {
+  pointer-events: none;
+}
+.modalWrapper.noFreeze .lyteModal {
+  pointer-events: auto;
+}
+lyte-modal-header {
+  font-size: 18px;
+  color: var(--lyte-modal-header-text-color);
+  font-family: var(--lyte-secondary-font);
+  padding: 25px 25px 15px;
+}
+lyte-modal-content {
+  padding: 15px 25px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: var(--lyte-modal-content-text-color);
+}
+lyte-modal-footer {
+  padding: 10px 25px 25px;
+}
+lyte-modal-header,
+lyte-modal-content,
+lyte-modal-footer {
+  display: block;
+  box-sizing: border-box;
+}
+.modalWrapper.scrollable {
+  overflow: hidden;
+}
+.modalWrapper.scrollable lyte-modal-content {
+  overflow: auto;
+}
+lyte-modal-freeze {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: var(--lyte-modal-freeze-bg);
+  display: block;
+  opacity: 0.4;
+  transition: opacity ease 0.15s;
+  transform: translate3d(0, 0, 0);
+}
+.lyteModalClose {
+  background-image: var(--lyte-sprite-image);
+  background-position: -52px 0px;
+  width: 13px;
+  height: 13px;
+  opacity: 0.5;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-block;
+  transform: scale(1.3);
+  z-index: 5;
+  outline: none;
+}
+.lyteModalClose:hover {
+  opacity: 1;
+}
+lyte-modal-footer.left {
+  text-align: left;
+}
+lyte-modal-footer.center {
+  text-align: center;
+}
+lyte-modal-footer.right {
+  text-align: right;
+}
+lyte-modal-footer lyte-button {
+  margin-left: 7px;
+}
+lyte-modal-footer lyte-button:first-child {
+  margin-left: 0;
+}
+.lyteModalFromLeft,
+.lyteModalFromRight,
+.lyteModalFromTop,
+.lyteModalFromBottom,
+.lyteModalFadeIn {
+  opacity: 1;
+}
+.lyteModalHeaderDraggable {
+  cursor: move;
+  touch-action: none;
+}
+.lyteModal.lyteZoom {
+  transform-origin: center;
+}
+.lyteModal.lyteModalFromRight {
+  left: 100%;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/modal.less file
+ */
+/* modal Styles ENDS */

@@ -1,0 +1,10 @@
+<template tag-name="home-portal">
+    <h1>Hello All. Lyte-Test</h1>
+    <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Enter your name" lt-prop-value = "{{lbind(personName)}}"> </lyte-input>
+    <lyte-button lt-prop-appearance="primary" onclick="{{action('routeTransition')}}">
+        <template is="registerYield" yield-name="text">
+            Go to your Website
+        </template>
+    </lyte-button>
+    <template is="component" component-name="menu-portal"></template>
+</template>

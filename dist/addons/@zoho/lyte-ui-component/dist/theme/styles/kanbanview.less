@@ -1,0 +1,151 @@
+/* Default theme imported */
+
+@import "../themes/default/ui-elements/kanbanview/kanbanview.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{kanbanview}/ui-elements/kanbanview/kanbanview.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{kanbanview}/global/@{direction}.less";
+
+/* Loading custom themes */
+
+lyte-kanbanview {
+    .lyteKanbanviewMixin();
+    display: block;
+    font-family: @font-family;
+    position: relative;
+}
+.lyteKanbanviewScrollDivSelector {
+    .lyteScrollDivSelectorMixin();
+    display: flex;
+    border: @border;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: @h;
+}
+.lyteKanbanViewItem {
+    .lyteKanbanViewItemMixin();
+    min-width: @min-w;
+    width: @w;
+}
+lyte-kanbanview lyte-board {
+    .lyteKanbanviewBoardMixin();
+    position: relative;
+    display: block;
+    height: @h;
+}
+lyte-kanbanview lyte-board.lyteSortableElem {
+    .lyteKanbanviewBoardSortableElemMixin();
+    min-width: @min-w;
+}
+lyte-kanbanview lyte-board .lyteBoardWrapper {
+    .lyteKanbanviewBoardWrapperMixin();
+    @{property-border-right}: @border-right;
+    display: flex;
+    flex-direction: column;
+    height: @h;
+    background: @bg;
+    color: @color;
+}
+lyte-kanbanview lyte-board.lyteSortablePlaceholder {
+    .lyteKanbanviewBoardSortablePlaceholderMixin();
+    background: @bg;
+    @{property-border-right}: @border-right;
+}
+lyte-kanbanview lyte-board.lyteSortableElem .lyteBoardWrapper {
+    .lyteKanbanviewBoardWrapperSortableMixin();
+    border: @border;
+}
+lyte-kanbanview lyte-board .lyteBoardHeader {
+    .lyteKanbanviewBoardHeaderMixin();
+    padding: @padding;
+    font-size: @font-size;
+	position: relative;
+    color: @color;
+	z-index: @z-index;
+    cursor: move;
+    position: relative;
+}
+.lyteBoardHeader.lyteKanbanviewHeaderShadow {
+    .lyteKanbanviewBoardHeaderShadowMixin();
+	box-shadow: @box-shadow;
+}
+.lyteBoardContainer {
+    .lyteKanbanviewBoardContainerMixin();
+    flex-grow: @flex-grow;
+    overflow: auto;
+}
+.lyteKanbanNestedSortable {
+    .lyteKanbanviewNestedSortableMixin();
+    overflow: auto;
+    height: @h;
+    box-sizing: border-box;
+}
+lyte-kanbanview .lyteBoardItemContentData {
+    .lyteKanbanviewBoardItemContentDataMixin();
+    min-height: @min-h;
+    border-bottom: @border-bottom;
+    background: @bg;
+    padding: @padding;
+    cursor: move;
+    position: relative;
+}
+lyte-kanbanview .lyteBoardItemContentData:hover {
+    .lyteKanbanviewBoardItemContentDataHoverMixin();
+    background: @bg;
+}
+lyte-kanbanview .lyteBoardItemContentData.lyteSortablePlaceholder, 
+lyte-kanbanview .lyteBoardItemContentData.lyteSortablePlaceholder:hover {
+    .lyteKanbanviewBoardContentSortablePlaceholderMixin();
+    background: @bg;
+    min-width: @min-w;
+}
+lyte-kanbanview lyte-card-box {
+    .lyteKanbanviewCardbox();
+    box-shadow: @box-shadow;
+    background: @bg;
+}
+lyte-kanbanview lyte-card-body {
+    .lyteKanbanviewCardbody();
+    padding: @padding;
+}
+
+.lyteKVLoadingHeaderPlaceholder,
+.lyteKVLoadingPlaceholder {
+    .lyteKVLoadingPlaceholderCommonMixin();
+	border: @border;
+	border-radius: @border-radius;
+	background: @bg;
+}
+.lyteKVLoadingPlaceholder {
+    .lyteKVLoadingPlaceholderMixin();
+	margin: @margin;
+	height: @h;
+}
+.lyteKVLoadingHeaderPlaceholder {
+    .lyteKVLoadingHeaderPlaceholderMixin();
+	margin: @margin;
+	height: @h;
+}
+.lyteKanbanNoResultMsg {
+    .lyteKanbanNoResultMsgMixin();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: @color;
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    width: @w;
+}
+.lyteKanbanNoResultMsg.lyteHide {
+    display: none;
+}

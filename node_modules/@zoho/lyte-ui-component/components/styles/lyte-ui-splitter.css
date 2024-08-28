@@ -1,0 +1,102 @@
+lyte-splitter lyte-yield {
+  height: 100%;
+  display: flex;
+  width: 100%;
+}
+lyte-row-splitter{
+  display: flex;
+  flex-direction: column;
+  border-top: solid 1px #eee;
+  border-bottom: solid 1px #eee;
+  flex-grow: 1;
+}
+lyte-column-splitter{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  border-right: solid 1px #eee;
+  border-left: solid 1px #eee;
+}
+lyte-row-element,
+lyte-column-element{
+  flex-grow: 1;
+  overflow: auto;
+  display: flex;
+}
+lyte-column-handle{
+  width: 8px;
+  background: #ddd;
+  border-radius: 6px;
+  cursor: col-resize;
+  user-select: none;
+  -webkit-user-select : none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+lyte-row-handle{
+  height: 8px;
+  background: #ddd;
+  border-radius: 6px;
+  cursor: row-resize;
+  user-select: none;
+  -webkit-user-select : none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testSpan{
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
+  background: black;
+}
+
+
+
+
+.columnHandleIcon {
+  height: 30px;
+  width: 4px;
+  background-color: #000;
+  border-radius: 6px;
+  margin: 15px 0;
+  order: 1;
+}
+.rowHandleIcon{
+  height: 4px;
+  width: 30px;
+  background-color: #000;
+  border-radius: 6px;
+  margin: 0px 15px;
+  order: 1;
+}
+
+.leftCollapseBtn {
+  order: 0;
+}
+.rightCollapseBtn {
+  order: 2;
+}
+
+.rightPointed::after,
+.leftPointed::before {
+  content: '';
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  display: block;
+}
+.leftPointed::before {
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-right: 5px solid #000;
+}
+.rightPointed::after {
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 5px solid #000;
+}

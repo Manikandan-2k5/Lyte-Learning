@@ -1,0 +1,10 @@
+<template tag-name="user-form">
+    <div style="display:flex; flex-direction:column; width:500px; height:200px; justify-content:space-around;">
+        <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Name" lt-prop-value = "{{lbind(userName)}}"></lyte-input>
+        <lyte-input lt-prop-type="number" lt-prop-appearance = 'box' lt-prop-placeholder = "Phone number" lt-prop-value = "{{lbind(phoneNumber)}}"></lyte-input>
+        <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Place" lt-prop-value = "{{lbind(place)}}"></lyte-input>
+        <lyte-button onclick="{{action('submit', event)}}">
+            <template is="registerYield" yield-name="text">Submit</template>
+        </lyte-button>
+    </div>
+</template>

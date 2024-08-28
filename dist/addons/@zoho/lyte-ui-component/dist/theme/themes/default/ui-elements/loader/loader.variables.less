@@ -1,0 +1,134 @@
+.Loaderspin(){
+  @z-index: 4;
+  @border-radius: 50%;
+  @text-indent: -9999em;
+  @border-top: 1px solid @loaderlightspinnerColor;
+  @border-right: 1px solid @loaderlightspinnerColor;
+  @border-bottom: 1px solid @loaderspinnerColor;
+  @border-left: 1px solid @loaderspinnerColor;
+  @animation: load8 1s infinite linear;
+  @w: 50px;
+  @h: 50px;
+}
+.Loaderspinafter(){
+  @z-index: 10;
+  @border-radius: 50%;
+  @w: 50px;
+  @h: 50px;
+}
+.LoaderProgressBar(){
+  @w: 90%;
+}
+.LoaderProgressBarDefinite(){
+  @h: 3px;
+  @z-index: 4;
+  @bg: @loaderlightspinnerColor;
+  @border-radius :3px;
+}
+.LoaderProgressBarDefiniteSpan(){
+  @z-index: 4;
+  @h: 100%;
+  @border-radius: 3px;
+  @bg: black;
+  @transition: width 500ms;
+}
+.LoaderProgressBarIndefinite(){
+  @h: 3px;
+  @z-index: 4;
+  @bg: linear-gradient(to right,lightgray,black);
+  @bg-color: #ccc;
+  @bg-size: 20%;
+  @bg-repeat: repeat-y;
+  @bg-pos: -25% 0;
+  @animation: loop 1.2s ease-in-out infinite;
+}
+.LoaderTimeoutMessage(){
+  @z-index: 4;
+  @h: 10%;
+  @font-family: 'Lato', sans-serif;
+  @color : var(--spinner-color);
+}
+.LoaderProgressMessage(){
+  @z-index: 4;
+  @h: 25%;
+  @font-family: 'Lato', sans-serif;
+  @color : @loaderspinnerColor;
+}
+.LoaderTimeout(){
+  @z-index : 4;
+  @animation: none;
+}
+.LoaderExit(){
+  @bg-img: @lytesprite;
+  @bg-pos: -52px 0px;
+  @w: 13px;
+  @h: 13px;
+  @opacity: 0.5;
+  @margin-right: 1%;
+  @transform: scale(2);
+  @z-index: 4;
+}
+.LoaderFreeze(){
+  @top: 0;
+  @left: 0;
+  @w: 100%;
+  @h: 100%;
+  @z-index:1;
+  @bg: #fff;
+  @opacity: 0.7;
+  @transition: opacity 0.15s ease 0s;
+}
+.LoaderElement(){
+  @z-index:10;
+  @w: 100%;
+  @h: 100%;
+  @top: 0;
+  @left: 0;
+}
+.Loader(){
+  @w: 100%;
+  @h: 100%;
+}
+.spindiv(){
+  @h: 25%;
+
+}
+.exitdiv(){
+  @h: 25%;
+  @w: 90%;
+}
+.LoaderContainer(){
+  @w: 100%;
+  @h: 100%;
+}
+@keyframes loop{
+    50%{background-size:80%}
+    100%{background-position:125% 0;}
+  }
+  @-webkit-keyframes loop {
+    50%{background-size:80%}
+    100%{background-position:125% 0;}
+  }
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+ 
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

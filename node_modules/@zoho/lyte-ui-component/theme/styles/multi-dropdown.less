@@ -1,0 +1,42 @@
+/* Default theme imported */
+
+@import "../themes/default/ui-elements/multidropdown/multi-dropdown.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{multidropdown}/ui-elements/multidropdown/multi-dropdown.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{multidropdown}/global/@{direction}.less";
+
+lyte-multi-dropdown lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button {
+	.lyteMultiDropdownDropButtonMixin();
+	padding: @padding;
+}
+.lyteMultiDropdownDropbox lyte-drop-item {
+	.lyteMultiDropdownDropboxItemMixin();
+	padding: @padding;
+	display: block;
+}
+.lyteMultiSelectDropdown lyte-drop-group.lyteDropdownHideGroup,
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item {
+	display: block;
+}
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item::before {
+	content: none;
+}
+lyte-multi-dropdown .lyteDropPlaceholderMultiple {
+	.lyteMultiDropdownDropPlaceholderMultipleMixin();
+	padding: @padding;
+}
+.lyteMultiDropSelectedText {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}

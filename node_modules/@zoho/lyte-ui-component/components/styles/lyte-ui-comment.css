@@ -1,0 +1,397 @@
+lyte-comment {
+    display: block;
+    color: #313949;
+    padding: 5px 10px;
+    font-family: 'LatoRegular', sans-serif;
+}
+lyte-comment > lyte-comment {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+lyte-comment-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px 10px 50px;
+}
+.lyteCommentProfileImage {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.lyteCommentProfileImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+lyte-comment-header span:nth-child(4),
+lyte-comment-header span:nth-child(2) {
+    font-size: 13px;
+    color: #313949;
+}
+lyte-comment-header span:nth-child(2)::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: #ccd2db;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+lyte-comment-header span:nth-child(3) {
+    font-size: 13px;
+    color: #8891A5;
+}
+lyte-comment-header span:nth-child(3)::after {
+    content: '-';
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top;
+}
+lyte-comment-content {
+    display: block;
+    position: relative;
+    margin-left: 45px;
+}
+lyte-comment-content a {
+    color: #338CF0;
+}
+.lyteCommentAttachments {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lyteCommentAttachmentDownload {
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+.lyteCommentAttachmentPreview:hover .lyteCommentAttachmentDownload {
+    opacity: 1;
+}
+.lyteCommentAttachmentDownload::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/lyte_note_sprite.svg);
+    background-position: -398px -3px;
+    display: block;
+    opacity: 0.7;
+}
+.lyteCommentAttachmentDownload:hover::after {
+    opacity: 1;
+}
+.lyteCommentAttachmentPreview {
+    padding-bottom: 25px;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+.lytecommentAttachment_image {
+    height: 85px;
+    border-radius: 10px;
+    display: block;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.lytecommentAttachment_image:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+.lyteCommentAttachmentSize {
+    position: absolute;
+    font-size: 13px;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: #777;
+}
+.lytecommentAttachment_image + .lyteCommentAttachmentSize {
+    display: none;
+}
+.lyteCommentAttachmentName {
+    position: absolute;
+    margin: 5px 7px 0;
+    font-size: 13px;
+    color: #000;
+    width: calc(100% - 14px);
+    text-align: center;
+}
+.lyteCommentFileNameTooltip {
+    max-width: 300px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 20px;
+    text-align: left;
+    animation: lyteCommentFileNameToolipAnim 0.3s ease;
+}
+@keyframes lyteCommentFileNameToolipAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.LyteNoteEditedLabel {
+    font-style: italic;
+    font-size: 13px;
+    color: #888;
+}
+.lyteCommentValue{
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+}
+.lyteCommentText {
+    font-size: 15px;
+}
+lyte-comment-footer {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.lyteCommentOtherFooter {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+.lyteCommentOtherFooter::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ccd2db;
+    margin-right: 10px;
+}
+.lyteCommentTime {
+    color: #878787;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.lyteNoteCommentEditedLabel {
+    color: #878787;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 5px;
+}
+.lyteCommentMoreString {
+    color: #338cf0;
+    font-size: 15px;
+    cursor: pointer;
+}
+.lyteNoteCommentMoreOptions,
+lyte-comment-edit,
+lyte-comment-delete {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    margin-top: 5px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    visibility: hidden;
+    position: sticky;
+    top: 10px;
+}
+.lyteNoteCommentMoreOptions {
+    margin: 5px 0 0 10px;
+}
+lyte-comment-edit + .lyteNoteCommentMoreOptions {
+    margin-left: 5px;
+}
+lyte-comment-edit {
+    margin-left: 10px;
+}
+lyte-comment-delete {
+    margin: 5px 5px 0;
+}
+.lyteNoteOptionsMenuOpened lyte-comment-edit,
+.lyteNoteOptionsMenuOpened .lyteNoteCommentMoreOptions,
+lyte-comment:hover .lyteNoteCommentMoreOptions,
+lyte-comment:hover lyte-comment-edit,
+lyte-comment:hover lyte-comment-delete {
+    visibility: visible;
+}
+lyte-comment-edit:hover {
+    background: #eef6ff;
+    border-color: #48aceb;
+}
+.lyteNoteCommentMoreOptions:hover,
+.lyteNoteCommentMoreOptions.lyteMenuSelected {
+    visibility: visible;
+    border-color: #48aceb;
+    background: #eef6ff;
+}
+.lyteNoteCommentMoreOptions::before,
+lyte-comment-edit::before,
+lyte-comment-delete::before {
+    content: '';
+    background-image: url(../images/lyte_note_sprite.svg);
+    display: block;
+}
+lyte-comment-edit::before {
+    background-position: -324px -2px;
+    width: 15px;
+    height: 16px;
+}
+lyte-comment-delete::before {
+    background-position: -345px -3px;
+    width: 14px;
+    height: 15px;
+}
+.lyteNoteCommentMoreOptions::before {
+    background-position: -6px -27px;
+    width: 14px;
+    height: 4px;
+}
+lyte-comment-delete:hover {
+    background: #fee;
+    border-color: #e57672;
+}
+lyte-comment-edit:hover::before {
+    background-position: -27px -22px;
+}
+lyte-comment-delete:hover::before {
+    background-position: -49px -23px;
+}
+.lyteNoteCommentMoreOptions.lyteMenuSelected::before,
+.lyteNoteCommentMoreOptions:hover::before {
+    background-position: -240px -51px;
+}
+.lyteNoteVoiceNoteComment lyte-note-editor lyte-voicenote {
+    margin: 10px;
+}
+.lyteNoteVoiceNoteComment lyte-voicenote {
+    margin-top: 10px;
+}
+.lyteNoteVoiceNoteComment .lyteVoiceNoteElapsedTime {
+    display: none;
+}
+.lyteNoteVoiceNoteComment .lyteEditorContent {
+    background: transparent;
+}
+.lyteCommentNonImageAttachWrap {
+    width: 130px;
+    height: 85px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+}
+.lyteCommentNonImageAttachWrap::before {
+    content: '';
+    display: block;
+    background-image: url(../images/lyte_note_sprite.svg);
+    background-position: -205px -68px;
+    width: 15px;
+    height: 17px;
+    transform: scale(2);
+    margin-top: 25px;
+}
+.lytecommentAttachment_pdf::before {
+    background-position: -70px -68px;
+}
+.lytecommentAttachment_audio::before {
+    background-position: -94px -68px;
+    width: 11px;
+}
+.lytecommentAttachment_video::before {
+    background-position: -5px -70px;
+    width: 16px;
+    height: 14px;
+}
+.lytecommentAttachment_zip::before {
+    background-position: -114px -68px;
+}
+.lytecommentAttachment_wav::before {
+    background-position: -94px -68px;
+    width: 11px;
+}
+
+.lyteNoteComponentColorbox .lyteColorboxHeader {
+    justify-content: center;
+}
+.lyteNoteComponentColorbox .lyteColorboxWrapper {
+    display: flex;
+    flex-direction: column;
+}
+.lyteNoteComponentColorbox .lyteColorboxUtilDiv {
+    bottom: 90px;
+}
+.lyteNoteComponentColorbox .lyteColorboxContent {
+    height: auto;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+    position: static;
+}
+.lyteNoteComponentFileDetailWrapper {
+    margin-left: auto;
+    text-align: center;
+}
+.lyteNoteComponentColorbox .lyteColorboxDownloadDiv {
+    margin-left: auto;
+    align-self: center;
+}
+.lyteNoteComponentFileDetail {
+    margin-top: 10px;
+    color: #999;
+    display: flex;
+    justify-content: center;
+}
+.lyteNoteComponentFileDate {
+    border-right: 1px solid #999;
+    padding-right: 5px;
+}
+.lyteNoteComponentFileTime {    /*  This line may get removed */
+    padding: 0 5px;
+    border-right: 1px solid #999;
+    margin-right: 5px;
+}
+.lyteNoteComponentFileSize {
+    padding-left: 5px;
+}
+.lyteNoteComponentNoPreviewIcon {
+    background-image: url(../images/lyte_note_sprite.svg);
+    background-position: -205px -68px;
+    width: 15px;
+    height: 17px;
+    display: block;
+    margin: 30px auto;
+    transform: scale(2);
+}
+.lyteNoteComponentNoPreviewIcon.zip {
+    background-position: -114px -68px;
+}
+.lyteNoteComponentColorbox .lyteColorboxTitle {
+    color: #555;
+}
+.lyteNoteComponentNoPreviewMessage {
+    font-size: 22px;
+}
+.lyteColorboxThumbInnerWrapper {
+    height: 150px;
+    justify-content: center;
+}

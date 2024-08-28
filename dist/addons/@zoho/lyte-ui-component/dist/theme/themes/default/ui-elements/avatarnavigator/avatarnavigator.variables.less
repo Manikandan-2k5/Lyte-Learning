@@ -1,0 +1,55 @@
+.lyteAvatarSetContMixin() {
+    @margin: 0 20px;
+}
+.lyteAvatarArrowContMixin() {
+    @w: 30px;
+    @h: 30px;
+    @border: 1px solid #ddd;
+    @border-radius: 50%;
+    @bg: #ccc;
+}
+.lyteAvatarArrowContHoverMixin() {
+    @bg: #aaa;
+}
+.lyteAvatarNextPrevIconCommonMixin() {
+    @bg-img: @lytesprite;
+    @bg-pos: -94px -109px;
+    @w: 9px;
+    @h: 11px;
+    @transform: @value-rotate-0deg;
+}
+.lyteAvatarNextIconMixin() {
+    @transform: @value-rotate-180deg;
+}
+.lyteAvatarNavigatorItemMixin() {
+    @margin: 0 5px;
+    @border-radius: 50%;
+    @border: 2px solid transparent;
+}
+.lyteAvatarNavigatorItemHoverMixin() {
+    @border: 2px solid @lyteAvatarItemHoverColor;
+    @box-shadow: 0 0 6px @lyteAvatarItemHoverColor;
+}
+.lyteAvatarSelectedItemMixin() {
+    @border: 2px solid @lyteAvatarItemSelectedColor;
+    @box-shadow: 0 0 6px @lyteAvatarItemSelectedColor;
+}
+.lyteAvatarNavigatorItemImgMixin() {
+    @w: 80px;
+    @h: 80px;
+    @border-radius: 50%;
+}
+.lyteAvatarSlideAnimMixin() {
+    @transition: transform 0.3s ease-in-out;
+}
+.lyteAvatarLoadingContMixin() {
+    @w: 100%;
+    @h: 100%;
+    @bg: @lyteAvatarItemLoadingBg;
+    @border-radius: 50%;
+}
+.lyteAvatarLoadingMixin() {
+    @h: 200%;
+    @w: 200%;
+    @bg: linear-gradient(to bottom @value-position-right, #eee 0%, #ddd 25%, #eee 50%, #ddd 75%, #eee 100%);
+}

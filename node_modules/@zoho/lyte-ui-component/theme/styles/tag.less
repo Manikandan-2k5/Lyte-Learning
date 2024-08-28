@@ -1,0 +1,104 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/tag/tag.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{tag}/ui-elements/tag/tag.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{tag}/global/@{direction}.less";
+
+/* Loading custom themes */
+
+@import (optional) "../overrides/ui-elements/tag.variables.less";
+
+/* tag styles BEGINS */
+
+
+lyte-tag {
+	position: relative;
+	display: block;
+}
+
+lyte-tag-label {
+    .tagLabel();
+    padding-bottom: @padding-bottom;
+}
+
+lyte-tag lyte-dropdown {
+    .tagCompDropdown();
+    width: @w;
+    display: inline-block;
+}
+
+lyte-tag-description {
+    .tagDescription();
+    opacity: @opacity;
+    font-size: @font-size;
+    white-space: nowrap;
+}
+
+.lyteTagDropdown lyte-drop-item {
+    .tagDropdownItem();
+    @{property-padding-left}: @padding-left;
+    display: flex;
+    flex-direction: @flex-direction;
+}
+
+.lyteTagDropdown lyte-drop-item.lyteDropdownActive {
+    display: none;
+}
+
+lyte-tag lyte-dropdown .lyteTagInputLi {
+    .tagInputLi();
+    background: @bg;
+    border: @border;
+    padding: @padding;
+    margin: @margin;
+    width: auto;
+    max-width: 100%;
+}
+
+
+lyte-tag lyte-dropdown .lyteTagInputLi input {
+    max-width: 100%;
+}
+
+lyte-tag .lyteTagItem {
+    display: block;
+    max-width: 100%;
+    -ms-word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+lyte-tag .lyteTagRemoveIcon lyte-drop-button::after {
+    display: none;
+}
+
+.lyteTagDropdown .lyteTagHidden {
+    display: none;
+}
+
+.lyteTagDropdown .lyteTagGroupHidden {
+    display: none;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{tag}/ui-elements/tag/tag.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/tag.overrides.less";
+
+/* tag styles ENDS */

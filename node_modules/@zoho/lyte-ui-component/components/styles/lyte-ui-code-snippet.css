@@ -1,0 +1,176 @@
+lyte-code-snippet {
+	display: block;
+	position: relative;
+}
+.lyteCSCopyButton {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+.lyteCSCopyButton .lyteDefaultBtn {
+	background: #EEF6FC;
+	border: 1px solid #0984E3;
+	border-radius: 5px;
+	color: #0984E3;
+	text-transform: capitalize;
+}
+.lyteCSContainer {
+	display: flex;
+	background: #F6FAFD;
+	border: 1px solid #DCEDF9;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 18px;
+	overflow: auto;
+	box-sizing: border-box;
+}
+.lyteCSLineNumberContainer {
+	padding: 15px;
+}
+.lyteCSLineNumber {
+	display: block;
+	color: #496A83;
+	text-align: right;
+}
+.lyteCSCodeContainer {
+	padding: 15px;
+	white-space: pre;
+	flex-grow: 1;
+}
+
+.lyteTagNameCls {
+	color: #04F;
+}
+
+.lytePunctuationCls {
+	color: #04F;
+}
+
+.lyteContentCls {
+	color: #333;
+}
+
+.lyteAttributeEqualsCls {
+	color: #800080;
+}
+
+.lyteAttributeNameCls {
+	color: #800080;
+}
+
+.lyteAttributeValueCls {
+	color: #006203;
+}
+
+.lyteEntityCls {
+	color: #ff2f2f;
+}
+
+.lyteCommentCls {
+	color: #737373;
+}
+
+.lyteCSSSelector {
+	color: #006203;
+}
+
+.lyteCSSRuleName {
+	color: #333;
+}
+
+.lyteCSSPunctuation {
+	color: #333;
+}
+
+.lyteCSSRuleValue {
+	color: #B24A00;
+}
+
+.lyteCSSCombinator {
+	color: #ff00ff;
+}
+
+.lyteCSSAttributeName {
+	color: #800080;
+}
+
+.lyteCSSAttributeValue {
+	color: #04F;
+}
+
+.lyteCSSColorValue {
+	color: orange;
+}
+
+.lyteJSKeyword {
+	color: #800080;
+}
+
+.lyteJSIndentifier {
+	color: #333;
+}
+
+.lyteJSOperator {
+	color: #800080;
+}
+
+.lyteJSPunctuator {
+	color: #1A1A1A;
+}
+
+.lyteJSNumber {
+	color: #B24A00;
+}
+
+.lyteJSStringLiteral {
+	color: #f4f491;
+}
+.lyteJSComment {
+	color: #5f5757;
+}
+
+.lyteJSRegex {
+	color: #00b483;
+}
+
+.lyteJSBoolean {
+	color: #6c58ff;
+}
+.lyteJSFunction {
+	color: #006203;
+}
+
+.lyteJSNull,
+.lyteJSUndefined {
+	color: #6c58ff;
+}
+
+.lyteCodeSnippetTransparentBg .lyteCSContainer {
+	background: transparent;
+}
+.lyteCodeSnippetNumberSectionBg .lyteCSLineNumberContainer {
+	background: #eef6fc;
+}
+.lyteCSCopyIcon {
+	display: flex;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	right: 8px;
+	top: 8px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.lyteCSCopyIcon:hover {
+	background: #dcedf9;
+}
+.lyteCSCopyIcon::after {
+	content: '';
+	background-image: url(../images/sprite_lyte.svg);
+	background-position: -263px -61px;
+	width: 16px;
+	height: 16px;
+	display: block;
+}

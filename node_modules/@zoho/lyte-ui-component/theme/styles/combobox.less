@@ -1,0 +1,74 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/combobox/combobox.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{combobox}/ui-elements/combobox/combobox.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{combobox}/global/@{direction}.less";
+
+
+lyte-combobox lyte-dropdown {
+    .lyteComboboxDropdownMixin();
+    display: block;
+    width: 100%;
+    max-width: @max-w;
+}
+
+.lyteComboboxButtonSearch.lyteComboboxSearchPresent .lyteDropPlaceholderNormal,
+.lyteComboboxButtonSearch.lyteComboboxSearchPresent .lyteDropdownLabel,
+lyte-combobox.buttonSearch.lyteComboboxSearchPresent .lyteDropPlaceholderNormal,
+lyte-combobox.buttonSearch.lyteComboboxSearchPresent .lyteDropdownLabel {
+    .lyteComboboxButtonSearchDropdownPlaceholderMixin();
+    position: absolute;
+    z-index: @z-index;
+    pointer-events: none;
+    @{property-padding-left}: @padding-left;
+}
+.lyteComboboxButtonSearch .lyteDropButtonDown .lyteDropdownLabel,
+.lyteComboboxButtonSearch .lyteDropButtonUp .lyteDropdownLabel,
+lyte-combobox.buttonSearch .lyteDropButtonDown .lyteDropdownLabel,
+lyte-combobox.buttonSearch .lyteDropButtonUp .lyteDropdownLabel {
+    .lyteComboboxButtonSearchDropdownOpenedLabelMixin();
+    opacity: @opacity;
+}
+.lyteComboboxFiltering .lyteDropPlaceholderNormal,
+.lyteComboboxButtonSearch .lyteComboboxFiltering .lyteDropdownLabel {
+    opacity: 0;
+}
+.lyteComboboxBtnSearchInput {
+    width: 100%;
+}
+.lyteInput.lyteComboboxBtnSearchInput[lt-prop-type="search"] .lyteComboboxBtnSearchOrigIpt {
+    .lyteComboboxBtnSearchInputOrigIptMixin();
+    padding: @padding;
+    @{property-padding-left}: @padding-left;
+}
+.lyteComboboxBtnSearchInput.lyteInputFocus .lyteField,
+.lyteComboboxBtnSearchInput .lyteField:hover,
+.lyteComboboxBtnSearchInput .lyteField {
+    border: 0;
+}
+.lyteComboboxBtnSearchInput[lt-prop-type="search"] .searchIcon {
+    .lyteComboboxBtnSearchInputSearchIconMixin();
+    @{property-left}: @left;
+}
+
+
+
+.lyteComboboxDropboxSearch {
+    .lyteComboboxDropboxSearchCommonMixin();
+    box-sizing: border-box;
+    width: @w;
+}
+.lyteComboboxDropboxSearch.lyteInputBox {
+    .lyteComboboxDropboxSearchMixin();
+    padding: @padding;
+}

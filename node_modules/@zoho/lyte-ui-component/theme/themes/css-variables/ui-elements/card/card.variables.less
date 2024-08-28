@@ -1,0 +1,14 @@
+:root {
+	--lyte-card-bg: @themeBodyBackground;
+	--lyte-card-boxshadow-color: rgba(0, 0, 0, 0.1);
+	--lyte-card-img-bg: #eee;
+	--lyte-card-text-color: @commonTextColor;
+	--lyte-card-render-placeholder-bg: #eee;
+}
+
+.lyteCardBoxMixin() {
+	@box-shadow: 0 1px 3px 2px var(--lyte-card-boxshadow-color);
+}
+.lyteCardRenderPlaceholderMixin() {
+	@bg: var(--lyte-card-render-placeholder-bg);
+}

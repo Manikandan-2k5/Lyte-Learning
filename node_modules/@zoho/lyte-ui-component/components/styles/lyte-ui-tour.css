@@ -1,0 +1,70 @@
+.lyteTourStep{
+  display: none;
+}
+.lyteTourFreezLayer{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.6;
+  z-index: 1000000;
+}
+.lyteTourActiveTarget{
+  z-index: 1100000;
+  /* position: relative; */
+}
+.lyteTourTargetBackground{
+  position: absolute;
+  background: white;
+  z-index: 1020000;
+  transition: top 0.3s;
+}
+.lyteTourContainer{
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  z-index: 1100000;
+}
+.lyteHintContainer{
+  background: #ccc;
+  width: 100%;
+  height: 100%;
+}
+.lyteTourStep{
+  width: 100%;
+  height: 100%;
+}
+.lyteTourActive,
+.lyteTourActiveStep{
+  display: block;
+}
+.lyteTourArrow{
+  transform: rotate(45deg);
+  position: absolute;
+  transition: 0.3s;
+  /* background: red; */
+}
+
+.lyteTourLeftArrow{
+  display: none;
+  /* left: -5px; */
+}
+.lyteTourRightArrow{
+  display: none;
+  right: 0px;
+}
+.lyteTourBottomArrow{
+  display: none;
+  bottom: 0px;
+}
+.lyteTourTopArrow{
+  display: none;
+  /* top: -5px; */
+}
+.lyteTourDefaultArrow{
+  display: block;
+}

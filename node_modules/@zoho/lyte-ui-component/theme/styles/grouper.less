@@ -1,0 +1,86 @@
+lyte-grouper {
+  display: block;
+}
+lyte-grouper .lyteGroupWrap {
+  display: flex;
+}
+lyte-grouper .lyteGroupWrap.lyteGroupVertical {
+  flex-direction: column;
+}
+lyte-grouper lyte-button {
+  flex-grow: 1;
+}
+lyte-grouper lyte-button button {
+  border-radius: 0;
+  width: 100%;
+}
+lyte-grouper .lyteGroupHorizontal lyte-button:first-child button {
+  border-radius: 2px 0 0 2px;
+}
+lyte-grouper .lyteGroupHorizontal lyte-button:last-child button {
+  border-radius: 0 2px 2px 0;
+}
+lyte-grouper .lyteGroupVertical lyte-button:first-child button {
+  border-radius: 2px 2px 0 0;
+}
+lyte-grouper .lyteGroupVertical lyte-button:last-child button {
+  border-radius: 0 0 2px 2px;
+}
+lyte-grouper .fillType lyte-button button.lyteDefaultBtn {
+  border: 0;
+  background: #e0e1e2;
+}
+lyte-grouper .fillType lyte-button button.lyteDefaultBtn:hover {
+  border: 0;
+  background: #cacbcd;
+}
+lyte-grouper .lineType lyte-button button.lyteDefaultBtn {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+lyte-grouper .lineType.lyteGroupHorizontal lyte-button button.lyteDefaultBtn {
+  border-right: 0;
+}
+lyte-grouper .lineType.lyteGroupVertical lyte-button button.lyteDefaultBtn {
+  border-bottom: 0;
+}
+lyte-grouper .lineType lyte-button button.lyteDefaultBtn:hover {
+  background: #f5f5f5;
+}
+lyte-grouper .lineType.lyteGroupHorizontal lyte-button:last-child button.lyteDefaultBtn {
+  border-right: 1px solid #ddd;
+}
+lyte-grouper .lineType.lyteGroupVertical lyte-button:last-child button.lyteDefaultBtn {
+  border-bottom: 1px solid #ddd;
+}
+
+.lyteGrouperInputOrDropdown .lyteGroupHorizontal {
+	border: 1px solid #d6d6d6;
+	border-radius: 2px;
+}
+.lyteGrouperInputOrDropdown .lyteGroupHorizontal:hover {
+	border: 1px solid #c1c1c1;
+}
+.lyteGrouperInputOrDropdown .lyteGrouperFocused:hover,
+.lyteGrouperInputOrDropdown .lyteGrouperFocused {
+	border: 1px solid #7fceef;
+}
+lyte-grouper .lyteGrouperItem {
+	border-right: 1px solid #d6d6d6;
+	flex: 1;
+}
+lyte-grouper .lyteGrouperItem:last-child {
+	border-right: 0;
+}
+lyte-grouper lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+lyte-grouper lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-grouper lyte-drop-button:hover,
+lyte-grouper lyte-drop-button {
+	border: 0;
+	box-shadow: none;
+}
+lyte-grouper .lyteInputBox.lyteInputFocus .lyteField,
+lyte-grouper .lyteInputBox .lyteField:hover,
+lyte-grouper .lyteInputBox .lyteField {
+	border: 0;
+}

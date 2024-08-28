@@ -1,0 +1,28 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.draggable-element {
+  cursor: move;
+}
+.lyteSortableParent .lyteDraggablePlaceholder {
+  background: #f6fad2;
+  border: 1px solid #edf2c3;
+  box-sizing: border-box;
+}
+.lyteSortableParent .lyteDraggableDisabledPlaceholder {
+  background: #f5c7c7;
+  border: 1px solid #f4a7a7;
+  box-sizing: border-box;
+}
+.stopDefaultMove {
+  touch-action: none;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */

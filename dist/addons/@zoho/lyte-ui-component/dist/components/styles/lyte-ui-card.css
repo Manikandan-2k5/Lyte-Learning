@@ -1,0 +1,37 @@
+lyte-card {
+    font-family: 'LatoRegular', sans-serif;
+    display: block;
+}
+lyte-card-box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px 2px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    text-align: left;
+    background: #fff;
+}
+lyte-card-image {
+    padding: 30px 20px;
+    background: #eee;
+    border-radius: 2px 2px 0 0;
+}
+lyte-card-header {
+    font-family: 'LatoBold', sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+lyte-card-body {
+    font-size: 14px;
+    padding: 5px 20px;
+}
+lyte-card-footer {
+    padding: 10px 20px;
+}
+.lyteCardImgElem {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+}

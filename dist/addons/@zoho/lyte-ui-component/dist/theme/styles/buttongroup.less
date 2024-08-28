@@ -1,0 +1,93 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/buttongroup/buttongroup.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{buttongroup}/ui-elements/buttongroup/buttongroup.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{buttongroup}/global/@{direction}.less";
+
+lyte-button-group {
+	display: block;
+}
+lyte-button-group .lyteBtnGroupWrap {
+	display: flex;
+}
+lyte-button-group .lyteGroupVertical .lyteBtnGroupWrap {
+	flex-direction: column;
+}
+lyte-button-group lyte-button {
+	flex-grow: 1;
+}
+lyte-button-group lyte-button button {
+	border-radius: 0;
+	width: 100%;
+}
+lyte-button-group .lyteGroupHorizontal lyte-button:first-child button {
+	.buttonGroupHorizontalFirstBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupHorizontal lyte-button:last-child button {
+	.buttonGroupHorizontalLastBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupVertical lyte-button:first-child button {
+	.buttonGroupVerticalFirstBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupVertical lyte-button:last-child button {
+	.buttonGroupVerticalLastBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .fillType lyte-button button.lyteDefaultBtn {
+	.buttonGroupFillTypeDefaultBtnMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .fillType lyte-button button.lyteDefaultBtn:hover {
+	.buttonGroupFillTypeDefaultBtnHoverMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .fillType lyte-button button.lyteBtnGroupSelectedBtn:hover,
+lyte-button-group .fillType lyte-button button.lyteBtnGroupSelectedBtn {
+	.buttonGroupFillTypeBtnSelectedMixin();
+	background: @bg;
+	color: @color;
+}
+lyte-button-group .lineType lyte-button button.lyteDefaultBtn {
+	.buttonGroupLineTypeDefaultBtnMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .lineType.lyteGroupHorizontal lyte-button button.lyteDefaultBtn {
+	border-right: 0;
+}
+lyte-button-group .lineType.lyteGroupVertical lyte-button button.lyteDefaultBtn {
+	border-bottom: 0;
+}
+lyte-button-group .lineType lyte-button button.lyteDefaultBtn:hover {
+	.buttonGroupLineTypeDefaultBtnHoverMixin();
+	background: @bg;
+}
+lyte-button-group .lineType.lyteGroupHorizontal lyte-button:last-child button.lyteDefaultBtn {
+	.buttonGroupLineTypeLastBtnMixin();
+	border-right: @border-right;
+}
+lyte-button-group .lineType.lyteGroupVertical lyte-button:last-child button.lyteDefaultBtn {
+	.buttonGroupLineTypeVerticalLastBtnMixin();
+	border-bottom: @border-bottom;
+}
+lyte-button-group .lineType lyte-button button.lyteBtnGroupSelectedBtn:hover,
+lyte-button-group .lineType lyte-button button.lyteBtnGroupSelectedBtn {
+	.buttonGroupLineTypeSelectedBtnMixin();
+	background: @bg;
+	color: @color;
+}
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{buttongroup}/ui-elements/buttongroup/buttongroup.styles.less";

@@ -1,0 +1,19 @@
+:root {
+	--lyte-navigator-text-color: @commonTextColor;
+	--lyte-navigator-text-hover-color: @commonTextHoverColor;
+	--lyte-navigator-num-hover-border-color: #aaa;
+	--lyte-navigator-arrow-border-color: #c4c4c4;
+	--lyte-navigator-active-color: @themeActiveElementBg;
+	--lyte-navigator-default-middle-text-color: #a2a2a2;
+	--lyte-navigator-simple-item-hover-bg: #e6f3fd;
+	--lyte-navigator-simple-active-item-text-color: #fff;
+}
+.lyteNavigatorText() {
+	@color: var(--lyte-navigator-default-middle-text-color);
+}
+.simpleTypeHover() {
+	@bg: var(--lyte-navigator-simple-item-hover-bg);
+}
+.simpleTypeActive() {
+	@color: var(--lyte-navigator-simple-active-item-text-color);
+}

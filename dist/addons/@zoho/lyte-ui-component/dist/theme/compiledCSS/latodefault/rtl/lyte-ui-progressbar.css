@@ -1,0 +1,170 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-PROGRESSBAR BEGINS  */
+.lyteProgressBar {
+  position: relative;
+}
+.lyteProgressBar.lyteHorizontal {
+  height: 14px;
+  width: calc(100% - 200px);
+  background: #e5e5e5;
+  border-radius: 8px;
+}
+.lyteProgressBar .lyteProgressStatus {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background: #51a2ee;
+  color: #fff;
+  transition: width 0.25s;
+}
+.lyteProgressBar .lyteProgressStatus .progressMovingObj,
+.lyteProgressBar .lyteProgressStatusStack .progressMovingObj {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  background-image: linear-gradient(-45deg, rgba(221, 221, 221, 0.29) 25%, transparent 25%, transparent 50%, rgba(221, 221, 221, 0.29) 50%, rgba(221, 221, 221, 0.29) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  animation: move 1s linear infinite;
+  border-radius: 20px;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+.lyteProgressBar .lyteProgressPercentage {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+}
+.lyteProgressBar.lyteProgressCompleted .lyteProgressStatus {
+  background: #3fbd5f;
+}
+/*  Radial progress bar related CSS -- BEGINS   */
+.lyteProgressBar.lyteCircle {
+  width: 100px;
+  height: 100px;
+}
+.lyteProgressBar .lyteCircleType {
+  position: relative;
+  display: inline-block;
+}
+.lyteCircleType svg {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 17px;
+  fill: #444;
+}
+.lyteProgressBar.lyteCircle .svgValueEle {
+  transform: rotate(-90deg);
+}
+.lyteProgressBar.lyteCircle circle:first-child {
+  stroke: #DCE0E3;
+}
+.lyteProgressBar.lyteCircle circle {
+  transition: stroke-dashoffset 0.25s linear;
+}
+/*  Radial progress bar related CSS -- ENDS   */
+/*  Indeterminate horizontal progress bar related CSS -- BEGINS   */
+.lyteIndeterminate {
+  overflow: hidden;
+}
+.inc {
+  animation: increase 2s infinite;
+}
+.dec {
+  animation: decrease 2s 0.5s infinite;
+}
+@keyframes increase {
+  from {
+    left: -5%;
+    width: 5%;
+  }
+  to {
+    left: 130%;
+    width: 100%;
+  }
+}
+@keyframes decrease {
+  from {
+    left: -80%;
+    width: 80%;
+  }
+  to {
+    left: 110%;
+    width: 10%;
+  }
+}
+/*  Indeterminate horizontal progress bar related CSS -- ENDS   */
+/*  stacked progress bar related CSS -- BEGINS   */
+.lyteStacked,
+.lyteProgressStatusStack {
+  display: flex;
+  overflow: hidden;
+}
+.lyteStacked .lyteProgressStatusStack {
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #007bff;
+  transition: width 2s linear;
+}
+/*  stacked progress bar related CSS -- ENDS   */
+/*  vertical progress bar related CSS -- BEGINS   */
+.lyteProgressBar.lyteVertical {
+  background-color: #e5e5e5;
+  background-position: 50% 50%;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.lyteProgressBar .lyteProgressStatusVertical {
+  border-radius: 8px;
+  background: #51a2ee;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: height 0.25s;
+  left: 0px;
+}
+.lyteProgressStatusVertical.up {
+  bottom: 0px;
+}
+.lyteProgressStatusVertical.down {
+  top: 0px;
+}
+.lyteProgressStatusVertical .lyteProgressPercentage {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*  vertical progress bar related CSS -- ENDS   */
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-PROGRESSBAR END*/

@@ -1,0 +1,142 @@
+table-tree {
+  display: block;
+  height: inherit;
+  margin:0;
+  margin-left: 500px;
+}
+lyte-tree-table{
+  display: table;
+ 
+  border: none;
+  
+}
+lyte-tree-tr {
+  display: table-row;
+ 
+  
+  
+}
+
+lyte-tree-thead {
+  display: table-header-group;
+ 
+  background-color: gray;
+}
+lyte-tree-th {
+  
+    background-color:#c4c4c4;
+  
+  display: table-cell;
+  word-wrap: normal;
+  overflow: hidden;
+
+  
+}
+.leftend{
+ /* background-image: url('/components/images/arrow-l.gif');
+  background-repeat: no-repeat;
+  background-position: center;*/
+/*padding-<left|right>: <width of image>px;*/
+}
+.rigthend{
+ /* background-image: url('/components/images/arrow-r.gif');
+  background-repeat: no-repeat;
+  background-position: center;*/
+/*padding-<left|right>: <width of image>px;*/
+}
+lyte-tree-body {
+  display: table-row-group;
+  }
+ lyte-tree-td {
+ 
+  display: table-cell;
+   
+  
+}
+.col-reoder-div{
+  position: absolute;
+  background-color: white;
+  opacity: 2px;
+  height: 25px;
+  text-align: center;
+  border: 2px black solid;
+  z-index: 12;
+}
+.fixedtable {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+
+}
+.container{
+  width: 600px;
+  
+  overflow-y: scroll;
+   overflow-x: hidden;
+  position: relative;
+}
+
+.tablediv::-webkit-scrollbar {
+    display: none;
+}
+.parallelcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.fixeddiv{
+    /*width: 0px;*/
+    position: absolute;
+    background: white;
+    z-index: 10;
+    
+
+}
+.tablediv{
+    overflow: auto;
+    width: 100%;
+
+}
+.parallelcontainer{
+
+  position: absolute;
+z-index: 11;
+
+background-color: white;
+}
+button{
+  padding: 0px;
+  height: 10px;
+  width: 16px;
+  text-align: center;
+}
+.scroll{
+
+  min-width: 50px;
+  height: 10px; 
+    position: absolute;
+
+  
+}
+.scrollbar{
+  bottom: 0;
+  height: 10px;
+}
+
+table{
+  position: relative;
+  /*word-wrap: break-word;*/
+  white-space: nowrap;
+ /* margin-left: 500px;*/
+}
+
+th{
+  background-color:#c4c4c4;
+  border-bottom: 0px;
+  height: 50px;
+}
+table-tree{
+  display: block;
+}
+td {
+  
+    height: 50px;
+    border-bottom: 1px solid gray;
+  }

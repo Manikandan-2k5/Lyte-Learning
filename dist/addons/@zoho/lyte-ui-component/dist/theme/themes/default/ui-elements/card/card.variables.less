@@ -1,0 +1,39 @@
+.lyteCardMixin() {
+    @font-family: @primaryFont;
+}
+.lyteCardBoxMixin() {
+    @box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1);
+    @border-radius: 3px;
+    @text-align: @value-textalign-left;
+    @bg: @cardBg;
+    @color: @cardTextColor;
+}
+.lyteCardImageMixin() {
+    @padding: 30px 20px;
+    @bg: @cardImgBg;
+    @border-radius: 2px 2px 0 0;
+}
+.lyteCardHeaderMixin() {
+    @font-family: @secondaryFont;
+    @font-size: 18px;
+    @padding: 10px 20px;
+}
+.lyteCardBodyMixin() {
+    @font-size: 14px;
+    @padding: 5px 20px;
+}
+.lyteCardFooterMixin() {
+    @padding: 10px 20px;
+}
+.lyteCardImgElemMixin() {
+    @w: 100px;
+    @h: 100px;
+    @border-radius: 50%;
+}
+.lyteCardRenderPlaceholderMixin() {
+    @min-h: 100px;
+    @h: 100%;
+    @w: 100%;
+    @bg: #eee;
+    @border-radius: 3px;
+}

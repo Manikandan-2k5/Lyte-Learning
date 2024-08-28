@@ -1,0 +1,41 @@
+.buttonGroupHorizontalFirstBtnMixin() {
+	@border-radius: 2px 0 0 2px;
+}
+.buttonGroupHorizontalLastBtnMixin() {
+	@border-radius: 0 2px 2px 0;
+}
+.buttonGroupVerticalFirstBtnMixin() {
+	@border-radius: 2px 2px 0 0;
+}
+.buttonGroupVerticalLastBtnMixin() {
+	@border-radius: 0 0 2px 2px;
+}
+.buttonGroupFillTypeDefaultBtnMixin() {
+	@border: 0;
+	@bg: @buttongGroupFillBg;
+}
+.buttonGroupFillTypeDefaultBtnHoverMixin() {
+	@border: 0;
+	@bg: @buttonGroupFillHoverBg;
+}
+.buttonGroupFillTypeBtnSelectedMixin() {
+	@bg: @buttonGroupFillSelectedBg;
+	@color: @buttonGroupTextColor;
+}
+.buttonGroupLineTypeDefaultBtnMixin() {
+	@border: 1px solid @buttonGroupBtnBorderColor;
+	@bg: @buttonGroupLineTypeBg;
+}
+.buttonGroupLineTypeDefaultBtnHoverMixin() {
+	@bg: @buttonGroupLineTypeHoverBg;
+}
+.buttonGroupLineTypeLastBtnMixin() {
+	@border-right: 1px solid @buttonGroupBtnBorderColor;
+}
+.buttonGroupLineTypeVerticalLastBtnMixin() {
+	@border-bottom: 1px solid @buttonGroupBtnBorderColor;
+}
+.buttonGroupLineTypeSelectedBtnMixin() {
+	@bg: @buttonGroupLineTypeSelectedBg;
+	@color: @buttonGroupTextColor;
+}

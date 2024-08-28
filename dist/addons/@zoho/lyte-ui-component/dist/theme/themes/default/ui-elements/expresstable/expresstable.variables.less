@@ -1,0 +1,76 @@
+.ExpTableFixedColHeaderMixin() {
+	@box-shadow: 3px 0 5px 0px @expressTableFixedBoxShadow;
+	@bg: #fff;
+	@border-right: 1px solid @expressTableBorderColor;
+}
+.ExpTableWrapperMixin() {
+	@border: 1px solid @expressTableBorderColor;
+}
+.ExpTableSortableHelperContMixin() {
+	@z-index: 1080;
+	@transform:translate(0px,0px);
+	@bg: #fff;
+}
+.ExpTableFakeHeaderWrapperMixin() {
+	@left: 0;
+	@right: 0;
+	@top: 0;
+	@bg: #fff;
+    @z-index: 10;
+}
+.ExpTableHeadAndCellMixin() {
+	@padding: 12px 15px;
+	@border-bottom: 1px solid @expressTableBorderColor;
+}
+.ExpTableHeadMixin() {
+	@bg: @expressTableThBg;
+	@min-w: 50px;
+}
+.ExpTableFixedColWrapperMixin() {
+	@bg: #fff;
+	@border-right: 1px solid @expressTableBorderColor;
+	@box-shadow: 3px 0 5px 0px @expressTableFixedBoxShadow;
+    @h: 100%;
+}
+.ExpTableFixedColWrapperNoShadowMixin() {
+    @border-right: 1px solid transparent;
+}
+.ExpTableHeadResizeMixin() {
+    @h: 100%;
+    @w: 21px;
+    @top: 0;
+    @z-index: 9;
+    @right: -12px;
+}
+.ExpTableHeadResizeAfterMixin() {
+	@w: 3px;
+	@h: 100%;
+	@right: 10px;
+}
+.ExpTableHeadResizeHoverAfterMixin() {
+    @bg: @expressTableBg;
+}
+
+
+.lyteExpStickyTableWrapperMixin() {
+    @border: 0;
+}
+.lyteExpStickyTableInnerWrapMixin() {
+    @w: 100%;
+    @border: 1px solid #e2e2e2;
+}
+.lyteExpStickyTableHeaderGroupMixin() {
+    @opacity: 1;
+}
+.lyteExpStickyTableThMixin() {
+    @top: 0;
+    @z-index: 10;
+    @bg: @expressTableThBg;
+}
+.lyteExpStickyTableThFixedColMixin() {
+    @z-index: 15;
+}
+.lyteExpStickyTableTdFixedColMixin() {
+    @z-index: 5;
+    @bg: #fff;
+}

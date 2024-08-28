@@ -1,0 +1,41 @@
+.lyteBadge{
+  font-family: 'LatoRegular', sans-serif;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 12px;
+  background: #f00;
+  border: solid 1px #fff;
+}
+.lyteBadgeContent{
+  color: #fff;
+  font-size: 8px;
+  margin: auto;
+}
+.lyteBadgeWidHeiD{
+  min-width: 10px;
+  height: 10px;
+  line-height: 10px;
+}
+.lyteBadgeWidHeiWD{
+  min-width: 6px;
+  height: 6px;
+}
+.lyteBadgeTopRight{
+  right: -3px;
+  top: -3px;
+}
+.lyteBadgeTopLeft{
+  left: -3px;
+  top: -3px;
+}
+.lyteBadgeBottomRight{
+  right: -3px;
+  bottom: -3px;
+}
+.lyteBadgeBottomLeft{
+  left: -3px;
+  bottom: -3px;
+}

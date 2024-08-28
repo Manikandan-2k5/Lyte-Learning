@@ -1,0 +1,172 @@
+.lyteClockMixin() {
+    @font-family: @primaryFont;
+    @color: @clockTextColor;
+}
+.lyteClkFrameOuterMixin() {
+    @padding: 10px;
+    @border-radius: 50%;
+    @bg: linear-gradient(#fff, #fff 35%, #f5f5f5 50%, #eee);
+    @box-shadow: 0 0 10px 0px rgba(0,0,0,0.2);
+}
+.lyteClkFrameInnerMixin() {
+    @w: 160px;
+    @h: 160px;
+    @border-radius: 50%;
+    @bg: linear-gradient(#ddd, #eee 40%, #f5f5f5 60%, #fff);
+}
+.lyteClkAlogTikMixin() {
+    @top: 0;
+    @bottom: 0;
+    @w: 1px;
+}
+.lyteClkTik126Mixin() {
+    @border-top: 12px solid #bbb;
+    @border-bottom: 12px solid #bbb;
+}
+.lyteClkSmallTiksMixin() {
+    @border-top: 4px solid #bbb;
+    @border-bottom: 4px solid #bbb;
+}
+.lyteClkTik17Mixin() {
+    @transform: rotate(30deg);
+}
+.lyteClkTik28Mixin() {
+    @transform: rotate(60deg);
+}
+.lyteClkTik39Mixin() {
+    @transform: rotate(90deg);
+}
+.lyteClkTik410Mixin() {
+    @transform: rotate(120deg);
+}
+.lyteClkTik511Mixin() {
+    @transform: rotate(150deg);
+}
+.lyteClkAlogDialMixin() {
+    @top: 0;
+    @bottom: 0;
+    @transform: rotate(0deg);
+}
+.lyteClockMidCircleMixin() {
+    @h: 15px;
+    @w: 15px;
+    @border-radius: 50%;
+    @bg: #fff;
+    @z-index: 10;
+    @box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+.lyteClockHrDialMixin() {
+    @w: 5px;
+    @left: calc(50% - 2px);
+}
+.lyteClockMinDialMixin() {
+    @w: 3px;
+    @left: calc(50% - 1px);
+}
+.lyteClockSecDialMixin() {
+    @w: 1px;
+    @left: 50%;
+}
+.lyteClkDialsMixin() {
+    @border-radius: 10px;
+    @bottom: 50%;
+    @bg: #666;
+    @w: 100%;
+}
+.lyteClkHrDialElemMixin() {
+    @h: 30%;
+}
+.lyteClkMinDialElemMixin() {
+    @h: 40%;
+}
+.lyteClkSecDialElemMixin() {
+    @h: 50%;
+    @bg: #f00;
+}
+.lyteClkWatchMixin() {
+    @font-size: 20px;
+}
+.lyteClkWatchColonMixin() {
+    @margin: 0 5px;
+}
+.lyteClkWatchDefAMPMMixin() {
+    @margin-left: 5px;
+}
+.lyteClkWatchFrameAMPMMixin() {
+    @bottom: 30px;
+    @w: 100%;
+    @left: 0;
+    @font-size: 14px;
+}
+.lyteClkTimerDefLabelMixin() {
+	@font-size: 15px;
+	@color: #777;
+}
+.lyteClkTimerFrameBoxMixin() {
+    @padding-bottom: 20px;
+}
+.lyteClkTimerFrameLabelMixin() {
+    @font-size: 10px;
+    @bottom: 0;
+    @w: 100%;
+    @left: 0;
+}
+
+.lyteClockStopWatchMixin() {
+    @border: 1px solid #d6d6d6;
+    @border-radius: 5px;
+}
+.lyteClockStopWatchOuterDivMixin() {
+    @margin: 20px 20px 0;
+}
+.lyteClockSwLapWrapperMixin() {
+    @border-top: 1px solid #d6d6d6;
+}
+.lyteClockSwWrapMixin() {
+    @font-size: 20px;
+}
+.lyteClockSwLapMixin() {
+	@font-size: 16px;
+	@margin: 5px 0;
+    @border-bottom: 1px solid #d6d6d6;
+    @padding: 5px 0;
+}
+.lyteClockSwLapLastChildMixin() {
+    @border-bottom: 0;
+}
+.lyteClockSwLapLabelMixin() {
+    @padding: 0 20px;
+}
+.lyteClockSwLapTimeMixin() {
+	@padding: 0 20px;
+}
+.lyteClockSwActionBtnWrapMixin() {
+    @padding: 0 20px 15px;
+}
+.lyteClockSwActionBtnMixin() {
+    @w: 50px;
+    @h: 50px;
+    @font-size: 14px;
+    @border-radius: 50%;
+}
+.lyteClockSWStartMixin() {
+    @border: 1px solid #5ba1e5;
+    @color: #5ba1e5;
+}
+.lyteClockSWStartHoverMixin() {
+    @bg: #e6f3fd;
+}
+.lyteClockSWResetMixin() {
+    @border: 1px solid #666;
+    @color: #666;
+}
+.lyteClockSWResetHoverMixin() {
+    @bg: #eee;
+}
+.lyteClockSWPauseMixin() {
+    @border: 1px solid #ec4844;
+    @color: #ec4844;
+}
+.lyteClockSWPauseHoverMixin() {
+    @bg: #ffe3e3;
+}

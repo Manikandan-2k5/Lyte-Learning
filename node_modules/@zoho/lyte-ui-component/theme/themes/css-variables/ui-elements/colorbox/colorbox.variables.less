@@ -1,0 +1,52 @@
+:root {
+	--lyte-colorbox-freeze-bg: #000;
+	--lyte-colorbox-wrapper-bg: #fff;
+	--lyte-colorbox-text-color: #111;
+	--lyte-colorbox-zindex: @Level3zIndex;
+	--lyte-colorbox-customtype-header-border-color: #ebebeb;
+	--lyte-colorbox-customtype-thumb-hover-border-color: #ccc;
+	--lyte-colorbox-thumb-active-border-color: #fff;
+	--lyte-colorbox-thumb-index-text-color: #fff;
+	--lyte-colorbox-thumb-iframe-label-text-color: #fff;
+	--lyte-colorbox-nav-border-color: #555;
+	--lyte-colorbox-nav-bg: #222;
+	--lyte-colorbox-nav-hover-bg: #000;
+	--lyte-colorbox-utilbox-bg: #000;
+	--lyte-colorbox-imagetype-header-bg: #222;
+	--lyte-colorbox-imagetype-header-text-color: #fff;
+}
+
+.ColorboxHeader() {
+	@border-top: 1px solid var(--lyte-colorbox-customtype-header-border-color);
+}
+.ColorboxThumbHover() {
+	@border: 1px solid var(--lyte-colorbox-customtype-thumb-hover-border-color);
+}
+.ColorboxThumbThumbOn() {
+	@border: 1px solid var(--lyte-colorbox-thumb-active-border-color);
+}
+.ColorboxThumbThumbOnAfter() {
+	@color: var(--lyte-colorbox-thumb-index-text-color);
+}
+.lyteCBoxIframeLabelMixin() {
+	@color: var(--lyte-colorbox-thumb-iframe-label-text-color);
+}
+.ColorboxIconDiv() {
+	@border: 1px solid var(--lyte-colorbox-nav-border-color);
+	@bg: var(--lyte-colorbox-nav-bg);
+}
+.ColorboxIconDivHover() {
+	@bg: var(--lyte-colorbox-nav-hover-bg);
+}
+.ColorboxUtilDiv() {
+	@bg: var(--lyte-colorbox-utilbox-bg);
+}
+.colorboxhidevisibilityhover() {
+	@bg: var(--lyte-colorbox-nav-bg);
+}
+.colorboxHeaderMixin() {
+	@bg: var(--lyte-colorbox-imagetype-header-bg);
+}
+.colorboxTitleMixin() {
+	@color: var(--lyte-colorbox-imagetype-header-text-color);
+}

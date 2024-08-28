@@ -1,0 +1,47 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Loading theme in configuration */
+/* rtl files loading */
+.lyteTextWrapper,
+lyte-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+lyte-text {
+  max-width: 100%;
+}
+lyte-text::after {
+  content: '';
+  display: block ;
+}
+.lyteTextNoSpace {
+  display: inline-flex;
+}
+.lyteTextWrapper {
+  vertical-align: text-bottom;
+}
+.lyteTextSuffix {
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+.lyteTextIndividual:last-child .lyteTextComma {
+  display: none;
+}
+.lyteTextRenderDiv {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+}
+.lyteTextIndividual {
+  display: flex;
+}
+.lyteTextComma {
+  white-space: pre;
+}

@@ -1,0 +1,481 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* .lyte-xscol,
+.lyte-smcol,
+.lyte-mdcol,
+.lyte-lgcol,
+.lyte-xlcol, */
+.lyte-col-1,
+.lyte-col-2,
+.lyte-col-3,
+.lyte-col-4,
+.lyte-col-5,
+.lyte-col-6,
+.lyte-col-7,
+.lyte-col-8,
+.lyte-col-9,
+.lyte-col-10,
+.lyte-col-11,
+.lyte-col-12,
+.lyte-smcol-1,
+.lyte-smcol-2,
+.lyte-smcol-3,
+.lyte-smcol-4,
+.lyte-smcol-5,
+.lyte-smcol-6,
+.lyte-smcol-7,
+.lyte-smcol-8,
+.lyte-smcol-9,
+.lyte-smcol-10,
+.lyte-smcol-11,
+.lyte-smcol-12,
+.lyte-mdcol-1,
+.lyte-mdcol-2,
+.lyte-mdcol-3,
+.lyte-mdcol-4,
+.lyte-mdcol-5,
+.lyte-mdcol-6,
+.lyte-mdcol-7,
+.lyte-mdcol-8,
+.lyte-mdcol-9,
+.lyte-mdcol-10,
+.lyte-mdcol-11,
+.lyte-mdcol-12,
+.lyte-lgcol-1,
+.lyte-lgcol-2,
+.lyte-lgcol-3,
+.lyte-lgcol-4,
+.lyte-lgcol-5,
+.lyte-lgcol-6,
+.lyte-lgcol-7,
+.lyte-lgcol-8,
+.lyte-lgcol-9,
+.lyte-lgcol-10,
+.lyte-lgcol-11,
+.lyte-lgcol-12,
+.lyte-xlcol-1,
+.lyte-xlcol-2,
+.lyte-xlcol-3,
+.lyte-xlcol-4,
+.lyte-xlcol-5,
+.lyte-xlcol-6,
+.lyte-xlcol-7,
+.lyte-xlcol-8,
+.lyte-xlcol-9,
+.lyte-xlcol-10,
+.lyte-xlcol-11,
+.lyte-xlcol-12{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lyte-row{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.lyte-col{
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%
+}
+
+.lyte-container-fluid,
+.lyte-container-lg,
+.lyte-container-md,
+.lyte-container-sm,
+.lyte-container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.lyte-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+/* left right alignment codes */
+
+.al-right{
+  margin-left: auto;
+}
+.content-al-right{
+  align-items: flex-end;
+}
+.justify-align-center{
+  justify-content: center;
+}
+ /* Extra small devices (portrait phones, less than 576px) */
+ /* No media query for `xs` since this is the default in Bootstrap */
+
+ .lyte-col-1{
+   -ms-flex: 0 0 8.333333%;
+   flex: 0 0 8.333333%;
+   max-width: 8.333333%
+ }
+.lyte-col-2{
+   -ms-flex: 0 0 16.666667%;
+   flex: 0 0 16.666667%;
+   max-width: 16.666667%
+ }
+.lyte-col-3{
+   -ms-flex: 0 0 25%;
+   flex: 0 0 25%;
+   max-width: 25%
+ }
+.lyte-col-4{
+   -ms-flex: 0 0 33.333333%;
+   flex: 0 0 33.333333%;
+   max-width: 33.333333%
+ }
+.lyte-col-5{
+   -ms-flex: 0 0 41.666667%;
+   flex: 0 0 41.666667%;
+   max-width: 41.666667%
+ }
+.lyte-col-6{
+   -ms-flex: 0 0 50%;
+   flex: 0 0 50%;
+   max-width: 50%
+ }
+.lyte-col-7{
+   -ms-flex: 0 0 58.333333%;
+   flex: 0 0 58.333333%;
+   max-width: 58.333333%
+ }
+.lyte-col-8{
+   -ms-flex: 0 0 66.666667%;
+   flex: 0 0 66.666667%;
+   max-width: 66.666667%
+ }
+.lyte-col-9{
+   -ms-flex: 0 0 75%;
+   flex: 0 0 75%;
+   max-width: 75%
+ }
+.lyte-col-10{
+   -ms-flex: 0 0 83.333333%;
+   flex: 0 0 83.333333%;
+   max-width: 83.333333%
+ }
+.lyte-col-11{
+   -ms-flex: 0 0 91.666667%;
+   flex: 0 0 91.666667%;
+   max-width: 91.666667%
+ }
+.lyte-col-12{
+   -ms-flex: 0 0 100%;
+   flex: 0 0 100%;
+   max-width: 100%
+ }
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .lyte-container {
+        max-width: 540px
+  }
+  .lyte-container,
+  .lyte-container-sm {
+      max-width: 540px
+  }
+  .lyte-smcol-1{
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%
+  }
+  .lyte-smcol-2{
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%
+  }
+  .lyte-smcol-3{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%
+  }
+  .lyte-smcol-4{
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+  }
+  .lyte-smcol-5{
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
+  }
+  .lyte-smcol-6{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%
+  }
+  .lyte-smcol-7{
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%
+  }
+  .lyte-smcol-8{
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%
+  }
+  .lyte-smcol-9{
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+  }
+  .lyte-smcol-10{
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%
+  }
+  .lyte-smcol-11{
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%
+  }
+  .lyte-smcol-12{
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+  }
+ }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .lyte-container {
+        max-width: 720px
+  }
+  .lyte-container,
+  .lyte-container-md,
+  .lyte-container-sm {
+      max-width: 720px
+  }
+  .lyte-mdcol-1{
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%
+  }
+  .lyte-mdcol-2{
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%
+  }
+  .lyte-mdcol-3{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%
+  }
+  .lyte-mdcol-4{
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+  }
+  .lyte-mdcol-5{
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
+  }
+  .lyte-mdcol-6{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%
+  }
+  .lyte-mdcol-7{
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%
+  }
+  .lyte-mdcol-8{
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%
+  }
+  .lyte-mdcol-9{
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+  }
+  .lyte-mdcol-10{
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%
+  }
+  .lyte-mdcol-11{
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%
+  }
+  .lyte-mdcol-12{
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+  }
+    .lyte-mdcol-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        max-width: auto;
+        width: auto;
+    }
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .lyte-container {
+      max-width: 960px
+  }
+  .lyte-container,
+  .lyte-container-lg,
+  .lyte-container-md,
+  .lyte-container-sm {
+      max-width: 960px
+  }
+  .lyte-lgcol-1{
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%
+  }
+.lyte-lgcol-2{
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%
+  }
+.lyte-lgcol-3{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%
+  }
+.lyte-lgcol-4{
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+  }
+.lyte-lgcol-5{
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
+  }
+.lyte-lgcol-6{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%
+  }
+.lyte-lgcol-7{
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%
+  }
+.lyte-lgcol-8{
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%
+  }
+.lyte-lgcol-9{
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+  }
+.lyte-lgcol-10{
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%
+  }
+.lyte-lgcol-11{
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%
+  }
+.lyte-lgcol-12{
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+  }
+ }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .lyte-container,
+  .lyte-container-lg,
+  .lyte-container-md,
+  .lyte-container-sm,
+  .lyte-container-xl {
+      max-width: 1140px
+  }
+  .lyte-container {
+        max-width: 1140px
+    }
+  .lyte-xlcol-1{
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%
+  }
+.lyte-xlcol-2{
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%
+  }
+.lyte-xlcol-3{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%
+  }
+.lyte-xlcol-4{
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+  }
+.lyte-xlcol-5{
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
+  }
+.lyte-xlcol-6{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%
+  }
+.lyte-xlcol-7{
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%
+  }
+.lyte-xlcol-8{
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%
+  }
+.lyte-xlcol-9{
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+  }
+.lyte-xlcol-10{
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%
+  }
+.lyte-xlcol-11{
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%
+  }
+.lyte-xlcol-12{
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+  }
+ }

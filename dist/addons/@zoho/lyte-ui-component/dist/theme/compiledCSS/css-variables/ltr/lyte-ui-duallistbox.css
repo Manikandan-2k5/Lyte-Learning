@@ -1,0 +1,307 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-listbox-border-color: #d6d6d6;
+  --lyte-listbox-toolbar-icons-color: #555;
+  --lyte-listbox-text-color: var(--lyte-common-text-color);
+  --lyte-listbox-active-text-color: var(--lyte-common-text-color2);
+  --lyte-listbox-bg: var(--lyte-theme-body-bg);
+  --lyte-listbox-toolbar-item-hover-border-color: #aaa;
+  --lyte-listbox-add-remove-icon-color: #666;
+  --lyte-listbox-element-hover-bg: #f5f5f5;
+  --lyte-listbox-element-active-bg: #f5f5f5;
+  --lyte-listbox-collapse-icon-color: #555;
+  --lyte-listbox-badge-content-bg: #f00;
+  --lyte-listbox-badge-content-text-color: #fff;
+  --lyte-listbox-leftpanel-dropzone-bg: #f6fad2;
+  --lyte-listbox-leftpanel-dropzone-b-border-color: #57a5c6;
+  --lyte-listbox-noresults-text-color: #777;
+}
+/* rtl files loading */
+lyte-dual-listbox {
+  display: block;
+  height: 600px;
+}
+.lyteListboxToolbar {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.lyteLBToolbarItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  border: 1px solid var(--lyte-listbox-border-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lyteLBToolbarItems:hover {
+  border: 1px solid var(--lyte-listbox-toolbar-item-hover-border-color);
+}
+.lyteLBTBMoveLeft::after,
+.lyteLBTBMoveRight::after {
+  content: '';
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+.lyteLBTBMoveLeft::after {
+  border-right: 8px solid var(--lyte-listbox-toolbar-icons-color);
+  transform: rotate(0deg) translateX(-1px);
+}
+.lyteLBTBMoveRight::after {
+  border-left: 8px solid var(--lyte-listbox-toolbar-icons-color);
+  transform: rotate(0deg) translateX(1px);
+}
+.lyteLBTBMoveUp::after,
+.lyteLBTBMoveDown::after {
+  content: '';
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.lyteLBTBMoveUp::after {
+  border-bottom: 8px solid var(--lyte-listbox-toolbar-icons-color);
+  transform: translateY(-1px);
+}
+.lyteLBTBMoveDown::after {
+  border-top: 8px solid var(--lyte-listbox-toolbar-icons-color);
+  transform: translateY(1px);
+}
+.lyteLBTBDeleteMarked::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -187px -38px;
+  width: 11px;
+  height: 13px;
+}
+.lyteLBTBDeleteMarked:hover::after {
+  background-position: -209px -38px;
+}
+.lyteListboxWrapper {
+  display: flex;
+  height: inherit;
+}
+.lyteListboxLeftPanel,
+.lyteListboxRightPanel {
+  width: 280px;
+  border: 1px solid var(--lyte-listbox-border-color);
+  border-radius: 2px;
+  overflow: auto;
+  background: var(--lyte-listbox-bg);
+}
+.lyteListboxLeftPanel {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+.lyteListboxRightPanel {
+  margin-left: 15px;
+}
+.lyteListboxleftElementWrap {
+  overflow: auto;
+  flex-grow: 1;
+}
+.ltListboxNoToolbor .lyteListboxLeftPanel {
+  margin-right: 50px;
+}
+.lyteListBoxLeftParentElement,
+.lyteListBoxRightParentElement {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.lyteListBoxSearch {
+  display: flex;
+}
+.lyteListBoxLeftWrap,
+.lyteListBoxRightWrap {
+  cursor: pointer;
+}
+.sortable-element.lyteListBoxLeftWrap .lyteLBLeftActive,
+.sortable-element.lyteListBoxRightWrap .lyteLBRightActive {
+  cursor: move;
+}
+.lyteListBoxRequiredParent {
+  cursor: default;
+}
+lyte-lb-add,
+lyte-lb-remove {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  visibility: hidden;
+  position: relative;
+  z-index: 5;
+  margin-left: auto;
+  cursor: pointer;
+}
+lyte-lb-remove::before,
+lyte-lb-add::before,
+lyte-lb-add::after {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  background: var(--lyte-listbox-add-remove-icon-color);
+}
+lyte-lb-remove::before,
+lyte-lb-add::before {
+  width: 12px;
+  height: 2px;
+  top: calc(50% - 1px);
+}
+lyte-lb-add::after {
+  height: 12px;
+  width: 2px;
+  left: calc(50% - 1px);
+}
+.lyteListBoxLeftElement,
+.lyteListBoxRightElement {
+  padding: 5px 15px 5px 25px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  color: var(--lyte-listbox-text-color);
+  outline: 0;
+}
+.lyteListBoxLeftElement:hover,
+.lyteListBoxRightElement:hover {
+  background: var(--lyte-listbox-element-hover-bg);
+}
+.lyteListboxYield {
+  max-width: 100%;
+  overflow: auto;
+  flex: 1;
+  margin-right: 10px;
+}
+.lyteListBoxRequiredItem:hover,
+.lyteLBDisabledElement .lyteListBoxLeftElement:hover,
+.lyteLBoxDisabledParent .lyteListBoxLeftParentElement:hover {
+  background: none;
+}
+.lyteLBLeftActive:hover,
+.lyteLBRightActive:hover,
+.lyteLBLeftActive,
+.lyteLBRightActive {
+  background: var(--lyte-listbox-element-active-bg);
+  color: var(--lyte-listbox-active-text-color);
+}
+.lyteListBoxLeftElement:hover lyte-lb-add,
+.lyteListBoxRightElement:hover lyte-lb-remove {
+  visibility: visible;
+}
+.lyteLBoxDisabledParent .lyteListBoxLeftElement:hover lyte-lb-add,
+.lyteLBDisabledElement .lyteListBoxLeftElement:hover lyte-lb-add {
+  visibility: hidden;
+}
+.lyteLBLeftChildWrap,
+.lyteLBRightChildWrap {
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+.lyteLBLeftChildWrap .lyteListBoxLeftElement,
+.lyteLBRightChildWrap .lyteListBoxRightElement {
+  padding-left: 40px;
+}
+.lyteListboxParentElementClose lyte-lb-collapse {
+  transform: rotate(-90deg);
+}
+lyte-lb-collapse {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  position: absolute;
+  left: 10px;
+}
+lyte-lb-collapse::before {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--lyte-listbox-collapse-icon-color);
+}
+.lyteListboxBadge {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  transform: translateX(50%) translateY(-50%);
+}
+.lyteListboxBadge .lyteBadge {
+  padding: 0;
+  transform: translate(50%, -50%);
+  right: 0;
+  top: 0;
+}
+.lyteListboxBadge .lyteBadgeContent {
+  padding: 3px 6px;
+  border-radius: 10px;
+  background: var(--lyte-listbox-badge-content-bg);
+  color: var(--lyte-listbox-badge-content-text-color);
+  font-size: 13px;
+  display: inline-block;
+}
+.lyteLBDisabledElement,
+.lyteLBoxDisabledParent .lyteListBoxLeftParentElement {
+  opacity: 0.5;
+  cursor: default;
+}
+.lyteLBoxDisabledParent .lyteListBoxLeftParentElement,
+.lyteLBDisabledElement .lyteListBoxLeftWrap {
+  cursor: default;
+}
+.lyteLBDisabledElement .lyteLBoxDisabledParent .lyteListBoxLeftParentElement {
+  opacity: 1;
+}
+.lyteDLBDisabledToolbar {
+  opacity: 0.1;
+  cursor: not-allowed;
+}
+.lyteLBLeftPanelDropZone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--lyte-listbox-leftpanel-dropzone-bg);
+}
+.lyteLBLeftPanelDropZoneB {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border: 1px dashed var(--lyte-listbox-leftpanel-dropzone-b-border-color);
+}
+.lyteListBoxNoResultsFound {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lyte-listbox-noresults-text-color);
+}
+.lyteListBoxLeftWrap.sortable-element .lyteListBoxElementBg,
+.lyteListBoxRightWrap.sortable-element .lyteListBoxElementBg {
+  animation: lytelistboxBgAnim 1s ease;
+}
+@keyframes lytelistboxBgAnim {
+  from {
+    background: #FFF3AD;
+    color: #333;
+  }
+  to {
+    background: var(--lyte-listbox-bg);
+  }
+}

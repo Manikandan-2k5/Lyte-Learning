@@ -1,0 +1,56 @@
+:root {
+	--lyte-calculator-border-color: #d8d8d8;
+	--lyte-calculator-main-text-color: #111;
+	--lyte-calculator-display-bg: #fafafa;
+	--lyte-calculator-display-secondary-text-color: #777;
+	--lyte-calculator-button-bg: #f4f4f4;
+	--lyte-calculator-button-hover-bg: #eee;
+	--lyte-calculator-operator-button-bg: #6f92e9;
+	--lyte-calculator-toggle-btn-bg: #f0f0f0;
+	--lyte-calculator-advance-inverse-btn-active-bg: #e4e4e4;
+	--lyte-calculator-advance-memory-btn-active-bg: #e4e4e4;
+	--lyte-calculator-advance-memory-btn-active-circle-bg: #3663d4;
+}
+
+.calcDisplayEqualBtnTextField() {
+	@color: var(--lyte-calculator-display-secondary-text-color);
+}
+.calculatorSpanButtons() {
+	@bg: var(--lyte-calculator-button-bg);
+}
+.calculatorButtonsHover() {
+	@bg: var(--lyte-calculator-button-hover-bg);
+}
+.calculatorBasicOp() {
+	@bg: var(--lyte-calculator-operator-button-bg);
+}
+.calculatorDispspan() {
+	@color: var(--lyte-calculator-display-secondary-text-color);
+}
+.calculatorToggleMixin() {
+	@bg: var(--lyte-calculator-toggle-btn-bg);
+}
+.advancedCalcSecond() {
+	@bg: var(--lyte-calculator-advance-inverse-btn-active-bg);
+}
+.memorymrActive() {
+	@bg: var(--lyte-calculator-advance-memory-btn-active-bg);
+}
+.memorymrActiveBefore() {
+	@bg: var(--lyte-calculator-advance-memory-btn-active-circle-bg);
+}
+.squarerootInverseBefore() {
+	@color: var(--lyte-calculator-main-text-color);
+}
+.squarerootInverseAfter() {
+	@color: var(--lyte-calculator-main-text-color);
+}
+.calcHideCursor() {
+	@text-shadow: 0 0 0 var(--lyte-calculator-main-text-color);
+}
+.calcEqualBtnHideCursor() {
+	@text-shadow: 0 0 0 var(--lyte-calculator-display-secondary-text-color);
+}
+.calcToggleBtnsAfter() {
+	@color: var(--lyte-calculator-main-text-color);
+}

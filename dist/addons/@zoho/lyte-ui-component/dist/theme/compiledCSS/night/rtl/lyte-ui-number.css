@@ -1,0 +1,95 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-number {
+  position: relative;
+  display: inline-flex;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+}
+lyte-number .lyteLabel {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 15px;
+  padding-left: 30px;
+  color: #bbb;
+  flex-grow: 1;
+}
+lyte-number .lyteField {
+  flex-grow: 1;
+}
+lyte-number input {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+lyte-number input:disabled {
+  background: #777;
+  cursor: not-allowed;
+  color: #999;
+}
+lyte-number input::placeholder {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  color: #a6a6a6;
+}
+lyte-number input:-ms-input-placeholder {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  color: #a6a6a6;
+}
+lyte-number input::-ms-input-placeholder {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  color: #a6a6a6;
+}
+lyte-number input::-ms-clear {
+  display: none;
+}
+lyte-number.horizontal .lyteLabel {
+  min-width: 40%;
+  width: 40%;
+  box-sizing: border-box;
+}
+lyte-number.horizontal .lyteField {
+  min-width: 60%;
+  width: 60%;
+}
+lyte-number.vertical {
+  flex-direction: column;
+  text-align: right;
+}
+lyte-number.vertical .lyteLabel {
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+.lyteInputFocus.lyteErrorInput .lyteField,
+.lyteErrorInput .lyteField:hover,
+.lyteErrorInput .lyteField {
+  border-color: #E74C3C;
+  position: relative;
+}
+.lyteErrorInput .lyteField::after {
+  content: '';
+  background-image: url(../../images/sprite_lyte_night.svg);
+  background-position: -263px -31px;
+  width: 16px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lyteErrorInput input {
+  padding-left: 35px;
+}
+.lyteNumberErrorMessage {
+  color: #E74C3C;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+}

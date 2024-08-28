@@ -1,0 +1,166 @@
+.ListboxMixin() {
+	@h: 600px;
+}
+.ListboxToolbarMixin() {
+	@w: 32px;
+}
+.LBToolbarItemsMixin() {
+	@w: 30px;
+	@h: 30px;
+	@margin: 10px auto;
+	@border: 1px solid @listboxBorderColor;
+	@border-radius: 50%;
+}
+.LBToolbarItemsHoverMixin() {
+	@border: 1px solid #aaa;
+}
+.LBTBMoveLeftRightAfterMixin() {
+	@border-top: 8px solid transparent;
+	@border-bottom: 8px solid transparent;
+}
+.LBTBMoveLeftAfterMixin() {
+	@border-right: 8px solid @listboxToolbarIconsColor;
+	@transform: @value-rotate-0deg translateX(-1px);
+}
+.LBTBMoveRightAfterMixin() {
+	@border-left: 8px solid @listboxToolbarIconsColor;
+	@transform: @value-rotate-0deg translateX(1px);
+}
+.LBTBMoveUpDownAfterMixin() {
+	@border-left: 8px solid transparent;
+	@border-right: 8px solid transparent;
+}
+.LBTBMoveUpAfterMixin() {
+	@border-bottom: 8px solid @listboxToolbarIconsColor;
+	@transform: translateY(-1px);
+}
+.LBTBMoveDownAfterMixin() {
+	@border-top: 8px solid @listboxToolbarIconsColor;
+	@transform: translateY(1px);
+}
+.LBTBDeleteMarkedAfterMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -187px -38px;
+	@w: 11px;
+	@h: 13px;
+}
+.LBTBDeleteMarkedHoverAfterMixin() {
+	@bg-pos: -209px -38px;
+}
+.ListboxLeftRightPanelMixin() {
+	@w: 280px;
+	@border: 1px solid @listboxBorderColor;
+	@border-radius: 2px;
+	@bg: @listboxBg;
+}
+.lyteListboxLeftPanelMixin() {
+	@margin-right: 15px;
+}
+.lyteListboxRightPanelMixin() {
+	@margin-left: 15px;
+}
+.listboxNoToolbarLeftPanelMixin() {
+    @margin-right: 50px;
+}
+.lbRemoveMixin() {
+	@w: 12px;
+	@h: 12px;
+}
+.lbRemoveAddBeforeAfterMixin() {
+	@border-radius: 2px;
+	@bg: #666;    
+}
+.lbRemoveAddbeforeMixin() {
+	@w: 12px;
+	@h: 2px;
+	@top: calc(50% - 1px);
+}
+.lbAddafterMixin() {
+	@h: 12px;
+	@w: 2px;
+	@left: calc(50% - 1px);
+}
+.ListBoxLeftRightElementMixin() {
+	@padding: .lyteLESSPaddingMixin(5px 15px 5px 25px)[@padding];
+	@font-size: 15px;
+	@color: @listboxTextColor;
+}
+.ListBoxLeftRightElementHoverMixin() {
+	@bg: #f5f5f5;
+}
+.lyteListboxYieldMixin() {
+	@max-w: 100%;
+	@margin-right: 10px;
+}
+.LBRightActiveMixin() {
+	@bg: #f5f5f5;
+	@color: @listboxActiveTextColor;
+}
+.lyteLBLeftRightChildWrapMixin() {
+	@transition: height 0.3s ease;
+}
+.LBRightChildWrapMixin() {
+	@padding-left: 40px;
+}
+.ListboxParentElementCloseMixin() {
+	@transform: rotate(-90deg);
+}
+.lbCollapseMixin() {
+	@w: 10px;
+	@h: 10px;
+	@transition: transform 0.3s ease;
+	@left: 10px;
+}
+.lbCollapsebeforeMixin() {
+	@border-left: 4px solid transparent;
+	@border-right: 4px solid transparent;
+	@border-top: 4px solid #555;
+}
+.ListboxBadgeMixin() {
+	@top: 0;
+	@right: 0;
+	@z-index: 5;
+	@transform: translateX(50%) translateY(-50%);
+}
+.ListboxBadgeBadgeElemMixin() {
+	@padding: 0;
+	@transform: translate(50%, -50%);
+	@right: 0;
+	@top: 0;
+}
+.ListboxBadgeContentMixin() {
+	@padding: 3px 6px;
+	@border-radius: 10px;
+	@bg: #f00;
+	@color: #fff;
+	@font-size: 13px;
+}
+.LBoxDisabledParentElementMixin() {
+    @opacity: 0.5;
+}
+.lyteLBLeftPanelDropZoneMixin() {
+	@top: 0;
+	@bottom: 0;
+	@left: 0;
+	@right:0;
+	@z-index: 10;
+	@bg: #f6fad2;
+}
+.lyteLBLeftPanelDropZoneBMixin() {
+	@top: 5px;
+	@bottom: 5px;
+	@left: 5px;
+	@right: 5px;
+	@border: 1px dashed #57a5c6;
+}
+.lyteListBoxNoResultsFoundMixin() {
+	@w: 100%;
+	@h: 100%;
+	@color: #777;
+}
+.lytelistboxBgAnimFromMixin() {
+	@bg: #FFF3AD;
+}
+.lytelistboxBgAnimToMixin() {
+	@bg: @listboxBg;
+}

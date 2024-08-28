@@ -1,0 +1,66 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+lyte-banner {
+  display: block;
+}
+.lyteBannerModalContent {
+  background: #2f363d;
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+}
+.lyteBannerModal .lyteModal {
+  border: 0;
+}
+.lyteBannerModal .lyteModalFromBottom {
+  box-shadow: 0 -3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.lyteBannerModal .lyteModalFromTop {
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.lyteBannerNonFloating .lyteModalClose,
+.lyteBannerModal .lyteModalClose {
+  background-position: -324px -109px;
+  width: 13px;
+  height: 13px;
+  transform: scale(1);
+  top: 15px;
+  opacity: 0.8;
+}
+.lyteBannerNonFloating {
+  background: #2f363d;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.lyteBannerFloating {
+  background: #2f363d;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  padding: 10px 20px;
+  text-align: center;
+  position: absolute;
+  color: #fff;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.lyteBannerInlineFloating {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+}
+.lyteBannerInlineFloating .lyteBannerFloating {
+  pointer-events: auto;
+}

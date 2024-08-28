@@ -1,0 +1,32 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-multi-dropdown lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding: 9px 10px 9px 25px;
+}
+.lyteMultiDropdownDropbox lyte-drop-item {
+  padding: 8px 25px 8px 15px;
+  display: block;
+}
+.lyteMultiSelectDropdown lyte-drop-group.lyteDropdownHideGroup,
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item {
+  display: block;
+}
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item::before {
+  content: none;
+}
+lyte-multi-dropdown .lyteDropPlaceholderMultiple {
+  padding: 0;
+}
+.lyteMultiDropSelectedText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}

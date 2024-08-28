@@ -1,0 +1,84 @@
+.lyteKanbanviewMixin() {
+    @font-family: @primaryFont;
+}
+.lyteScrollDivSelectorMixin() {
+    @border: 1px solid @kanbanviewBorderColor;
+    @h: 100%;
+}
+.lyteKanbanViewItemMixin() {
+    @min-w: 33%;
+    @w: 33%;
+}
+.lyteKanbanviewBoardMixin() {
+    @h: 100%;
+}
+.lyteKanbanviewBoardSortableElemMixin() {
+    @min-w: unset;
+}
+.lyteKanbanviewBoardWrapperMixin() {
+    @border-right: 1px solid @kanbanviewBorderColor;
+    @h: 100%;
+    @bg: @kanbanviewBg;
+    @color: @kanbanviewTextColor;
+}
+.lyteKanbanviewBoardSortablePlaceholderMixin() {
+    @border-right: 1px solid @kanbanviewBorderColor;
+    @bg: @kanbanviewHoverBg;
+}
+.lyteKanbanviewBoardWrapperSortableMixin() {
+    @border: 1px solid @kanbanviewBorderColor;
+}
+.lyteKanbanviewBoardHeaderMixin() {
+    @padding: 15px;
+    @font-size: 18px;
+    @color: #666;
+	@z-index: 5;
+}
+.lyteKanbanviewBoardHeaderShadowMixin() {
+	@box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+.lyteKanbanviewBoardContainerMixin() {
+    @flex-grow: 1;
+}
+.lyteKanbanviewNestedSortableMixin() {
+    @h: 100%;
+}
+.lyteKanbanviewBoardItemContentDataMixin() {
+    @min-h: 50px;
+    @border-bottom: 1px solid @kanbanviewBorderColor;
+    @bg: @kanbanviewBg;
+    @padding: 15px;
+}
+.lyteKanbanviewBoardItemContentDataHoverMixin() {
+    @bg: @kanbanviewHoverBg;
+}
+.lyteKanbanviewBoardContentSortablePlaceholderMixin() {
+    @bg: @kanbanviewHoverBg;
+    @min-w: 100%;
+}
+.lyteKanbanviewCardbox() {
+    @box-shadow: none;
+    @bg: transparent;
+}
+.lyteKanbanviewCardbody() {
+    @padding: 0;
+}
+.lyteKVLoadingPlaceholderCommonMixin() {
+	@border: 1px solid #eee;
+	@border-radius: 3px;
+	@bg: #f5f5f5;
+}
+.lyteKVLoadingPlaceholderMixin() {
+	@margin: 15px;
+	@h: 33%;
+}
+.lyteKVLoadingHeaderPlaceholderMixin() {
+	@margin: 15px 15px 0;
+	@h: 40px;
+}
+.lyteKanbanNoResultMsgMixin() {
+    @color: #777;
+    @top: 50px;
+    @bottom: 0;
+    @w: 100%;
+}

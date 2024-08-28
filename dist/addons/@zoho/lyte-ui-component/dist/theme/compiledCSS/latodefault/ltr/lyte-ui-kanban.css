@@ -1,0 +1,120 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+lyte-kanbanview {
+  display: block;
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  position: relative;
+}
+.lyteKanbanviewScrollDivSelector {
+  display: flex;
+  border: 1px solid #d6d6d6;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+}
+.lyteKanbanViewItem {
+  min-width: 33%;
+  width: 33%;
+}
+lyte-kanbanview lyte-board {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+lyte-kanbanview lyte-board.lyteSortableElem {
+  min-width: unset;
+}
+lyte-kanbanview lyte-board .lyteBoardWrapper {
+  border-right: 1px solid #d6d6d6;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  color: #444;
+}
+lyte-kanbanview lyte-board.lyteSortablePlaceholder {
+  background: #f5f5f5;
+  border-right: 1px solid #d6d6d6;
+}
+lyte-kanbanview lyte-board.lyteSortableElem .lyteBoardWrapper {
+  border: 1px solid #d6d6d6;
+}
+lyte-kanbanview lyte-board .lyteBoardHeader {
+  padding: 15px;
+  font-size: 18px;
+  color: #666;
+  z-index: 5;
+  cursor: move;
+  position: relative;
+}
+.lyteBoardHeader.lyteKanbanviewHeaderShadow {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.lyteBoardContainer {
+  flex-grow: 1;
+  overflow: auto;
+}
+.lyteKanbanNestedSortable {
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+lyte-kanbanview .lyteBoardItemContentData {
+  min-height: 50px;
+  border-bottom: 1px solid #d6d6d6;
+  background: #fff;
+  padding: 15px;
+  cursor: move;
+  position: relative;
+}
+lyte-kanbanview .lyteBoardItemContentData:hover {
+  background: #f5f5f5;
+}
+lyte-kanbanview .lyteBoardItemContentData.lyteSortablePlaceholder,
+lyte-kanbanview .lyteBoardItemContentData.lyteSortablePlaceholder:hover {
+  background: #f5f5f5;
+  min-width: 100%;
+}
+lyte-kanbanview lyte-card-box {
+  box-shadow: none;
+  background: transparent;
+}
+lyte-kanbanview lyte-card-body {
+  padding: 0;
+}
+.lyteKVLoadingHeaderPlaceholder,
+.lyteKVLoadingPlaceholder {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background: #f5f5f5;
+}
+.lyteKVLoadingPlaceholder {
+  margin: 15px;
+  height: 33%;
+}
+.lyteKVLoadingHeaderPlaceholder {
+  margin: 15px 15px 0;
+  height: 40px;
+}
+.lyteKanbanNoResultMsg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #777;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  width: 100%;
+}
+.lyteKanbanNoResultMsg.lyteHide {
+  display: none;
+}

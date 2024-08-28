@@ -1,0 +1,33 @@
+:root {
+	--lyte-drawer-active-bg: @themeActiveElementBg;
+	--lyte-drawer-item-disabled-bg: #d6d6d6;
+	--lyte-drawer-freeze-bg: #000;
+	--lyte-drawer-text-color: @commonTextColor;
+	--lyte-drawer-border-color: #ddd;
+	--lyte-drawer-group-border-color: #d6d6d6;
+	--lyte-drawer-item-hover-bg: #eee;
+	--lyte-drawer-active-item-text-color: #fff;
+	--lyte-drawer-inline-panel-bg: #fff;
+	--lyte-drawer-overlay-bg: #fff;
+}
+.lyteDrawerMixin() {
+	@border: 1px solid var(--lyte-drawer-border-color);
+}
+.lyteDrawerGroupMixin() {
+	@border-bottom: 1px solid var(--lyte-drawer-group-border-color);
+}
+.drawerItemhoverMixin() {
+	@bg: var(--lyte-drawer-item-hover-bg);
+}
+.DrawerActiveItemMixin() {
+	@color: var(--lyte-drawer-active-item-text-color);
+}
+.lyteDrawerInlineBodyDrawerPanelMixin() {
+	@bg: var(--lyte-drawer-inline-panel-bg);
+}
+.lyteDrawerInlineMiniVariantPanelMixin() {
+	@border-right: 1px solid var(--lyte-drawer-border-color);
+}
+.lyteDrawerOverlayShowMixin() {
+	@bg: var(--lyte-drawer-overlay-bg);
+}

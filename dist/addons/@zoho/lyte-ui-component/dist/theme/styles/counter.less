@@ -1,0 +1,36 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/counter/counter.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{counter}/ui-elements/counter/counter.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{counter}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/counter.variables.less";
+
+
+lyte-counter {
+    .lyteCounterMixin();
+    font-family: @primaryFont;
+    font-size: @font-size;
+    color: @color;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{counter}/ui-elements/counter/counter.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/counter.overrides.less";

@@ -1,0 +1,109 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-avatar-navigator {
+  display: flex;
+  position: relative;
+}
+.lyteAvatarSetCont {
+  position: relative;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.lyteAvatarSet {
+  display: flex;
+  position: absolute;
+  transform: translate(-10000px);
+  left: 0;
+}
+.lyteAvatarArrowCont {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #6f6f6f;
+  border-radius: 50%;
+  align-self: center;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #666;
+}
+.lyteAvatarArrowCont:hover {
+  background: #888;
+}
+.lyteAvatarNextIcon,
+.lyteAvatarPrevIcon {
+  content: '';
+  background-image: url(../../images/sprite_lyte_night.svg);
+  background-position: -94px -109px;
+  width: 9px;
+  height: 11px;
+}
+.lyteAvatarNextIcon {
+  transform: rotate(180deg);
+}
+lyte-avatar-navigator-item {
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+}
+lyte-avatar-navigator-item:hover {
+  border: 2px solid #6f6f6f;
+  box-shadow: 0 0 6px #6f6f6f;
+}
+.lyteAvatarSelectedItem:hover,
+.lyteAvatarSelectedItem {
+  border: 2px solid #5ba1e5;
+  box-shadow: 0 0 6px #5ba1e5;
+}
+lyte-avatar-navigator-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.lyteAvatarSlideAnim {
+  transition: transform 0.3s ease-in-out;
+}
+.lyteAvatarLoadingCont {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #444;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.lyteAvatarLoading {
+  height: 200%;
+  width: 200%;
+  background: linear-gradient(to bottom right, #555 0%, #666 25%, #555 50%, #666 75%, #555 100%);
+  animation: lyteAvatarLoadAnim 1s linear infinite;
+  position: absolute;
+}
+.lyteVisuallyHidden {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+}
+@keyframes lyteAvatarLoadAnim {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+  }
+}

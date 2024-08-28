@@ -1,0 +1,29 @@
+:root {
+	--lyte-express-table-common-bg: #fff;
+	--lyte-express-table-resize-hover-bg: @themeActiveElementBg;
+	--lyte-express-table-th-bg: #f7f7f7;
+	--lyte-express-table-border-color: #e2e2e2;
+	--lyte-express-table-fixed-box-shadow: rgba(0, 0, 0, 0.2);
+	--lyte-express-table-th-text-color: @commonTextColor;
+	--lyte-express-table-td-text-color: @commonTextColor2;
+	--lyte-express-table-fixed-column-header-bg: var(--lyte-express-table-common-bg);
+	--lyte-express-table-sortable-helper-bg: var(--lyte-express-table-common-bg);
+	--lyte-express-table-fake-header-wrapper-bg: var(--lyte-express-table-common-bg);
+	--lyte-express-table-fixed-column-wrapper-bg: var(--lyte-express-table-common-bg);
+	--lyte-express-table-sticky-column-td-bg: var(--lyte-express-table-common-bg);
+}
+.ExpTableFixedColHeaderMixin() {
+	@bg: var(--lyte-express-table-fixed-column-header-bg);
+}
+.ExpTableSortableHelperContMixin() {
+	@bg: var(--lyte-express-table-sortable-helper-bg);
+}
+.ExpTableFakeHeaderWrapperMixin() {
+	@bg: var(--lyte-express-table-fake-header-wrapper-bg);
+}
+.ExpTableFixedColWrapperMixin() {
+	@bg: var(--lyte-express-table-fixed-column-wrapper-bg);
+}
+.lyteExpStickyTableTdFixedColMixin() {
+	@bg: var(--lyte-express-table-sticky-column-td-bg);
+}

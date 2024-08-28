@@ -1,0 +1,162 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-autocomplete-highlight-color: #000;
+  --lyte-autocomplete-highlight-bg: #fff5b0;
+  --lyte-autocomplete-text-color: #6b6b6b;
+  --lyte-autocomplete-box-shadow: rgba(0, 0, 0, 0.15);
+  --lyte-autocomplete-focus-border-color: var(--lyte-input-focus-border-color);
+  --lyte-autocomplete-icon-separator-color: #ddd;
+  --lyte-autocomplete-errormsg-color: #8a8a8a;
+  --lyte-autocomplete-dropbox-border-color: #dadada;
+}
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* Autocomplete styles BEGINS */
+lyte-autocomplete {
+  position: relative;
+  display: inline-block;
+}
+lyte-autocomplete lyte-dropdown {
+  /*  Since this mixin is provided, This mixin can not be removed immediately */
+  display: block;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button {
+  border: 0;
+  padding: 0;
+}
+lyte-autocomplete lyte-input {
+  display: block;
+}
+lyte-autocomplete lyte-input.lyteInputBox .lyteInputBoxSearch input {
+  padding-right: 10px;
+}
+lyte-autocomplete lyte-input.lyteInputBox input {
+  padding-left: 25px;
+  font-size: 15px;
+}
+lyte-autocomplete.searchPresent lyte-input.lyteInputBox input {
+  padding-left: 60px;
+}
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input {
+  border-radius: 2px 2px 0 0;
+}
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox input {
+  border-radius: 0 0 2px 2px;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp:hover {
+  border: 0;
+  box-shadow: none;
+}
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField {
+  border: 1px solid var(--lyte-autocomplete-focus-border-color);
+}
+.lyteAutoCompCloseIcon {
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+.lyteAutoCompCloseIconWrapper {
+  left: 5px;
+  top: calc(50% - 12px);
+  padding: 8px;
+  height: 8px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.5;
+}
+lyte-autocomplete.searchPresent .lyteAutoCompCloseIconWrapper {
+  left: 40px;
+}
+.lyteAutoCompCloseIconWrapper:hover {
+  opacity: 1;
+}
+lyte-autocomplete lyte-input[lt-prop-type="search"] .searchIcon {
+  right: auto;
+  left: 10px;
+  top: calc(50% - 7.5px);
+  z-index: 10;
+  cursor: default;
+  opacity: 0.7;
+}
+.iconSeparator {
+  height: 24px;
+  border-left: 1px solid var(--lyte-autocomplete-icon-separator-color);
+  left: 35px;
+  top: calc(50% - 12px);
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+}
+lyte-autocomplete-description {
+  opacity: 0.4;
+  font-size: 13px;
+  align-self: center;
+  white-space: nowrap;
+}
+.lyteautocompleteError {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  color: var(--lyte-autocomplete-errormsg-color);
+  padding: 5px 15px 15px;
+}
+lyte-drop-item .lyteAutoComplete {
+  color: var(--lyte-autocomplete-text-color);
+  font-family: var(--lyte-primary-font);
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.lyteautocompleteDropdown {
+  border: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+  border-top: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+  box-shadow: 0px 3px 6px 0px var(--lyte-autocomplete-box-shadow);
+}
+.lyteautocompleteDropdown.lyteDropdownDown {
+  transform: translateY(5px);
+}
+.lyteautocompleteDropdown.lyteDropdownUp {
+  transform: translateY(-5px);
+}
+.lyteautocompleteDropdown lyte-drop-item {
+  padding-right: 10px;
+  display: flex;
+}
+.lyteautocompleteDropdown lyte-drop-item[selected='true']::before {
+  content: none;
+}
+.lyteautocompleteHighlight {
+  color: var(--lyte-autocomplete-highlight-color);
+  background: var(--lyte-autocomplete-highlight-bg);
+}
+.lyteautocompleteDropdown lyte-drop-item.lyteSearchHidden {
+  display: none;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/autocomplete.less file
+ */
+/* Autocomplete styles ENDS */

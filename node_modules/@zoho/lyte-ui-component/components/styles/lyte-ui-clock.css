@@ -1,0 +1,233 @@
+lyte-clock {
+    display: inline-block;
+    font-family: 'LatoRegular', sans-serif;
+    color: #333;
+}
+.lyteClkFrameOuter {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    background: linear-gradient(#fff, #fff 35%, #f5f5f5 50%, #eee);
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.2);
+}
+.lyteClkFrameInner {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#ddd, #eee 40%, #f5f5f5 60%, #fff);
+}
+
+.lyteClkAlogTik {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    display: none;
+}
+
+.lyteClkTik126,
+.lyteClkTik39 {
+    border-top: 12px solid #bbb;
+    border-bottom: 12px solid #bbb;
+}
+
+.lyteClkTik17,
+.lyteClkTik28,
+.lyteClkTik410,
+.lyteClkTik511 {
+    border-top: 4px solid #bbb;
+    border-bottom: 4px solid #bbb;
+}
+
+.lyteClkTik17 {
+    transform: rotate(30deg);
+}
+
+.lyteClkTik28 {
+    transform: rotate(60deg);
+}
+
+.lyteClkTik39 {
+    transform: rotate(90deg);
+}
+
+.lyteClkTik410 {
+    transform: rotate(120deg);
+}
+
+.lyteClkTik511 {
+    transform: rotate(150deg);
+}
+
+.lyteClkAlogDial {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: rotate(0deg);
+}
+.lyteClockMidCircle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.lyteClockHrDial {
+    width: 5px;
+    left: calc(50% - 2px);
+}
+.lyteClockMinDial {
+    width: 3px;
+    left: calc(50% - 1px);
+}
+.lyteClockSecDial {
+    width: 1px;
+    left: 50%;
+}
+
+.lyteClkHrDialElem,
+.lyteClkMinDialElem,
+.lyteClkSecDialElem {
+    border-radius: 10px;
+    position: absolute;
+    bottom: 50%;
+    background: #666;
+    width: 100%;
+}
+
+.lyteClkHrDialElem {
+    height: 30%;
+}
+
+.lyteClkMinDialElem {
+    height: 40%;
+}
+
+.lyteClkSecDialElem {
+    height: 50%;
+    background: #f00;
+}
+
+
+.lyteClkWatch,
+.lyteClkTimer {
+    display: flex;
+    font-size: 20px;
+}
+.lyteClkWatchColon,
+.lyteClkTimerColon {
+    margin: 0 5px;
+}
+
+.lyteClkWatchDefAMPM {
+    margin-left: 5px;
+}
+.lyteClkWatchFrameAMPM {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-size: 14px;
+}
+
+.lyteClkTimerDefLabel {
+	font-size: 15px;
+	color: #777;
+}
+.lyteClkTimerFrameBox {
+    position: relative;
+    padding-bottom: 20px;
+}
+.lyteClkTimerFrameLabel {
+    font-size: 10px;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+
+/*  Lyte Stop watch related code starts */
+
+.lyteClockStopWatch {
+    text-align: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+}
+.lyteClockStopWatch .lyteClkOuterDiv {
+    margin: 20px 20px 0;
+}
+.lyteClockSwLapWrapper {
+    border-top: 1px solid #d6d6d6;
+}
+.lyteClockSwWrap {
+    font-size: 20px;
+}
+.lyteClockSwLap {
+	display: flex;
+	font-size: 16px;
+	margin: 5px 0;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 5px 0;
+}
+.lyteClockSwLap:last-child {
+    border-bottom: 0;
+}
+.lyteClockSwLapLabel {
+	margin-right: auto;
+    padding: 0 20px;
+}
+.lyteClockSwLapTime {
+	padding: 0 20px;
+}
+.lyteClockSwActionBtnWrap {
+    display: flex;
+    padding: 0 20px 15px;
+}
+.lyteClockSwActionBtn {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 50%;
+}
+.lyteClockSWStart {
+    border: 1px solid #5ba1e5;
+    color: #5ba1e5;
+}
+.lyteClockSWStart:hover {
+    background: #e6f3fd;
+}
+.lyteClockSWReset,
+.lyteClockSWLap {
+    border: 1px solid #666;
+    color: #666;
+    margin-left: auto;
+}
+.lyteClockSWReset:hover,
+.lyteClockSWLap:hover {
+    background: #eee;
+}
+.lyteClockSWPause {
+    border: 1px solid #ec4844;
+    color: #ec4844;
+}
+.lyteClockSWPause:hover {
+    background: #ffe3e3;
+}
+
+/*  Lyte Stop watch related code ends */

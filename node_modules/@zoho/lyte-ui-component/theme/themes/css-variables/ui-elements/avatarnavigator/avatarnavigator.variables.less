@@ -1,0 +1,28 @@
+:root {
+	--lyte-avatar-item-hover-color: #d6d6d6;
+	--lyte-avatar-item-selected-color: #5ba1e5;
+	--lyte-avatar-item-hover-border-color: var(--lyte-avatar-item-hover-color);
+	--lyte-avatar-item-hover-boxshadow-color: var(--lyte-avatar-item-hover-color);
+	--lyte-avatar-item-selected-border-color: var(--lyte-avatar-item-selected-color);
+	--lyte-avatar-item-selected-boxshadow-color: var(--lyte-avatar-item-selected-color);
+	--lyte-avatar-item-loading-bg: #f5f5f5;
+	--lyte-avatar-nav-border-color: #ddd;
+	--lyte-avatar-nav-bg: #ccc;
+	--lyte-avatar-nav-hover-bg: #aaa;
+}
+
+.lyteAvatarArrowContMixin() {
+	@border: 1px solid var(--lyte-avatar-nav-border-color);
+	@bg: var(--lyte-avatar-nav-bg);
+}
+.lyteAvatarArrowContHoverMixin() {
+	@bg: var(--lyte-avatar-nav-hover-bg);
+}
+.lyteAvatarNavigatorItemHoverMixin() {
+	@border: 2px solid var(--lyte-avatar-item-hover-border-color);
+	@box-shadow: 0 0 6px var(--lyte-avatar-item-hover-boxshadow-color);
+}
+.lyteAvatarSelectedItemMixin() {
+	@border: 2px solid var(--lyte-avatar-item-selected-border-color);
+	@box-shadow: 0 0 6px var(--lyte-avatar-item-selected-boxshadow-color);
+}

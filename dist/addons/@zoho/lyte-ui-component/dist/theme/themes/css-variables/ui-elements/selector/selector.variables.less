@@ -1,0 +1,28 @@
+:root {
+	--lyte-selector-selectionbox-border-color: #fff;
+	--lyte-selector-selectionbox-active-border-color: #5ba1e5;
+	--lyte-selector-freezelayer-bg: #000;
+	--lyte-selector-resize-handle-bg: #fff;
+	--lyte-selector-resize-handle-border-color: #5ba1e5;
+	--lyte-selector-delete-btn-bg: #fff;
+	--lyte-selector-label-text-color: #fff;
+}
+.SelectionBoxMixin() {
+	@border: 1px solid var(--lyte-selector-selectionbox-border-color);
+}
+.SelectorActiveBoxMixin() {
+	@border: 1px solid var(--lyte-selector-selectionbox-active-border-color);
+}
+.SelectionFreezeLayerMixin() {
+	@bg: var(--lyte-selector-freezelayer-bg);
+}
+.SelectorHandlesMixin() {
+	@bg: var(--lyte-selector-resize-handle-bg);
+	@border: 1px solid var(--lyte-selector-resize-handle-border-color);
+}
+.SelectorDeleteBtnMixin() {
+	@bg: var(--lyte-selector-delete-btn-bg);
+}
+.lyteSelectorLabelMixin() {
+	@color: var(--lyte-selector-label-text-color);
+}

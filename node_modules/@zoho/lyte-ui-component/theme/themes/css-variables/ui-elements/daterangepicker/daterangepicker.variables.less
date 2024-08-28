@@ -1,0 +1,30 @@
+:root {
+	--lyte-daterangepicker-bg: @themeBodyBackground;
+	--lyte-daterangepicker-inrange-bg: #e6f3fd;
+	--lyte-daterangepicker-selelem-bg: @themeActiveElementBg;
+	--lyte-daterangepicker-inrange-text-color: @commonTextColor2;
+	--lyte-daterangepicker-border-color: #d1d1d1;
+	--lyte-daterangepicker-boxshadow-color: rgba(0, 0, 0, 0.1);
+	--lyte-daterangepicker-calendar-separator-color: #f0f0f0;
+	--lyte-daterangepicker-selected-date-text-color: #fff;
+	--lyte-daterangepicker-inrange-hover-text-color: @commonTextColor2;
+}
+.DateRangePickerRow() {
+	@box-shadow: 0 0 3px 1px var(--lyte-daterangepicker-boxshadow-color);
+	@border: 1px solid var(--lyte-daterangepicker-border-color);
+}
+.dRPCalendar2() {
+	@border-left: 1px solid var(--lyte-daterangepicker-calendar-separator-color);
+}
+.DateRPLastDateSelectedHover() {
+	@color: var(--lyte-daterangepicker-selected-date-text-color);
+}
+.dateRPLastDateSelHoverBg() {
+	@color: var(--lyte-daterangepicker-selected-date-text-color);
+}
+.DRPSelectedEndPoints() {
+    @color: var(--lyte-daterangepicker-selected-date-text-color);
+}
+.DateRPTempSelectedHover() {
+	@color: var(--lyte-daterangepicker-inrange-hover-text-color);
+}

@@ -1,0 +1,90 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-accordion-border-color: #e9e9e9;
+  --lyte-accordion-hover-border-color: #ccc;
+  --lyte-accordion-active-border-color: #aaa;
+  --lyte-accordion-bg: var(--lyte-theme-body-bg);
+  --lyte-accordion-color: var(--lyte-common-text-color);
+  --lyte-accordion-header-text-color: #555;
+  --lyte-accordion-header-hover-text-color: var(--lyte-common-text-hover-color);
+  --lyte-accordion-header-active-text-color: var(--lyte-theme-active-element-color);
+  --lyte-accordion-header-font-size: 16px;
+  --lyte-accordion-body-font-size: 14px;
+}
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+lyte-accordion {
+  display: block;
+  position: relative;
+}
+lyte-accordion-item {
+  margin: 3px;
+  border-bottom: 1px solid var(--lyte-accordion-border-color);
+  display: block;
+  background: var(--lyte-accordion-bg);
+}
+lyte-accordion-item:hover {
+  border-bottom-color: var(--lyte-accordion-hover-border-color);
+}
+lyte-accordion-header {
+  padding: 15px 15px 10px;
+  font-family: var(--lyte-primary-font);
+  color: var(--lyte-accordion-header-text-color);
+  font-size: var(--lyte-accordion-header-font-size);
+  text-align: left;
+  outline: 0;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+lyte-accordion-header:hover {
+  color: var(--lyte-accordion-header-hover-text-color);
+}
+.lyteAccordionActive {
+  border-bottom-color: var(--lyte-accordion-active-border-color);
+}
+.lyteAccordionActive lyte-accordion-header {
+  color: var(--lyte-accordion-header-active-text-color);
+}
+lyte-accordion-body {
+  width: 400px;
+  padding: 0 15px;
+  color: var(--lyte-accordion-color);
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-accordion-body-font-size);
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  transition: height ease-out 0.3s, padding ease-out 0.3s;
+}
+.lyteAccordionActive lyte-accordion-body {
+  padding-bottom: 10px;
+}
+lyte-icon.lyteAccordionArrow {
+  background-image: var(--lyte-sprite-image);
+  background-position: -42px 0;
+  width: 6px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  margin-top: 7px;
+  display: inline-block;
+}
+.lyteAccordionActive lyte-icon.lyteAccordionArrow {
+  background-position: -28px 0px;
+  width: 9px;
+  height: 7px;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/accordion.less file
+ */

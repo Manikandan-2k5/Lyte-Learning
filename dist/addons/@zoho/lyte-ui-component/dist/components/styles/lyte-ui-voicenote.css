@@ -1,0 +1,272 @@
+lyte-voicenote {
+	display: flex;
+	background: #f5f8fb;
+	align-items: center;
+	border-radius: 20px;
+	width: 570px;
+	padding: 5px;
+}
+.lyteVoiceNotePrefetchContainer {
+	display: flex;
+	flex-grow: 1;
+}
+.lyteVoiceNotePrefetchPlayIcon,
+.lyteVoiceNotePausePlayIcon {
+	width: 32px;
+	height: 32px;
+	background: #8AC0F2;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	box-shadow: 0px 0px 2px 0px #00000040;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lyteVoiceNotePrefetchPlayIcon::after,
+.lyteVoiceNotePausePlayIcon::after {
+	content: '';
+	-webkit-mask-image: url(../images/sprite_lyte.svg);
+	mask-image: url(../images/sprite_lyte.svg);
+	-webkit-mask-position: -181px -79px;
+	mask-position: -181px -79px;
+	background-color: #fff;
+	width: 9px;
+	height: 13px;
+}
+.lyteVoiceNotePrefetchPlayIcon::after,
+.lyteVoiceNotePausePlayIcon.paused::after {
+	-webkit-mask-position: -160px -80px;
+	mask-position: -160px -80px;
+	width: 10px;
+	height: 11px;
+	margin-left: 3px;
+}
+.lyteVoiceNotePrefetchLoading .lyteVoiceNotePrefetchPlayIcon::after {
+	display: none;
+}
+.lyteVoiceNotePrefetchLoading .lyteVoiceNotePrefetchPlayIcon {
+	pointer-events: none;
+}
+.lyteVoiceNotePrefetchLoadBarWrap {
+	margin: 0 10px 0 20px;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+.lyteVoiceNotePrefetchLoadingBar {
+	background: #dce3eb;
+	height: 2px;
+	display: block;
+	flex-grow: 1;
+	position: relative;
+}
+.lyteVoiceNoteProgress {
+	position: relative;
+	outline: none;
+	margin: 0 10px 0 20px;
+	flex-grow: 1;
+	background: #dce3eb;
+}
+.lyteVoiceNotePrefetchLoadingBar::before {
+	content: '';
+}
+.lyteVoiceNotePrefetchLoadingBar::before,
+.lyteVoiceNoteHandler {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: inherit;
+	top: 1px;
+}
+.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler {
+	background: #59B0FF;
+}
+.lyteVoiceNoteMetaLoaded .lyteVoiceNoteProgress {
+	cursor: pointer;
+}
+.lyteVoiceNoteCompletion {
+	display: block;
+	pointer-events: none;
+	background: #8ac0f2;
+	height: 2px;
+	width: 0;
+}
+.lyteVoiceNoteElapsedTime,
+.lyteVoiceNoteDurationSpan {
+	color: #949fb5;
+	font-size: 13px;
+}
+.lyteVoiceNoteDurationSpan {
+	margin-right: 7px;
+}
+.lyteVoiceNoteTimeSeparate {
+	margin: 0 5px;
+	color: #949fb5;
+}
+.lyteVoiceNoteVolumeController {
+	display: flex;
+	margin-left: 10px;
+}
+.lyteVoiceNotePlaybackRate {
+	margin: 0 10px;
+}
+.lyteVoiceNoteVolumeIcon,
+.lyteVoiceNoteVolumeControl {
+	-webkit-mask-image: url(../images/sprite_lyte.svg);
+	mask-image: url(../images/sprite_lyte.svg);
+	-webkit-mask-position: -68px -78px;
+	mask-position: -68px -78px;
+	background-color: #555;
+	width: 20px;
+	height: 16px;
+	display: block;
+	cursor: pointer;
+}
+.lyteVoiceNotePopover {
+	padding: 7px 13px;
+}
+.lyteVoiceNoteVolumeIcon {
+	margin-right: 10px;
+}
+.lyteVoiceNoteMuteIcon {
+	-webkit-mask-position: -128px -78px;
+	mask-position: -128px -78px;
+}
+.lyteVoiceNoteFullVolumeIcon {
+	-webkit-mask-position: -95px -78px;
+	mask-position: -95px -78px;
+}
+.lyteVoiceNoteVolumeSlider {
+	display: flex;
+	align-items: center;
+}
+.lyteVoiceNoteVolumeSlider .lyteRangeSlider {
+	background: transparent;
+	height: 2px;
+}
+.lyteVoiceNoteVolumeSlider .lyteRangeSlider.lyteHorizontal .lyteSliderFill {
+	height: 2px;
+	top: calc(50% - 1px) !important;
+	background: #8ac0f2;
+}
+.lyteVoiceNoteVolumeSlider .lyteSliderHandler {
+	background: #59B0FF;
+	top: calc(50% - 6px);
+	border: 0;
+}
+.lyteVoiceNotePlaybackRate lyte-drop-button {
+	padding: 2px 7px;
+	display: block;
+	border-radius: 10px;
+	color: #666;
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+}
+.lyteVoiceNotePlaybackRate lyte-icon.dropdown {
+	display: none;
+}
+lyte-drop-box.lyteVoiceNotePlaybackRateDropbox {
+	border-radius: 5px;
+}
+.lyteVoiceNotePlaybackRateDropbox .lyteArrow {
+	display: none !important;
+}
+lyte-drop-box.lyteDropdownDown.lyteVoiceNotePlaybackRateDropbox {
+	transform: translateX(-25%) translateY(15px);
+}
+lyte-drop-box.lyteDropdownUp.lyteVoiceNotePlaybackRateDropbox {
+	transform: translateX(-25%) translateY(-15px);
+}
+.lyteVoiceNotePlaybackRateDropbox lyte-drop-item {
+	padding: 4px 15px;
+	font-size: 13px;
+	color: #666;
+}
+.lyteVoiceNotePlaybackRateDropbox lyte-drop-item[selected="true"]::before {
+	left: 4px;
+	top: calc(50% - 3px);
+}
+.lyteVoiceNotePrefetchContainer .lyteCircleLoader {
+	display: none;
+}
+.lyteVoiceNotePrefetchLoading .lyteCircleLoader {
+	display: block;
+}
+.lyteVoiceNotePrefetchContainer ~ lyte-dropdown,
+.lyteVoiceNotePrefetchContainer ~ .lyteVoiceNoteVolumeController {
+	pointer-events: none;
+	opacity: 0.7;
+}
+
+.lyteCircleLoader {
+	height: 32px;
+	width: 32px;
+	animation: lyteCircleLoaderAnim 4.8s linear infinite;
+}
+@keyframes lyteCircleLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.lyteCircleInnerLoader {
+	display: block;
+	/* clip: rect(0, 32px, 32px, 16px); */
+	animation: lyteCircleInnerLoaderAnim 1.2s linear infinite;
+}
+.lyteCircleInnerLoader,
+.lyteCircleInnerLoader::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	height: 20px;
+	width: 20px;
+	clip-path: polygon(10px 0, 20px 0px, 20px 20px, 10px 20px);
+	box-sizing: border-box;
+}
+@keyframes lyteCircleInnerLoaderAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(220deg);
+	}
+}
+.lyteCircleInnerLoader::after {
+	content: "";
+	/* clip: rect(0, 32px, 32px, 16px); */
+	border: 2px solid #FFF;
+	border-radius: 50%;
+	animation: lyteCircleInnerLoaderAfterAnim 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+@keyframes lyteCircleInnerLoaderAfterAnim {
+	0% {
+		transform: rotate(-140deg);
+	}
+	50% {
+		transform: rotate(-160deg);
+	}
+	100% {
+		transform: rotate(140deg);
+	}
+}
+
+.lyteVoiceNoteError .lyteVoiceNotePlaybackRate,
+.lyteVoiceNoteError .lyteVoiceNoteVolumeControl,
+.lyteVoiceNoteError .lyteVoiceNoteProgress,
+.lyteVoiceNoteError .lyteVoiceNotePausePlayIcon {
+	pointer-events: none;
+	opacity: 0.7;
+}
+.lyteVoiceNoteError .lyteVoiceNoteHandler {
+	background: #dce3eb;
+}

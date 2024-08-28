@@ -1,0 +1,230 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/carousel/carousel.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{carousel}/ui-elements/carousel/carousel.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{carousel}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/carousel.variables.less";
+
+
+lyte-carousel {
+    .carouselMixin();
+	display: block;
+	font-family: @primaryFont;
+	width: @w;
+	height: @h;
+	min-height: @min-h;
+}
+.lyteCarouselWrapper {
+    .carouselWrapperMixin();
+	position: relative;
+	display: inline-block;
+	width: @w;
+	height: @h;
+	min-height: inherit;
+}
+.lyteCarouselWrapper lyte-yield {
+    .carouselWrapperYieldMixin();
+	width: @w;
+	height: @h;
+	display: flex;
+	flex-direction: column;
+	min-height: inherit;
+}
+lyte-carousel-content {
+    .carouselContentMixin();
+	width: @w;
+	height: @h;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	min-height: inherit;
+}
+lyte-carousel-item {
+	.carouselItemMixin();
+	width: @w;
+	height: @h;
+	padding: @padding;
+	box-sizing: border-box;
+	display: none;
+	transform: translateX(0);
+	transition: transform 0.2s ease;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+lyte-carousel-item.lyteActive {
+	display: flex;
+}
+.lyteActiveNext {
+    .carouselActiveNextItemMixin();
+	display: flex;
+	transform: @transform;
+}
+.lyteActivePrev {
+    .carouselActivePrevItemMixin();
+	display: flex;
+	transform: @transform;
+}
+lyte-carousel-item img {
+    .carouselItemImgMixin();
+	width: @w;
+	height: @h;
+	object-fit: contain;
+}
+lyte-carousel-indicator {
+	.carouselIndicatorMixin();
+	display: flex;
+	justify-content: center;
+	margin-top: @margin-top;
+	width: @w;
+}
+lyte-carousel-indicator-item {
+	.carouselIndicatorItemMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	border-radius: @border-radius;
+	margin: @margin;
+	cursor: pointer;
+}
+lyte-carousel-indicator-item:hover {
+	.carouselIndicatorItemhoverMixin();
+	background: @bg;
+}
+lyte-carousel-indicator-item li {
+	list-style: none;
+}
+lyte-carousel-indicator-item.lyteActive {
+    .carouselIndicatorItemActiveMixin();
+	background: @bg;
+}
+lyte-carousel-next,
+lyte-carousel-prev {
+	.carouselPrevMixin();
+	display: flex;
+	width: @w;
+	height: @h;
+	border: @border;
+	background: @bg;
+	border-radius: 50%;
+	position: absolute;
+    z-index: 5;
+	top: @top;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background 0.1s ease;
+    & when (@rtlEnabled = true) {
+        transform: @value-rotate-0deg;
+    }
+}
+lyte-carousel-next:hover,
+lyte-carousel-prev:hover {
+    .carouselPrevHoverMixin();
+	background: @bg;
+}
+lyte-carousel-next {
+    .carouselNextMixin();
+    @{property-right}: @right;
+}
+lyte-carousel-prev.lyteDisabled,
+lyte-carousel-next.lyteDisabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+lyte-carousel-prev::before,
+lyte-carousel-next::before {
+	.carouselNextbeforeMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+lyte-carousel-next::before {
+	transform: rotate(180deg);
+}
+.lyteFade lyte-carousel-item {
+    .carouselItemFadeEffect();
+	display: flex;
+	opacity: @opacity;
+	transition: @transition;
+}
+.lyteFade lyte-carousel-item.lyteActive {
+    .carouselActiveItemFadeEffect();
+	opacity: @opacity;
+}
+lyte-carousel-sub-item {
+	.carouselSubItemMixin();
+	height: @h;
+	margin: @margin;
+}
+.lyteCarouselFrames lyte-carousel-item.lyteActive {
+	flex-wrap: wrap;
+	overflow: auto;
+}
+.lyteCarouselFrames lyte-carousel-sub-item {
+	.carouselFramesSubItemMixin();
+	width: @w;
+	height: @h;
+	margin: @margin;
+	background: @bg;
+	border-radius: @border-radius;
+	padding: @padding;
+	border: @border;
+}
+
+lyte-carousel.lyteCarouselVertical {
+	.lyteCarouselVerticalMixin();
+	min-height: @min-h;
+}
+.lyteCarouselVertical .lyteCarouselWrapper > lyte-yield {
+	flex-direction: row;
+}
+.lyteCarouselVertical lyte-carousel-item {
+	.lyteCarouselVerticalCarouselItemMixin();
+	padding: @padding;
+}
+.lyteCarouselVertical lyte-carousel-indicator {
+	.lyteCarouselVerticalCarouselIndicatorMixin();
+	flex-direction: column;
+	width: auto;
+	margin-top: @margin-top;
+}
+.lyteCarouselVertical lyte-carousel-indicator-item {
+	.lyteCarouselVerticalCarouselIndicatorItemMixin();
+	margin: @margin;
+}
+.lyteCarouselVertical lyte-carousel-next,
+.lyteCarouselVertical lyte-carousel-prev {
+	.lyteCarouselVerticalCarouselNavArrowsCommonMixin();
+	@{property-left}: @left;
+	transform: @transform;
+	top: @top;
+}
+.lyteCarouselVertical lyte-carousel-next {
+	.lyteCarouselVerticalCarouselNextMixin();
+	top: @top;
+	bottom: @bottom;
+}
+.lyteCarouselVertical .lyteActiveNext {
+	.lyteCarouselVerticalActiveNextItemMixin();
+	transform: @transform;
+}
+.lyteCarouselVertical .lyteActivePrev {
+	.lyteCarouselVerticalActivePrevItemMixin();
+	transform: @transform;
+}

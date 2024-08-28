@@ -1,0 +1,95 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/resize/resize.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{resize}/ui-elements/resize/resize.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{resize}/global/@{direction}.less";
+
+.lyteResizeElement {
+    position: relative;
+}
+
+.lyteResizeHandle {
+    .lyteResizeHandleMixin();
+    position: absolute;
+    width: @w;
+    height: @h;
+    background: @bg;
+    transform: @transform;
+    display: none;
+}
+
+.lyteResizeSelected .lyteResizeHandle {
+    display: block;
+}
+
+.lyteResizeN {
+    .lyteResizeNMixin();
+    top: @top;
+    left: @left;
+    cursor: @cursor;
+}
+
+.lyteResizeNW {
+    .lyteResizeNWMixin();
+    top: @top;
+    left: @left;
+    cursor: @cursor;
+}
+
+.lyteResizeNE {
+    .lyteResizeNEMixin();
+    top: @top;
+    left: @left;
+    cursor: @cursor;
+}
+
+.lyteResizeS {
+    .lyteResizeSMixin();
+    left: @left;
+    top: @top;
+    cursor: @cursor;
+}
+
+.lyteResizeSW {
+    .lyteResizeSWMixin();
+    left: @left;
+    top: @top;
+    cursor: @cursor;
+}
+
+.lyteResizeSE {
+    .lyteResizeSEMixin();
+    left: @left;
+    top: @top;
+    cursor: @cursor;
+}
+
+.lyteResizeW {
+    .lyteResizeWMixin();
+    left: @left;
+    top: @top;
+    cursor: @cursor;
+}
+
+.lyteResizeE {
+    .lyteResizeEMixin();
+    left: @left;
+    top: @top;
+    cursor: @cursor;
+}
+
+.lyteResizeInfoDiv {
+    .lyteResizeInfoDivMixin();
+    position: absolute;
+    display: block;
+    border: @border;
+    padding: @padding;
+    pointer-events: none;
+}

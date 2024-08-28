@@ -1,0 +1,306 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/fileupload/fileupload.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{fileupload}/ui-elements/fileupload/fileupload.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{fileupload}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/fileupload.variables.less";
+
+
+lyte-file-message,
+lyte-fileupload,
+lyte-file-select-area {
+	font-family: @primaryFont;
+	display: block;
+}
+.lyteFileUpdMsgWrap {
+	.fileUpdMsgWrapMixin();
+	font-size: @font-size;
+	box-sizing: border-box;
+	cursor: pointer;
+	outline: none;
+	background: @bg;
+	text-align: center;
+	color: @color;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+	.fileUpdBoxTypeMsgWrapMixin();
+	border-radius: @border-radius;
+	padding: @padding;
+	border: @border;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap:hover {
+	.fileUpdBoxTypeMsgWrapHoverMixin();
+	border: @border;
+}
+.fileDragEnter.lyteFileUpdInputType .lyteFileUpdMsgWrap,
+.fileDragEnter.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+	.fileDragEnterFileUpdBoxTypeMsgWrapMixin();
+	border: @border;
+	background: @bg;
+}
+.lyteFileUpdMsg {
+	.fileUpdMsgMixin();
+	position: relative;
+	line-height: @line-height;
+}
+.fileDragEnter .lyteFileUpdMsg {
+	opacity: 0.7;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsg {
+	.fileUpdBoxTypeMsgMixin();
+    @{property-padding-left}: @padding-left;
+}
+.lyteFileUpdBoxType .lyteFileUpdMsg::before {
+	.fileUpdBoxTypeMsgBeforeMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+    @{property-left}: 0;
+}
+.lyteFileUpdThumb {
+	.fileUpdThumbMixin();
+	display: block;
+	width: @w;
+	height: @h;
+	border-radius: 50%;
+	border: @border;
+}
+.lyteFileUpdList {
+	display: flex;
+	flex-direction: column;
+}
+.multiFileupload .lyteFileUpdList {
+	.multiFileuploadListMixin();
+	margin-top: @margin-top;
+}
+.multiFileupload .lyteFileUpdListFile {
+	.multiFileuploadListFileMixin();
+	margin-bottom: @margin-bottom;
+}
+.lyteFileUpdListFile {
+	.fileUpdListFileMixin();
+	position: relative;
+	display: flex;
+	padding: @padding;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	align-items: center;
+}
+.lyteFileUpdListFile.lyteFileError {
+	.multiFileuploadListFileErrorMixin();
+	background: @bg;
+	border: @border;
+}
+.lyteFileUpdTypePreview {
+	.fileUpdTypePreviewMixin();
+    @{property-margin-right}: @margin-right;
+}
+.lyteFileUpdTypeIcon::after {
+	.fileUpdTypeIconAfterMixin();
+	content: '';
+	background-image: @bg-img;
+	display: block;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.lyteFileUpdTypeIcon.pdf::after {
+	.fileUpdTypeIconPdfAfterMixin();
+	background-position: @bg-pos;
+}
+.lyteFileUpdTypeIcon.video::after {
+	.fileUpdTypeIconAfterVideoMixin();
+	background-position: @bg-pos;
+}
+.lyteFileUpdTypeIcon.image::after {
+	.fileUpdTypeIconAfterImageMixin();
+	background-position: @bg-pos;
+}
+.lyteFileUpdTypeIcon.zip::after {
+	.fileUpdTypeIconAfterZipMixin();
+	background-position: @bg-pos;
+}
+.lyteFileUpdFileName {
+	.fileUpdFileNameMixin();
+	color: @color;
+	font-size: @font-size;
+	@{property-margin-right}: @margin-right;
+	max-width: @max-w;
+	white-space: nowrap;
+}
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+	.fileUpdSuccessFileNameMixin();
+	max-width: @max-w;
+}
+.lyteFileUpdFileSize {
+	.fileUpdFileSizeMixin();
+	font-size: @font-size;
+	color: @color;
+	@{property-margin-right}: auto;
+	white-space: nowrap;
+}
+.lyteFileUpdFileStatus {
+	.fileUpdFileStatusMixin();
+	display: flex;
+	@{property-margin-right}: @margin-right;
+}
+.lyteFileUpdProgressBar {
+	.fileUpdProgressBarMixin();
+	height: @h;
+	width: @w;
+	background: @bg;
+	flex-grow: 1;
+	border-radius: @border-radius;
+}
+.lyteFileUpdProgressFill {
+	.fileUpdProgressFillMixin();
+	height: @h;
+	background: @bg;
+	width: 0;
+	border-radius: @border-radius;
+	transition: width 0.1s linear;
+}
+lyte-file-retry {
+	.fileRetryMixin();
+	display: inline-flex;
+	@{property-margin-right}: @margin-right;
+}
+.lyteFileUpdFailMsg {
+	.fileUpdFailMsgMixin();
+	font-size: @font-size;
+	color: @color;
+	@{property-margin-right}: @margin-right;
+	text-transform: capitalize;
+	cursor: default;
+}
+.lyteFileUpdRetryMsg {
+	.fileUpdRetryMsgMixin();
+	font-size: @font-size;
+	color: @color;
+	text-transform: capitalize;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.lyteFileUpdRetryMsg:hover {
+	.fileUpdRetryMsgHoverMixin();
+	color: @color;
+}
+lyte-file-close {
+	.fileCloseMixin();
+	cursor: pointer;
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	opacity: @opacity;
+	display: inline-flex;
+	flex-shrink: 0;
+}
+.lyteFileUpdListFile.lyteFileSuccess lyte-file-close {
+	visibility: hidden;
+}
+.lyteFileUpdListFile.lyteFileSuccess:hover lyte-file-close {
+	visibility: visible;
+}
+lyte-file-close:hover {
+	opacity: 0.7;
+}
+.lyteFileUpdBoxType #lyteFileUpdSelectedFile {
+	.fileUpdSelectedFileMixin();
+	background: @bg;
+	border: @border;
+}
+.lyteFileUpdInputType .lyteFileUpdMsgWrap {
+	.fileUpdInputTypeMsgWrapMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	border: @border;
+	background: @bg;
+	text-align: @property-left;
+}
+.lyteFileUpdInputType .lyteFileUpdMsgWrap:hover {
+	.fileUpdInputTypeMsgWrapHoverMixin();
+	border: @border;
+}
+.lyteFileUpdInputType .lyteFileUpdListFile {
+	.fileUpdInputTypeListFileMixin();
+	padding: @padding;
+	border: @border;
+	border-radius: @border-radius;
+	background: @bg;
+}
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileError {
+	.fileUpdInputTypeListFileErrorMixin();
+	background: @bg;
+	border: @border;
+}
+.lyteFileUpdInputType .lyteFileUpdFileName {
+	.fileUpdInputTypeFileNameMixin();
+	line-height: @line-height;
+	font-size: @font-size;
+	max-width: @max-w;
+}
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+	.fileUpdInputTypeListFileSuccessFileNameMixin();
+	max-width: @max-w;
+}
+.lyteFileUpdInputType lyte-file-close {
+	.fileUpdInputTypeFileCloseMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap {
+	.FileUpdBtnTypeMsgWrapMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap::after {
+	.fileUpdBtnTypeMsgWrapAfterMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: block;
+}
+.lyteFileUpdListFile.lyteFileError .lyteFileUpdFileStatus,
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileStatus,
+.lyteFileUpdBtnType .lyteFileUpdMsg,
+.fileuploadInput,
+.lyteFileUpdInputType .lyteFileUpdTypePreview,
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap.lyteHide,
+lyte-fileupload .lyteHide {
+	display: none;
+}
+.lyteFileUpdDisabled {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{fileupload}/ui-elements/fileupload/fileupload.styles.less";
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/fileupload.overrides.less";

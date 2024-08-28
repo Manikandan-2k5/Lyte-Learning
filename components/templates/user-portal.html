@@ -1,0 +1,28 @@
+<template tag-name="user-portal">
+    <h1 lyte-if="{{if(name=='MANIKANDAN', true, false)}}">Hi {{name}}</h1>
+    <h1 lyte-else>Bye Bye</h1>
+    <link-to lt-prop-route="home">
+        <span>Home</span>
+    </link-to>
+    Hi {{name}}
+    <div>{{unescape(htmlContent)}}</div>
+    <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Change your name" lt-prop-value = "{{lbind(name)}}"> </lyte-input>
+    <menu-portal>
+        <template is="yield" yield-name="menu-list">
+            <ol>
+                <li lyte-for="{{operations}} as item index">
+                    <lyte-button onclick="{{action('menu',item)}}">
+                        <template is="registerYield" yield-name="text">{{item}} {{iconElement}}</template>
+                    </lyte-button>
+                </li>
+            </ol>
+        </template>
+    </menu-portal>
+    <lyte-button onclick="{{action('changeArray')}}">
+        <template is="registerYield" yield-name="text">Change Array</template>
+    </lyte-button>
+    <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Change your phone_no" lt-prop-value = "{{lbind(details.personal_info.phone_number)}}"> </lyte-input>
+    <div style="margin:1rem; display:flex; flex-direction:column; overflow:scroll; justify-content: space-around; align-items:center; width:400px; height:1000px; border:1px solid black;">
+        <user-label lyte-view-port="true" lyte-for="{{usersLabel}} as item index" user-name="{{item.userName}}" user-id="{{item.userId}}"></user-label>
+    </div>
+</template>

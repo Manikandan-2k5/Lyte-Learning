@@ -1,0 +1,13 @@
+:root {
+	--lyte-badge-bg: #f06060;
+	--lyte-badge-border-color: #fff;
+	--lyte-badge-content-color: #fff;
+}
+
+.BadgeMixin() {
+	@bg: var(--lyte-badge-bg);
+	@border: 1px solid var(--lyte-badge-border-color);
+}
+.BadgeContentMixin() {
+	@color: var(--lyte-badge-content-color);
+}

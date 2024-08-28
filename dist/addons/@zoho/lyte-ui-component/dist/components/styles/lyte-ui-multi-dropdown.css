@@ -1,0 +1,23 @@
+lyte-multi-dropdown lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button {
+	padding: 9px 25px 9px 10px;
+}
+.lyteMultiDropdownDropbox lyte-drop-item {
+	padding: 8px 15px 8px 25px;
+	display: block;
+}
+.lyteMultiSelectDropdown lyte-drop-group.lyteDropdownHideGroup,
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item {
+	display: block;
+}
+.lyteMultiDropdownCheckBoxTypeDropbox lyte-drop-item::before {
+	content: none;
+}
+lyte-multi-dropdown .lyteDropPlaceholderMultiple {
+	padding: 0;
+}
+.lyteMultiDropSelectedText {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}

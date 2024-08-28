@@ -1,0 +1,21 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/find/find.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{find}/ui-elements/find/find.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{find}/global/@{direction}.less";
+
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/find.variables.less";
+
+.lyteFindHighlight {
+    .findHighlightMixin();
+    background: @bg;
+}

@@ -1,0 +1,357 @@
+/*
+
+
+lyte-rating{
+  display: inline-flex;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+lyte-rate-icon{
+  display: inline-flex;
+  width: 18px;
+  height: 16px;
+  padding: 2px;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  cursor: pointer;
+  -webkit-transition: opacity .1s ease,background .1s ease,text-shadow .1s ease,color .1s ease;
+  transition: opacity .1s ease,background .1s ease,text-shadow .1s ease,color .1s ease;
+}
+.lyteRatingReadOnly{
+  pointer-events: none;
+}
+.lyteRatingEmptyStar{
+  background: url(../images/png/star_empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingHalfStar,
+.lyteRatingHoverHalfStar{
+  background: url(../images/png/star_half.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingFullStar,
+.lyteRatingHoverFullStar{
+  background: url(../images/png/star_full.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingEmptyHeart{
+  background: url(../images/png/heart_empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingHalfHeart,
+.lyteRatingHoverHalfHeart{
+  background: url(../images/png/heart_half.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingFullHeart,
+.lyteRatingHoverFullHeart{
+  background: url(../images/png/heart_full.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lyteRatingHoverFullStar,
+.lyteRatingHoverHalfStar,
+.lyteRatingHoverFullHeart,
+.lyteRatingHoverHalfHeart{
+  opacity: 0.5;
+}
+.lyteRatingFullStar,
+.lyteRatingHalfStar,
+.lyteRatingFullHeart,
+.lyteRatingHalfHeart{
+  opacity: 1 !important;
+}
+
+*/
+
+/* This css are for the custom icons */
+
+/*
+.lRCustomRatingEmpty,
+.lRCustomRatingHover{
+  background: url(../images/png/circle-outline.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lRCustomRatingEmpty{
+  opacity: 0.5;
+}
+.lRCustomRatingHover{
+  opacity: 1;
+}
+.lRCustomRating{
+  background: url(../images/png/star.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+*/
+
+/* This css are for the custom toggle icon */
+
+/*
+
+.lrcToggleEmpty{
+  background: url(../images/png/review-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lrcToggleHover1{
+  background: url(../images/png/review-fill1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lrcToggleHover2{
+  background: url(../images/png/review-fill2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lrcToggleFill{
+  background: url(../images/png/review.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lrcToggleEmptyTU{
+  background: url(../images/png/thumbsUp-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+.lrcToggleHoverTU{
+  background: url(../images/png/thumbsUp-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+.lrcToggleFillTU{
+  background: url(../images/png/thumbsUp-fill.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+*/
+
+/* This css are for the custom switch icon */
+
+/*
+.lrcSwitchLikeEmpty{
+  background: url(../images/png/like-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+.lrcSwitchHoverLike{
+  background: url(../images/png/like-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+.lrcSwitchLike{
+  background: url(../images/png/like.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+.lrcSwitchDislikeEmpty{
+  background: url(../images/png/dislike-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+.lrcSwitchHoverDislike{
+  background: url(../images/png/dislike-empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+.lrcSwitchDislike{
+  background: url(../images/png/dislike.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+*/
+
+/*--------------------------  Multiple type example  --------------------------*/
+/*
+
+.empty1,.empty2,.empty3,.empty4,.empty5{
+  background: url(../images/png/star_empty.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.half1,.half2,.half3,.half4,.half5,
+.hoverHalf1,.hoverHalf2,.hoverHalf3,.hoverHalf4,.hoverHalf5{
+  background: url(../images/png/star_half.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.full1,.full2,.full3,.full4,.full5,
+.hoverFull1,.hoverFull2,.hoverFull3,.hoverFull4,.hoverFull5{
+  background: url(../images/png/star_full.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+*/
+
+
+
+
+lyte-rating{
+    display: inline-flex;
+    white-space: nowrap;
+}
+lyte-rate-icon{
+    display: inline-flex;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-image: url(../images/sprite_lyte.svg);
+}
+
+
+lyte-rating.star lyte-rate-icon {
+    background-position: -140px -239px;
+}
+lyte-rating.heart lyte-rate-icon {
+    background-position: -9px -240px;
+}
+lyte-rating.lineStar lyte-rate-icon {
+    background-position: -172px -239px;
+}
+lyte-rating.lineHeart lyte-rate-icon {
+    background-position: -41px -240px;
+}
+
+
+lyte-rating.star .lyteRatingHoverHalf,
+lyte-rating.lineStar .lyteRatingHoverHalf,
+lyte-rating.star .lyteRatingHalf,
+lyte-rating.lineStar .lyteRatingHalf {
+    background-position: -239px -239px;
+}
+lyte-rating.heart .lyteRatingHoverHalf,
+lyte-rating.lineHeart .lyteRatingHoverHalf,
+lyte-rating.heart .lyteRatingHalf,
+lyte-rating.lineHeart .lyteRatingHalf {
+    background-position: -107px -240px;
+}
+
+lyte-rating.lineStar .lyteRatingHoverFilled,
+lyte-rating.lineStar .lyteRatingFilled,
+lyte-rating.star .lyteRatingHoverFilled,
+lyte-rating.star .lyteRatingFilled {
+    background-position: -205px -239px;
+}
+lyte-rating.lineHeart .lyteRatingHoverFilled,
+lyte-rating.lineHeart .lyteRatingFilled,
+lyte-rating.heart .lyteRatingHoverFilled,
+lyte-rating.heart .lyteRatingFilled {
+    background-position: -74px -240px;
+}
+.lyteRatingReadOnly {
+    cursor: not-allowed;
+}
+.lyteRatingReadOnly lyte-rate-icon {
+    pointer-events: none;
+}
+
+
+.lyteRatingSmiley lyte-rate-icon {
+    width: 21px;
+    height: 21px;
+}
+.lyteRatingSmiley lyte-rate-icon:nth-child(1) {
+    background-position: -72px -273px;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(2) {
+    background-position: -104px -273px;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(3) {
+    background-position: -135px -273px;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(4) {
+    background-position: -41px -273px;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(5) {
+    background-position: -10px -273px;
+}
+
+.lyteRatingSmiley lyte-rate-icon.lyteRatingHover:nth-child(1),
+.lyteRatingSmiley lyte-rate-icon.lyteRated:nth-child(1) {
+    background-position: -231px -273px;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(2) {
+    background-position: -263px -273px;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(3) {
+    background-position: -294px -273px;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(4),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(4) {
+    background-position: -200px -273px;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(5),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(5) {
+    background-position: -169px -273px;
+}
+
+
+.lrcSwitchDislikeEmpty,
+.lrcSwitchLikeEmpty {
+    width: 20px;
+    height: 20px;
+}
+.lrcSwitchLikeEmpty {
+    background-position: -230px -205px;
+}
+.lrcSwitchDislikeEmpty {
+    background-position: -294px -210px;
+}
+.lrcSwitchLikeEmpty:hover {
+    background-position: -262px -205px;
+    opacity: 0.8;
+}
+.lrcSwitchDislikeEmpty:hover {
+    background-position: -325px -210px;
+    opacity: 0.8;
+}
+.lrcSwitchLike.lyteRated {
+    background-position: -262px -205px;
+    opacity: 1;
+}
+.lrcSwitchDislike.lyteRated {
+    background-position: -325px -210px;
+    opacity: 1;
+}
+
+.lrcToggleEmpty {
+    background-position: -9px -240px;
+}
+.lrcToggleEmpty:hover,
+.lrcToggleFill {
+    background-position: -74px -240px;
+}

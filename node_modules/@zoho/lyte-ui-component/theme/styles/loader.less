@@ -1,0 +1,184 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/loader/loader.variables.less";
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{loader}/ui-elements/loader/loader.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{loader}/global/@{direction}.less";
+
+
+.ltLoaderSpin:after {
+  .Loaderspinafter();
+  z-index: @z-index;
+  border-radius: @border-radius;
+  width: @w;
+  height: @h;
+}
+
+
+.ltLoaderSpin {
+  .Loaderspin();
+  display: block;
+  width: @w;
+  height: @h;
+  border-radius: @border-radius;
+  position: relative;
+  text-indent: @text-indent;
+  border-top: @border-top;
+  border-right: @border-right;
+  border-bottom: @border-bottom;
+  border-left: @border-left;
+  -webkit-animation: @animation;
+  animation: @animation;
+}
+
+.ltLoaderProgressBar{
+  .LoaderProgressBar();
+  display: block;
+  width: @w;
+}
+.ltLoaderProgressBar.definite{
+  .LoaderProgressBarDefinite();
+  position :relative;
+  height: @h;
+  z-index: @z-index;
+  background-color: @bg;
+  border-radius :@border-radius;
+}
+.ltLoaderProgressBar.definite span{
+  .LoaderProgressBarDefiniteSpan();
+  content: '';
+  position : absolute;
+  z-index: @z-index;
+  height: @h;
+  border-radius: @border-radius;
+  background: @bg;
+  transition: @transition;
+}
+
+
+.ltLoaderProgressBar.indefinite{
+  .LoaderProgressBarIndefinite();
+  height: @h;
+  z-index: @z-index;
+  background: @bg;
+  background-color: @bg-color;
+  position: relative;
+  background-size: @bg-size;
+  background-repeat: @bg-repeat;
+  background-position: @bg-pos;
+  animation: @animation;
+
+}
+.lyteLoaderTimeoutMessage{
+  .LoaderTimeoutMessage();
+  z-index: @z-index;
+  height: @h;
+  font-family: @font-family;
+  color : @color;
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+.lyteLoaderProgressMessage {
+  .LoaderProgressMessage();
+  z-index: @z-index;
+  height: @h;
+  font-family: @font-family;
+  color : @color;
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+.ltLoaderProgressBar.indefinite.lyteLoaderTimeout{
+  .LoaderTimeout();
+  z-index : @z-index;
+  animation: @animation;
+
+}
+
+
+.ltLoaderSpin.lyteLoaderTimeout{
+  .LoaderTimeout();
+  animation: @animation;
+}
+.lyteLoaderExit{
+  .LoaderExit();
+  background-image: @bg-img;
+  background-position: @bg-pos;
+  width: @w;
+  height: @h;
+  opacity: @opacity;
+  margin-right: @margin-right;
+  cursor: pointer;
+  transform: @transform;
+  z-index: @z-index;
+  outline: none;
+  
+}
+
+.lyteLoaderParent{
+  display: block;
+  position: relative;
+}
+
+.lyteLoaderFreeze{
+  .LoaderFreeze();
+  display: block;
+  position: absolute;
+  top: @top;
+  left: @left;
+  width: @w;
+  height: @h;
+  z-index: @z-index;
+  background: @bg;
+  opacity: @opacity;
+  transition: @transition;
+}
+
+.ltLoader{
+  .Loader();
+  display: flex;
+  width: @w;
+  height: @h;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+.ltspindiv{
+  .spindiv();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: @h;
+
+}
+.ltexitdiv{
+  .exitdiv();
+  height: @h;
+  width: @w;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.ltLoaderContainer{
+  .LoaderContainer();
+  width: @w;
+  height: @h;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+}
+ 

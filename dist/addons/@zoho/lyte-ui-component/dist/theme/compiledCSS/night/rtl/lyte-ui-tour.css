@@ -1,0 +1,139 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteTourFreezeLayer,
+.lyteTourDummyWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.lyteTourFreezeLayer {
+  mix-blend-mode: hard-light;
+  position: fixed;
+  background: #000;
+  opacity: 0.3;
+}
+.lyteTourClipMask {
+  background: gray;
+}
+.lyteTourContainer {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s linear;
+  z-index: 1040;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+.lyteTourArrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: #333;
+  display: none;
+  left: 0;
+}
+.lyteTourLeftArrow {
+  border-left: 1px solid #6f6f6f;
+  border-bottom: 1px solid #6f6f6f;
+}
+.lyteTourRightArrow {
+  right: 0;
+  border-top: 1px solid #6f6f6f;
+  border-right: 1px solid #6f6f6f;
+  left: unset;
+}
+.lyteTourTopArrow {
+  top: 0;
+  border-top: 1px solid #6f6f6f;
+  border-left: 1px solid #6f6f6f;
+}
+.lyteTourBottomArrow {
+  bottom: 0;
+  border-bottom: 1px solid #6f6f6f;
+  border-right: 1px solid #6f6f6f;
+}
+.lyteTourStep {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  border: 1px solid #6f6f6f;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+lyte-tour-step-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+lyte-tour-step-head {
+  font-family: 'LatoBold', 'Open Sans', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  color: #eee;
+}
+lyte-tour-step-content {
+  flex-grow: 1;
+}
+lyte-tour-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+lyte-tour-step-indicator-wrapper {
+  display: flex;
+}
+lyte-tour-step-indicator {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+lyte-tour-step-indicator.lyteCurTourStep,
+lyte-tour-step-indicator:hover {
+  background: #5ba1e5;
+}
+.lyteTourActiveTarget {
+  z-index: 1040;
+}
+.lyteTourTargetBackground {
+  position: absolute;
+  background: #333;
+  z-index: 1020;
+  transition: top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+}
+.lyteTourDefaultArrow,
+.lyteTourActive,
+.lyteTourActiveStep {
+  display: block;
+}
+.lyteTourResetSpacing {
+  margin: 0;
+}
+.lyteTourDummyTarget {
+  position: absolute;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+.lyteTourDummyTarget.lyteTourActiveTarget {
+  visibility: visible;
+}
+.lyteTourStepHidden {
+  display: none;
+}

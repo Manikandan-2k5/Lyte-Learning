@@ -1,0 +1,24 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-primary-font: 'LatoRegular', sans-serif;
+  --lyte-secondary-font: 'LatoBold', sans-serif;
+  --lyte-sprite-image: url(../../images/sprite_lyte.svg);
+  --lyte-video-sprite: url(../../images/sprite_lyte_video.svg);
+  --lyte-theme-body-bg: #fff;
+  --lyte-common-text-color: #333;
+  --lyte-common-text-hover-color: #111;
+  --lyte-common-text-color2: #111;
+  --lyte-heading-text-color: #111;
+  --lyte-theme-active-element-bg: #5ba1e5;
+  --lyte-theme-active-element-color: #2c7bd0;
+  --lyte-level1-zindex: 1000;
+  --lyte-level2-zindex: 1020;
+  --lyte-level3-zindex: 1040;
+  --lyte-level4-zindex: 1060;
+  --lyte-level5-zindex: 1080;
+}

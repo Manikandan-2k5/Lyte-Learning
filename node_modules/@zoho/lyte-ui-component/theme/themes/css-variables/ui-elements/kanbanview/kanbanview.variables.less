@@ -1,0 +1,21 @@
+:root {
+	--lyte-kanbanview-bg: @themeBodyBackground;
+	--lyte-kanbanview-text-color: @commonTextColor;
+	--lyte-kanbanview-hover-bg: #f5f5f5;
+	--lyte-kanbanview-border-color: #d6d6d6;
+	--lyte-kanbanview-board-header-text-color: #666;
+	--lyte-kanbanview-loading-placeholder-border-color: #eee;
+	--lyte-kanbanview-loading-placeholder-bg: #f5f5f5;
+	--lyte-kanbanview-no-result-text-color: #777;
+}
+
+.lyteKanbanviewBoardHeaderMixin() {
+	@color: var(--lyte-kanbanview-board-header-text-color);
+}
+.lyteKVLoadingPlaceholderCommonMixin() {
+	@border: 1px solid var(--lyte-kanbanview-loading-placeholder-border-color);
+	@bg: var(--lyte-kanbanview-loading-placeholder-bg);
+}
+.lyteKanbanNoResultMsgMixin() {
+	@color: var(--lyte-kanbanview-no-result-text-color);
+}

@@ -1,0 +1,377 @@
+
+/* Default theme imported */
+@import "../themes/default/ui-elements/tree/tree.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{tree}/ui-elements/tree/tree.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{tree}/global/@{direction}.less";
+
+/* Loading custom themes */
+@import (optional) "../overrides/ui-elements/tree.variables.less";
+
+
+lyte-tree {
+	.tree();
+    background: @bg;
+	display: block;
+    @{property-padding-left}: @padding-left;
+    overflow: hidden;
+	transition: height 0.2s ease;
+}
+lyte-tree lyte-yield {
+	display: inline-block;
+}
+lyte-tree-body {
+	.treeBody();
+	display: block;
+	margin-top: @margin-top;
+}
+.lyteTreeBodyDivLastVisibleElem > lyte-tree-body > .mainContainer::after,
+.lyteTreeBodyDiv:last-of-type > lyte-tree-body > .mainContainer::after {
+	.treeBodylastoftype();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	background: @bg;
+	z-index: @z-index;
+    @{property-left}: @left;
+	top: @top;
+}
+lyte-tree-content {
+	display: block;
+	cursor: pointer;
+	position: relative;
+}
+lyte-tree lyte-tree lyte-tree-content::before {
+	.treeContentBefore();
+	content: '';
+	width: @w;
+	height: @h;
+	border-bottom: @border-bottom;
+	position: absolute;
+    @{property-left}: @left;
+	top: @top;
+}
+.mainContainer {
+	position: relative;
+}
+.mainContainer::before {
+	.treeMainContainerBefore();
+	content: '';
+	width: @w;
+	height: @h;
+    @{property-border-left}: @border-left;
+	top: @top;
+	position: absolute;
+    @{property-left}: @left;
+}
+.lyteTreeNoChildContainer::before {
+    content: none;
+}
+lyte-tree-icon {
+	display: inline-block;
+	text-align: @value-textalign-left;
+}
+lyte-tree-icon .collapseBox {
+	.iconCollpaseBox();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+    opacity: 0.7;
+}
+lyte-tree-icon:hover .collapseBox {
+    opacity: 0.8;
+}
+.lyteTreeOpen .collapseBox,
+lyte-tree-icon.open .collapseBox {
+    opacity: 0.9;
+}
+lyte-tree lyte-tree lyte-tree-icon:hover .collapseBox {
+	.iconHoverCollpaseBox();
+	border-color: @border-color;
+}
+.treeValue {
+	.treeValue();
+	display: inline-block;
+	font-family: @primaryFont;
+	font-size: @font-size;
+	color: @color;
+    @{property-margin-left}: @margin-left;
+	vertical-align: middle;
+}
+lyte-tree lyte-tree lyte-tree-icon:hover .treeValue {
+	.iconHoverTreeValue();
+	color: @color;
+}
+.lyteTreeOpen .arrow,
+lyte-tree-icon.open .arrow {
+	.treeOpenIconArrow();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+}
+.lyteTreeClose .arrow,
+lyte-tree-icon.close .arrow {
+	.treeCloseIconArrow();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+}
+.lyteTreeOpen .treeValue,
+lyte-tree-icon.open .treeValue {
+	font-family: @secondaryFont;
+}
+.lyteTreeHasNoChild .lyteTreeOpen .treeValue,
+.lyteTreeHasNoChild lyte-tree-icon.open .treeValue,
+.noChildClass lyte-tree-icon.open .treeValue {
+    .treeNoChildText();
+	font-family: @primaryFont;
+    @{property-margin-left}: @margin-left;
+    margin-top: @margin-top;
+    color: @color;
+    cursor: default;
+}
+.lyteTreeHasNoChild .collapseBox,
+.noChildClass .collapseBox {
+    display: none;
+}
+
+
+
+.lyteDataTreeNodeWrap {
+	padding-left: 12px;
+}
+.lyteDataTreeNode {
+	.lyteDataTreeNodeMixin();
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: @margin-bottom;
+	color: @color;
+}
+.lyteDataTreeIndex {
+	color: #5ba1e5;
+}
+.lyteDataTreeNodeContent {
+	margin-left: 10px;
+}
+.lyteDataTreeNodeText {
+	color: #357636;
+}
+.lyteDataTreeObjectNode,
+.lyteDataTreeArrayNode {
+	cursor: pointer;
+}
+.lyteDataTreeClosed::before {
+	.lyteDataTreeClosedBeforeMixin();
+	content: '';
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	@{property-border-left}: @border-left;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+.lyteDataTreeNodeContent > .lyteDataTreeSubLevel > .lyteDataTreeNodeWrap {
+	padding-left: 0;
+}
+.lyteDataTreeNodeContent > .lyteDataTreeSubLevel > .lyteDataTreeNodeWrap > .lyteDataTreeNode {
+	position: static;
+}
+.lyteDataTreeOpened::before {
+	.lyteDataTreeOpenedBeforeMixin();
+	content: '';
+	border-left: @border-left;
+	border-right: @border-right;
+	border-top: @border-top;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+.lyteTreeComma:last-of-type {
+	display: none;
+}
+.lyteDataTreeSubLevel {
+	padding-left: 0;
+}
+.lyteDataTreeObjectTextLabel {
+	opacity: 0;
+}
+
+
+/*	Lyte Tree Horizontal Related CSS Begins	*/
+
+lyte-tree[lt-prop-structure-type="hierarchy"],
+.lyteHTreeChildWrap {
+	padding-left: 0;
+}
+.lyteHTreeParentNode {
+	padding: 15px;
+	position: relative;
+}
+.lyteHTreeContentWrap {
+	cursor: pointer;
+}
+.lyteHTreeConnectorLine {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 100%;
+	flex-direction: column;
+}
+.lyteHTreeVerticalConnectLine {
+	background: #555;
+	flex-grow: 1;
+}
+.lyteHTreeHorizontalAfterConnectLine,
+.lyteHTreeHorizontalBeforeConnectLine {
+	position: absolute;
+	height: 1px;
+	top: 50%;
+	background: #555;
+	width: 15px;
+}
+.lyteHTreeHorizontalBeforeConnectLine {
+	left: 0;
+}
+.lyteHTreeHorizontalAfterConnectLine {
+	right: 0;
+}
+.lyteHTreeVerticalConnectorHidden {
+	visibility: hidden;
+}
+.lyteHTreeHorizontalConnectorHidden {
+	display: none
+}
+
+/*	Lyte Tree Horizontal Related CSS Ends	*/
+
+/*	Sortable Tree related LESS Begins	*/
+
+.lyteTreeTopParent.lyteTreeSortable {
+	position: relative;
+}
+.lyteTreeSortableElement {
+	position: relative;
+	border: solid 1px transparent;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.lyteTreeCurrentSortElem {
+	cursor: move;
+	pointer-events: none;
+	background: #eee;
+	z-index: 15;
+}
+.lyteTreeSortable .lyteTreeSortableElement.lyteTreeSortableDropPlaceholderChild {
+	z-index: 15;
+	border: 1px dashed #5ba1e5;
+}
+.lyteTreeSortable lyte-tree-body {
+	margin-top: 0;
+}
+.lyteTreeSortable .lyteTreeMainContainer::before {
+	left : calc((var(--treeLevel) * 50px) + 8px);
+	z-index: 1;
+	top: 35px;
+}
+.lyteTreeSortable .lyteTreeBodyDivLastVisibleElem > lyte-tree-body > .mainContainer::after,
+.lyteTreeSortable .lyteTreeBodyDiv:last-of-type > lyte-tree-body > .mainContainer::after {
+	left: calc((var(--treeLevel)* 50px) - 43px);
+	top: 19px;
+}
+.lyteTreeSortable lyte-tree {
+	padding: 0;
+}
+.lyteTreeSortable lyte-tree-content {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: calc(var(--treeLevel) * 50px);
+}
+.lyteTreeSortable lyte-tree-content::before {
+	left: calc((var(--treeLevel) * 50px) - 42px);
+	top: 17px;
+}
+.lyteTreeDragRunning .treeValue {
+	user-select: none;
+}
+.lyteTreeSortable .lyteTreeSortableElement.lyteTreeSortableDropPlaceholderBottom::before,
+.lyteTreeSortable .lyteTreeSortableElement.lyteTreeSortableDropPlaceholderTop::before {
+	content: '';
+	border-left: 5px solid #5ba1e5;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	width: 0;
+	height: 0;
+	display: block;
+	position: absolute;
+	left: 0;
+}
+.lyteTreeSortableDropPlaceholderTop::before {
+	top: -6px;
+}
+.lyteTreeSortableDropPlaceholderBottom::before {
+	bottom: -6px;
+}
+.lyteTreeSortable .lyteTreeSortableElement.lyteTreeSortableDropPlaceholderBottom::after,
+.lyteTreeSortable .lyteTreeSortableElement.lyteTreeSortableDropPlaceholderTop::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 10px;
+	width: 25px;
+	height: 2px;
+	background: #5ba1e5;
+	z-index: 10;
+}
+.lyteTreeSortableDropPlaceholderTop::after {
+	top: -2px;
+}
+.lyteTreeSortableDropPlaceholderBottom::after {
+	bottom: -2px;
+}
+.lyteTreeDragRunning lyte-tree :not(lyte-tree.lyteTreeClosed){
+	overflow: visible;
+}
+.lyteTreeMM{
+	cursor: move;
+}
+.lyteTreeSortable .lyteTreeMainContainer::before {
+	height: calc(100% - 55px);
+}
+.lyteTreeSortableDropNotAllowed {
+	cursor: not-allowed;
+}
+
+/*	Sortable Tree related LESS Ends	*/
+
+    /* import theme overrides - styles */
+@import (optional) "../themes/@{tree}/ui-elements/tree/tree.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/tree.overrides.less";
+
+

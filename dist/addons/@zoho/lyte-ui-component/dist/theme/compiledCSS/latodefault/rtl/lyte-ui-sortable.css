@@ -1,0 +1,34 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteSortableParent .lyteSortablePlaceholder:hover,
+.lyteSortableParent .lyteSortablePlaceholder {
+  background: #f6fad2;
+  border: 1px solid #edf2c3;
+  box-sizing: border-box;
+}
+.lyteSortableParent .lyteSortableDisabledPlaceholder:hover,
+.lyteSortableParent .lyteSortableDisabledPlaceholder {
+  background: #f5c7c7;
+  border: 1px solid #f4a7a7;
+}
+.nullifyTransition {
+  transition-duration: 0s;
+}
+.lyteSortableDisablePE {
+  pointer-events: none;
+}
+.lyteSortableDummyTr {
+  opacity: 0 !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */

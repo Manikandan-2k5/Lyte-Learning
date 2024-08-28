@@ -1,0 +1,199 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/rating/rating.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{rating}/ui-elements/rating/rating.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{rating}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/rating.variables.less";
+
+lyte-rating{
+	display: inline-flex;
+	white-space: nowrap;
+}
+lyte-rate-icon{
+	.rateIconMixin();
+	display: inline-flex;
+	cursor: pointer;
+	// @{property-margin-right}: @margin-right;
+	padding-right: 5px;
+	background-image: @bg-img;
+}
+
+lyte-rate-icon:last-child {
+	padding-right: 0px;
+    // @{property-margin-right}: 0;
+}
+// lyte-rating:not(.heart):not(.lineHeart):not(.star):not(.lineStar) lyte-rate-icon{
+// 	.rateIconMixin();
+// 	width: @w;
+// 	height: @h;
+// }
+
+lyte-rating.heart lyte-rate-icon,
+lyte-rating.lineHeart lyte-rate-icon {
+    .rateHeartIconMixin();
+    // width: @w;
+    // height: @h;
+}
+lyte-rating.star lyte-rate-icon {
+	.ratingStarIconMixin();
+	background-image:none;
+	// background-position: @bg-pos;
+}
+lyte-rating.heart lyte-rate-icon {
+	.ratingHeartIconMixin();
+	background-image:none;
+	// background-position: @bg-pos;
+}
+lyte-rating.lineStar lyte-rate-icon {
+	.ratingLineStarMixin();
+	background-image:none;
+	// background-position: @bg-pos;
+}
+lyte-rating.lineHeart lyte-rate-icon {
+	.ratingLineHeartMixin();
+	background-image:none;
+	// background-position: @bg-pos;
+}
+lyte-rating.star .lyteRatingHoverHalf,
+lyte-rating.lineStar .lyteRatingHoverHalf,
+lyte-rating.star .lyteRatingHalf,
+lyte-rating.lineStar .lyteRatingHalf {
+	.ratingLineStarHalfMixin();
+	// background-position: @bg-pos;
+}
+lyte-rating.heart .lyteRatingHoverHalf,
+lyte-rating.lineHeart .lyteRatingHoverHalf,
+lyte-rating.heart .lyteRatingHalf,
+lyte-rating.lineHeart .lyteRatingHalf {
+	.ratingLineHeartHalfMixin();
+	// background-position: @bg-pos;
+}
+lyte-rating.lineStar .lyteRatingHoverFilled,
+lyte-rating.lineStar .lyteRatingFilled,
+lyte-rating.star .lyteRatingHoverFilled,
+lyte-rating.star .lyteRatingFilled {
+	.ratingStarFilledMixin();
+	// background-position: @bg-pos;
+}
+lyte-rating.lineHeart .lyteRatingHoverFilled,
+lyte-rating.lineHeart .lyteRatingFilled,
+lyte-rating.heart .lyteRatingHoverFilled,
+lyte-rating.heart .lyteRatingFilled {
+	.ratingHeartFilledMixin();
+	// background-position: @bg-pos;
+}
+.lyteRatingReadOnly {
+	cursor: not-allowed;
+}
+.lyteRatingReadOnly lyte-rate-icon {
+	pointer-events: none;
+}
+// .lyteRatingSmiley lyte-rate-icon {
+// 	.ratingSmileyIconMixin();
+// 	width: @w;
+// 	height: @h;
+// }
+.lyteRatingSmiley lyte-rate-icon:nth-child(1) {
+	.ratingSmileyFirstChildMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(2) {
+	.ratingSmileySecondChildMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(3) {
+	.ratingSmileyThirdChildMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(4) {
+	.ratingSmileyFourthChildMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(5) {
+	.ratingSmileyFifthChildMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley lyte-rate-icon.lyteRatingHover:nth-child(1),
+.lyteRatingSmiley lyte-rate-icon.lyteRated:nth-child(1) {
+	.ratingSmileyFirstChildRatedMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(2) {
+	.ratingSmileySecondChildRatedMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(3) {
+	.ratingSmileyThirdChildRatedMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(4),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(4) {
+	.ratingSmileyFourthChildRatedMixin();
+	background-position: @bg-pos;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(5),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(5) {
+	.ratingSmileyFifthChildRatedMixin();
+	background-position: @bg-pos;
+}
+// .lrcSwitchDislikeEmpty,
+// .lrcSwitchLikeEmpty {
+// 	.lrcSwitchLikeEmptyMixin();
+// 	width: @w;
+// 	height: @h;
+// }
+.lrcSwitchLikeEmpty {
+	.lrcSwitchLikeEmptyIconMixin();
+	background-position: @bg-pos;
+}
+.lrcSwitchDislikeEmpty {
+	.lrcSwitchDislikeEmptyMixin();
+	background-position: @bg-pos;
+}
+.lrcSwitchLikeEmpty:hover {
+	.lrcSwitchLikeEmptyHoverMixin();
+	background-position: @bg-pos;
+	opacity: @opacity;
+}
+.lrcSwitchDislikeEmpty:hover {
+	.lrcSwitchDislikeEmptyHoverMixin();
+	background-position: @bg-pos;
+	opacity: @opacity;
+}
+.lrcSwitchLike.lyteRated {
+	.lrcSwitchLikeRatedMixin();
+	background-position: @bg-pos;
+	opacity: 1;
+}
+.lrcSwitchDislike.lyteRated {
+	.lrcSwitchDislikeRatedMixin();
+	background-position: @bg-pos;
+	opacity: 1;
+}
+.lrcToggleEmpty {
+	.lrcToggleEmptyMixin();
+    // width: @w;
+	background-position: @bg-pos;
+}
+.lrcToggleEmpty:hover,
+.lrcToggleFill {
+	.lrcToggleFillMixin();
+	background-position: @bg-pos;
+}

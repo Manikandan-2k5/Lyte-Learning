@@ -1,0 +1,57 @@
+:root {
+	--lyte-calendar-popup-bg: @themeBodyBackground;
+	--lyte-calendar-popup-boxshadow-color: rgba(0, 0, 0, 0.1);
+	--lyte-calendar-popup-border-color: #d1d1d1;
+	--lyte-calendar-dropdown-text-color: #666;
+	--lyte-calendar-dropdown-hover-text-color: #111;
+	--lyte-calendar-text-color: @commonTextColor2;
+	--lyte-calendar-horizontal-cell-spacing: 8px;
+	--lyte-calendar-selected-elem-bg: @themeActiveElementBg;
+	--lyte-calendar-hover-elem-bg: #e6f3fd;
+	--lyte-calendar-nav-bg: #faf9f9;
+	--lyte-calendar-nav-border-color: #999;
+	--lyte-calendar-nav-hover-border-color: #333;
+	--lyte-calendar-zindex: @Level4zIndex;
+	--lyte-calender-weeklabel-text-color: #777;
+	--lyte-calendar-selected-element-text-color: #fff;
+	--lyte-calendar-footer-btn-border-color: #e0e0e0;
+	--lyte-calendar-drilldown-button-text-color: #777;
+	--lyte-calendar-drilldown-button-border-color: #bbb;
+	--lyte-calendar-drilldown-button-hover-bg: #eee;
+}
+
+.CalendarPopup() {
+	@box-shadow: 0 1px 3px 1px var(--lyte-calendar-popup-boxshadow-color);
+	@border: 1px solid var(--lyte-calendar-popup-border-color);
+}
+.CalNav() {
+	@border: 1px solid var(--lyte-calendar-nav-border-color);
+}
+.CalNavHover() {
+	@border: 1px solid var(--lyte-calendar-nav-hover-border-color);
+}
+.CalTableCellHeader() {
+	@color: var(--lyte-calender-weeklabel-text-color);
+}
+.CalSelHover() {
+	@color: var(--lyte-calendar-selected-element-text-color);
+}
+.CalBtns() {
+	@border-top: 1px solid var(--lyte-calendar-footer-btn-border-color);
+}
+.drillCalHeaderButtonMixin() {
+	@color: var(--lyte-calendar-drilldown-button-text-color);
+	@border: 1px solid var(--lyte-calendar-drilldown-button-border-color);
+}
+.drillCalHeaderButtonHoverMixin() {
+	@bg: var(--lyte-calendar-drilldown-button-hover-bg);
+}
+.lyteCalWeekSelTypeWeekSelFirstAndLastChildMixin() {
+	@color: var(--lyte-calendar-selected-element-text-color);
+}
+.lyteCalWeekSelTypeRowHoverWeekSelFirstAndLastChildMixin() {
+	@color: var(--lyte-calendar-selected-element-text-color);
+}
+.lyteCalMonthSelMixin() {
+	@color: var(--lyte-calendar-selected-element-text-color);
+}

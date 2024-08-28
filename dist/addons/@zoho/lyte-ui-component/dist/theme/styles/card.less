@@ -1,0 +1,74 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/card/card.variables.less";
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{card}/ui-elements/card/card.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{card}/global/@{direction}.less";
+
+
+
+lyte-card {
+    .lyteCardMixin();
+    font-family: @font-family;
+    display: block;
+}
+lyte-card-box {
+    .lyteCardBoxMixin();
+    display: block;
+    box-shadow: @box-shadow;
+    border-radius: @border-radius;
+    text-align: @text-align;
+    background: @bg;
+    color: @color;
+}
+
+.lyteCardYield {
+    display: flex;
+    flex-direction: column;  
+}
+
+lyte-card-image {
+    .lyteCardImageMixin();
+    padding: @padding;
+    background: @bg;
+    border-radius: @border-radius;
+}
+lyte-card-header {
+    .lyteCardHeaderMixin();
+    font-family: @font-family;
+    font-size: @font-size;
+    padding: @padding;
+}
+lyte-card-body {
+    .lyteCardBodyMixin();
+    font-size: @font-size;
+    padding: @padding;
+}
+lyte-card-footer {
+    .lyteCardFooterMixin();
+    padding: @padding;
+}
+.lyteCardImgElem {
+    .lyteCardImgElemMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+}
+.lyteCardRenderPlaceholder {
+    .lyteCardRenderPlaceholderMixin();
+    min-height: @min-h;
+    height: @h;
+    width: @w;
+    background: @bg;
+    border-radius: @border-radius;
+}

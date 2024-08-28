@@ -1,0 +1,22 @@
+:root {
+	--lyte-tour-bg: @themeBodyBackground;
+	--lyte-tour-text-color: @commonTextColor;
+	--lyte-tour-border-color: #d6d6d6;
+	--lyte-tour-freezelayer-bg: #000;
+	--lyte-tour-container-boxshadow-color: rgba(0, 0, 0, 0.1);
+	--lyte-tour-step-indicator-bg: #ddd;
+	--lyte-tour-step-indicator-hover-bg: #5ba1e5;
+}
+
+.TourFreezeLayerMixin() {
+	@bg: var(--lyte-tour-freezelayer-bg);
+}
+.TourContainerMixin() {
+	@box-shadow: 0 0 4px 1px var(--lyte-tour-container-boxshadow-color);
+}
+.tourStepIndicatorMixin() {
+	@bg: var(--lyte-tour-step-indicator-bg);
+}
+.tourStepIndicatorhoverMixin() {
+	@bg: var(--lyte-tour-step-indicator-hover-bg);
+}

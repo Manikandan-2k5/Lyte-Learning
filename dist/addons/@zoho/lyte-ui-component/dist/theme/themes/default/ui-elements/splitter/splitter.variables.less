@@ -1,0 +1,60 @@
+.splitterMixin() {
+	@border: 1px solid @splitterBorderColor;
+    @bg: @splitterBg;
+    @color: @splitterTextColor;
+}
+.splitterYieldMixin() {
+	@h: 100%;
+	@w: 100%;
+}
+.nonResizeableRowElementMixin() {
+	@border-bottom: 1px solid @splitterBorderColor;
+	@border-top: 1px solid @splitterBorderColor;
+}
+.nonResizeableColumnElementMixin() {
+	@border-right: 1px solid @splitterBorderColor;
+	@border-left: 1px solid @splitterBorderColor;
+}
+.rowAndColumnHandleMixin() {
+	@bg: @splitterHandleBg;
+	@border-radius: 0px;
+}
+.columnHandleMixin() {
+	@w: 8px;
+}
+.rowHandleMixin() {
+	@h: 8px;
+}
+.columnHandlehoverMixin() {
+	@bg: @splitterHandleHoverBg;
+}
+.rowAndColumnHandleResizingMixin() {
+    @bg: @themeActiveElementBg;
+}
+.rowAndColumnHandleIcon() {
+    @bg: @splitterHandleIconBg;
+	@border-radius: 6px;
+}
+.columnHandleIconMixin() {
+	@h: 30px;
+	@w: 4px;
+	@margin: 15px 0;
+}
+.rowHandleIconMixin() {
+	@h: 4px;
+	@w: 30px;
+	@margin: 0px 15px;
+}
+.resizingHandlesMixin() {
+    @bg: #fff;
+}
+.leftPointedBeforeMixin() {
+	@border-bottom: 5px solid transparent;
+	@border-top: 5px solid transparent;
+	@border-right: 5px solid #000;
+}
+.rightPointedAfterMixin() {
+	@border-bottom: 5px solid transparent;
+	@border-top: 5px solid transparent;
+	@border-left: 5px solid #000;
+}

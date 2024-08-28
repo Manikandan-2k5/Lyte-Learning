@@ -1,0 +1,14 @@
+:root {
+	--lyte-draggable-placeholder-bg: #f6fad2;
+	--lyte-draggable-placeholder-border-color: #edf2c3;
+	--lyte-draggable-placeholder-disabled-bg: #f5c7c7;
+	--lyte-draggable-placeholder-disabled-border-color: #f4a7a7;
+}
+.draggablePlaceholder() {
+	@bg: var(--lyte-draggable-placeholder-bg);
+	@border: 1px solid var(--lyte-draggable-placeholder-border-color);
+}
+.draggableDisabledPlaceholder() {
+	@bg: var(--lyte-draggable-placeholder-disabled-bg);
+	@border: 1px solid var(--lyte-draggable-placeholder-disabled-border-color);
+}

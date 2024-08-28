@@ -1,0 +1,173 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/splitter/splitter.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{splitter}/ui-elements/splitter/splitter.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{splitter}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/splitter.variables.less";
+
+lyte-splitter {
+	.splitterMixin();
+	display: block;
+    background: @bg;
+	border: @border;
+    color: @color;
+}
+lyte-splitter lyte-yield {
+    .splitterYieldMixin();
+	height: @h;
+	display: flex;
+	width: @w;
+}
+lyte-row-splitter {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+lyte-row-splitter:first-child {
+	border-top: 0;
+}
+lyte-row-splitter:last-child {
+	border-bottom: 0;
+}
+lyte-column-splitter {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+lyte-column-splitter:first-child {
+	border-left: 0;
+}
+lyte-column-splitter:last-child {
+	border-right: 0;
+}
+lyte-row-element,
+lyte-column-element {
+	flex-grow: 1;
+	overflow: auto;
+	display: flex;
+}
+lyte-row-element[lt-resize="false"] {
+    .nonResizeableRowElementMixin();
+	border-bottom: @border-bottom;
+	border-top: @border-top;
+}
+lyte-row-element[lt-resize="false"]:first-child {
+	border-top: 0;
+}
+lyte-row-element[lt-resize="false"]:last-child {
+	border-bottom: 0;
+}
+lyte-column-element[lt-resize="false"] {
+    .nonResizeableColumnElementMixin();
+	border-right: @border-right;
+	border-left: @border-left;
+}
+lyte-column-element[lt-resize="false"]:first-child {
+	border-left: 0;
+}
+lyte-column-element[lt-resize="false"]:last-child {
+	border-right: 0;
+}
+lyte-row-handle,
+lyte-column-handle {
+	.rowAndColumnHandleMixin();
+	background: @bg;
+	border-radius: @border-radius;
+	-webkit-user-select: none;
+	user-select: none;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+lyte-column-handle {
+	.columnHandleMixin();
+	width: @w;
+	cursor: col-resize;
+	flex-direction: column;
+}
+lyte-row-handle {
+	.rowHandleMixin();
+	height: @h;
+	cursor: row-resize;
+}
+lyte-row-handle:hover,
+lyte-column-handle:hover {
+	.columnHandlehoverMixin();
+	background: @bg;
+}
+lyte-row-handle.splitResizing,
+lyte-column-handle.splitResizing {
+    .rowAndColumnHandleResizingMixin();
+    background: @bg;
+}
+.rowHandleIcon,
+.columnHandleIcon {
+    .rowAndColumnHandleIcon();
+	background: @bg;
+	border-radius: @border-radius;
+}
+.columnHandleIcon {
+	.columnHandleIconMixin();
+	height: @h;
+	width: @w;
+	margin: @margin;
+	order: 1;
+}
+.rowHandleIcon {
+	.rowHandleIconMixin();
+	height: @h;
+	width: @w;
+	margin: @margin;
+	order: 1;
+}
+.splitResizing .columnHandleIcon,
+.splitResizing .rowHandleIcon {
+    .resizingHandlesMixin();
+    background: @bg;
+}
+.leftCollapseBtn {
+	order: 0;
+}
+.rightCollapseBtn {
+	order: 2;
+}
+.rightPointed::after,
+.leftPointed::before {
+	content: '';
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	display: block;
+}
+.leftPointed::before {
+	.leftPointedBeforeMixin();
+	border-bottom: @border-bottom;
+	border-top: @border-top;
+	border-right: @border-right;
+}
+.rightPointed::after {
+	.rightPointedAfterMixin();
+	border-bottom: @border-bottom;
+	border-top: @border-top;
+	border-left: @border-left;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{splitter}/ui-elements/splitter/splitter.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/splitter.overrides.less";

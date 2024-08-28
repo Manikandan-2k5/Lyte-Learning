@@ -1,0 +1,31 @@
+:root {
+	--lyte-carousel-indicator-item-bg: #ddd;
+	--lyte-carousel-indicator-item-hover-bg: #bbb;
+	--lyte-carousel-indicator-active-item-bg: #5ba1e5;
+	--lyte-carousel-nav-border-color: #ddd;
+	--lyte-carousel-nav-bg: rgba(0, 0, 0, 0.2);
+	--lyte-carousel-nav-hover-bg: rgba(0, 0, 0, 0.4);
+	--lyte-carousel-frame-subitem-bg: #f5f5f5;
+	--lyte-carousel-frame-subitem-border: #ddd;
+}
+
+.carouselIndicatorItemMixin() {
+	@bg: var(--lyte-carousel-indicator-item-bg);
+}
+.carouselIndicatorItemhoverMixin() {
+	@bg: var(--lyte-carousel-indicator-item-hover-bg);
+}
+.carouselIndicatorItemActiveMixin() {
+	@bg: var(--lyte-carousel-indicator-active-item-bg);
+}
+.carouselPrevMixin() {
+	@border: 1px solid var(--lyte-carousel-nav-border-color);
+	@bg: var(--lyte-carousel-nav-bg);
+}
+.carouselPrevHoverMixin() {
+	@bg: var(--lyte-carousel-nav-hover-bg);
+}
+.carouselFramesSubItemMixin() {
+	@bg: var(--lyte-carousel-frame-subitem-bg);
+	@border: 1px solid var(--lyte-carousel-frame-subitem-border);
+}

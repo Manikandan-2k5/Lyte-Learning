@@ -1,0 +1,31 @@
+:root {
+	--lyte-radio-text-color: @commonTextColor;
+	--lyte-radio-text-hover-color: @commonTextHoverColor;
+	--lyte-radio-border-color: #aaa;
+	--lyte-radio-bg: @themeBodyBackground;
+	--lyte-radio-default-bg-on-mode: #555;
+	--lyte-radio-primary-bg-on-mode: @themeActiveElementBg;
+	--lyte-radio-secondary-bg-on-mode: #72C98A;
+	--lyte-radio-switch-bg: #d3d3d3;
+	--lyte-radio-switch-circle-bg: #fff;
+	--lyte-radio-slider-circle-bg: #fff;
+	--lyte-radio-slider-boxshadow-color: 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+	--lyte-radio-slider-bar-bg: #b5b1b1;
+	--lyte-radio-slider-bar-checked-bg: #000;
+}
+.radioSwitch() {
+	@bg: var(--lyte-radio-switch-bg);
+}
+.radioSwitchCircle() {
+	@bg: var(--lyte-radio-switch-circle-bg);
+}
+.radioSliderCircle() {
+	@bg: var(--lyte-radio-slider-circle-bg);
+	@box-shadow: var(--lyte-radio-slider-boxshadow-color);
+}
+.radioSliderBar() {
+	@bg: var(--lyte-radio-slider-bar-bg);
+}
+.radioSliderBarChecked() {
+	@bg: var(--lyte-radio-slider-bar-checked-bg);
+}

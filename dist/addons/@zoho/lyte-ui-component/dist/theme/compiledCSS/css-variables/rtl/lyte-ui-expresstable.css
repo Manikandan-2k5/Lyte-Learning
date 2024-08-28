@@ -1,0 +1,272 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-express-table-common-bg: #fff;
+  --lyte-express-table-resize-hover-bg: var(--lyte-theme-active-element-bg);
+  --lyte-express-table-th-bg: #f7f7f7;
+  --lyte-express-table-border-color: #e2e2e2;
+  --lyte-express-table-fixed-box-shadow: rgba(0, 0, 0, 0.2);
+  --lyte-express-table-th-text-color: var(--lyte-common-text-color);
+  --lyte-express-table-td-text-color: var(--lyte-common-text-color2);
+  --lyte-express-table-fixed-column-header-bg: var(--lyte-express-table-common-bg);
+  --lyte-express-table-sortable-helper-bg: var(--lyte-express-table-common-bg);
+  --lyte-express-table-fake-header-wrapper-bg: var(--lyte-express-table-common-bg);
+  --lyte-express-table-fixed-column-wrapper-bg: var(--lyte-express-table-common-bg);
+  --lyte-express-table-sticky-column-td-bg: var(--lyte-express-table-common-bg);
+}
+/* rtl files loading */
+lyte-expresstable {
+  display: block;
+  height: 100%;
+  max-height: inherit;
+}
+.lyteExpTableOrigTableWrapper {
+  height: 100%;
+  position: relative;
+  max-height: inherit;
+}
+.lyteExpTableFixedColHeader {
+  z-index: 1;
+  box-shadow: 3px 0 5px 0px var(--lyte-express-table-fixed-box-shadow);
+  position: absolute;
+  background: var(--lyte-express-table-fixed-column-header-bg);
+  border-left: 1px solid var(--lyte-express-table-border-color);
+}
+.lyteExpTableWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--lyte-express-table-border-color);
+  max-height: inherit;
+}
+.lyteExpTableSortableHelperCont {
+  position: absolute;
+  z-index: 1080;
+  pointer-events: none;
+  transform: translate(0px, 0px);
+  overflow: hidden;
+  background: var(--lyte-express-table-sortable-helper-bg);
+  will-change: transform;
+}
+.lyteExpTableSortableHelperCont .lyteExpTableHead {
+  position: relative;
+  z-index: 5;
+}
+.lyteExpTableFakeHeaderWrapper {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  background: var(--lyte-express-table-fake-header-wrapper-bg);
+  z-index: 10;
+}
+.lyteExpTableFakeHeaderShow {
+  opacity: 1;
+  z-index: 10;
+}
+lyte-exptable {
+  display: table;
+}
+.lyteExpTableHeaderGroup,
+lyte-exptable-thead {
+  display: table-header-group;
+}
+.lyteExpTableRowGroup,
+lyte-exptable-tbody {
+  display: table-row-group;
+}
+lyte-exptable-tr {
+  display: table-row;
+}
+lyte-expresstable .lyteExpTableHide {
+  display: none;
+}
+.lyteExpTableHeaderGroup lyte-exptable-th,
+.lyteExpTableHeaderGroup lyte-exptable-tr {
+  -ms-transform: inherit;
+}
+@supports (-ms-ime-align: auto) {
+  /*  This code targets only Edge browser    */
+  .lyteExpTableHeaderGroup lyte-exptable-th,
+  .lyteExpTableHeaderGroup lyte-exptable-tr {
+    transform: inherit;
+  }
+}
+.lyteExpAccordionTable td,
+lyte-exptable-th,
+lyte-exptable-td {
+  display: table-cell;
+  text-align: right;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--lyte-express-table-border-color);
+  white-space: nowrap;
+}
+lyte-exptable-th {
+  background: var(--lyte-express-table-th-bg);
+  border-bottom: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: relative;
+  min-width: 50px;
+}
+.lyteExpTableOrigTableInnerWrap {
+  overflow: auto;
+  height: 100%;
+  max-height: inherit;
+}
+.lyteExpOriginalTable {
+  width: 100%;
+}
+.lyteExpTableOrigTableInnerWrap .lyteExpTableHeaderGroup {
+  opacity: 0;
+}
+.lyteExpTableFixedColWrapper {
+  position: absolute;
+  background: var(--lyte-express-table-fixed-column-wrapper-bg);
+  border-left: 1px solid var(--lyte-express-table-border-color);
+  z-index: 5;
+  overflow-x: hidden;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  box-shadow: -3px 0 5px 0px var(--lyte-express-table-fixed-box-shadow);
+  height: 100%;
+}
+.lyteExpTableNoShadow .lyteExpTableFixedColHeader,
+.lyteExpTableNoShadow .lyteExpTableFixedColWrapper {
+  box-shadow: none;
+  border-left: 1px solid transparent;
+}
+.lyteExpTableFixedColWrapper::-webkit-scrollbar {
+  width: 0;
+}
+.lyteExpSortableTable .lyteExpTableSortableColumn {
+  opacity: 0;
+}
+.lyteExpTableFixedColTable {
+  position: relative;
+  z-index: 1;
+  display: table;
+  will-change: transform;
+}
+lyte-exptablehead-resize {
+  cursor: ew-resize;
+  height: 100%;
+  width: 21px;
+  top: 0;
+  z-index: 9;
+  left: -12px;
+  position: absolute;
+}
+lyte-exptablehead-resize::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  left: 10px;
+  background: transparent;
+}
+lyte-exptablehead-resize:hover::after {
+  background: var(--lyte-express-table-resize-hover-bg);
+}
+.lyteExpTableFixedColHeader lyte-exptablehead-resize {
+  display: none;
+}
+lyte-expresstable.tableLayoutFixed lyte-exptable {
+  table-layout: fixed;
+}
+lyte-exptable-th:last-of-type lyte-exptablehead-resize {
+  left: 0;
+}
+.lyteExpTableFakeColHeaderWrapper {
+  display: table;
+  table-layout: fixed;
+}
+.lyteFixHeaderDisplayNone {
+  display: none;
+}
+/*  Sticky Express Table CSS BEGINS    */
+.lyteExpStickyInterSection {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  top: 20px;
+  opacity: 0;
+  will-change: left, top, right;
+  pointer-events: none;
+  z-index: -1;
+}
+.lyteExpStickyTable .lyteExpTableWrapper {
+  overflow: auto;
+  border: 0;
+}
+.lyteExpStickyTable .lyteExpTableOrigTableInnerWrap {
+  display: block;
+  width: 100%;
+  position: relative;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+}
+.lyteExpStickyTable .lyteExpTableOrigTableInnerWrap .lyteExpTableHeaderGroup {
+  opacity: 1;
+}
+.lyteExpStickyTable lyte-exptable-th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--lyte-express-table-th-bg);
+}
+.lyteExpStickyTable lyte-exptable-th.lyteFixedColumn {
+  z-index: 15;
+}
+.lyteExpAccordionTable td.lyteFixedColumn,
+.lyteExpStickyTable lyte-exptable-td.lyteFixedColumn {
+  position: sticky;
+  z-index: 5;
+  background: var(--lyte-express-table-sticky-column-td-bg);
+}
+/*  Sticky Express Table CSS ENDS    */
+/*  Accordion Table BEGINS  */
+.lyteExpAccordionTable lyte-exptable {
+  table-layout: fixed;
+}
+.lyteExpAccordionTable td {
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+.lyteExpTableAccordionContent .lyteExpressAccordionTdChild,
+.lyteExpTableAccordionContent lyte-td-wrap {
+  transform-origin: top;
+  overflow: hidden;
+  max-height: var(--tableMaxHeight);
+  display: block;
+}
+.lyteExpTableHideStart .lyteExpTableAccordionContent td {
+  padding: 0 15px;
+  border-bottom-width: 0;
+}
+.lyteExpTableHideStart .lyteExpTableAccordionContent .lyteExpressAccordionTdChild,
+.lyteExpTableHideStart .lyteExpTableAccordionContent lyte-td-wrap {
+  max-height: 0px;
+}
+.lyteExpTableAccordionAnimation .lyteExpTableAccordionContent td {
+  transition: padding 0.3s linear, border-width 0.3s linear;
+}
+.lyteExpTableAccordionAnimation .lyteExpTableAccordionContent .lyteExpressAccordionTdChild,
+.lyteExpTableAccordionAnimation .lyteExpTableAccordionContent lyte-td-wrap {
+  transition: max-height 0.3s linear;
+}
+.lyteExpTbodyClosed .lyteExpTableAccordionContent {
+  display: none;
+}
+/*  Accordion Table ENDS  */

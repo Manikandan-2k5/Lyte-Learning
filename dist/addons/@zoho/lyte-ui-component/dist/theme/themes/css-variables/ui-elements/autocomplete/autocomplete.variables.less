@@ -1,0 +1,21 @@
+:root {
+	--lyte-autocomplete-highlight-color: #000;
+	--lyte-autocomplete-highlight-bg: #fff5b0;
+	--lyte-autocomplete-text-color: #6b6b6b;
+	--lyte-autocomplete-box-shadow: rgba(0, 0, 0, 0.15);
+	--lyte-autocomplete-focus-border-color: @lyteInputBorderFocus;
+	--lyte-autocomplete-icon-separator-color: #ddd;
+	--lyte-autocomplete-errormsg-color: #8a8a8a;
+	--lyte-autocomplete-dropbox-border-color: #dadada;
+}
+
+.iconSeparator() {
+	@border-right: 1px solid var(--lyte-autocomplete-icon-separator-color);
+}
+.autocompleteError() {
+	@color: var(--lyte-autocomplete-errormsg-color);
+}
+.autocompleteDropdown() {
+	@border: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+	@border-top: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+}

@@ -1,0 +1,519 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+/*  Colorbox Styles starts  */
+.lyteColorbox {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 14px;
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1040;
+}
+.lyteColorboxDisplay.lyteColorbox {
+  display: flex;
+  flex-direction: column;
+}
+.lyteColorboxFreezeLayer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.8;
+}
+.lyteColorboxWrapper {
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  height: calc(100% - 170px);
+  overflow: auto;
+  border-radius: 0 0 2px 2px;
+  z-index: 5;
+}
+.lyteColorboxContent {
+  height: calc(100% - 65px);
+  margin: 0 auto;
+  position: relative;
+  padding: 10px 10px 0;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  border-radius: 3px 3px 0 0;
+}
+.lyteCBoxPhoto {
+  max-height: inherit;
+  max-width: 100%;
+  transition: transform 0.15s linear;
+}
+.lyteColorboxHeader {
+  display: flex;
+  background: #fff;
+  position: relative;
+  padding: 15px 20px;
+  border-top: 1px solid #ebebeb;
+  border-radius: 0 0 3px 3px;
+}
+.lyteColorboxTitle {
+  font-size: 15px;
+  margin-right: auto;
+  font-family: 'LatoBold', 'Open Sans', sans-serif;
+  color: #111;
+}
+.lyteColorboxCloseIcon {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+}
+lyte-colorbox-close,
+.lyteColorboxCloseIcon {
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -50px -100px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+}
+lyte-colorbox-close:hover,
+.lyteColorboxCloseIcon:hover {
+  opacity: 1;
+}
+.lyteColorboxThumbOuterWrapper {
+  height: 150px;
+  order: 3;
+  position: relative;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 5;
+}
+.lyteColorboxThumbInnerWrapper {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.lyteColorboxThumb {
+  align-self: center;
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lyteColorboxThumb:hover {
+  border: 1px solid #ccc;
+}
+.lyteColorboxThumb.thumb-on {
+  border: 1px solid #fff;
+}
+.lyteColorboxThumb.thumb-on::after {
+  content: attr(data-thumb-val);
+  position: absolute;
+  bottom: -30px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.lyteColorboxThumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 2px;
+  object-fit: contain;
+}
+.lyteCBoxIframeWrap {
+  text-align: center;
+}
+.lyteCBoxIframeIcon {
+  background-image: url(../../images/sprite_lyte.svg);
+  background-position: -117px -198px;
+  width: 21px;
+  height: 26px;
+  display: inline-block;
+}
+.lyteCBoxIframeLabel {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.lyteColorboxThumb .lyteCBoxFavImg {
+  height: auto;
+  width: auto;
+}
+.lyteCBoxPhotoZoomIn {
+  cursor: zoom-in;
+}
+.lyteCBoxPhotoZoomOut {
+  cursor: zoom-out;
+}
+lyte-colorbox-previous,
+lyte-colorbox-next,
+.lyteColorboxIconDiv {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #555;
+  background: #222;
+  position: fixed;
+  border-radius: 50%;
+  top: calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+lyte-colorbox-previous:hover,
+lyte-colorbox-next:hover,
+.lyteColorboxIconDiv:hover {
+  background: #000;
+}
+lyte-colorbox-previous,
+.lyteCBoxPrevious {
+  left: 20px;
+}
+lyte-colorbox-next,
+.lyteCBoxNext {
+  right: 20px;
+}
+.lyteColorboxNextIcon,
+.lyteColorboxPreviousIcon {
+  background-image: url(../../images/sprite_lyte.svg);
+  width: 9px;
+  height: 11px;
+  background-position: -94px -109px;
+}
+.lyteColorboxNextIcon {
+  background-position: -115px -108px;
+}
+.lyteCBoxDownload {
+  position: relative;
+}
+lyte-colorbox-download .lyteColorboxDownloadImg::after,
+.lyteCBoxDownload .lyteColorboxDownloadImg::after {
+  content: '';
+  background-image: url(../../images/sprite_lyte.svg);
+  width: 16px;
+  height: 16px;
+  background-position: -271px -106px;
+  opacity: 0.4;
+  cursor: pointer;
+  display: block;
+}
+lyte-colorbox-download .lyteColorboxDownloadImg:hover::after,
+.lyteCBoxDownload .lyteColorboxDownloadImg:hover::after {
+  opacity: 0.8;
+}
+.lyteColorboxUtilDiv {
+  display: flex;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  border-radius: 3px;
+  z-index: 1020;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+lyte-colorbox-zoomin,
+lyte-colorbox-reset,
+lyte-colorbox-zoomout,
+.lyteColorboxZoomIn,
+.lyteColorboxReset,
+.lyteColorboxZoomOut {
+  cursor: pointer;
+  padding: 10px;
+  height: 16px;
+}
+.lyteColorboxDisabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+lyte-colorbox-zoomin:hover,
+lyte-colorbox-reset:hover,
+lyte-colorbox-zoomout:hover,
+.lyteColorboxZoomIn:hover,
+.lyteColorboxReset:hover,
+.lyteColorboxZoomOut:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+lyte-colorbox-zoomin::before,
+lyte-colorbox-reset::before,
+lyte-colorbox-zoomout::before,
+.lyteColorboxZoomIn::before,
+.lyteColorboxReset::before,
+.lyteColorboxZoomOut::before {
+  content: '';
+  background: url(../../images/sprite_lyte.svg);
+  display: inline-block;
+  align-self: center;
+}
+lyte-colorbox-zoomout::before,
+.lyteColorboxZoomOut::before {
+  background-position: -132px -107px;
+  width: 13px;
+  height: 15px;
+}
+lyte-colorbox-zoomout:hover::before,
+.lyteColorboxZoomOut:hover::before {
+  background-position: -153px -107px;
+}
+lyte-colorbox-reset::before,
+.lyteColorboxReset::before {
+  background-position: -218px -106px;
+  width: 17px;
+  height: 17px;
+}
+lyte-colorbox-reset:hover::before,
+.lyteColorboxReset:hover::before {
+  background-position: -242px -106px;
+}
+lyte-colorbox-zoomin::before,
+.lyteColorboxZoomIn::before {
+  background-position: -175px -107px;
+  width: 14px;
+  height: 15px;
+}
+lyte-colorbox-zoomin:hover::before,
+.lyteColorboxZoomIn:hover::before {
+  background-position: -196px -107px;
+}
+.lyteColorboxHideVisibility {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+lyte-colorbox-next.lyteColorboxHideVisibility:hover,
+lyte-colorbox-previous.lyteColorboxHideVisibility:hover,
+.lyteColorboxIconDiv.lyteColorboxHideVisibility:hover {
+  background: #222;
+}
+.lyteCBoxItem {
+  position: absolute;
+  height: calc(100% - 10px);
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.lytCBoxPreviousItem {
+  transform: translate3d(-100%, 0, 0);
+  transition: none;
+}
+.lytCBoxNextItem {
+  transform: translate3d(100%, 0, 0);
+  transition: none;
+}
+.lyteCBoxCurrentItem {
+  transform: translate3d(0%, 0, 0);
+  transition: transform 0.3s ease;
+}
+.lyteCBoxOH {
+  overflow: hidden;
+}
+.lyteCBoxPhoto,
+.lyteCBoxIframe,
+.lyteCBoxCustom,
+.lyteCBoxDN {
+  display: none;
+}
+.lyteCBoxVisible {
+  display: inline-block;
+}
+.lyteCBoxAlignStart {
+  align-items: flex-start;
+}
+lyte-colorbox-container {
+  font-family: 'LatoRegular', 'Open Sans', sans-serif;
+  font-size: 14px;
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1040;
+}
+lyte-colorbox-container.lyteColorboxDisplay {
+  display: block;
+}
+lyte-colorbox-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #222;
+  z-index: 10;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+lyte-colorbox-download {
+  margin-left: 10px;
+}
+lyte-colorbox-download .lyteColorboxDownloadImg::after {
+  background-position: -372px -157px;
+  width: 16px;
+  height: 15px;
+}
+lyte-colorbox-title {
+  color: #fff;
+  font-size: 16px;
+}
+lyte-colorbox-close {
+  margin-left: auto;
+}
+lyte-colorbox-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+}
+lyte-colorbox-container .lyteCBoxItem {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+lyte-colorbox-container .lyteCBoxPhoto,
+.lyteColorboxContent .lyteCBoxPhoto {
+  position: relative;
+  cursor: grab;
+}
+lyte-colorbox-container .lyteCBoxPhoto.lyteCBoxDragging,
+.lyteColorboxContent .lyteCBoxPhoto.lyteCBoxDragging {
+  cursor: grabbing;
+}
+lyte-colorbox-thumbnail {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 150px;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+}
+lyte-colorbox-container .lyteColorboxUtilDiv {
+  flex-direction: row-reverse;
+  bottom: 150px;
+}
+.lyteCBoxMoveLeft {
+  transform: translate3d(-100%, 0, 0);
+}
+.lyteCBoxMoveRight {
+  transform: translate3d(100%, 0, 0);
+}
+.lyteCBoxMoveLeftWithTransition {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.3s;
+}
+.lyteCBoxMoveRightWithTransition {
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.3s;
+}
+.lyteCBoxAnimateOnUp {
+  transition: transform 0.3s, left 0.3s, top 0.3s;
+}
+.lyteColorboxLoadingCircle {
+  animation: lyteColorboxLoadingSvgAnim 1.4s linear infinite;
+}
+@keyframes lyteColorboxLoadingSvgAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+lyte-colorbox-loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+.lyteColorboxLoadingCircle circle {
+  stroke-dasharray: 88px;
+  stroke-dashoffset: 0;
+  stroke-width: 1px;
+  stroke-linecap: round;
+  transform-origin: center;
+  animation: lyteColorboxLoadingAnim 1.4s ease-in-out infinite;
+}
+@keyframes lyteColorboxLoadingAnim {
+  0% {
+    stroke-dashoffset: 88px;
+  }
+  50% {
+    stroke-dashoffset: 22px;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 88px;
+    transform: rotate(450deg);
+  }
+}
+lyte-colorbox-content .lyteColorBoxDisableTransition,
+.lyteColorboxContent .lyteColorBoxDisableTransition {
+  transition: none;
+}
+/*
+lyte-colorbox-previous.lyteColorboxHideVisibility:hover, lyte-colorbox-next.lyteColorboxHideVisibility:hover {
+  background: #222;
+}
+
+.animateOnUp {
+    transition: transform 0.3s, left 0.3s, top 0.3s;
+}
+
+}*/
+/*Sets the orientation of the images so that there wont be any difference in viewing the image in different browser*/
+.lyteColorboxThumb.addedOrientation img {
+  image-orientation: from-image;
+}
+.lyteCBoxDNImp {
+  display: none !important;
+}
+/* Sets z-index to current element for non sliding images*/
+.lyteCBoxCurrentElem {
+  z-index: 1;
+}
+.lyteCBoxPreviewNone {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  background-image: url(../../images/zip-folder.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* colorbox CSS ENDS   */

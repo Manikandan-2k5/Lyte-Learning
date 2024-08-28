@@ -1,0 +1,148 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/selector/selector.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{selector}/ui-elements/selector/selector.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{selector}/global/@{direction}.less";
+
+.lyteSelectionWrapperBox {
+    position: relative;
+    overflow: hidden;
+}
+.lyteSelectionBox {
+	.SelectionBoxMixin();
+	position: absolute;
+	background: red;
+	cursor: move;
+	border: @border;
+	z-index: @z-index;
+}
+.lyteSelectorActiveBox {
+	.SelectorActiveBoxMixin();
+	z-index: @z-index;
+	border: @border;
+}
+.lyteSelectionFreezeLayer {
+	.SelectionFreezeLayerMixin();
+	position: absolute;
+	margin: auto;
+	user-select: none;
+	background: @bg;
+	opacity: .3;
+    cursor: crosshair;
+}
+.lyteSelectorHandles {
+	.SelectorHandlesMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	position: absolute;
+	display: none;
+	border: @border;
+}
+.lyteTLCorner {
+	.TLCornerMixin();
+	top: @top;
+	left: @left;
+	cursor: nwse-resize;
+}
+.lyteTRCorner {
+	.TRCornerMixin();
+	top: @top;
+	right: @right;
+	cursor: nesw-resize;
+}
+.lyteBRCorner {
+	.BRCornerMixin();
+	bottom: @bottom;
+	right: @right;
+	cursor: nwse-resize;
+}
+.lyteBLCorner {
+	.BLCornerMixin();
+	bottom: @bottom;
+	left: @left;
+	cursor: nesw-resize;
+}
+.lyteTEdge {
+	.TEdgeMixin();
+	top: @top;
+	left: @left;
+	cursor: ns-resize;
+}
+.lyteBEdge {
+	.BEdgeMixin();
+	bottom: @bottom;
+	left: @left;
+	cursor: ns-resize;
+}
+.lyteREdge {
+	.REdgeMixin();
+	right: @right;
+	top: @top;
+	cursor: ew-resize;
+}
+.lyteLEdge {
+	.LEdgeMixin();
+	left: @left;
+	top: @top;
+	cursor: ew-resize;
+}
+.lyteSelectorDeleteBtn {
+	.SelectorDeleteBtnMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	top: @top;
+	@{property-right}: @right;
+	display: none;
+	cursor: pointer;
+	border-radius: @border-radius;
+	background: @bg;
+	padding: @padding;
+}
+.lyteSelectorDeleteBtn::after {
+	.SelectorDeleteBtnAfterMixin();
+	content: '';
+	display: block;
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+}
+.lyteSelectorDeleteBtn:hover::after {
+	.SelectorDeleteBtnHoverAfterMixin();
+	background-position: @bg-pos;
+}
+.lyteSelectorWorkArea {
+	position: absolute;
+	display: none;
+}
+.lyteSelectorActiveBox .lyteSelectorHandles,
+.lyteSelectorActiveBox .lyteSelectorDeleteBtn,
+.lyteSelectorActiveBox .lyteSelectorWorkArea {
+	display: block;
+}
+.lyteSelectorLabel {
+    .lyteSelectorLabelMixin();
+    position: absolute;
+    width: @w;
+    color: @color;
+    font-size: @font-size;
+}
+.lyteSelectorLabelTop {
+	.lyteSelectorLabelTopMixin();
+	top: @top;
+	transform: @transform;
+}
+.lyteSelectorLabelBottom {
+	.lyteSelectorLabelBottomMixin();
+	top: @top;
+}

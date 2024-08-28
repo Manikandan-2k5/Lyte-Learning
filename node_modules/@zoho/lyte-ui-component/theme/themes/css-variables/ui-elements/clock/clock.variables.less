@@ -1,0 +1,66 @@
+:root {
+	--lyte-clock-text-color: @commonTextColor;
+	--lyte-clock-analog-middle-circle-bg: #fff;
+	--lyte-clock-analog-middle-circle-boxshadow-color: rgba(0, 0, 0, 0.2);
+	--lyte-clock-analog-dial-bg: #666;
+	--lyte-clock-analog-seconds-dial-bg: #f00;
+	--lyte-clock-timer-format-label-text-color: #777;
+	--lyte-clock-stopwatch-border-color: #d6d6d6;
+
+	--lyte-clock-stopwatch-startbutton-border-color: #5ba1e5;
+	--lyte-clock-stopwatch-startbutton-text-color: #5ba1e5;
+	--lyte-clock-stopwatch-startbutton-hover-bg: #e6f3fd;
+
+	--lyte-clock-stopwatch-resetbutton-border-color: #666;
+	--lyte-clock-stopwatch-resetbutton-text-color: #666;
+	--lyte-clock-stopwatch-resetbutton-hover-bg: #eee;
+
+	--lyte-clock-stopwatch-pausebutton-border-color: #ec4844;
+	--lyte-clock-stopwatch-pausebutton-text-color: #ec4844;
+	--lyte-clock-stopwatch-pausebutton-hover-bg: #ffe3e3;
+}
+
+.lyteClockMidCircleMixin() {
+	@bg: var(--lyte-clock-analog-middle-circle-bg);
+	@box-shadow: 0 0 5px 2px var(--lyte-clock-analog-middle-circle-boxshadow-color);
+}
+.lyteClkDialsMixin() {
+	@bg: var(--lyte-clock-analog-dial-bg);
+}
+.lyteClkSecDialElemMixin() {
+	@bg: var(--lyte-clock-analog-seconds-dial-bg);
+}
+.lyteClkTimerDefLabelMixin() {
+	@color: var(--lyte-clock-timer-format-label-text-color);
+}
+
+.lyteClockStopWatchMixin() {
+	@border: 1px solid var(--lyte-clock-stopwatch-border-color);
+}
+.lyteClockSwLapWrapperMixin() {
+	@border-top: 1px solid var(--lyte-clock-stopwatch-border-color);
+}
+.lyteClockSwLapMixin() {
+	@border-bottom: 1px solid var(--lyte-clock-stopwatch-border-color);
+}
+.lyteClockSWStartMixin() {
+    @border: 1px solid var(--lyte-clock-stopwatch-startbutton-border-color);
+    @color: var(--lyte-clock-stopwatch-startbutton-text-color);
+}
+.lyteClockSWStartHoverMixin() {
+    @bg: var(--lyte-clock-stopwatch-startbutton-hover-bg);
+}
+.lyteClockSWResetMixin() {
+    @border: 1px solid var(--lyte-clock-stopwatch-resetbutton-border-color);
+    @color: var(--lyte-clock-stopwatch-resetbutton-text-color);
+}
+.lyteClockSWResetHoverMixin() {
+    @bg: var(--lyte-clock-stopwatch-resetbutton-hover-bg);
+}
+.lyteClockSWPauseMixin() {
+    @border: 1px solid var(--lyte-clock-stopwatch-pausebutton-border-color);
+    @color: var(--lyte-clock-stopwatch-pausebutton-text-color);
+}
+.lyteClockSWPauseHoverMixin() {
+    @bg: var(--lyte-clock-stopwatch-pausebutton-hover-bg);
+}

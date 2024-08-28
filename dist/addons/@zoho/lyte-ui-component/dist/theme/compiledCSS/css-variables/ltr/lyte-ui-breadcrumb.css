@@ -1,0 +1,63 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-breadcrumb-text-color: #555;
+  --lyte-breadcrumb-hover-text-color: var(--lyte-common-text-hover-color);
+  --lyte-breadcrumb-active-text-color: var(--lyte-theme-active-element-color);
+}
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* Breadcrumb styles BEGINS */
+lyte-breadcrumb,
+.lyte-breadcrumb-structure {
+  display: inline-block;
+}
+lyte-breadcrumb-body {
+  font-family: var(--lyte-primary-font);
+  font-size: 15px;
+  color: var(--lyte-breadcrumb-text-color);
+  cursor: pointer;
+}
+lyte-breadcrumb-body:hover {
+  color: var(--lyte-breadcrumb-hover-text-color);
+}
+.lyteActive lyte-breadcrumb-body {
+  color: var(--lyte-breadcrumb-active-text-color);
+}
+lyte-breadcrumb-item {
+  padding: 0;
+  font-size: 15px;
+  margin-right: 25px;
+  display: inline-block;
+  position: relative;
+}
+lyte-breadcrumb-item::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -42px -1px;
+  width: 6px;
+  height: 10px;
+  position: absolute;
+  right: -18px;
+  top: calc(50% - 10px/2);
+  opacity: 0.5;
+}
+lyte-breadcrumb-item:last-child {
+  margin-right: 0;
+}
+lyte-breadcrumb-item:last-child::after {
+  content: none;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/breadcrumb.less file
+ */
+/* Breadcrumb styles ENDS */
