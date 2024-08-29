@@ -1421,20 +1421,20 @@ Timing to complete init function0.001 s
 [Compiled][themes]create an css files in the outputPath /home/manikandans/Lyte-Test/dist/addons/@zoho/lyte-ui-component/dist/theme/compiledCSS/css-variables/rtl/lyte-ui-voicenote.css
 CliLocation :/usr/lib/node_modules/@zoho/lyte-cli
  CliVersion 3.3.5
-Building time of copyAppDir : 0.039 s
+Building time of copyAppDir : 0.045 s
 Building components ....
 Searching for syntax errors.....
 Finding the unclosed tags compilation over
-[Time] => find unclosedTags => 0.046 s
+[Time] => find unclosedTags => 0.043 s
 Running compilerule ...
-[Time] => Convert Lyte syntax => 0.131 s
-browser Endpoint ws://127.0.0.1:36153/devtools/browser/68057fd7-2b70-4230-9c2c-875b3a5d072f
+[Time] => Convert Lyte syntax => 0.128 s
+browser Endpoint ws://127.0.0.1:34181/devtools/browser/b54f179d-e9e3-4f33-9111-8b865839b31e
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 1.266 s
-Callback function called 0.005 slyte-accordion,lyte-autocomplete,lyte-badge,lyte-board,lyte-alert,lyte-banner,lyte-breadcrumb,lyte-button-group,lyte-button,lyte-card,lyte-checkbox-group,lyte-calculator,lyte-calendar,lyte-checkbox,lyte-clock,lyte-carousel,lyte-column-chooser,lyte-code-snippet,lyte-counter,lyte-datetime-input,lyte-combobox,lyte-datemultiselect,lyte-drawer,lyte-colorbox,lyte-dragdrop,lyte-dateselect,lyte-daterangepicker,lyte-dropdown,lyte-dual-listbox,lyte-expresstable,lyte-emoji,lyte-fileupload,lyte-grouper,lyte-hovercard,lyte-kanbanview,lyte-keyboard-navigator,lyte-messagebox,lyte-loader,lyte-multi-dropdown,lyte-menu,lyte-input,lyte-multislider,lyte-nav,lyte-navigator,lyte-gridstack,lyte-radiobutton,lyte-number,lyte-pip,lyte-progressbar,lyte-modal,lyte-rating,lyte-radiobutton-group,lyte-signature,lyte-search,lyte-popover,lyte-slider,lyte-step,lyte-svg,lyte-splitter,lyte-tag,lyte-table,lyte-timeline,lyte-tooltip,lyte-text,lyte-tour-hint,lyte-tour-step,lyte-tour,lyte-video,lyte-tabs,lyte-wormhole,lyte-voicenote,lyte-annotator-item,lyte-tree,table-tree,lyte-avatar-navigator-item,lyte-avatar-navigator,lyte-connect-item,lyte-annotator,lyte-colorpicker,lyte-layout-row,lyte-shape-wrap,lyte-comment,lyte-note-editor,lyte-reaction-view,lyte-layout,colorpicker-ui,lyte-notecomp,lyte-edit-element,lyte-boolean-filter,lyte-listview,lyte-list-filter,lyte-multiselect-filter,lyte-custom-filter,lyte-text-filter,lyte-number-filter,lyte-date-filter,lyte-listview1,lyte-connect
-Time to end the dynamic nodes1.272 s
+Time taken for end call back be 1.336 s
+Callback function called 0.004 slyte-accordion,lyte-alert,lyte-banner,lyte-badge,lyte-autocomplete,lyte-board,lyte-breadcrumb,lyte-button-group,lyte-button,lyte-calculator,lyte-carousel,lyte-card,lyte-calendar,lyte-checkbox-group,lyte-checkbox,lyte-code-snippet,lyte-clock,lyte-column-chooser,lyte-combobox,lyte-counter,lyte-datemultiselect,lyte-colorbox,lyte-dateselect,lyte-datetime-input,lyte-daterangepicker,lyte-drawer,lyte-dragdrop,lyte-dual-listbox,lyte-dropdown,lyte-grouper,lyte-emoji,lyte-hovercard,lyte-fileupload,lyte-kanbanview,lyte-expresstable,lyte-loader,lyte-keyboard-navigator,lyte-menu,lyte-input,lyte-modal,lyte-gridstack,lyte-messagebox,lyte-multi-dropdown,lyte-pip,lyte-multislider,lyte-navigator,lyte-number,lyte-nav,lyte-progressbar,lyte-radiobutton-group,lyte-radiobutton,lyte-popover,lyte-rating,lyte-signature,lyte-search,lyte-splitter,lyte-slider,lyte-step,lyte-svg,lyte-table,lyte-tabs,lyte-tag,lyte-text,lyte-timeline,lyte-tour-step,lyte-tooltip,lyte-tour-hint,lyte-tour,lyte-voicenote,lyte-video,lyte-wormhole,lyte-tree,lyte-avatar-navigator-item,table-tree,lyte-annotator-item,lyte-avatar-navigator,lyte-connect-item,lyte-layout-row,lyte-layout,lyte-colorpicker,lyte-annotator,lyte-shape-wrap,lyte-comment,lyte-note-editor,lyte-edit-element,colorpicker-ui,lyte-reaction-view,lyte-list-filter,lyte-notecomp,lyte-boolean-filter,lyte-custom-filter,lyte-connect,lyte-listview,lyte-listview1,lyte-date-filter,lyte-number-filter,lyte-text-filter,lyte-multiselect-filter
+Time to end the dynamic nodes1.34 s
 Generating dist components...
 
 Warnings in the component :lyte-calendar
@@ -1449,17 +1449,17 @@ Warnings in the component :lyte-dual-listbox
 Warnings in the component :lyte-modal
 		Invalid component names : calculateHW
 
-Warnings in the component :lyte-rating
-		Invalid component names : starVB,lineStarVB,heartVB,lineHeartVB
-
 Warnings in the component :lyte-popover
 		Invalid component names : calculateHW
+
+Warnings in the component :lyte-rating
+		Invalid component names : starVB,lineStarVB,heartVB,lineHeartVB
 
 Warnings in the component :colorpicker-ui
 		Invalid component names : poxYHue,poxXHue,advCPDimensions,posXOpacity
 
-Time to end processing template0.031 s
-Building time of components : 1.494 s
+Time to end processing template0.025 s
+Building time of components : 1.548 s
 Building models ..............
 
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/data-store/models/navigation.js
@@ -1474,7 +1474,7 @@ Building time of helpers : 0.001 s
 Building mixins .....
 [Copy] mixins => ../../../dist/addons/@zoho/lyte-ui-component/dist/mixins
 
-Building time of mixins : 0.002 s
+Building time of mixins : 0.001 s
 Building time of addons : 0 s
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-connect.js
 
@@ -1484,11 +1484,11 @@ Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/di
 
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/mixins/lyte-connect-positioning.js
 
-Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-avatar-navigator.js
-
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-colorpicker.js
 
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-kanban.js
+
+Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-avatar-navigator.js
 
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-layout.js
 
@@ -1506,7 +1506,7 @@ Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/di
 
 Consolidated file created in the ../../../dist/addons/@zoho/lyte-ui-component/dist/components/lyte-ui-components.js
 
-Building time of consolidate : 0.057 s
-Total Building Time : 1.627 s
+Building time of consolidate : 0.044 s
+Total Building Time : 1.664 s
 Building completed
 Build sucesss

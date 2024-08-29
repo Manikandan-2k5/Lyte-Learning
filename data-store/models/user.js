@@ -50,13 +50,26 @@ store.registerModel("user",
         userName: Lyte.attr("string", {mandatory:true}),
         place: Lyte.attr("string", {mandatory:true}),
         phoneNumber: Lyte.attr("string", {mandatory:true, pattern:Lyte.patterns.phoneNumberRegex}),
-        profile: Lyte.belongsTo("profile")
+        profile:Lyte.belongsTo("profile"),
+        collectedBadges:Lyte.hasMany("badge", {inverse:"collectedUsers"}),
+        earnedBadges:Lyte.hasMany("badge", {inverse:"earnedUsers"}),
+        bestFriend:Lyte.belongsTo("user", {inverse:"bestFriend"})
     }
 );
 
 store.registerModel("profile",
     {
         id:Lyte.attr("number", {primaryKey:true}),
+        status:Lyte.attr("string", {mandatory:true}),
         user:Lyte.belongsTo("user")
     }
-)
+);
+
+store.registerModel("badge",
+    {
+        id:Lyte.attr("number", {primaryKey:true}),
+        badgeName:Lyte.attr("string", {mandatory:true}),
+        collectedUsers:Lyte.hasMany("user"),
+        earnedUsers:Lyte.hasMany("user")
+    }
+);
