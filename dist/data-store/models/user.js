@@ -47,13 +47,16 @@ Lyte.registerPattern( "phoneNumberRegex" , /^[6-9]{1}\d{9}$/ );
 
 store.registerModel("user",
     {
-        userName: Lyte.attr("string", {mandatory:true}),
-        place: Lyte.attr("string", {mandatory:true}),
-        phoneNumber: Lyte.attr("string", {mandatory:true, pattern:Lyte.patterns.phoneNumberRegex}),
-        profile:Lyte.belongsTo("profile"),
-        collectedBadges:Lyte.hasMany("badge", {inverse:"collectedUsers"}),
-        earnedBadges:Lyte.hasMany("badge", {inverse:"earnedUsers"}),
-        bestFriend:Lyte.belongsTo("user", {inverse:"bestFriend"})
+
+        STD_ID: Lyte.attr("number", {primaryKey:true}),
+        STD_NAME: Lyte.attr("string", {mandatory:true}),
+        LAST_NAME: Lyte.attr("string", {mandatory:true}),
+        COURSE_ID: Lyte.attr("number", {mandatory:true}),
+        STD_DOB: Lyte.attr("string", {mandatory:true}),
+        STD_ADDR: Lyte.attr("string", {mandatory:true}),
+        STD_DOJ: Lyte.attr("string", {mandatory:true}),
+        STD_GENDER: Lyte.attr("string", {mandatory:true})
+
     }
 );
 
@@ -73,3 +76,67 @@ store.registerModel("badge",
         earnedUsers:Lyte.hasMany("user")
     }
 );
+store.registerAdapter("user", {
+
+	host : "http://localhost:8080/",
+
+    namespace : "web_app",
+
+    withCredentials: true,
+
+    delayPersistence:{delete:true},
+
+    buildURL : function(modelName , type , queryParams , payLoad , url , actionName , customData ){
+        switch(type){
+            case "updateRecord" || "findRecord":
+                url.replace("user");
+        }
+        url = url.replace("user", "users");
+        console.log(url);
+        return url;
+    },
+
+    headersForRequest : function(type , queryParams , customData, actionName, key ){
+        console.log("headers");
+        return {
+            "Accept":"application/json"
+        };
+    },
+
+    methodForRequest : function(method , type , queryParams , customData, actionName, key){
+        console.log("requestMethod");
+        if( method == "PATCH" ){
+            return "PUT";
+        }
+        return method;
+    }
+
+});
+
+
+store.registerSerializer("user",{
+	normalize : function(modelName , type , snapshot, customData, opts ){
+        console.log("normalize");
+        console.log(snapshot);
+        return snapshot;
+    },
+    normalizeResponse : function(modelName , type , payLoad , pkValue , status , headers , queryParams , customData, opts){
+        console.log("normalizeResponse");
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="findrecord"){
+            return {user:payLoad[0]};
+        }
+        else{
+            return {user:payLoad};
+        }
+    },
+    serialize:function(type , payLoad , records , customData , modelName, queryParams , actionName){
+        console.log("serialize");
+        console.log(payLoad);
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="updaterecord"){
+            return [payLoad.user];
+        }
+        else{
+            return payLoad.user;
+        }
+    }
+});

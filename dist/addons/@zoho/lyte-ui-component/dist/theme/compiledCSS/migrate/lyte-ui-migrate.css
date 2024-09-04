@@ -47,49 +47,6 @@ lyte-icon.lyteAccordionPlus {
     height: 3px;
     margin-top: 8px;
 }
-lyte-autocomplete {
-	display: inline-block;
-}
-lyte-autocomplete lyte-input[lt-prop-type="search"] .searchIcon {
-    background:  url('../images/lyte_ui_sprite.svg') no-repeat -362px -2px;
-    left: 7px;
-}
-lyte-autocomplete.searchPresent lyte-input.lyteInputBox input {
-    padding: 9px 10px 9px 30px;
-}
-lyte-autocomplete .iconSeparator {
-    display: none !important;
-}
-lyte-autocomplete .closeIconWrapper {
-	right: 5px;
-	top: calc( 50% - 9px);
-    padding: 0;
-}
-lyte-autocomplete.searchPresent .closeIconWrapper {
-	right: 5px;    
-}
-lyte-autocomplete lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button {
-    padding: 0;
-}
-span.closeIcon {
-	background: url('../images/lyte_ui_sprite.svg') no-repeat -14px -1px;
-	width: 12px;
-	height: 11px;
-    vertical-align: unset;
-}
-.lyteautocompleteDropdown {
-    width: auto;
-}
-.lyteautocompleteDropdown.lyteDropdownUp,
-.lyteautocompleteDropdown.lyteDropdownDown {
-    transform: none;
-}
-lyte-autocomplete-description{
-	opacity: 0.4;
-}
-.lyteautocompleteError {
-	padding: 10px 20px;
-}
 lyte-breadcrumb-structure{
 	line-height: 1;
     display: inline-block;
@@ -412,6 +369,77 @@ lyte-breadcrumb{
     color: #555;
     pointer-events: none;
 }
+.alertWrapper {
+    overflow: auto;
+    position: fixed;
+    z-index: 10021;
+}
+.alertPopup {
+    padding: 0;
+    position: absolute;
+    z-index: 10001;
+    top: -100%;
+    left:50%;
+    transform: translate(-50%,0%);
+    min-width: 500px;
+    max-width: 900px;
+}
+.alertHeader, .alertContent{
+    display: block;
+    padding: 15px 40px 15px 30px
+}
+.lyteAlertCenterContent .alertContent {
+    display: inline-block;
+}
+.alertContentMiddle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.alertHeader {
+    background: #fff;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.alertFooter {
+    padding: 15px 30px;
+}
+.alertPrimaryMsg{
+	margin-bottom: 5px;
+	display: block;
+	font-weight: bold;
+}
+.alertSecondaryMsg, .dBlock{
+	display: block;
+    font-size: inherit;
+}
+.alertFreezeLayer{ 
+	z-index:1000;
+}
+.alertClose {
+    top: 20px;
+    right: 25px;
+}
+lyte-alert-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 15px 40px 15px 30px;    
+}
+lyte-alert-content{
+    font-size: inherit;
+    padding: 15px 40px 15px 30px;
+    display: block;
+}
+.lyteStatusIcon {
+    margin-right: 15px;
+}
+.alertPopup.lyteAlertZoomIn {
+    transform-origin: 12.5% 50%;
+    transform: scale(0) translate(-50%,0%);
+}
+.alertPopup.lyteAlertZoomIn.alertOpened {
+    transform: scale(1) translate(-50%,0%);
+}
 /*Checkbox css */
 lyte-checkbox {
     font-size: inherit;
@@ -474,6 +502,49 @@ input[type=checkbox].on-off-sw:checked:focus+.lyteCheckSwitch {
 .lyteCheckSwitch + span {
     margin-left: 0;
     vertical-align: top;
+}
+lyte-autocomplete {
+	display: inline-block;
+}
+lyte-autocomplete lyte-input[lt-prop-type="search"] .searchIcon {
+    background:  url('../images/lyte_ui_sprite.svg') no-repeat -362px -2px;
+    left: 7px;
+}
+lyte-autocomplete.searchPresent lyte-input.lyteInputBox input {
+    padding: 9px 10px 9px 30px;
+}
+lyte-autocomplete .iconSeparator {
+    display: none !important;
+}
+lyte-autocomplete .closeIconWrapper {
+	right: 5px;
+	top: calc( 50% - 9px);
+    padding: 0;
+}
+lyte-autocomplete.searchPresent .closeIconWrapper {
+	right: 5px;    
+}
+lyte-autocomplete lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button {
+    padding: 0;
+}
+span.closeIcon {
+	background: url('../images/lyte_ui_sprite.svg') no-repeat -14px -1px;
+	width: 12px;
+	height: 11px;
+    vertical-align: unset;
+}
+.lyteautocompleteDropdown {
+    width: auto;
+}
+.lyteautocompleteDropdown.lyteDropdownUp,
+.lyteautocompleteDropdown.lyteDropdownDown {
+    transform: none;
+}
+lyte-autocomplete-description{
+	opacity: 0.4;
+}
+.lyteautocompleteError {
+	padding: 10px 20px;
 }
 lyte-button button {
     font-size: .929rem;	
@@ -584,77 +655,6 @@ lyte-daterangepicker .lyteCalCdate::after {
 lyte-daterangepicker .lyteCalCdate,
 lyte-daterangepicker .lyteCalCdate:hover {
     border-radius: 3px !important;
-}
-.alertWrapper {
-    overflow: auto;
-    position: fixed;
-    z-index: 10021;
-}
-.alertPopup {
-    padding: 0;
-    position: absolute;
-    z-index: 10001;
-    top: -100%;
-    left:50%;
-    transform: translate(-50%,0%);
-    min-width: 500px;
-    max-width: 900px;
-}
-.alertHeader, .alertContent{
-    display: block;
-    padding: 15px 40px 15px 30px
-}
-.lyteAlertCenterContent .alertContent {
-    display: inline-block;
-}
-.alertContentMiddle {
-    display: table-cell;
-    vertical-align: middle;
-}
-.alertHeader {
-    background: #fff;
-    font-size: 20px;
-    margin-bottom: 0;
-}
-.alertFooter {
-    padding: 15px 30px;
-}
-.alertPrimaryMsg{
-	margin-bottom: 5px;
-	display: block;
-	font-weight: bold;
-}
-.alertSecondaryMsg, .dBlock{
-	display: block;
-    font-size: inherit;
-}
-.alertFreezeLayer{ 
-	z-index:1000;
-}
-.alertClose {
-    top: 20px;
-    right: 25px;
-}
-lyte-alert-header{
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 0;
-    padding: 15px 40px 15px 30px;    
-}
-lyte-alert-content{
-    font-size: inherit;
-    padding: 15px 40px 15px 30px;
-    display: block;
-}
-.lyteStatusIcon {
-    margin-right: 15px;
-}
-.alertPopup.lyteAlertZoomIn {
-    transform-origin: 12.5% 50%;
-    transform: scale(0) translate(-50%,0%);
-}
-.alertPopup.lyteAlertZoomIn.alertOpened {
-    transform: scale(1) translate(-50%,0%);
 }
 /*lyte-list-box css*/
 lyte-dropdown {
@@ -840,9 +840,6 @@ lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button::after, lyte-dropdown
 .dateSelectcal {
     z-index: 10020;
 }
-.lyteMessageBox {
-    z-index: 11000;
-}
 lyte-input .lyteLabel {
     font-size: 1rem;
     padding: 9px 6px 6px 0;
@@ -885,6 +882,52 @@ lyte-input.vertical .lyteLabel {
 }
 .lyteInputCalendar {
 	z-index: 10020;
+}
+.lyteMessageBox {
+    z-index: 11000;
+}
+lyte-menu-box {
+  margin: 0;
+  z-index: 10020;
+}
+lyte-menu-body {
+    padding: 0;
+}
+ lyte-menu-header {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.855rem;
+  text-align: center;
+}
+lyte-menu-header div {
+  display: inline-block;
+}
+lyte-menu-item {
+    display: block;
+    line-height: 0.9rem;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.855rem;
+    min-width: 0;
+}
+lyte-menu-label {
+    margin-right: 0;
+    font-size: 0.855rem;
+}
+lyte-menu-item ~ lyte-menu-group {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+ lyte-menu-description {
+     opacity: 0.4;
+     font-size: 0.855rem;
+}
+lyte-menu-group {
+    padding: 0;
+}
+ lyte-menu-group:last-of-type ~ lyte-menu-item {
+  border-top: 1px solid #e5e5e5;
+}
+div.lytemenufreezelayer {
+  z-index: 10001;
 }
 .bodyWrapper {
 	overflow: hidden;
@@ -936,48 +979,79 @@ lyte-modal-freeze {
 lyte-modal-header.draggable{
 	cursor: move;
 }
-lyte-menu-box {
-  margin: 0;
-  z-index: 10020;
+lyte-nav {
+	margin:10px;
+	background: #313949;    
 }
-lyte-menu-body {
-    padding: 0;
+lyte-nav:not([lt-prop-alignment="vertical"]){
+	flex-wrap:wrap;
+	width:100%;
+	line-height: 2.429rem;
 }
- lyte-menu-header {
-  padding: 0.45rem 1.1rem;
-  font-size: 0.855rem;
-  text-align: center;
+lyte-nav lyte-nav-item,
+lyte-nav lyte-nav-item:hover {
+    font-size: inherit;
+	font-family: 'LatoBold', sans-serif;
+    background: transparent;
+	color:#eee;
 }
-lyte-menu-header div {
-  display: inline-block;
+.lyteNavIconContainer:hover,
+.lyteNavIconContainer.lyteMenuSelected {
+    background: #5a616d;
 }
-lyte-menu-item {
-    display: block;
-    line-height: 0.9rem;
-    padding: 0.45rem 1.1rem;
-    font-size: 0.855rem;
-    min-width: 0;
+lyte-nav:not([lt-prop-alignment="vertical"]) lyte-nav-item{
+    padding:6px 12px 7px;
+    font-size:1em;
 }
-lyte-menu-label {
-    margin-right: 0;
-    font-size: 0.855rem;
+lyte-nav-item.lyteNavActive,
+lyte-nav-item.lyteNavActive:hover {
+	background: #5a616d;
+    color: #fff;
 }
-lyte-menu-item ~ lyte-menu-group {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: none;
+lyte-nav[lt-prop-alignment="vertical"]{
+	width:200px;
 }
- lyte-menu-description {
-     opacity: 0.4;
-     font-size: 0.855rem;
+lyte-nav[lt-prop-alignment="vertical"] lyte-nav-item {
+	padding: 10px;
 }
-lyte-menu-group {
-    padding: 0;
+lyte-nav[lt-prop-alignment="vertical"] .lyteNavDiv{
+	height:calc(100% - 30px);
+	position:relative;
 }
- lyte-menu-group:last-of-type ~ lyte-menu-item {
-  border-top: 1px solid #e5e5e5;
+.arrow-down {
+  border-top: 5px solid #eee;
 }
-div.lytemenufreezelayer {
-  z-index: 10001;
+.arrow-up {
+  border-bottom: 5px solid #eee;
+}
+.lyteNavKebabMenu {
+    background: url('../images/lyte_ui_sprite.svg') no-repeat -261px -31px;
+    width: 17px;
+    height: 5px;
+}
+.lyteNavIconContainer {
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.lyteNavMenuClass .lyteArrow,
+.lyteNavMenuClass  {
+    background: #313949;
+}
+.lyteNavMenuClass lyte-menu-item {
+    color: #fff;
+    font-family: 'LatoBold', sans-serif;
+    font-size: 1em;
+    padding: 0.85rem 1.15rem;
+}
+.lyteNavMenuClass lyte-menu-label {
+    color: #fff;
+}
+.lyteNavMenuClass lyte-menu-item:hover,
+.lyteNavMenuClass .lyteMenuSelection {
+    background: rgba(255,255,255,0.2);
 }
 lyte-navigator {
     font-size: inherit;
@@ -1126,80 +1200,6 @@ lyte-popover-header.draggable{
 }
 .lytePopover .lyteRadioBtn .lyteRadioLayer {
     box-sizing: content-box;
-}
-lyte-nav {
-	margin:10px;
-	background: #313949;    
-}
-lyte-nav:not([lt-prop-alignment="vertical"]){
-	flex-wrap:wrap;
-	width:100%;
-	line-height: 2.429rem;
-}
-lyte-nav lyte-nav-item,
-lyte-nav lyte-nav-item:hover {
-    font-size: inherit;
-	font-family: 'LatoBold', sans-serif;
-    background: transparent;
-	color:#eee;
-}
-.lyteNavIconContainer:hover,
-.lyteNavIconContainer.lyteMenuSelected {
-    background: #5a616d;
-}
-lyte-nav:not([lt-prop-alignment="vertical"]) lyte-nav-item{
-    padding:6px 12px 7px;
-    font-size:1em;
-}
-lyte-nav-item.lyteNavActive,
-lyte-nav-item.lyteNavActive:hover {
-	background: #5a616d;
-    color: #fff;
-}
-lyte-nav[lt-prop-alignment="vertical"]{
-	width:200px;
-}
-lyte-nav[lt-prop-alignment="vertical"] lyte-nav-item {
-	padding: 10px;
-}
-lyte-nav[lt-prop-alignment="vertical"] .lyteNavDiv{
-	height:calc(100% - 30px);
-	position:relative;
-}
-.arrow-down {
-  border-top: 5px solid #eee;
-}
-.arrow-up {
-  border-bottom: 5px solid #eee;
-}
-.lyteNavKebabMenu {
-    background: url('../images/lyte_ui_sprite.svg') no-repeat -261px -31px;
-    width: 17px;
-    height: 5px;
-}
-.lyteNavIconContainer {
-    align-self: stretch;
-    display: inline-flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-}
-.lyteNavMenuClass .lyteArrow,
-.lyteNavMenuClass  {
-    background: #313949;
-}
-.lyteNavMenuClass lyte-menu-item {
-    color: #fff;
-    font-family: 'LatoBold', sans-serif;
-    font-size: 1em;
-    padding: 0.85rem 1.15rem;
-}
-.lyteNavMenuClass lyte-menu-label {
-    color: #fff;
-}
-.lyteNavMenuClass lyte-menu-item:hover,
-.lyteNavMenuClass .lyteMenuSelection {
-    background: rgba(255,255,255,0.2);
 }
 .lyteProgressBar.lyteHorizontal{
 	height: 12px;
@@ -1763,17 +1763,6 @@ lyte-table.infinitescroll lyte-td > div {
 .resizing .lyteScrollContainer.lyteScrollContainerY{
   visibility: hidden !important;
 }
-span.lyteTooltip{
-    padding: 5px;
-    font-size: 1em;
-    z-index: 99999;
-}
-span.lyteTooltip.lyteLeft{
-    padding-right: 8px;
-}
-span.lyteTooltip.lyteRight {
-    padding-left: 8px;
-}
 lyte-tab-head {
     background: #ededed;    
 }
@@ -1875,6 +1864,17 @@ lyte-tab-title.lyteTabActive:hover {
 .lyteTabCustomTitleWidth{
     white-space: nowrap;
     overflow: auto;
+}
+span.lyteTooltip{
+    padding: 5px;
+    font-size: 1em;
+    z-index: 99999;
+}
+span.lyteTooltip.lyteLeft{
+    padding-right: 8px;
+}
+span.lyteTooltip.lyteRight {
+    padding-left: 8px;
 }
 lyte-accordion-item {
     margin: 0;

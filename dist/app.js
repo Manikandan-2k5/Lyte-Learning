@@ -234,6 +234,56 @@ Lyte.Router.registerRoute("menu",{
     }
 });
 
+Lyte.Router.registerRoute("home.form",{
+	getResources  : function (paramsObject ){ 
+        return [
+            "/addons/@zoho/lyte-ui-component/dist/components/lyte-number.js",
+            "/addons/@zoho/lyte-ui-component/dist/theme/compiledCSS/default/ltr/lyte-ui-number.css",
+        ];
+    },
+    getDependencies  : function (paramsObject ){ 
+            /* Files returned as dependencies will be downloaded at once and will be available before 'beforeModel' hook. */
+    },
+    beforeModel  : function (paramsObject ){ 
+            /* Pre processing stage where you can decide whether to abort/redirect the current transition(e.g Permission check). */
+    },
+    model  : function (paramsObject ){ 
+            /* Initiate data request that are necessary for the current page. */
+    },
+    afterModel  : function (model, paramsObject ){ 
+            /* Manipulating data before returning data to component. */
+    },
+    redirect  : function (model, paramsObject ){ 
+            /* Redirections based on data fetched. */
+    },
+    renderTemplate  : function (model, paramsObject ){ 
+            return {component:"user-form", outlet:"#outlet"}
+    },
+    afterRender  : function (model, paramsObject ){ 
+            /* Post processing of rendered page. */
+    },
+    beforeExit  : function (model, paramsObject ){ 
+            /* Will be invoked before a route is removed from view. */
+    },
+    didDestroy  : function (model, paramsObject ){ 
+            /* Will be invoked when a route is completly destroyed(remove residues of route. eg: file cache removal). */
+    },
+    actions  : { 
+           onBeforeLoad  : function (paramsObject ){ 
+                    /* Triggered once route transition starts. */
+            },
+           onError  : function (error, pausedTrans, paramsObject ){ 
+                    /* Triggered by error on file load or on data request. */
+            },
+           willTransition  : function (transition ){ 
+                    /* Triggered before a transition is going to change. */
+            },
+           didTransition  : function (paramsObject ){ 
+                    /* Triggered after completion of transition. */
+            },
+}
+});
+
 Lyte.Router.registerRoute("home.user",{
     getResources  : function (paramsObject ){ 
         console.log("In getResources");
@@ -309,56 +359,6 @@ Lyte.Router.registerRoute("home.user",{
         },
     }
 });
-Lyte.Router.registerRoute("home.form",{
-	getResources  : function (paramsObject ){ 
-        return [
-            "/addons/@zoho/lyte-ui-component/dist/components/lyte-number.js",
-            "/addons/@zoho/lyte-ui-component/dist/theme/compiledCSS/default/ltr/lyte-ui-number.css",
-        ];
-    },
-    getDependencies  : function (paramsObject ){ 
-            /* Files returned as dependencies will be downloaded at once and will be available before 'beforeModel' hook. */
-    },
-    beforeModel  : function (paramsObject ){ 
-            /* Pre processing stage where you can decide whether to abort/redirect the current transition(e.g Permission check). */
-    },
-    model  : function (paramsObject ){ 
-            /* Initiate data request that are necessary for the current page. */
-    },
-    afterModel  : function (model, paramsObject ){ 
-            /* Manipulating data before returning data to component. */
-    },
-    redirect  : function (model, paramsObject ){ 
-            /* Redirections based on data fetched. */
-    },
-    renderTemplate  : function (model, paramsObject ){ 
-            return {component:"user-form", outlet:"#outlet"}
-    },
-    afterRender  : function (model, paramsObject ){ 
-            /* Post processing of rendered page. */
-    },
-    beforeExit  : function (model, paramsObject ){ 
-            /* Will be invoked before a route is removed from view. */
-    },
-    didDestroy  : function (model, paramsObject ){ 
-            /* Will be invoked when a route is completly destroyed(remove residues of route. eg: file cache removal). */
-    },
-    actions  : { 
-           onBeforeLoad  : function (paramsObject ){ 
-                    /* Triggered once route transition starts. */
-            },
-           onError  : function (error, pausedTrans, paramsObject ){ 
-                    /* Triggered by error on file load or on data request. */
-            },
-           willTransition  : function (transition ){ 
-                    /* Triggered before a transition is going to change. */
-            },
-           didTransition  : function (paramsObject ){ 
-                    /* Triggered after completion of transition. */
-            },
-}
-});
-
 Lyte.Component.register("home-portal", {
 _template:"<template tag-name=\"home-portal\"> <h1>Hello All. Lyte-Test</h1> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Enter your name\" lt-prop-value=\"{{lbind(personName)}}\"> </lyte-input> <lyte-button lt-prop-appearance=\"primary\" __click=\"{{action('routeTransition')}}\"> <template is=\"registerYield\" yield-name=\"text\"> Go to your Website </template> </lyte-button> <template is=\"component\" component-name=\"menu-portal\"></template> </template>",
 _dynamicNodes : [{"type":"attr","position":[3]},{"type":"componentDynamic","position":[3]},{"type":"attr","position":[5]},{"type":"registerYield","position":[5,1],"dynamicNodes":[]},{"type":"componentDynamic","position":[5]},{"type":"component","position":[7],"dynamicNodes":[]}],
@@ -418,35 +418,16 @@ _observedAttributes :["userName","place","phoneNumber","customArray","customObje
 		}	
 	},
 	actions : {
-		submit:function(){
-			store.createRecord("user", {userName:"Manikandan", place:"Chennai", phoneNumber:"8610045338", age:18});
+		submit:async function(){
 			this.setData("customArray", ["hello",2,3,4]);
 			this.setData("customObject", {age:18});
 			console.log(this.getData("errors"));
-			if(this.getData("errors").userName!=undefined || this.getData("errors").phoneNumber!=undefined || this.getData("errors").place!=undefined){
-				for (error in this.getData("errors")){
-					console.log(error+": "+this.getData("errors")[error].message);
-				}
-			}
-			else{
-				let record = store.createRecord("user", {userName:this.getData("userName"), place:this.getData("place"), phoneNumber:this.getData("phoneNumber")});
-				console.log(record.$.error);
-				if(record.$.isError){
-					for (error in record.$.error){
-						console.log(error+": "+record.$.error[error].message);
-					}
-				}
-				else{
-					this.setData("price", store.peekAll("user")[0].price);
-					alert("Record Added.");
-				}
-			}
 		}
 	},
 	methods : {
 		// Functions which can be used as callback in the component.
 	}
-});
+});	
 Lyte.Component.register("user-label", {
 _template:"<template tag-name=\"user-label\"><template is=\"if\" value=\"{{lyteViewPort}}\"><template case=\"true\"><dummy-port-element></dummy-port-element> <div style=\"display:flex; width:300px; height:25px; justify-content:space-around; border:1px solid black; margin:0.3rem;\"> <p style=\"margin:0.4rem; background-color: black; border:1px solid black; width:100px; height:12.5px;\"></p> <p style=\"margin:0.4rem; background-color: black; border:1px solid black; width:100px; height:12.5px;\"></p> </div> <dummy-port-element></dummy-port-element></template><template case=\"false\"> <div style=\"display:flex; width:300px; height:25px; justify-content:space-around; border:1px solid black; margin:0.3rem;\"> <p style=\"margin:0.4rem; border:1px solid black; width:100px; height:12.5px; line-height:12.5px; text-align:center;\">{{userName}}</p> <p style=\"margin:0.4rem; border:1px solid black; width:100px; height:12.5px; line-height:12.5px; text-align:center;\">{{userId}}</p> </div> </template></template></template>",
 _dynamicNodes : [{"type":"attr","position":[0]},{"type":"if","position":[0],"cases":{"true":{"dynamicNodes":[{"type":"componentDynamic","position":[0]},{"type":"componentDynamic","position":[4]}]},"false":{"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]}},"default":{}}],
@@ -1582,13 +1563,16 @@ Lyte.registerPattern( "phoneNumberRegex" , /^[6-9]{1}\d{9}$/ );
 
 store.registerModel("user",
     {
-        userName: Lyte.attr("string", {mandatory:true}),
-        place: Lyte.attr("string", {mandatory:true}),
-        phoneNumber: Lyte.attr("string", {mandatory:true, pattern:Lyte.patterns.phoneNumberRegex}),
-        profile:Lyte.belongsTo("profile"),
-        collectedBadges:Lyte.hasMany("badge", {inverse:"collectedUsers"}),
-        earnedBadges:Lyte.hasMany("badge", {inverse:"earnedUsers"}),
-        bestFriend:Lyte.belongsTo("user", {inverse:"bestFriend"})
+
+        STD_ID: Lyte.attr("number", {primaryKey:true}),
+        STD_NAME: Lyte.attr("string", {mandatory:true}),
+        LAST_NAME: Lyte.attr("string", {mandatory:true}),
+        COURSE_ID: Lyte.attr("number", {mandatory:true}),
+        STD_DOB: Lyte.attr("string", {mandatory:true}),
+        STD_ADDR: Lyte.attr("string", {mandatory:true}),
+        STD_DOJ: Lyte.attr("string", {mandatory:true}),
+        STD_GENDER: Lyte.attr("string", {mandatory:true})
+
     }
 );
 
@@ -1608,3 +1592,67 @@ store.registerModel("badge",
         earnedUsers:Lyte.hasMany("user")
     }
 );
+store.registerAdapter("user", {
+
+	host : "http://localhost:8080/",
+
+    namespace : "web_app",
+
+    withCredentials: true,
+
+    delayPersistence:{delete:true},
+
+    buildURL : function(modelName , type , queryParams , payLoad , url , actionName , customData ){
+        switch(type){
+            case "updateRecord" || "findRecord":
+                url.replace("user");
+        }
+        url = url.replace("user", "users");
+        console.log(url);
+        return url;
+    },
+
+    headersForRequest : function(type , queryParams , customData, actionName, key ){
+        console.log("headers");
+        return {
+            "Accept":"application/json"
+        };
+    },
+
+    methodForRequest : function(method , type , queryParams , customData, actionName, key){
+        console.log("requestMethod");
+        if( method == "PATCH" ){
+            return "PUT";
+        }
+        return method;
+    }
+
+});
+
+
+store.registerSerializer("user",{
+	normalize : function(modelName , type , snapshot, customData, opts ){
+        console.log("normalize");
+        console.log(snapshot);
+        return snapshot;
+    },
+    normalizeResponse : function(modelName , type , payLoad , pkValue , status , headers , queryParams , customData, opts){
+        console.log("normalizeResponse");
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="findrecord"){
+            return {user:payLoad[0]};
+        }
+        else{
+            return {user:payLoad};
+        }
+    },
+    serialize:function(type , payLoad , records , customData , modelName, queryParams , actionName){
+        console.log("serialize");
+        console.log(payLoad);
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="updaterecord"){
+            return [payLoad.user];
+        }
+        else{
+            return payLoad.user;
+        }
+    }
+});

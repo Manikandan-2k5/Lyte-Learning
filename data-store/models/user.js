@@ -47,13 +47,16 @@ Lyte.registerPattern( "phoneNumberRegex" , /^[6-9]{1}\d{9}$/ );
 
 store.registerModel("user",
     {
-        userName: Lyte.attr("string", {mandatory:true}),
-        place: Lyte.attr("string", {mandatory:true}),
-        phoneNumber: Lyte.attr("string", {mandatory:true, pattern:Lyte.patterns.phoneNumberRegex}),
-        profile:Lyte.belongsTo("profile"),
-        collectedBadges:Lyte.hasMany("badge", {inverse:"collectedUsers"}),
-        earnedBadges:Lyte.hasMany("badge", {inverse:"earnedUsers"}),
-        bestFriend:Lyte.belongsTo("user", {inverse:"bestFriend"})
+
+        STD_ID: Lyte.attr("number", {primaryKey:true}),
+        STD_NAME: Lyte.attr("string", {mandatory:true}),
+        LAST_NAME: Lyte.attr("string", {mandatory:true}),
+        COURSE_ID: Lyte.attr("number", {mandatory:true}),
+        STD_DOB: Lyte.attr("string", {mandatory:true}),
+        STD_ADDR: Lyte.attr("string", {mandatory:true}),
+        STD_DOJ: Lyte.attr("string", {mandatory:true}),
+        STD_GENDER: Lyte.attr("string", {mandatory:true})
+
     }
 );
 

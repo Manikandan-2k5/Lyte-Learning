@@ -1,4 +1,4 @@
-Timing to complete init function0.001 s
+Timing to complete init function0 s
 CliLocation :/usr/lib/node_modules/@zoho/lyte-cli
  CliVersion 3.3.5
 Building time of copyAppDir : 0.001 s
@@ -13,17 +13,17 @@ Running compilerule ...
 [Time] => Convert Lyte syntax => 0 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:34181/devtools/browser/b54f179d-e9e3-4f33-9111-8b865839b31e
+browser Endpoint ws://127.0.0.1:37171/devtools/browser/1252a817-78e8-443c-be21-2eda6fa5cff2
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 0.246 s
-Callback function called 0.001 suser-label,menu-portal,welcome-comp,user-portal,home-portal,user-form
-Time to end the dynamic nodes0.247 s
+Time taken for end call back be 0.224 s
+Callback function called 0 suser-form,menu-portal,home-portal,user-label,welcome-comp,user-portal
+Time to end the dynamic nodes0.225 s
 Generating dist components...
 
-Time to end processing template0.003 s
-Building time of components : 0.259 s
+Time to end processing template0.002 s
+Building time of components : 0.235 s
 Building models ..............
 
 Consolidated file created in the dist/data-store/models/user.js
@@ -37,10 +37,10 @@ Building time of mixins : 0 s
 Building time of services : 0 s
 addons building initated for/home/manikandans/Lyte-Test/node_modules/@zoho/lyte-ui-component/build/build.js
 build file exists on addons building
-Building time of addons : 14.904 s
+Building time of addons : 13.659 s
 Error: ENOENT: no such file or directory, lstat '/home/manikandans/Lyte-Test/dist/components/helpers'
 Building time of consolidate : 0.004 s
-LiveServer running in 41075
+LiveServer running in 39835
 Minified Count : 0
-Total Building Time : 15.235 s
+Total Building Time : 13.965 s
 Building completed
