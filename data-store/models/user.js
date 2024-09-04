@@ -57,6 +57,12 @@ store.registerModel("user",
         STD_DOJ: Lyte.attr("string", {mandatory:true}),
         STD_GENDER: Lyte.attr("string", {mandatory:true})
 
+    },
+    
+    {
+        actions:{
+            invokeAction:{}
+        }
     }
 );
 

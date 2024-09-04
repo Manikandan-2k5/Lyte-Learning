@@ -9,6 +9,9 @@ store.registerSerializer("user",{
         if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="findrecord"){
             return {user:payLoad[0]};
         }
+        else if(type.toLowerCase()=="updaterecord" || type.toLowerCase()=="update"){
+            return payLoad;
+        }
         else{
             return {user:payLoad};
         }
@@ -18,6 +21,9 @@ store.registerSerializer("user",{
         console.log(payLoad);
         if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="updaterecord"){
             return [payLoad.user];
+        }
+        else if(type.toLowerCase()=="action"){
+            return payLoad;
         }
         else{
             return payLoad.user;

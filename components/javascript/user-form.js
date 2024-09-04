@@ -13,6 +13,8 @@ Lyte.Component.register("user-form", {
 			this.setData("customArray", ["hello",2,3,4]);
 			this.setData("customObject", {age:18});
 			console.log(this.getData("errors"));
+			let rec = store.peekRecord("user", 15);
+			rec.$.triggerAction("action");
 		}
 	},
 	methods : {
