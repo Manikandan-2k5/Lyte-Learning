@@ -1,7 +1,7 @@
 Lyte.Component.register("user-portal", {
-_template:"<template tag-name=\"user-portal\"> <template is=\"if\" value=\"{{if(expHandlers(name,'==','MANIKANDAN'),true,false)}}\"><template case=\"true\"><h1>Hi {{name}}</h1></template><template case=\"false\"><h1>Bye Bye</h1></template></template> <link-to lt-prop-route=\"home\"> <span>Home</span> </link-to> Hi {{name}} <div>{{unescape(htmlContent)}}</div> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your name\" lt-prop-value=\"{{lbind(name)}}\"> </lyte-input> <menu-portal> <template is=\"yield\" yield-name=\"menu-list\"> <ol> <template items=\"{{operations}}\" item=\"item\" index=\"index\" is=\"for\"><li> <lyte-button __click=\"{{action('menu',item)}}\"> <template is=\"registerYield\" yield-name=\"text\">{{item}} {{iconElement}}</template> </lyte-button> </li></template> </ol> </template> </menu-portal> <lyte-button __click=\"{{action('changeArray')}}\"> <template is=\"registerYield\" yield-name=\"text\">Change Array</template> </lyte-button> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your phone_no\" lt-prop-value=\"{{lbind(details.personal_info.phone_number)}}\"> </lyte-input> <div style=\"margin:1rem; display:flex; flex-direction:column; overflow:scroll; justify-content: space-around; align-items:center; width:400px; height:1000px; border:1px solid black;\"> <template items=\"{{usersLabel}}\" item=\"item\" index=\"index\" is=\"for\"><user-label lyte-view-port=\"true\" user-name=\"{{item.userName}}\" user-id=\"{{item.userId}}\"></user-label></template> </div> </template>",
+_template:"<template tag-name=\"user-portal\"> <template is=\"if\" value=\"{{if(expHandlers(name,'==','MANIKANDAN'),true,false)}}\"><template case=\"true\"><h1>Hi {{name}}</h1></template><template case=\"false\"><h1>Bye Bye</h1></template></template> <link-to lt-prop-route=\"home\"> <span>Home</span> </link-to> Hi {{name}} <div>{{unescape(htmlContent,undefined,sanitizerInstance.sanitizer)}}</div> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your name\" lt-prop-value=\"{{lbind(name)}}\"> </lyte-input> <menu-portal> <template is=\"yield\" yield-name=\"menu-list\"> <ol> <template items=\"{{operations}}\" item=\"item\" index=\"index\" is=\"for\"><li> <lyte-button __click=\"{{action('menu',item)}}\"> <template is=\"registerYield\" yield-name=\"text\">{{item}} {{iconElement}}</template> </lyte-button> </li></template> </ol> </template> </menu-portal> <lyte-button __click=\"{{action('changeArray')}}\"> <template is=\"registerYield\" yield-name=\"text\">Change Array</template> </lyte-button> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your phone_no\" lt-prop-value=\"{{lbind(details.personal_info.phone_number)}}\"> </lyte-input> <div style=\"margin:1rem; display:flex; flex-direction:column; overflow:scroll; justify-content: space-around; align-items:center; width:400px; height:1000px; border:1px solid black;\"> <template items=\"{{usersLabel}}\" item=\"item\" index=\"index\" is=\"for\"><user-label lyte-view-port=\"true\" user-name=\"{{item.userName}}\" user-id=\"{{item.userId}}\"></user-label></template> </div> </template>",
 _dynamicNodes : [{"type":"attr","position":[1]},{"type":"if","position":[1],"cases":{"true":{"dynamicNodes":[{"type":"text","position":[0,1]}]},"false":{"dynamicNodes":[]}},"default":{}},{"type":"componentDynamic","position":[3]},{"type":"text","position":[5]},{"type":"text","position":[7,0]},{"type":"attr","position":[9]},{"type":"componentDynamic","position":[9]},{"type":"registerYield","position":[11,1],"dynamicNodes":[{"type":"attr","position":[1,1]},{"type":"for","position":[1,1],"dynamicNodes":[{"type":"attr","position":[0,1]},{"type":"registerYield","position":[0,1,1],"dynamicNodes":[{"type":"text","position":[0]},{"type":"text","position":[2]}]},{"type":"componentDynamic","position":[0,1]}]}]},{"type":"componentDynamic","position":[11]},{"type":"attr","position":[13]},{"type":"registerYield","position":[13,1],"dynamicNodes":[]},{"type":"componentDynamic","position":[13]},{"type":"attr","position":[15]},{"type":"componentDynamic","position":[15]},{"type":"attr","position":[17,1]},{"type":"for","position":[17,1],"dynamicNodes":[{"type":"attr","position":[0]},{"type":"componentDynamic","position":[0]}]}],
-_observedAttributes :["name","htmlContent","operations","details","usersLabel"],
+_observedAttributes :["name","htmlContent","operations","details","sanitizerInstance","usersLabel"],
 
 	data : function(){
 		return {
@@ -9,6 +9,7 @@ _observedAttributes :["name","htmlContent","operations","details","usersLabel"],
 			htmlContent:Lyte.attr("string", {default:"<p>Hi I'm from Chennai.</p>"}),
 			operations:Lyte.attr("array", {default:["Logout", "Search"]}),
 			details:Lyte.attr("object", {default:{age:18, personal_info:{phone_number:8610045338, location:{country:{name:"India", continent:"Asia"}, code:91}}, gender:"male"}}),
+			sanitizerInstance:Lyte.attr("object", {default:{sanitizer:{}}}),
 			usersLabel:Lyte.attr("array", 
 				{
 					default:[
@@ -1034,6 +1035,9 @@ _observedAttributes :["name","htmlContent","operations","details","usersLabel"],
 	},
 	methods : {
 		// Functions which can be used as callback in the component.
+	},
+	init:function(){
+		this.setData("sanitizerInstance.sanitizer", Lyte.Security.createSanitizer({"FORBID_TAGS":["p"], "KEEP_CONTENT":false}));
 	},
 	nameObserver:function(change){
 		console.log(change);

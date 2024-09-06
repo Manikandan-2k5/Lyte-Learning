@@ -5,7 +5,7 @@
         <span>Home</span>
     </link-to>
     Hi {{name}}
-    <div>{{unescape(htmlContent)}}</div>
+    <div>{{unescape(htmlContent, undefined, sanitizerInstance.sanitizer)}}</div>
     <lyte-input lt-prop-appearance = 'box' lt-prop-placeholder = "Change your name" lt-prop-value = "{{lbind(name)}}"> </lyte-input>
     <menu-portal>
         <template is="yield" yield-name="menu-list">

@@ -5,6 +5,7 @@ Lyte.Component.register("user-portal", {
 			htmlContent:Lyte.attr("string", {default:"<p>Hi I'm from Chennai.</p>"}),
 			operations:Lyte.attr("array", {default:["Logout", "Search"]}),
 			details:Lyte.attr("object", {default:{age:18, personal_info:{phone_number:8610045338, location:{country:{name:"India", continent:"Asia"}, code:91}}, gender:"male"}}),
+			sanitizerInstance:Lyte.attr("object", {default:{sanitizer:{}}}),
 			usersLabel:Lyte.attr("array", 
 				{
 					default:[
@@ -1030,6 +1031,9 @@ Lyte.Component.register("user-portal", {
 	},
 	methods : {
 		// Functions which can be used as callback in the component.
+	},
+	init:function(){
+		this.setData("sanitizerInstance.sanitizer", Lyte.Security.createSanitizer({"FORBID_TAGS":["p"], "KEEP_CONTENT":false}));
 	},
 	nameObserver:function(change){
 		console.log(change);

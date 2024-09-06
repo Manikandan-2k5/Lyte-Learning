@@ -423,10 +423,209 @@ _observedAttributes :["userName","userId","lyteViewPort"],
 	}
 });
 
+Lyte.Component.register("user-form", {
+_template:"<template tag-name=\"user-form\"> <div style=\"display:flex; flex-direction:column; width:500px; height:200px; justify-content:space-around;\"> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Name\" lt-prop-value=\"{{lbind(userName)}}\"></lyte-input> <lyte-input lt-prop-type=\"number\" lt-prop-appearance=\"box\" lt-prop-placeholder=\"Phone number\" lt-prop-value=\"{{lbind(phoneNumber)}}\"></lyte-input> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Place\" lt-prop-value=\"{{lbind(place)}}\"></lyte-input> <lyte-button __click=\"{{action('submit',event)}}\"> <template is=\"registerYield\" yield-name=\"text\">Submit</template> </lyte-button> </div> </template>",
+_dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"componentDynamic","position":[1,1]},{"type":"attr","position":[1,3]},{"type":"componentDynamic","position":[1,3]},{"type":"attr","position":[1,5]},{"type":"componentDynamic","position":[1,5]},{"type":"attr","position":[1,7]},{"type":"registerYield","position":[1,7,1],"dynamicNodes":[]},{"type":"componentDynamic","position":[1,7]}],
+_observedAttributes :["userName","place","phoneNumber","customArray","customObject"],
+
+	data : function(){
+		return {
+			userName:Lyte.attr("string", {mandatory:true}),
+			place:Lyte.attr("string", {mandatory:true}),
+			phoneNumber:Lyte.attr("string", {mandatory:true}),
+			customArray:Lyte.attr("customArray"),
+			customObject:Lyte.attr("customObject")
+		}	
+	},
+	actions : {
+		submit:async function(){
+			this.setData("customArray", ["hello",2,3,4]);
+			this.setData("customObject", {age:18});
+			console.log(this.getData("errors"));
+			let rec = store.peekRecord("user", 15);
+			rec.$.triggerAction("action");
+		}
+	},
+	methods : {
+		// Functions which can be used as callback in the component.
+	}
+});	
+Lyte.Component.register("welcome-comp",{
+_template:"<template tag-name=\"welcome-comp\"> <h1>Available features of LYTE</h1> <ul> <template items=\"{{features}}\" item=\"item\" index=\"index\" is=\"for\"><li> <a href=\"{{item.url}}\" target=\"_blank\">{{item.module}}</a> </li></template> </ul> </template>",
+_dynamicNodes : [{"type":"attr","position":[3,1]},{"type":"for","position":[3,1],"dynamicNodes":[{"type":"attr","position":[0,1]},{"type":"text","position":[0,1,0]}]}],
+_observedAttributes :["features"],
+
+	data : function(){
+		return {
+			features : Lyte.attr("array")
+		}
+	},
+	actions : {
+		// Functions for event handling
+	},
+	methods : {
+		// Functions which can be used as callback in the component.
+	}
+});
+
+Lyte.registerValidator("checkEmpty",
+    function(fieldName, fieldValue){
+        if(fieldValue==undefined || fieldValue==null){  
+            console.log("hello")  
+            return {message:"Validation failed."};
+        }
+        else{
+            return true;
+        }
+    }
+);
+
+Lyte.registerDataType("currency", 
+	{
+		extends:"number",
+		serialize:function(deserialized){
+            console.log("hello");
+			return deserialized*83;
+		},
+		deserialize:function(serialized){
+            console.log("hello");
+			return serialized/83;
+		}
+	}
+);
+
+Lyte.registerDataType("customObject",
+    {
+        extends:"object",
+        properties:{
+            userName:Lyte.attr("string", {mandatory:true, validation:"checkEmpty"}),
+            place:Lyte.attr("string", {mandatory:true, validation:"checkEmpty"}),
+            phoneNumber:Lyte.attr("number", {mandatory:true, validation:"checkEmpty"})
+        }
+    }
+);
+
+
+Lyte.registerDataType("customArray",
+    {
+        extends:"array",
+        items:Lyte.attr("string")
+    }
+);
+
+Lyte.registerPattern( "phoneNumberRegex" , /^[6-9]{1}\d{9}$/ );
+
+store.registerModel("user",
+    {
+
+        STD_ID: Lyte.attr("number", {primaryKey:true}),
+        STD_NAME: Lyte.attr("string", {mandatory:true}),
+        LAST_NAME: Lyte.attr("string", {mandatory:true}),
+        COURSE_ID: Lyte.attr("number", {mandatory:true}),
+        STD_DOB: Lyte.attr("string", {mandatory:true}),
+        STD_ADDR: Lyte.attr("string", {mandatory:true}),
+        STD_DOJ: Lyte.attr("string", {mandatory:true}),
+        STD_GENDER: Lyte.attr("string", {mandatory:true})
+
+    },
+    
+    {
+        actions:{
+            invokeAction:{}
+        }
+    }
+);
+
+store.registerModel("profile",
+    {
+        id:Lyte.attr("number", {primaryKey:true}),
+        status:Lyte.attr("string", {mandatory:true}),
+        user:Lyte.belongsTo("user")
+    }
+);
+
+store.registerModel("badge",
+    {
+        id:Lyte.attr("number", {primaryKey:true}),
+        badgeName:Lyte.attr("string", {mandatory:true}),
+        collectedUsers:Lyte.hasMany("user"),
+        earnedUsers:Lyte.hasMany("user")
+    }
+);
+store.registerAdapter("user", {
+
+	host : "http://localhost:8080/",
+
+    namespace : "web_app",
+
+    withCredentials: true,
+
+    delayPersistence:{delete:true},
+
+    buildURL : function(modelName , type , queryParams , payLoad , url , actionName , customData ){
+        switch(type){
+            case "updateRecord" || "findRecord":
+                url.replace("user");
+        }
+        url = url.replace("user", "users");
+        console.log(url);
+        return url;
+    },
+
+    headersForRequest : function(type , queryParams , customData, actionName, key ){
+        console.log("headers");
+        return {
+            "Accept":"application/json"
+        };
+    },
+
+    methodForRequest : function(method , type , queryParams , customData, actionName, key){
+        console.log("requestMethod");
+        if( method == "PATCH" ){
+            return "PUT";
+        }
+        return method;
+    }
+
+});
+
+
+store.registerSerializer("user",{
+	normalize : function(modelName , type , snapshot, customData, opts ){
+        console.log("normalize");
+        console.log(snapshot);
+        return snapshot;
+    },
+    normalizeResponse : function(modelName , type , payLoad , pkValue , status , headers , queryParams , customData, opts){
+        console.log("normalizeResponse");
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="findrecord"){
+            return {user:payLoad[0]};
+        }
+        else if(type.toLowerCase()=="updaterecord" || type.toLowerCase()=="update"){
+            return payLoad;
+        }
+        else{
+            return {user:payLoad};
+        }
+    },
+    serialize:function(type , payLoad , records , customData , modelName, queryParams , actionName){
+        console.log("serialize");
+        console.log(payLoad);
+        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="updaterecord"){
+            return [payLoad.user];
+        }
+        else if(type.toLowerCase()=="action"){
+            return payLoad;
+        }
+        else{
+            return payLoad.user;
+        }
+    }
+});
 Lyte.Component.register("user-portal", {
-_template:"<template tag-name=\"user-portal\"> <template is=\"if\" value=\"{{if(expHandlers(name,'==','MANIKANDAN'),true,false)}}\"><template case=\"true\"><h1>Hi {{name}}</h1></template><template case=\"false\"><h1>Bye Bye</h1></template></template> <link-to lt-prop-route=\"home\"> <span>Home</span> </link-to> Hi {{name}} <div>{{unescape(htmlContent)}}</div> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your name\" lt-prop-value=\"{{lbind(name)}}\"> </lyte-input> <menu-portal> <template is=\"yield\" yield-name=\"menu-list\"> <ol> <template items=\"{{operations}}\" item=\"item\" index=\"index\" is=\"for\"><li> <lyte-button __click=\"{{action('menu',item)}}\"> <template is=\"registerYield\" yield-name=\"text\">{{item}} {{iconElement}}</template> </lyte-button> </li></template> </ol> </template> </menu-portal> <lyte-button __click=\"{{action('changeArray')}}\"> <template is=\"registerYield\" yield-name=\"text\">Change Array</template> </lyte-button> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your phone_no\" lt-prop-value=\"{{lbind(details.personal_info.phone_number)}}\"> </lyte-input> <div style=\"margin:1rem; display:flex; flex-direction:column; overflow:scroll; justify-content: space-around; align-items:center; width:400px; height:1000px; border:1px solid black;\"> <template items=\"{{usersLabel}}\" item=\"item\" index=\"index\" is=\"for\"><user-label lyte-view-port=\"true\" user-name=\"{{item.userName}}\" user-id=\"{{item.userId}}\"></user-label></template> </div> </template>",
+_template:"<template tag-name=\"user-portal\"> <template is=\"if\" value=\"{{if(expHandlers(name,'==','MANIKANDAN'),true,false)}}\"><template case=\"true\"><h1>Hi {{name}}</h1></template><template case=\"false\"><h1>Bye Bye</h1></template></template> <link-to lt-prop-route=\"home\"> <span>Home</span> </link-to> Hi {{name}} <div>{{unescape(htmlContent,undefined,sanitizerInstance.sanitizer)}}</div> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your name\" lt-prop-value=\"{{lbind(name)}}\"> </lyte-input> <menu-portal> <template is=\"yield\" yield-name=\"menu-list\"> <ol> <template items=\"{{operations}}\" item=\"item\" index=\"index\" is=\"for\"><li> <lyte-button __click=\"{{action('menu',item)}}\"> <template is=\"registerYield\" yield-name=\"text\">{{item}} {{iconElement}}</template> </lyte-button> </li></template> </ol> </template> </menu-portal> <lyte-button __click=\"{{action('changeArray')}}\"> <template is=\"registerYield\" yield-name=\"text\">Change Array</template> </lyte-button> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Change your phone_no\" lt-prop-value=\"{{lbind(details.personal_info.phone_number)}}\"> </lyte-input> <div style=\"margin:1rem; display:flex; flex-direction:column; overflow:scroll; justify-content: space-around; align-items:center; width:400px; height:1000px; border:1px solid black;\"> <template items=\"{{usersLabel}}\" item=\"item\" index=\"index\" is=\"for\"><user-label lyte-view-port=\"true\" user-name=\"{{item.userName}}\" user-id=\"{{item.userId}}\"></user-label></template> </div> </template>",
 _dynamicNodes : [{"type":"attr","position":[1]},{"type":"if","position":[1],"cases":{"true":{"dynamicNodes":[{"type":"text","position":[0,1]}]},"false":{"dynamicNodes":[]}},"default":{}},{"type":"componentDynamic","position":[3]},{"type":"text","position":[5]},{"type":"text","position":[7,0]},{"type":"attr","position":[9]},{"type":"componentDynamic","position":[9]},{"type":"registerYield","position":[11,1],"dynamicNodes":[{"type":"attr","position":[1,1]},{"type":"for","position":[1,1],"dynamicNodes":[{"type":"attr","position":[0,1]},{"type":"registerYield","position":[0,1,1],"dynamicNodes":[{"type":"text","position":[0]},{"type":"text","position":[2]}]},{"type":"componentDynamic","position":[0,1]}]}]},{"type":"componentDynamic","position":[11]},{"type":"attr","position":[13]},{"type":"registerYield","position":[13,1],"dynamicNodes":[]},{"type":"componentDynamic","position":[13]},{"type":"attr","position":[15]},{"type":"componentDynamic","position":[15]},{"type":"attr","position":[17,1]},{"type":"for","position":[17,1],"dynamicNodes":[{"type":"attr","position":[0]},{"type":"componentDynamic","position":[0]}]}],
-_observedAttributes :["name","htmlContent","operations","details","usersLabel"],
+_observedAttributes :["name","htmlContent","operations","details","sanitizerInstance","usersLabel"],
 
 	data : function(){
 		return {
@@ -434,6 +633,7 @@ _observedAttributes :["name","htmlContent","operations","details","usersLabel"],
 			htmlContent:Lyte.attr("string", {default:"<p>Hi I'm from Chennai.</p>"}),
 			operations:Lyte.attr("array", {default:["Logout", "Search"]}),
 			details:Lyte.attr("object", {default:{age:18, personal_info:{phone_number:8610045338, location:{country:{name:"India", continent:"Asia"}, code:91}}, gender:"male"}}),
+			sanitizerInstance:Lyte.attr("object", {default:{sanitizer:{}}}),
 			usersLabel:Lyte.attr("array", 
 				{
 					default:[
@@ -1460,6 +1660,9 @@ _observedAttributes :["name","htmlContent","operations","details","usersLabel"],
 	methods : {
 		// Functions which can be used as callback in the component.
 	},
+	init:function(){
+		this.setData("sanitizerInstance.sanitizer", Lyte.Security.createSanitizer({"FORBID_TAGS":["p"], "KEEP_CONTENT":false}));
+	},
 	nameObserver:function(change){
 		console.log(change);
 	}.observes("name"),
@@ -1470,203 +1673,3 @@ _observedAttributes :["name","htmlContent","operations","details","usersLabel"],
 		console.log(change);
 	}.observes("$.details.*")
 });
-
-Lyte.Component.register("welcome-comp",{
-_template:"<template tag-name=\"welcome-comp\"> <h1>Available features of LYTE</h1> <ul> <template items=\"{{features}}\" item=\"item\" index=\"index\" is=\"for\"><li> <a href=\"{{item.url}}\" target=\"_blank\">{{item.module}}</a> </li></template> </ul> </template>",
-_dynamicNodes : [{"type":"attr","position":[3,1]},{"type":"for","position":[3,1],"dynamicNodes":[{"type":"attr","position":[0,1]},{"type":"text","position":[0,1,0]}]}],
-_observedAttributes :["features"],
-
-	data : function(){
-		return {
-			features : Lyte.attr("array")
-		}
-	},
-	actions : {
-		// Functions for event handling
-	},
-	methods : {
-		// Functions which can be used as callback in the component.
-	}
-});
-
-Lyte.registerValidator("checkEmpty",
-    function(fieldName, fieldValue){
-        if(fieldValue==undefined || fieldValue==null){  
-            console.log("hello")  
-            return {message:"Validation failed."};
-        }
-        else{
-            return true;
-        }
-    }
-);
-
-Lyte.registerDataType("currency", 
-	{
-		extends:"number",
-		serialize:function(deserialized){
-            console.log("hello");
-			return deserialized*83;
-		},
-		deserialize:function(serialized){
-            console.log("hello");
-			return serialized/83;
-		}
-	}
-);
-
-Lyte.registerDataType("customObject",
-    {
-        extends:"object",
-        properties:{
-            userName:Lyte.attr("string", {mandatory:true, validation:"checkEmpty"}),
-            place:Lyte.attr("string", {mandatory:true, validation:"checkEmpty"}),
-            phoneNumber:Lyte.attr("number", {mandatory:true, validation:"checkEmpty"})
-        }
-    }
-);
-
-
-Lyte.registerDataType("customArray",
-    {
-        extends:"array",
-        items:Lyte.attr("string")
-    }
-);
-
-Lyte.registerPattern( "phoneNumberRegex" , /^[6-9]{1}\d{9}$/ );
-
-store.registerModel("user",
-    {
-
-        STD_ID: Lyte.attr("number", {primaryKey:true}),
-        STD_NAME: Lyte.attr("string", {mandatory:true}),
-        LAST_NAME: Lyte.attr("string", {mandatory:true}),
-        COURSE_ID: Lyte.attr("number", {mandatory:true}),
-        STD_DOB: Lyte.attr("string", {mandatory:true}),
-        STD_ADDR: Lyte.attr("string", {mandatory:true}),
-        STD_DOJ: Lyte.attr("string", {mandatory:true}),
-        STD_GENDER: Lyte.attr("string", {mandatory:true})
-
-    },
-    
-    {
-        actions:{
-            invokeAction:{}
-        }
-    }
-);
-
-store.registerModel("profile",
-    {
-        id:Lyte.attr("number", {primaryKey:true}),
-        status:Lyte.attr("string", {mandatory:true}),
-        user:Lyte.belongsTo("user")
-    }
-);
-
-store.registerModel("badge",
-    {
-        id:Lyte.attr("number", {primaryKey:true}),
-        badgeName:Lyte.attr("string", {mandatory:true}),
-        collectedUsers:Lyte.hasMany("user"),
-        earnedUsers:Lyte.hasMany("user")
-    }
-);
-store.registerAdapter("user", {
-
-	host : "http://localhost:8080/",
-
-    namespace : "web_app",
-
-    withCredentials: true,
-
-    delayPersistence:{delete:true},
-
-    buildURL : function(modelName , type , queryParams , payLoad , url , actionName , customData ){
-        switch(type){
-            case "updateRecord" || "findRecord":
-                url.replace("user");
-        }
-        url = url.replace("user", "users");
-        console.log(url);
-        return url;
-    },
-
-    headersForRequest : function(type , queryParams , customData, actionName, key ){
-        console.log("headers");
-        return {
-            "Accept":"application/json"
-        };
-    },
-
-    methodForRequest : function(method , type , queryParams , customData, actionName, key){
-        console.log("requestMethod");
-        if( method == "PATCH" ){
-            return "PUT";
-        }
-        return method;
-    }
-
-});
-
-
-store.registerSerializer("user",{
-	normalize : function(modelName , type , snapshot, customData, opts ){
-        console.log("normalize");
-        console.log(snapshot);
-        return snapshot;
-    },
-    normalizeResponse : function(modelName , type , payLoad , pkValue , status , headers , queryParams , customData, opts){
-        console.log("normalizeResponse");
-        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="findrecord"){
-            return {user:payLoad[0]};
-        }
-        else if(type.toLowerCase()=="updaterecord" || type.toLowerCase()=="update"){
-            return payLoad;
-        }
-        else{
-            return {user:payLoad};
-        }
-    },
-    serialize:function(type , payLoad , records , customData , modelName, queryParams , actionName){
-        console.log("serialize");
-        console.log(payLoad);
-        if(type.toLowerCase()=="createrecord" || type.toLowerCase()=="updaterecord"){
-            return [payLoad.user];
-        }
-        else if(type.toLowerCase()=="action"){
-            return payLoad;
-        }
-        else{
-            return payLoad.user;
-        }
-    }
-});
-Lyte.Component.register("user-form", {
-_template:"<template tag-name=\"user-form\"> <div style=\"display:flex; flex-direction:column; width:500px; height:200px; justify-content:space-around;\"> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Name\" lt-prop-value=\"{{lbind(userName)}}\"></lyte-input> <lyte-input lt-prop-type=\"number\" lt-prop-appearance=\"box\" lt-prop-placeholder=\"Phone number\" lt-prop-value=\"{{lbind(phoneNumber)}}\"></lyte-input> <lyte-input lt-prop-appearance=\"box\" lt-prop-placeholder=\"Place\" lt-prop-value=\"{{lbind(place)}}\"></lyte-input> <lyte-button __click=\"{{action('submit',event)}}\"> <template is=\"registerYield\" yield-name=\"text\">Submit</template> </lyte-button> </div> </template>",
-_dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"componentDynamic","position":[1,1]},{"type":"attr","position":[1,3]},{"type":"componentDynamic","position":[1,3]},{"type":"attr","position":[1,5]},{"type":"componentDynamic","position":[1,5]},{"type":"attr","position":[1,7]},{"type":"registerYield","position":[1,7,1],"dynamicNodes":[]},{"type":"componentDynamic","position":[1,7]}],
-_observedAttributes :["userName","place","phoneNumber","customArray","customObject"],
-
-	data : function(){
-		return {
-			userName:Lyte.attr("string", {mandatory:true}),
-			place:Lyte.attr("string", {mandatory:true}),
-			phoneNumber:Lyte.attr("string", {mandatory:true}),
-			customArray:Lyte.attr("customArray"),
-			customObject:Lyte.attr("customObject")
-		}	
-	},
-	actions : {
-		submit:async function(){
-			this.setData("customArray", ["hello",2,3,4]);
-			this.setData("customObject", {age:18});
-			console.log(this.getData("errors"));
-			let rec = store.peekRecord("user", 15);
-			rec.$.triggerAction("action");
-		}
-	},
-	methods : {
-		// Functions which can be used as callback in the component.
-	}
-});	
