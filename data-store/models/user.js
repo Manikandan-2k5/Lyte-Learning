@@ -55,7 +55,10 @@ store.registerModel("user",
         STD_DOB: Lyte.attr("string", {mandatory:true}),
         STD_ADDR: Lyte.attr("string", {mandatory:true}),
         STD_DOJ: Lyte.attr("string", {mandatory:true}),
-        STD_GENDER: Lyte.attr("string", {mandatory:true})
+        STD_GENDER: Lyte.attr("string", {mandatory:true}),
+        didLoad:function(){
+            console.log("Records got loaded from server", this);
+        }
 
     },
     
